@@ -30,8 +30,14 @@ export function AdminPasscodeProvider({ children }: { children: ReactNode }) {
   const setPasscode = (code: string | null) => {
     if (code) {
       localStorage.setItem('ieb_admin_passcode', code);
+      if (typeof document !== 'undefined') {
+        document.cookie = `ieb_admin_passcode=${encodeURIComponent(code)}; path=/; max-age=86400; SameSite=Lax`;
+      }
     } else {
       localStorage.removeItem('ieb_admin_passcode');
+      if (typeof document !== 'undefined') {
+        document.cookie = `ieb_admin_passcode=; path=/; max-age=0; SameSite=Lax`;
+      }
     }
     setPasscodeState(code);
   };

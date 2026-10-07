@@ -15,7 +15,7 @@ export default function AdminOrdersListPage() {
   const fetchOrders = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/admin/orders/', {
+      const res = await fetch(`/api/admin/orders/?passcode=${encodeURIComponent(passcode || '')}`, {
         headers: { 'X-Admin-Passcode': passcode || '' },
       });
       if (res.ok) {
@@ -41,7 +41,7 @@ export default function AdminOrdersListPage() {
   const handleDelete = async (id: string) => {
     if (!confirm(`Delete order #${id}?`)) return;
     try {
-      await fetch(`/api/admin/orders/${id}/`, {
+      await fetch(`/api/admin/orders/${id}/?passcode=${encodeURIComponent(passcode || '')}`, {
         method: 'DELETE',
         headers: { 'X-Admin-Passcode': passcode || '' },
       });

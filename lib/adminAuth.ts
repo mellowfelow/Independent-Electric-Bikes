@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export function checkAdminPasscode(request: NextRequest): NextResponse | null {
-  const expectedPasscode = process.env.ADMIN_PASSCODE || 'orderreply';
+  const expectedPasscode = (process.env.ADMIN_PASSCODE || 'orderreply').trim();
 
-  const providedPasscode =
+  const providedPasscode = (
     request.headers.get('X-Admin-Passcode') ||
     request.cookies.get('ieb_admin_passcode')?.value ||
-    new URL(request.url).searchParams.get('passcode');
+    new URL(request.url).searchParams.get('passcode') ||
+    ''
+  ).trim();
 
   if (!providedPasscode) {
     return NextResponse.json({ error: 'Passcode required' }, { status: 401 });

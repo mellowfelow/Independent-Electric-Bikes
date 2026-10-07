@@ -17,9 +17,10 @@ export function PasscodeGate({ children }: { children: ReactNode }) {
     setError('');
 
     try {
-      const res = await fetch('/api/admin/orders/', {
+      const url = `/api/admin/orders/?passcode=${encodeURIComponent(codeToTest.trim())}`;
+      const res = await fetch(url, {
         headers: {
-          'X-Admin-Passcode': codeToTest,
+          'X-Admin-Passcode': codeToTest.trim(),
         },
       });
 
