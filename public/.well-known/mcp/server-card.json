@@ -1,0 +1,88 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/server-card/v1.json",
+  "serverInfo": {
+    "name": "INDEPENDENT ELECTRIC BIKES",
+    "version": "1.0.0",
+    "description": "Australia's Premier Independent Electric Commuter & Cargo Bike Specialist",
+    "homepage": "https://independentelectricbikes.com.au",
+    "contact": {
+      "email": "sales@independentelectricbikes.com.au",
+      "whatsapp": "+61480811308"
+    }
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://independentelectricbikes.com.au/api/mcp"
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "search_products",
+        "description": "Search electric bikes by keyword query, category slug, or max_price in AUD",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": { "type": "string" },
+            "category": { "type": "string" },
+            "max_price": { "type": "number" }
+          }
+        }
+      },
+      {
+        "name": "get_product",
+        "description": "Get full technical specifications, motor/battery details, and pricing for a single electric bike by slug",
+        "inputSchema": {
+          "type": "object",
+          "required": ["slug"],
+          "properties": {
+            "slug": { "type": "string" }
+          }
+        }
+      },
+      {
+        "name": "list_categories",
+        "description": "List all electric bike categories (Commuter, Cargo, Folding, Fat Tire Cruisers) with product counts",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "get_policies",
+        "description": "Get express shipping rules, warranty policies, minimum order ($300 AUD), and payment options (Bank Transfer, PayID, 10% Crypto discount)",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "create_order_draft",
+        "description": "Create a prefilled e-bike order draft with WhatsApp and Checkout URL. Human customer completes the transaction.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "items": { "type": "array" },
+            "notes": { "type": "string" }
+          }
+        }
+      }
+    ],
+    "resources": [
+      { "name": "product-catalog", "description": "Full electric bike catalog", "uri": "https://independentelectricbikes.com.au/shop/" },
+      { "name": "compare-matrix", "description": "Technical e-bike spec comparison", "uri": "https://independentelectricbikes.com.au/compare/" },
+      { "name": "ebike-guides", "description": "Australian e-bike guides blog", "uri": "https://independentelectricbikes.com.au/blog/" }
+    ],
+    "commerce": {
+      "ordering": "human-assisted-whatsapp-or-form",
+      "payment": ["bank-transfer", "payid", "crypto-BTC", "crypto-USDT"],
+      "currency": "AUD",
+      "minimumOrder": "300",
+      "freeShipping": "1500"
+    }
+  },
+  "legal": {
+    "ageRestriction": "none",
+    "productType": "Electric Bikes & Commuter Mobility",
+    "compliance": "EN15194 250W-500W 25km/h Pedal-Assist Compliant"
+  }
+}

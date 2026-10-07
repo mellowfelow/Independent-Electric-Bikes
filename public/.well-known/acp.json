@@ -1,0 +1,27 @@
+{
+  "protocol": { "name": "acp", "version": "0.1.0" },
+  "name": "INDEPENDENT ELECTRIC BIKES",
+  "description": "Australia's Premier Independent Electric Commuter & Cargo Bike Specialist",
+  "api_base_url": "https://independentelectricbikes.com.au",
+  "homepage": "https://independentelectricbikes.com.au",
+  "transports": ["https"],
+  "capabilities": {
+    "services": ["product-catalog", "compare-matrix", "blog", "faq", "mcp-server"],
+    "ordering": "human-assisted",
+    "payment_methods": ["bank-transfer", "payid", "crypto-BTC", "crypto-USDT"],
+    "currency": "AUD",
+    "minimum_order_usd": "300",
+    "free_shipping_threshold_usd": "1500"
+  },
+  "contact": {
+    "whatsapp": "https://wa.me/61480811308",
+    "email": "sales@independentelectricbikes.com.au"
+  },
+  "legal": {
+    "age_restriction": "none",
+    "region": "Australia",
+    "ships_to": "Australia-wide (Victoria metro & regional express freight)",
+    "productType": "Electric Bikes & Commuter Mobility",
+    "compliance": "EN15194 250W-500W 25km/h Pedal-Assist Compliant"
+  }
+}

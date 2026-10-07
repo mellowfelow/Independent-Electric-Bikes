@@ -1,0 +1,26 @@
+{
+  "issuer": "https://independentelectricbikes.com.au",
+  "authorization_endpoint": null,
+  "token_endpoint": null,
+  "jwks_uri": null,
+  "grant_types_supported": [],
+  "response_types_supported": [],
+  "scopes_supported": [],
+  "note": "INDEPENDENT ELECTRIC BIKES has no protected private APIs. All e-commerce content is publicly accessible.",
+  "public_resources": [
+    "https://independentelectricbikes.com.au/shop/",
+    "https://independentelectricbikes.com.au/compare/",
+    "https://independentelectricbikes.com.au/blog/",
+    "https://independentelectricbikes.com.au/faq/",
+    "https://independentelectricbikes.com.au/llms.txt",
+    "https://independentelectricbikes.com.au/.well-known/api-catalog",
+    "https://independentelectricbikes.com.au/.well-known/agent-skills/index.json",
+    "https://independentelectricbikes.com.au/.well-known/mcp/server-card.json"
+  ],
+  "agent_auth": {
+    "register_uri": null,
+    "identity_types_supported": ["none"],
+    "credential_types_supported": ["none"],
+    "notes": "No registration required. All content is publicly accessible to autonomous agents."
+  }
+}

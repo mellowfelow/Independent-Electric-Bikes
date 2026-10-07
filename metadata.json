@@ -1,0 +1,6 @@
+{
+  "name": "Independent Electric Bikes",
+  "description": "Australia's premier independent electric commuter bikes, cargo e-bikes, and folding bikes specialist based in Victoria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

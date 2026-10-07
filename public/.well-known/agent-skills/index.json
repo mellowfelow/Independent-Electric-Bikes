@@ -1,0 +1,50 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "name": "INDEPENDENT ELECTRIC BIKES",
+  "url": "https://independentelectricbikes.com.au",
+  "description": "Australia's Premier Independent Electric Commuter & Cargo Bike Specialist",
+  "skills": [
+    {
+      "name": "search-products",
+      "type": "commerce",
+      "description": "Search electric commuter, cargo, folding, and fat tire e-bikes by keyword, category, or price",
+      "url": "https://independentelectricbikes.com.au/api/mcp",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "browse-catalog",
+      "type": "navigation",
+      "description": "Browse full electric bike catalog by category",
+      "url": "https://independentelectricbikes.com.au/shop/",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "compare-ebikes",
+      "type": "utility",
+      "description": "Compare motor wattage, battery capacity, range, and weights across e-bike models",
+      "url": "https://independentelectricbikes.com.au/compare/",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "order-draft",
+      "type": "commerce",
+      "description": "Create a prefilled e-bike order draft for human customer completion via Email or WhatsApp",
+      "url": "https://independentelectricbikes.com.au/api/mcp",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ebike-guides",
+      "type": "content",
+      "description": "Read Australian electric bike buying guides, battery care advice, and Victorian road rules",
+      "url": "https://independentelectricbikes.com.au/blog/",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "contact-support",
+      "type": "support",
+      "description": "Contact Brunswick showroom sales and warranty support team",
+      "url": "https://independentelectricbikes.com.au/contact/",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

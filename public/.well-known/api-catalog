@@ -1,0 +1,44 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://independentelectricbikes.com.au/",
+      "https://www.iana.org/assignments/link-relations/service-doc": [
+        { "href": "https://independentelectricbikes.com.au/faq/" }
+      ],
+      "title": "INDEPENDENT ELECTRIC BIKES — Australia's Premier Electric Bike Specialist"
+    },
+    {
+      "anchor": "https://independentelectricbikes.com.au/shop/",
+      "type": "text/html",
+      "title": "INDEPENDENT ELECTRIC BIKES Product Catalog"
+    },
+    {
+      "anchor": "https://independentelectricbikes.com.au/compare/",
+      "type": "text/html",
+      "title": "INDEPENDENT ELECTRIC BIKES Comparison Matrix"
+    },
+    {
+      "anchor": "https://independentelectricbikes.com.au/api/products",
+      "type": "application/json",
+      "title": "INDEPENDENT ELECTRIC BIKES Products API"
+    },
+    {
+      "anchor": "https://independentelectricbikes.com.au/api/categories",
+      "type": "application/json",
+      "title": "INDEPENDENT ELECTRIC BIKES Categories API"
+    },
+    {
+      "anchor": "https://independentelectricbikes.com.au/api/search",
+      "type": "application/json",
+      "title": "INDEPENDENT ELECTRIC BIKES Search API"
+    },
+    {
+      "anchor": "https://independentelectricbikes.com.au/api/mcp",
+      "type": "application/json",
+      "https://www.iana.org/assignments/link-relations/service-desc": [
+        { "href": "https://independentelectricbikes.com.au/.well-known/mcp/server-card.json" }
+      ],
+      "title": "INDEPENDENT ELECTRIC BIKES MCP Server"
+    }
+  ]
+}
