@@ -242,18 +242,6 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
                 </div>
               </div>
             </div>
-
-            <div className="pt-2 border-t border-slate-800">
-              <a
-                href={`/order/payment-details/?id=${order.id}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-bold hover:underline"
-              >
-                <span>View Public Customer Payment Page</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
           </div>
         </div>
       </div>

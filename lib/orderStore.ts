@@ -44,26 +44,38 @@ export async function saveOrder(order: OrderRecord): Promise<OrderRecord> {
 }
 
 export async function listOrders(): Promise<OrderRecord[]> {
-  let orders: OrderRecord[] = [];
+  let redisOrders: OrderRecord[] = [];
 
   if (redis) {
     try {
-      const data = await redis.hgetall<Record<string, string | OrderRecord>>(REDIS_KEY);
-      if (data) {
-        orders = Object.values(data).map((item) =>
-          typeof item === 'string' ? JSON.parse(item) : item
-        );
+      const data = await redis.hgetall<Record<string, any>>(REDIS_KEY);
+      if (data && typeof data === 'object') {
+        redisOrders = Object.values(data)
+          .map((item) => {
+            if (!item) return null;
+            if (typeof item === 'string') {
+              try {
+                return JSON.parse(item);
+              } catch {
+                return null;
+              }
+            }
+            return item;
+          })
+          .filter(Boolean);
       }
     } catch (err) {
       console.error('[OrderStore] Redis list failed:', err);
     }
   }
 
-  if (orders.length === 0 && memoryOrdersMap.size > 0) {
-    orders = Array.from(memoryOrdersMap.values());
-  }
+  // Merge memory orders and Redis orders into unified list
+  const combinedMap = new Map<string, OrderRecord>();
+  memoryOrdersMap.forEach((o, id) => combinedMap.set(id, o));
+  redisOrders.forEach((o) => combinedMap.set(o.id, o));
 
-  return orders.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+  const allOrders = Array.from(combinedMap.values());
+  return allOrders.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 }
 
 export async function getOrder(id: string): Promise<OrderRecord | null> {

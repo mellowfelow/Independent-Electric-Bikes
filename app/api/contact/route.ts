@@ -3,7 +3,7 @@ import { FORMS, CONTACT, SITE, REPLY } from '@/config/site';
 import { sendMail } from '@/lib/mailer';
 import { saveOrder } from '@/lib/orderStore';
 import { saveEnquiry } from '@/lib/enquiryStore';
-import { orderConfirmationEmail } from '@/utils/emailTemplates';
+import { orderConfirmationEmail, adminNewOrderEmail } from '@/utils/emailTemplates';
 
 export async function POST(req: NextRequest) {
   try {
@@ -37,13 +37,25 @@ export async function POST(req: NextRequest) {
 
       // Email Notification to Shop Admin
       const adminEmail = process.env.ORDER_EMAIL || FORMS.destinations.order || CONTACT.email;
+      const adminOrderHtml = adminNewOrderEmail({
+        id: orderRef,
+        customerName: name,
+        email,
+        phone: phone || '',
+        address: address || '',
+        paymentMethod: paymentMethod || 'bank-transfer',
+        channel: channel || 'both',
+        items: newOrder.items,
+        totalAmount: newOrder.totalAmount,
+      });
+
       const itemsListText = newOrder.items.map((i) => `- ${i.name} x ${i.quantity} ($${i.price * i.quantity})`).join('\n');
 
       await sendMail({
         to: adminEmail,
-        subject: `New E-Bike Order Draft #${orderRef} from ${name}`,
+        subject: `New Order Received #${orderRef} from ${name}`,
         text: `New order received on ${SITE.name}!\n\nOrder Ref: ${orderRef}\nCustomer: ${name} (${email}, ${phone})\nAddress: ${address}\nPayment Method: ${paymentMethod}\n\nItems:\n${itemsListText}\n\nTotal: $${totalAmount} AUD`,
-        html: `<p>New order received on <strong>${SITE.name}</strong>!</p><p><strong>Order Ref:</strong> #${orderRef}</p><p><strong>Customer:</strong> ${name} (${email}, ${phone})</p><p><strong>Address:</strong> ${address}</p><p><strong>Payment Method:</strong> ${paymentMethod}</p><pre>${itemsListText}</pre><p><strong>Total:</strong> $${totalAmount} AUD</p>`,
+        html: adminOrderHtml,
       });
 
       // UNCONDITIONAL Confirmation Email to Customer (Fires on all channel choices, including WhatsApp)

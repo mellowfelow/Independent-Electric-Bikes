@@ -159,7 +159,7 @@ function SendPaymentEmailContent() {
       <div className="lg:col-span-5 space-y-6">
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
           <h2 className="text-xs font-extrabold uppercase tracking-wider text-emerald-400">
-            Live Customer Page Preview (`parsePaymentDetail`)
+            Live Email Payment Details Preview (`parsePaymentDetail`)
           </h2>
 
           <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-3">

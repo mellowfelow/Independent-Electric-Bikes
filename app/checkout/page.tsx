@@ -23,8 +23,6 @@ import {
 import { SITE, SHOP, CONTACT } from '@/config/site';
 import { money } from '@/lib/order';
 import { waOrderLink } from '@/lib/whatsapp';
-import { Nav } from '@/components/Nav';
-import { Footer } from '@/components/Footer';
 
 export interface CartItem {
   slug: string;
@@ -149,10 +147,10 @@ export default function CheckoutPage() {
 
       if (data.success) {
         const confirmedRef = data.orderRef || orderRefGuess;
-        setOrderCompleteRef(confirmedRef);
         localStorage.removeItem(SITE.cartKey);
         setItems([]);
         window.dispatchEvent(new Event('ieb-cart-update'));
+        window.location.href = `/thank-you-order/?ref=${encodeURIComponent(confirmedRef)}`;
       } else {
         setErrorMsg(data.message || 'There was an error processing your order.');
       }
@@ -164,65 +162,32 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
-      <Nav />
-
-      <main className="flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        {/* Header Breadcrumb */}
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-800">
-          <div>
-            <div className="flex items-center gap-2 text-xs font-semibold text-slate-400 mb-2">
-              <Link href="/" className="hover:text-emerald-400">Home</Link>
-              <span>/</span>
-              <Link href="/shop/" className="hover:text-emerald-400">Shop</Link>
-              <span>/</span>
-              <span className="text-white">Secure Checkout</span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
-              <Lock className="w-7 h-7 text-emerald-400" />
-              <span>Independent Electric Bikes Checkout</span>
-            </h1>
+    <div className="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      {/* Header Breadcrumb */}
+      <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-800">
+        <div>
+          <div className="flex items-center gap-2 text-xs font-semibold text-slate-400 mb-2">
+            <Link href="/" className="hover:text-emerald-400">Home</Link>
+            <span>/</span>
+            <Link href="/shop/" className="hover:text-emerald-400">Shop</Link>
+            <span>/</span>
+            <span className="text-white">Secure Checkout</span>
           </div>
-          <Link
-            href="/shop/"
-            className="hidden sm:flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-white bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl transition-all"
-          >
-            <ChevronLeft className="w-4 h-4" />
-            <span>Continue Shopping</span>
-          </Link>
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
+            <Lock className="w-7 h-7 text-emerald-400" />
+            <span>Independent Electric Bikes Checkout</span>
+          </h1>
         </div>
+        <Link
+          href="/shop/"
+          className="hidden sm:flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-white bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl transition-all"
+        >
+          <ChevronLeft className="w-4 h-4" />
+          <span>Continue Shopping</span>
+        </Link>
+      </div>
 
-        {/* Order Completed Screen */}
-        {orderCompleteRef ? (
-          <div className="max-w-2xl mx-auto my-12 bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center shadow-2xl animate-in zoom-in-95 duration-300">
-            <div className="w-20 h-20 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-6">
-              <CheckCircle2 className="w-12 h-12" />
-            </div>
-            <h2 className="text-2xl font-extrabold text-white mb-3">Order Placed Successfully!</h2>
-            <p className="text-base text-slate-300 mb-4">
-              Your Order Reference is: <strong className="text-emerald-400 font-mono text-lg">#{orderCompleteRef}</strong>
-            </p>
-            <p className="text-sm text-slate-400 max-w-md mx-auto mb-8 leading-relaxed">
-              We have dispatched a full invoice and confirmation email to <strong className="text-white">{email}</strong>. Our Brunswick showroom team is preparing your payment details.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`/order/payment-details/?id=${orderCompleteRef}`}
-                className="py-3.5 px-6 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold rounded-xl text-sm transition-all shadow-lg hover:shadow-emerald-950/50 flex items-center justify-center gap-2"
-              >
-                <span>View Order & Payment Details Page</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <Link
-                href="/shop/"
-                className="py-3.5 px-6 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-sm transition-all text-center"
-              >
-                Return to Shop Catalog
-              </Link>
-            </div>
-          </div>
-        ) : items.length === 0 ? (
+      {items.length === 0 ? (
           /* Empty Cart Screen */
           <div className="max-w-lg mx-auto my-16 bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center">
             <ShoppingBag className="w-16 h-16 text-slate-700 mx-auto mb-4" />
@@ -591,9 +556,6 @@ export default function CheckoutPage() {
             </div>
           </div>
         )}
-      </main>
-
-      <Footer />
     </div>
   );
 }

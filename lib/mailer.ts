@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { FORMS } from '@/config/site';
+import { FORMS, SITE } from '@/config/site';
 
 export interface SendMailOptions {
   to: string;
@@ -7,6 +7,7 @@ export interface SendMailOptions {
   html: string;
   text: string;
   replyTo?: string;
+  from?: string;
 }
 
 export async function sendMail(opts: SendMailOptions): Promise<{ sent: boolean; reason?: string }> {
@@ -15,12 +16,15 @@ export async function sendMail(opts: SendMailOptions): Promise<{ sent: boolean; 
     const user = process.env.SMTP_USER;
     const pass = process.env.SMTP_PASS;
     const port = parseInt(process.env.SMTP_PORT || '465', 10);
-    const from = process.env.SMTP_FROM || FORMS.smtpFrom;
+    const rawFrom = opts.from || process.env.SMTP_FROM || FORMS.smtpFrom || user || '';
 
     if (!host || !user || !pass) {
       console.warn('[Mailer] SMTP credentials not set. Returning sent:false gracefully.');
       return { sent: false, reason: 'not-configured' };
     }
+
+    // Ensure sender display name uses SITE.name (e.g., "INDEPENDENT ELECTRIC BIKES" <sales@...>)
+    const formattedFrom = rawFrom.includes('<') ? rawFrom : `"${SITE.name}" <${rawFrom}>`;
 
     const transporter = nodemailer.createTransport({
       host,
@@ -33,12 +37,12 @@ export async function sendMail(opts: SendMailOptions): Promise<{ sent: boolean; 
     });
 
     await transporter.sendMail({
-      from,
+      from: formattedFrom,
       to: opts.to,
       subject: opts.subject,
       html: opts.html,
       text: opts.text,
-      replyTo: opts.replyTo || opts.to,
+      replyTo: opts.replyTo || user || FORMS.smtpFrom,
     });
 
     return { sent: true };

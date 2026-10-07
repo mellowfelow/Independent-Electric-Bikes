@@ -155,9 +155,6 @@ export function paymentDetailsEmail(opts: {
     )
     .join('');
 
-  const copyUrl = `https://${SITE.domain}/order/payment-details/?id=${encodeURIComponent(opts.orderId)}`;
-  const confirmUrl = `https://${SITE.domain}/order/confirm-payment/?id=${encodeURIComponent(opts.orderId)}`;
-
   const bodyHtml = `
     <p style="font-size:15px; margin-top:0;">Dear <strong>${escapeHtml(opts.customerName)}</strong>,</p>
     <p>${escapeHtml(opts.openingText)}</p>
@@ -172,10 +169,6 @@ export function paymentDetailsEmail(opts: {
 
     <p>${escapeHtml(opts.closingText)}</p>
 
-    <div style="text-align:center; margin:24px 0;">
-      ${button(copyUrl, 'View & Copy Payment Details Online')}
-    </div>
-
     ${callout(`
       <strong style="color:#15803d; font-size:14px;">Payment Terms & Reference Instructions:</strong>
       <ul style="margin:8px 0 0 0; padding-left:18px; font-size:13px; color:#1e293b;">
@@ -184,8 +177,7 @@ export function paymentDetailsEmail(opts: {
     `)}
 
     <div style="margin-top:20px; font-size:13px; color:#64748b; text-align:center;">
-      Once paid, please upload your receipt screenshot at:<br>
-      <a href="${confirmUrl}" style="color:${REPLY.brand.primary}; font-weight:700;">${confirmUrl}</a>
+      Once payment is sent, please reply to this email or send your receipt to us on WhatsApp (<a href="https://wa.me/${CONTACT.whatsapp}" style="color:${REPLY.brand.primary}; font-weight:700;">${CONTACT.phoneDisplay}</a>).
     </div>
   `;
 
@@ -218,6 +210,66 @@ export function enquiryReplyEmail(opts: {
   return shell({
     eyebrow: 'Inquiry Response',
     title: `Response from ${SITE.name}`,
+    bodyHtml,
+  });
+}
+
+/** 4. Admin New Order Notification Email */
+export function adminNewOrderEmail(order: {
+  id: string;
+  customerName: string;
+  email: string;
+  phone: string;
+  address: string;
+  paymentMethod: string;
+  channel: string;
+  items: { name: string; quantity: number; price: number }[];
+  totalAmount: number;
+}): string {
+  const itemsHtml = order.items
+    .map(
+      (item) => `<tr>
+      <td style="padding:8px 0; border-bottom:1px solid #f1f5f9; font-weight:600;">${escapeHtml(item.name)} &times; ${item.quantity}</td>
+      <td style="padding:8px 0; border-bottom:1px solid #f1f5f9; text-align:right; font-weight:700;">${money(item.price * item.quantity)}</td>
+    </tr>`
+    )
+    .join('');
+
+  const dashboardUrl = `https://${SITE.domain}/admin/orders/${encodeURIComponent(order.id)}/`;
+
+  const bodyHtml = `
+    <p style="font-size:15px; margin-top:0;">A new order <strong>#${escapeHtml(order.id)}</strong> was received on <strong>${escapeHtml(SITE.name)}</strong>.</p>
+
+    <div style="background-color:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px; margin:16px 0;">
+      <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:#64748b; margin-bottom:10px;">Customer Details</div>
+      ${field('Customer Name', escapeHtml(order.customerName))}
+      ${field('Email Address', escapeHtml(order.email))}
+      ${field('Phone Number', escapeHtml(order.phone || 'N/A'))}
+      ${field('Delivery Address', escapeHtml(order.address || 'N/A'))}
+      ${field('Preferred Payment Method', escapeHtml(order.paymentMethod))}
+      ${field('Order Channel', escapeHtml(order.channel))}
+    </div>
+
+    <div style="background-color:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px; margin:16px 0;">
+      <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:#64748b; margin-bottom:10px;">Items Ordered</div>
+      <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+        ${itemsHtml}
+        <tr>
+          <td style="padding-top:12px; font-size:16px; font-weight:800;">Total Amount:</td>
+          <td style="padding-top:12px; font-size:18px; font-weight:800; color:${REPLY.brand.primary}; text-align:right;">${money(order.totalAmount)}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="text-align:center; margin:24px 0;">
+      ${button(dashboardUrl, 'Reply Order in Dashboard')}
+    </div>
+  `;
+
+  return shell({
+    eyebrow: 'New Order Received',
+    title: `New Order #${order.id} from ${escapeHtml(order.customerName)}`,
+    meta: `Total: ${money(order.totalAmount)} · ${SITE.name}`,
     bodyHtml,
   });
 }

@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
     const mailRes = await sendMail({
       to: order.email,
       subject: `Payment Invoice for Order #${order.id} - ${SITE.name}`,
-      text: `Payment details for Order #${order.id}. Total Due: $${order.totalAmount} AUD. Please view online at https://${SITE.domain}/order/payment-details/?id=${order.id}`,
+      text: `Payment details for Order #${order.id}. Total Due: $${order.totalAmount} AUD. Payment method: ${methodParts.label}. Please reply to this email once payment is sent.`,
       html: emailHtml,
     });
 

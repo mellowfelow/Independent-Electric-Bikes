@@ -34,26 +34,37 @@ export async function saveEnquiry(enquiry: EnquiryRecord): Promise<EnquiryRecord
 }
 
 export async function listEnquiries(): Promise<EnquiryRecord[]> {
-  let enquiries: EnquiryRecord[] = [];
+  let redisEnquiries: EnquiryRecord[] = [];
 
   if (redis) {
     try {
-      const data = await redis.hgetall<Record<string, string | EnquiryRecord>>(REDIS_KEY);
-      if (data) {
-        enquiries = Object.values(data).map((item) =>
-          typeof item === 'string' ? JSON.parse(item) : item
-        );
+      const data = await redis.hgetall<Record<string, any>>(REDIS_KEY);
+      if (data && typeof data === 'object') {
+        redisEnquiries = Object.values(data)
+          .map((item) => {
+            if (!item) return null;
+            if (typeof item === 'string') {
+              try {
+                return JSON.parse(item);
+              } catch {
+                return null;
+              }
+            }
+            return item;
+          })
+          .filter(Boolean);
       }
     } catch (err) {
       console.error('[EnquiryStore] Redis list failed:', err);
     }
   }
 
-  if (enquiries.length === 0 && memoryEnquiriesMap.size > 0) {
-    enquiries = Array.from(memoryEnquiriesMap.values());
-  }
+  const combinedMap = new Map<string, EnquiryRecord>();
+  memoryEnquiriesMap.forEach((e, id) => combinedMap.set(id, e));
+  redisEnquiries.forEach((e) => combinedMap.set(e.id, e));
 
-  return enquiries.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+  const allEnquiries = Array.from(combinedMap.values());
+  return allEnquiries.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 }
 
 export async function getEnquiry(id: string): Promise<EnquiryRecord | null> {
