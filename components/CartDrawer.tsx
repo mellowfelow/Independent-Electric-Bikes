@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Truck } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Truck, AlertTriangle } from 'lucide-react';
 import { SITE, SHOP } from '@/config/site';
 import { money } from '@/lib/order';
 
@@ -19,7 +20,9 @@ interface CartDrawerProps {
 }
 
 export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
+  const router = useRouter();
   const [items, setItems] = useState<CartItem[]>([]);
+  const [showMinNotice, setShowMinNotice] = useState(false);
 
   // Sync cart from localStorage
   const loadCart = () => {
@@ -75,9 +78,19 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 
   if (!isOpen) return null;
 
-  const handleProceedToCheckout = () => {
+  const handleProceedToCheckout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!isMinOrderMet) {
+      setShowMinNotice(true);
+      return;
+    }
     onClose();
-    window.location.href = '/checkout/';
+    router.push('/checkout/');
+    setTimeout(() => {
+      if (typeof window !== 'undefined' && window.location.pathname !== '/checkout/') {
+        window.location.href = '/checkout/';
+      }
+    }, 100);
   };
 
   return (
@@ -226,12 +239,21 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 </div>
               </div>
 
+              {/* Min Order Notice when button clicked or subtotal under minimum */}
+              {(!isMinOrderMet || showMinNotice) && (
+                <div className="p-3 bg-amber-950/80 border border-amber-600/80 rounded-xl text-xs text-amber-200 flex items-start gap-2">
+                  <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                  <span>
+                    Minimum order requirement is <strong>{money(SHOP.minOrder)}</strong>. Please add <strong>{money(SHOP.minOrder - subtotal)}</strong> more to proceed to checkout.
+                  </span>
+                </div>
+              )}
+
               {/* Proceed to Checkout Button */}
               <button
                 type="button"
-                disabled={!isMinOrderMet}
                 onClick={handleProceedToCheckout}
-                className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white font-extrabold rounded-xl text-sm flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-emerald-900/40 cursor-pointer disabled:cursor-not-allowed"
+                className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold rounded-xl text-sm flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-emerald-900/40 cursor-pointer active:scale-98"
               >
                 <span>Proceed to Checkout</span>
                 <ArrowRight className="w-4 h-4" />

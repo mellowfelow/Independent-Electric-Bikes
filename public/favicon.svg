@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="120" fill="#0f172a"/>
+  <rect x="16" y="16" width="480" height="480" rx="104" fill="none" stroke="#16a34a" stroke-width="12" opacity="0.6"/>
+  <!-- E-Bike Wheel Left -->
+  <circle cx="130" cy="330" r="65" fill="none" stroke="#38bdf8" stroke-width="24"/>
+  <circle cx="130" cy="330" r="18" fill="#10b981"/>
+  <!-- E-Bike Wheel Right -->
+  <circle cx="380" cy="330" r="65" fill="none" stroke="#38bdf8" stroke-width="24"/>
+  <circle cx="380" cy="330" r="18" fill="#10b981"/>
+  <!-- Frame Lines -->
+  <path d="M130 330 L220 210 L330 210 L380 330 M220 210 L290 330 L130 330 M330 210 L380 330" fill="none" stroke="#10b981" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Handlebars & Seat -->
+  <path d="M330 210 L350 140 L385 140" fill="none" stroke="#f8fafc" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M195 210 L240 210" fill="none" stroke="#f8fafc" stroke-width="28" stroke-linecap="round"/>
+  <!-- Glowing Central Lightning Bolt -->
+  <polygon points="270,120 220,230 260,230 230,340 300,195 260,195" fill="#facc15" stroke="#f59e0b" stroke-width="6" stroke-linejoin="round"/>
+</svg>

@@ -28,7 +28,7 @@ export const CONTACT = {
 };
 
 export const SHOP = {
-  minOrder: 300,
+  minOrder: 350,
   freeShippingThreshold: 1500,
   shippingFee: 99,
   cryptoDiscount: 10,

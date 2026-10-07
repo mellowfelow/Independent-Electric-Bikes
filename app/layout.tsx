@@ -10,6 +10,14 @@ import { SITE } from '@/config/site';
 export const metadata: Metadata = {
   title: `${SITE.name} — ${SITE.tagline}`,
   description: `Australia's premier independent electric commuter, cargo, and folding bike specialist based in Brunswick, Victoria. High torque 500W motors & Samsung batteries.`,
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     type: 'website',
     siteName: SITE.name,
@@ -36,6 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang={SITE.locale}>
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
         <script src="/js/webmcp.js" defer />
       </head>
       <body className="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col font-sans">
