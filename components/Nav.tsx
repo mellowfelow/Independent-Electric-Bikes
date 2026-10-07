@@ -100,13 +100,10 @@ export function Nav() {
                       {MASTER_TAXONOMY.map((cat) => {
                         const isActive = cat.slug === activeCategorySlug;
                         return (
-                          <button
+                          <Link
                             key={cat.slug}
-                            type="button"
+                            href={`/shop/${cat.slug}/`}
                             onMouseEnter={() => setActiveCategorySlug(cat.slug)}
-                            onClick={() => {
-                              window.location.href = `/shop/${cat.slug}/`;
-                            }}
                             className={`w-full text-left px-3 py-2.5 rounded-xl font-bold text-xs flex items-center justify-between transition-all ${
                               isActive
                                 ? 'bg-emerald-600 text-white shadow-md'
@@ -115,7 +112,7 @@ export function Nav() {
                           >
                             <span>{cat.name}</span>
                             <ChevronRight className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-slate-500'}`} />
-                          </button>
+                          </Link>
                         );
                       })}
 

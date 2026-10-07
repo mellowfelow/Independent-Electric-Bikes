@@ -42,8 +42,7 @@ ${pastedDetails}
 
 ${closingText}
 
-Upload confirmation receipt:
-https://independentelectricbikes.com.au/order/confirm-payment/?id=${orderRef}`;
+Please use your Order Number (#${orderRef}) as your payment description/reference. Once sent, reply to this message or email us with your payment receipt screenshot.`;
 
   const waUrl = waLinkTo(customerPhone, rawBody);
   const copyText = waMessageText(rawBody);

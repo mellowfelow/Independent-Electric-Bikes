@@ -53,10 +53,10 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({
-      success: true,
+      success: mailRes.sent,
       message: mailRes.sent
         ? `Payment details email sent successfully to ${order.email}!`
-        : `Payment details saved to portal. (SMTP not set up; email not dispatched)`,
+        : `Email dispatch notice: ${mailRes.reason === 'not-configured' ? 'SMTP credentials not configured in Vercel env vars.' : `SMTP dispatch failed: ${mailRes.reason}`}`,
       parsedFields,
       emailSent: mailRes.sent,
     });

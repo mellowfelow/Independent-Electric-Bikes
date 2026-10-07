@@ -12,11 +12,11 @@ export interface SendMailOptions {
 
 export async function sendMail(opts: SendMailOptions): Promise<{ sent: boolean; reason?: string }> {
   try {
-    const host = process.env.SMTP_HOST;
-    const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_PASS;
+    const host = process.env.SMTP_HOST || process.env.SMTP_SERVER;
+    const user = process.env.SMTP_USER || process.env.SMTP_USERNAME || process.env.SMTP_EMAIL;
+    const pass = process.env.SMTP_PASS || process.env.SMTP_PASSWORD;
     const port = parseInt(process.env.SMTP_PORT || '465', 10);
-    const rawFrom = opts.from || process.env.SMTP_FROM || FORMS.smtpFrom || user || '';
+    const rawFrom = opts.from || process.env.SMTP_FROM || process.env.MAIL_FROM || FORMS.smtpFrom || user || '';
 
     if (!host || !user || !pass) {
       console.warn('[Mailer] SMTP credentials not set. Returning sent:false gracefully.');

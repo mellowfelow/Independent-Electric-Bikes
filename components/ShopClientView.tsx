@@ -64,6 +64,13 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
     setCurrentPage(1);
   };
 
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE) || 1;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginatedProducts = filteredProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
@@ -140,8 +147,8 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
             <button
               type="button"
               disabled={currentPage === 1}
-              onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 disabled:opacity-40 disabled:hover:bg-slate-900 transition-all"
+              onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 disabled:opacity-40 disabled:hover:bg-slate-900 transition-all cursor-pointer disabled:cursor-not-allowed"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -155,8 +162,8 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
                   <button
                     key={pageNum}
                     type="button"
-                    onClick={() => setCurrentPage(pageNum)}
-                    className={`w-9 h-9 rounded-xl font-bold text-xs transition-all ${
+                    onClick={() => handlePageChange(pageNum)}
+                    className={`w-9 h-9 rounded-xl font-bold text-xs transition-all cursor-pointer ${
                       isCurrent
                         ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-950'
                         : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800'
@@ -175,8 +182,8 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
             <button
               type="button"
               disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
-              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 disabled:opacity-40 disabled:hover:bg-slate-900 transition-all"
+              onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
+              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800 disabled:opacity-40 disabled:hover:bg-slate-900 transition-all cursor-pointer disabled:cursor-not-allowed"
             >
               <ChevronRight className="w-4 h-4" />
             </button>

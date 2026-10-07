@@ -13,9 +13,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   return (
     <AdminPasscodeProvider>
       <PasscodeGate>
-        <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
+        <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans max-w-full overflow-x-hidden">
           <AdminNav />
-          <main className="flex-1 py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+          <main className="flex-1 py-6 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full overflow-x-hidden">
             {children}
           </main>
         </div>

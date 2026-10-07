@@ -77,8 +77,7 @@ ${opts.pastedDetails}
 
 ${opts.closingText}
 
-Please reply with your payment screenshot or transfer receipt once sent.
-Upload page: https://${SITE.domain}/order/confirm-payment/?id=${opts.ref}`;
+Please use your Order Number (#${opts.ref}) as your payment reference. Once sent, reply to this WhatsApp message or email ${CONTACT.email} with your payment receipt for instant verification and dispatch.`;
 
   return body;
 }

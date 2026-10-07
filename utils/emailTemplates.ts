@@ -170,14 +170,15 @@ export function paymentDetailsEmail(opts: {
     <p>${escapeHtml(opts.closingText)}</p>
 
     ${callout(`
-      <strong style="color:#15803d; font-size:14px;">Payment Terms & Reference Instructions:</strong>
+      <strong style="color:#15803d; font-size:14px;">Payment Reference & Confirmation Instructions:</strong>
       <ul style="margin:8px 0 0 0; padding-left:18px; font-size:13px; color:#1e293b;">
         ${paymentTermsHtml(opts.orderId)}
       </ul>
     `)}
 
-    <div style="margin-top:20px; font-size:13px; color:#64748b; text-align:center;">
-      Once payment is sent, please reply to this email or send your receipt to us on WhatsApp (<a href="https://wa.me/${CONTACT.whatsapp}" style="color:${REPLY.brand.primary}; font-weight:700;">${CONTACT.phoneDisplay}</a>).
+    <div style="margin-top:24px; text-align:center;">
+      <a href="mailto:${CONTACT.email}?subject=Payment%20Receipt%20Order%20%23${encodeURIComponent(opts.orderId)}" style="display:inline-block; background-color:${REPLY.brand.primary}; color:#ffffff; font-size:13px; font-weight:700; padding:12px 20px; border-radius:8px; text-decoration:none; margin:4px 6px;">Email Payment Receipt &rarr;</a>
+      <a href="https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(`Hi ${SITE.name}, here is my payment receipt for Order #${opts.orderId}`)}" style="display:inline-block; background-color:#25d366; color:#ffffff; font-size:13px; font-weight:700; padding:12px 20px; border-radius:8px; text-decoration:none; margin:4px 6px;">Send Receipt on WhatsApp &rarr;</a>
     </div>
   `;
 
