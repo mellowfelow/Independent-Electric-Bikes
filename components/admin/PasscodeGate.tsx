@@ -101,10 +101,6 @@ export function PasscodeGate({ children }: { children: ReactNode }) {
             <ArrowRight className="w-4 h-4" />
           </button>
         </form>
-
-        <div className="mt-6 pt-6 border-t border-slate-800 text-center text-[11px] text-slate-500">
-          Passcode-gated endpoint. Default passcode: <code className="font-mono text-emerald-400 font-bold">orderreply</code>
-        </div>
       </div>
     </div>
   );

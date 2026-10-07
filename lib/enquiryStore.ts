@@ -22,14 +22,17 @@ const REDIS_KEY = `${REPLY.orderPrefix.toLowerCase()}:enquiries`;
 const memoryEnquiriesMap = new Map<string, EnquiryRecord>();
 
 export async function saveEnquiry(enquiry: EnquiryRecord): Promise<EnquiryRecord> {
+  const cleanId = (enquiry.id || '').trim().replace(/\/$/, '');
+  enquiry.id = cleanId;
+
   if (redis) {
     try {
-      await redis.hset(REDIS_KEY, { [enquiry.id]: JSON.stringify(enquiry) });
+      await redis.hset(REDIS_KEY, { [cleanId]: JSON.stringify(enquiry) });
     } catch (err) {
       console.error('[EnquiryStore] Redis save failed:', err);
     }
   }
-  memoryEnquiriesMap.set(enquiry.id, enquiry);
+  memoryEnquiriesMap.set(cleanId, enquiry);
   return enquiry;
 }
 
@@ -52,7 +55,8 @@ export async function listEnquiries(): Promise<EnquiryRecord[]> {
             }
             return item;
           })
-          .filter(Boolean);
+          .filter(Boolean)
+          .map((e) => ({ ...e, id: (e.id || '').trim().replace(/\/$/, '') }));
       }
     } catch (err) {
       console.error('[EnquiryStore] Redis list failed:', err);
@@ -60,26 +64,34 @@ export async function listEnquiries(): Promise<EnquiryRecord[]> {
   }
 
   const combinedMap = new Map<string, EnquiryRecord>();
-  memoryEnquiriesMap.forEach((e, id) => combinedMap.set(id, e));
-  redisEnquiries.forEach((e) => combinedMap.set(e.id, e));
+  memoryEnquiriesMap.forEach((e, id) => combinedMap.set(id.trim().replace(/\/$/, ''), e));
+  redisEnquiries.forEach((e) => combinedMap.set(e.id.trim().replace(/\/$/, ''), e));
 
   const allEnquiries = Array.from(combinedMap.values());
   return allEnquiries.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 }
 
 export async function getEnquiry(id: string): Promise<EnquiryRecord | null> {
+  if (!id) return null;
+  const cleanId = id.trim().replace(/\/$/, '');
+
   if (redis) {
     try {
-      const data = await redis.hget<string | EnquiryRecord>(REDIS_KEY, id);
+      const data = await redis.hget<string | EnquiryRecord>(REDIS_KEY, cleanId);
       if (data) {
-        return typeof data === 'string' ? JSON.parse(data) : data;
+        const parsed = typeof data === 'string' ? JSON.parse(data) : data;
+        return { ...parsed, id: (parsed.id || cleanId).trim().replace(/\/$/, '') };
       }
     } catch (err) {
       console.error('[EnquiryStore] Redis get failed:', err);
     }
   }
 
-  return memoryEnquiriesMap.get(id) || null;
+  const inMem = memoryEnquiriesMap.get(cleanId);
+  if (inMem) return inMem;
+
+  const all = await listEnquiries();
+  return all.find((e) => e.id.toLowerCase() === cleanId.toLowerCase()) || null;
 }
 
 export async function markEnquiryReplied(id: string, replyText: string): Promise<EnquiryRecord | null> {

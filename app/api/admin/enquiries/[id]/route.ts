@@ -7,7 +7,8 @@ export async function GET(req: NextRequest, props: { params: Promise<{ id: strin
   if (authErr) return authErr;
 
   const params = await props.params;
-  const enquiry = await getEnquiry(params.id);
+  const cleanId = (params.id || '').trim().replace(/\/$/, '');
+  const enquiry = await getEnquiry(cleanId);
   if (!enquiry) return NextResponse.json({ error: 'Enquiry not found' }, { status: 404 });
 
   return NextResponse.json({ success: true, enquiry });
@@ -18,6 +19,7 @@ export async function DELETE(req: NextRequest, props: { params: Promise<{ id: st
   if (authErr) return authErr;
 
   const params = await props.params;
-  await deleteEnquiry(params.id);
+  const cleanId = (params.id || '').trim().replace(/\/$/, '');
+  await deleteEnquiry(cleanId);
   return NextResponse.json({ success: true, message: 'Enquiry deleted' });
 }

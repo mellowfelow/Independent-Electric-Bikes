@@ -221,80 +221,100 @@ export default function CheckoutPage() {
             {/* Left Column: Customer Details & Payment Options (7 Cols) */}
             <div className="lg:col-span-7 space-y-6">
               {/* Step 1: Customer Details */}
-              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
-                <div className="flex items-center gap-3 mb-5 pb-3 border-b border-slate-800">
-                  <div className="w-8 h-8 rounded-full bg-emerald-600 text-white font-extrabold text-sm flex items-center justify-center">
+              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
+                <div className="flex items-center gap-3 pb-3 border-b border-slate-800">
+                  <div className="w-8 h-8 rounded-full bg-emerald-600 text-white font-extrabold text-sm flex items-center justify-center shadow-md">
                     1
                   </div>
                   <div>
-                    <h2 className="text-lg font-extrabold text-white">Customer & Shipping Information</h2>
-                    <p className="text-xs text-slate-400">Where should we deliver your order or send the invoice?</p>
+                    <h2 className="text-lg font-extrabold text-white flex items-center gap-2">
+                      <span>Customer Contact & Courier Shipping Details</span>
+                      <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-extrabold px-2 py-0.5 rounded-md border border-emerald-500/30 uppercase tracking-wider">
+                        Required
+                      </span>
+                    </h2>
+                    <p className="text-xs text-slate-400">Please provide your contact details for invoices, freight tracking, and delivery dispatch.</p>
                   </div>
                 </div>
 
                 {errorMsg && (
-                  <div className="mb-5 p-4 bg-red-950/80 border border-red-800 rounded-xl text-xs text-red-200 flex items-start gap-2.5">
+                  <div className="p-4 bg-red-950/80 border border-red-800 rounded-xl text-xs text-red-200 flex items-start gap-2.5">
                     <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
                     <span>{errorMsg}</span>
                   </div>
                 )}
 
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                        Full Name <span className="text-emerald-400">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={customerName}
-                        onChange={(e) => setCustomerName(e.target.value)}
-                        placeholder="e.g. David Miller"
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
-                      />
+                <div className="space-y-5">
+                  {/* Customer Personal Contact Info Box */}
+                  <div className="bg-slate-950/80 border border-slate-800 rounded-xl p-4 space-y-4">
+                    <div className="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+                      <Lock className="w-3.5 h-3.5" />
+                      <span>Section A: Primary Customer Contact Information</span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-slate-200 mb-1.5">
+                          Full Legal Name <span className="text-emerald-400 font-black">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={customerName}
+                          onChange={(e) => setCustomerName(e.target.value)}
+                          placeholder="e.g. David Miller"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-medium"
+                        />
+                        <p className="text-[10px] text-slate-400 mt-1">First and last name for tax invoice and parcel identification.</p>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-bold text-slate-200 mb-1.5">
+                          Email Address <span className="text-emerald-400 font-black">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="e.g. david@example.com.au"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-medium"
+                        />
+                        <p className="text-[10px] text-emerald-400 font-semibold mt-1">
+                          ✓ Official tax invoice & payment instructions sent directly to this email.
+                        </p>
+                      </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                        Email Address <span className="text-emerald-400">*</span>
+                      <label className="block text-xs font-bold text-slate-200 mb-1.5">
+                        Mobile Phone Number <span className="text-emerald-400 font-black">*</span>
                       </label>
                       <input
-                        type="email"
+                        type="tel"
                         required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="e.g. david@example.com.au"
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="e.g. 0412 345 678"
+                        className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-medium"
                       />
-                      <p className="text-[10px] text-slate-400 mt-1">Tax invoice and official payment details sent here.</p>
+                      <p className="text-[10px] text-slate-400 mt-1">Used exclusively for courier SMS dispatch updates and delivery day notifications.</p>
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                      Mobile Phone Number <span className="text-emerald-400">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      placeholder="e.g. 0412 345 678"
-                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
-                    />
-                    <p className="text-[10px] text-slate-400 mt-1">Required for SMS freight tracking and delivery dispatch alerts.</p>
-                  </div>
-
-                  <div className="border-t border-slate-800/80 pt-4 space-y-4">
-                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
-                      <Truck className="w-4 h-4 text-emerald-400" />
-                      <span>Courier Freight Shipping Address</span>
+                  {/* Freight Delivery Address Box */}
+                  <div className="bg-slate-950/80 border border-slate-800 rounded-xl p-4 space-y-4">
+                    <div className="text-xs font-extrabold uppercase tracking-wider text-emerald-400 flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Truck className="w-4 h-4 text-emerald-400" />
+                        <span>Section B: Courier Freight Delivery Address (Physical Street Address)</span>
+                      </div>
+                      <span className="text-[10px] text-slate-400 font-normal">PO Boxes Not Accepted</span>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                        Street Address / Unit / House Number <span className="text-emerald-400">*</span>
+                      <label className="block text-xs font-bold text-slate-200 mb-1.5">
+                        Street Address / Unit / House Number <span className="text-emerald-400 font-black">*</span>
                       </label>
                       <input
                         type="text"
@@ -302,14 +322,14 @@ export default function CheckoutPage() {
                         value={streetAddress}
                         onChange={(e) => setStreetAddress(e.target.value)}
                         placeholder="e.g. Unit 4, 12 High Street"
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                        className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-medium"
                       />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div>
-                        <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                          Suburb / City <span className="text-emerald-400">*</span>
+                        <label className="block text-xs font-bold text-slate-200 mb-1.5">
+                          Suburb / City <span className="text-emerald-400 font-black">*</span>
                         </label>
                         <input
                           type="text"
@@ -317,18 +337,18 @@ export default function CheckoutPage() {
                           value={suburb}
                           onChange={(e) => setSuburb(e.target.value)}
                           placeholder="e.g. Brunswick"
-                          className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-medium"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                          State / Territory <span className="text-emerald-400">*</span>
+                        <label className="block text-xs font-bold text-slate-200 mb-1.5">
+                          State / Territory <span className="text-emerald-400 font-black">*</span>
                         </label>
                         <select
                           value={stateTerritory}
                           onChange={(e) => setStateTerritory(e.target.value)}
-                          className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500 font-medium"
                         >
                           <option value="VIC">VIC - Victoria</option>
                           <option value="NSW">NSW - New South Wales</option>
@@ -342,8 +362,8 @@ export default function CheckoutPage() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                          Postcode <span className="text-emerald-400">*</span>
+                        <label className="block text-xs font-bold text-slate-200 mb-1.5">
+                          Postcode <span className="text-emerald-400 font-black">*</span>
                         </label>
                         <input
                           type="text"
@@ -351,21 +371,21 @@ export default function CheckoutPage() {
                           value={postcode}
                           onChange={(e) => setPostcode(e.target.value)}
                           placeholder="e.g. 3056"
-                          className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-medium"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                        Delivery Notes / Gate Instructions <span className="text-slate-500">(Optional)</span>
+                      <label className="block text-xs font-bold text-slate-200 mb-1.5">
+                        Delivery Notes / Special Instructions <span className="text-slate-500">(Optional)</span>
                       </label>
                       <input
                         type="text"
                         value={deliveryNotes}
                         onChange={(e) => setDeliveryNotes(e.target.value)}
-                        placeholder="e.g. Leave inside front door if unattended"
-                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                        placeholder="e.g. Leave inside front gate if unattended"
+                        className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-medium"
                       />
                     </div>
                   </div>

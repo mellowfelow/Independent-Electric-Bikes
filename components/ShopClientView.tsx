@@ -67,7 +67,7 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
     if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo(0, 0);
     }
   };
 

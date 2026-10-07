@@ -32,14 +32,17 @@ const REDIS_KEY = `${REPLY.orderPrefix.toLowerCase()}:orders`;
 const memoryOrdersMap = new Map<string, OrderRecord>();
 
 export async function saveOrder(order: OrderRecord): Promise<OrderRecord> {
+  const cleanId = (order.id || '').trim().replace(/\/$/, '');
+  order.id = cleanId;
+
   if (redis) {
     try {
-      await redis.hset(REDIS_KEY, { [order.id]: JSON.stringify(order) });
+      await redis.hset(REDIS_KEY, { [cleanId]: JSON.stringify(order) });
     } catch (err) {
       console.error('[OrderStore] Redis save failed:', err);
     }
   }
-  memoryOrdersMap.set(order.id, order);
+  memoryOrdersMap.set(cleanId, order);
   return order;
 }
 
@@ -62,7 +65,8 @@ export async function listOrders(): Promise<OrderRecord[]> {
             }
             return item;
           })
-          .filter(Boolean);
+          .filter(Boolean)
+          .map((o) => ({ ...o, id: (o.id || '').trim().replace(/\/$/, '') }));
       }
     } catch (err) {
       console.error('[OrderStore] Redis list failed:', err);
@@ -71,26 +75,36 @@ export async function listOrders(): Promise<OrderRecord[]> {
 
   // Merge memory orders and Redis orders into unified list
   const combinedMap = new Map<string, OrderRecord>();
-  memoryOrdersMap.forEach((o, id) => combinedMap.set(id, o));
-  redisOrders.forEach((o) => combinedMap.set(o.id, o));
+  memoryOrdersMap.forEach((o, id) => combinedMap.set(id.trim().replace(/\/$/, ''), o));
+  redisOrders.forEach((o) => combinedMap.set(o.id.trim().replace(/\/$/, ''), o));
 
   const allOrders = Array.from(combinedMap.values());
   return allOrders.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 }
 
 export async function getOrder(id: string): Promise<OrderRecord | null> {
+  if (!id) return null;
+  const cleanId = id.trim().replace(/\/$/, '');
+
   if (redis) {
     try {
-      const data = await redis.hget<string | OrderRecord>(REDIS_KEY, id);
+      const data = await redis.hget<string | OrderRecord>(REDIS_KEY, cleanId);
       if (data) {
-        return typeof data === 'string' ? JSON.parse(data) : data;
+        const parsed = typeof data === 'string' ? JSON.parse(data) : data;
+        return { ...parsed, id: (parsed.id || cleanId).trim().replace(/\/$/, '') };
       }
     } catch (err) {
       console.error('[OrderStore] Redis get failed:', err);
     }
   }
 
-  return memoryOrdersMap.get(id) || null;
+  // Check in-memory store if Redis missed
+  const inMem = memoryOrdersMap.get(cleanId);
+  if (inMem) return inMem;
+
+  // Case-insensitive fallback check
+  const all = await listOrders();
+  return all.find((o) => o.id.toLowerCase() === cleanId.toLowerCase()) || null;
 }
 
 export async function markOrderSent(

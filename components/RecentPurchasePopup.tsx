@@ -124,10 +124,10 @@ export function RecentPurchasePopup() {
   useEffect(() => {
     if (purchaseList.length === 0 || isDismissed) return;
 
-    // Initial pop-up timing: show after 1.8 seconds on page load
+    // Initial pop-up timing: show after 12 seconds on page load
     const initialTimer = setTimeout(() => {
       setIsVisible(true);
-    }, 1800);
+    }, 12000);
 
     return () => clearTimeout(initialTimer);
   }, [purchaseList, isDismissed]);
@@ -144,11 +144,11 @@ export function RecentPurchasePopup() {
         setIsVisible(false);
       }, 5500);
     } else {
-      // Pause for 23.5 seconds (+20s interval), then show next purchase in loop
+      // Pause for 28.5 seconds (+20s interval), then show next purchase in loop
       nextTimer = setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % purchaseList.length);
         setIsVisible(true);
-      }, 23500);
+      }, 28500);
     }
 
     return () => {
