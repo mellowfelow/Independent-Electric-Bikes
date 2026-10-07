@@ -38,6 +38,11 @@ export default function CheckoutPage() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
+  const [streetAddress, setStreetAddress] = useState('');
+  const [suburb, setSuburb] = useState('');
+  const [stateTerritory, setStateTerritory] = useState('VIC');
+  const [postcode, setPostcode] = useState('');
+  const [deliveryNotes, setDeliveryNotes] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('bank-transfer');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderCompleteRef, setOrderCompleteRef] = useState<string | null>(null);
@@ -101,8 +106,17 @@ export default function CheckoutPage() {
     e.preventDefault();
     setErrorMsg('');
 
+    const computedAddress = streetAddress.trim()
+      ? `${streetAddress.trim()}, ${suburb.trim()} ${stateTerritory} ${postcode.trim()}` + (deliveryNotes.trim() ? ` (Notes: ${deliveryNotes.trim()})` : '')
+      : address.trim();
+
     if (!customerName.trim() || !email.trim()) {
       setErrorMsg('Please provide your Full Name and Email Address.');
+      return;
+    }
+
+    if (!streetAddress.trim() && !address.trim()) {
+      setErrorMsg('Please provide your Street Delivery Address.');
       return;
     }
 
@@ -135,7 +149,7 @@ export default function CheckoutPage() {
           name: customerName,
           email,
           phone,
-          address,
+          address: computedAddress,
           paymentMethod,
           channel,
           items,
@@ -243,7 +257,7 @@ export default function CheckoutPage() {
 
                     <div>
                       <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                        Email Address <span className="text-emerald-400">* (Tax Invoice Sent Here)</span>
+                        Email Address <span className="text-emerald-400">*</span>
                       </label>
                       <input
                         type="email"
@@ -253,32 +267,104 @@ export default function CheckoutPage() {
                         placeholder="e.g. david@example.com.au"
                         className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
                       />
+                      <p className="text-[10px] text-slate-400 mt-1">Tax invoice and official payment details sent here.</p>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-1.5">
+                      Mobile Phone Number <span className="text-emerald-400">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="e.g. 0412 345 678"
+                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                    />
+                    <p className="text-[10px] text-slate-400 mt-1">Required for SMS freight tracking and delivery dispatch alerts.</p>
+                  </div>
+
+                  <div className="border-t border-slate-800/80 pt-4 space-y-4">
+                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+                      <Truck className="w-4 h-4 text-emerald-400" />
+                      <span>Courier Freight Shipping Address</span>
+                    </div>
+
                     <div>
                       <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                        Mobile Phone Number <span className="text-slate-400">(Delivery Courier Alerts)</span>
+                        Street Address / Unit / House Number <span className="text-emerald-400">*</span>
                       </label>
                       <input
-                        type="tel"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        placeholder="e.g. 0412 345 678"
+                        type="text"
+                        required
+                        value={streetAddress}
+                        onChange={(e) => setStreetAddress(e.target.value)}
+                        placeholder="e.g. Unit 4, 12 High Street"
                         className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
                       />
                     </div>
 
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <div>
+                        <label className="block text-xs font-bold text-slate-300 mb-1.5">
+                          Suburb / City <span className="text-emerald-400">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={suburb}
+                          onChange={(e) => setSuburb(e.target.value)}
+                          placeholder="e.g. Brunswick"
+                          className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-bold text-slate-300 mb-1.5">
+                          State / Territory <span className="text-emerald-400">*</span>
+                        </label>
+                        <select
+                          value={stateTerritory}
+                          onChange={(e) => setStateTerritory(e.target.value)}
+                          className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500"
+                        >
+                          <option value="VIC">VIC - Victoria</option>
+                          <option value="NSW">NSW - New South Wales</option>
+                          <option value="QLD">QLD - Queensland</option>
+                          <option value="SA">SA - South Australia</option>
+                          <option value="WA">WA - Western Australia</option>
+                          <option value="TAS">TAS - Tasmania</option>
+                          <option value="ACT">ACT - Australian Capital Territory</option>
+                          <option value="NT">NT - Northern Territory</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-bold text-slate-300 mb-1.5">
+                          Postcode <span className="text-emerald-400">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={postcode}
+                          onChange={(e) => setPostcode(e.target.value)}
+                          placeholder="e.g. 3056"
+                          className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                        />
+                      </div>
+                    </div>
+
                     <div>
                       <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                        Delivery Address / Suburb / Postcode
+                        Delivery Notes / Gate Instructions <span className="text-slate-500">(Optional)</span>
                       </label>
                       <input
                         type="text"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                        placeholder="e.g. 12 High Street, Brunswick VIC 3056"
+                        value={deliveryNotes}
+                        onChange={(e) => setDeliveryNotes(e.target.value)}
+                        placeholder="e.g. Leave inside front door if unattended"
                         className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
                       />
                     </div>

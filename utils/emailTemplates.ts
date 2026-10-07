@@ -261,8 +261,9 @@ export function adminNewOrderEmail(order: {
       </table>
     </div>
 
-    <div style="text-align:center; margin:24px 0;">
+    <div style="text-align:center; margin:24px 0; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
       ${button(dashboardUrl, 'Reply Order in Dashboard')}
+      ${button(`https://${SITE.domain}/admin/send-payment-email/?orderId=${encodeURIComponent(order.id)}`, 'Send Payment Invoice')}
     </div>
   `;
 
