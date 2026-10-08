@@ -6,9 +6,11 @@ import { JsonLd } from '@/components/JsonLd';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { TrustpilotReviews } from '@/components/TrustpilotReviews';
 import { ProductCard } from '@/components/ProductCard';
+import { HomeHero } from '@/components/HomeHero';
 
 export default function HomePage() {
-  const featuredProducts = PRODUCTS.filter((p) => p.featured).slice(0, 8);
+  const hasPhoto = (p: (typeof PRODUCTS)[number]) => !p.images[0].endsWith('.svg');
+  const featuredProducts = [...PRODUCTS.filter((p) => p.featured)].sort((a, b) => Number(hasPhoto(b)) - Number(hasPhoto(a))).slice(0, 8);
   const latestPosts = POSTS.slice(0, 3);
 
   // Homepage JSON-LD Schemas
@@ -149,27 +151,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Hero Image Card */}
+            {/* Right Hero Slideshow */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 aspect-[4/3]">
-                <img
-                  src="https://picsum.photos/seed/lekker-jordaan/1200/900"
-                  alt="Lekker Jordaan Urban 8sp Electric Commuter Bike Australia"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent text-white">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="text-[10px] font-extrabold text-emerald-400 uppercase tracking-wider">Dutch Style Commuter</span>
-                      <h3 className="text-base font-extrabold text-white">Lekker Jordaan Urban 8sp</h3>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-slate-400 line-through">$3,399 AUD</div>
-                      <div className="text-lg font-black text-emerald-400">$3,098 AUD</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <HomeHero />
             </div>
           </div>
         </div>
@@ -245,7 +229,7 @@ export default function HomePage() {
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-60 group-hover:opacity-80"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 

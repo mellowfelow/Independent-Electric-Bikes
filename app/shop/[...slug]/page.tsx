@@ -52,7 +52,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string[]
       openGraph: {
         title: `${product.name} — ${SITE.name}`,
         description: productMetaDescription(product),
-        images: [{ url: product.images[0] }],
+        images: [{ url: product.images[0].endsWith('.svg') ? '/og.png' : product.images[0] }],
       },
     };
   }
@@ -82,7 +82,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
       '@context': 'https://schema.org',
       '@type': 'Product',
       name: product.name,
-      image: product.images,
+      ...(product.images[0].endsWith('.svg') ? {} : { image: product.images.map((src) => `https://${SITE.domain}${src}`) }),
       description: productDescription(product),
       sku: product.slug,
       url: `https://${SITE.domain}/shop/${product.category}/${product.slug}/`,
@@ -128,8 +128,8 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               <div className="lg:col-span-7 space-y-4">
-                <div className="bg-white rounded-2xl border border-slate-800 p-6 flex items-center justify-center aspect-[4/3] overflow-hidden">
-                  <img src={product.images[0]} alt={product.name} className="object-contain max-h-full max-w-full" />
+                <div className="bg-white rounded-2xl border border-slate-800 aspect-[4/3] overflow-hidden">
+                  <img src={product.images[0]} alt={product.name} width={1200} height={900} className="h-full w-full object-contain" />
                 </div>
                 {product.images.length > 1 && (
                   <div className="grid grid-cols-3 gap-3">

@@ -98,7 +98,7 @@ export function RecentPurchasePopup() {
       const timeAgo = TIMESTAMPS[idx % TIMESTAMPS.length];
       const tag = PAYMENT_TAGS[idx % PAYMENT_TAGS.length];
       
-      const img = prod.images && prod.images.length > 0 ? prod.images[0] : 'https://picsum.photos/seed/ieb-fallback/300/300';
+      const img = prod.images && prod.images.length > 0 ? prod.images[0] : '/images/product-placeholder.svg';
       const imageSrc = img.startsWith('/') ? img : (img.startsWith('http') ? img : `/images/${img}`);
 
       return {

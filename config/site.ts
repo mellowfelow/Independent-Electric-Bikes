@@ -1,5 +1,6 @@
 import { EBIKE_PRODUCTS } from './products';
 import { VERIFIED, type VerifiedInfo } from './data/verified';
+import { PRODUCT_IMAGES, PRODUCT_PLACEHOLDER } from './data/productImages';
 
 export const SITE = {
   name: 'INDEPENDENT ELECTRIC BIKES',
@@ -145,7 +146,7 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     name: 'E-Bikes',
     path: '/shop/electric-bikes',
     description: 'Urban commuters, heavy-duty cargo, full-suspension eMTBs, foldable e-bikes & fat tyre cruisers.',
-    image: 'https://picsum.photos/seed/ieb-commuter-hero/1200/800',
+    image: '/images/categories/electric-bikes.webp',
     subcategories: [
       {
         slug: 'urban-commuter-ebikes',
@@ -207,7 +208,7 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     name: 'E-Scooters',
     path: '/shop/electric-scooters',
     description: 'Lightweight commuter e-scooters and high-performance dual-motor long-range e-scooters.',
-    image: 'https://picsum.photos/seed/ieb-scooter-hero/1200/800',
+    image: '/images/categories/electric-scooters.webp',
     subcategories: [
       {
         slug: 'commuter-electric-scooters',
@@ -228,7 +229,7 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     name: 'Electric Skateboards',
     path: '/shop/electric-skateboards',
     description: 'Street longboards, all-terrain pneumatic boards, and portable shortboards.',
-    image: 'https://picsum.photos/seed/ieb-eskate-hero/1200/800',
+    image: '/images/categories/electric-skateboards.webp',
     subcategories: [
       {
         slug: 'street-electric-skateboards',
@@ -255,7 +256,7 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     name: 'Self-Balancing EV',
     path: '/shop/self-balancing-ev',
     description: 'Gyroscopic electric unicycles (EUCs) and recreational hoverboards.',
-    image: 'https://picsum.photos/seed/ieb-euc-hero/1200/800',
+    image: '/images/categories/self-balancing-ev.webp',
     subcategories: [
       {
         slug: 'electric-unicycles',
@@ -276,7 +277,7 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     name: 'Kids & Off-Road EV',
     path: '/shop/kids-off-road-ev',
     description: 'Electric balance bikes for toddlers, youth pit dirt bikes, and electric go-karts.',
-    image: 'https://picsum.photos/seed/ieb-kids-hero/1200/800',
+    image: '/images/categories/kids-off-road-ev.webp',
     subcategories: [
       {
         slug: 'electric-balance-bikes',
@@ -303,7 +304,7 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     name: 'Mobility & Assisted Living',
     path: '/shop/mobility-scooters',
     description: 'Travel folding mobility scooters and heavy-duty 4-wheel all-terrain mobility scooters.',
-    image: 'https://picsum.photos/seed/ieb-mobility-hero/1200/800',
+    image: '/images/categories/mobility-scooters.webp',
     subcategories: [
       {
         slug: 'travel-mobility-scooters',
@@ -324,7 +325,7 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     name: 'Accessories & Parts',
     path: '/shop/accessories',
     description: 'Replacement lithium batteries, heavy-duty security locks, helmets, and cargo add-ons.',
-    image: 'https://picsum.photos/seed/ieb-access-hero/1200/800',
+    image: '/images/categories/accessories.webp',
     subcategories: [
       {
         slug: 'replacement-batteries-chargers',
@@ -413,16 +414,22 @@ function categoryLabel(p: Product): string {
  */
 function applyVerification(p: Product): Product {
   const v = VERIFIED[p.slug];
+  // Real photos only; products without one show a neutral placeholder instead of an unrelated stock image.
+  const images = [PRODUCT_IMAGES[p.slug] ?? PRODUCT_PLACEHOLDER];
   if (v) {
     return {
       ...p,
+      images,
       verified: v,
       specs: { ...EMPTY_SPECS, ...v.specs },
       filters: { ...v.filters },
+      shortDescription: `${p.name} - ${categoryLabel(p)}`,
+      description: `${p.name} is available from ${SITE.entityName}. Specifications below are as published by the manufacturer.`,
     };
   }
   return {
     ...p,
+    images,
     specs: { ...EMPTY_SPECS },
     filters: {},
     shortDescription: `${p.name} - ${categoryLabel(p)}`,
@@ -440,7 +447,7 @@ export const POSTS = [
     category: 'Commuter Guides',
     date: '2026-09-15',
     readTime: '6 min read',
-    image: 'https://picsum.photos/seed/ieb-post1/1200/800',
+    image: '/images/home/hero-1.webp',
   },
   {
     slug: 'melbourne-ebike-laws-and-safety-standards',
@@ -449,7 +456,7 @@ export const POSTS = [
     category: 'E-Bike Regulations',
     date: '2026-08-28',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/ieb-post2/1200/800',
+    image: '/images/home/hero-3.webp',
   },
   {
     slug: 'cargo-electric-bikes-replacing-second-family-car',
@@ -458,7 +465,7 @@ export const POSTS = [
     category: 'Cargo Lifestyle',
     date: '2026-08-10',
     readTime: '7 min read',
-    image: 'https://picsum.photos/seed/ieb-post3/1200/800',
+    image: '/images/home/hero-1.webp',
   },
   {
     slug: 'ebike-battery-care-and-range-maximization-guide',
@@ -467,7 +474,7 @@ export const POSTS = [
     category: 'Battery & Tech',
     date: '2026-07-22',
     readTime: '6 min read',
-    image: 'https://picsum.photos/seed/ieb-post4/1200/800',
+    image: '/images/categories/accessories.webp',
   },
   {
     slug: 'belt-drive-vs-chain-ebikes-pros-cons-australia',
@@ -476,7 +483,7 @@ export const POSTS = [
     category: 'Tech Comparisons',
     date: '2026-07-05',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/ieb-post5/1200/800',
+    image: '/images/categories/accessories.webp',
   },
   {
     slug: 'mid-drive-vs-hub-motors-australian-hills-comparison',
@@ -485,7 +492,7 @@ export const POSTS = [
     category: 'Motor Systems',
     date: '2026-06-18',
     readTime: '8 min read',
-    image: 'https://picsum.photos/seed/ieb-post6/1200/800',
+    image: '/images/categories/accessories.webp',
   },
   {
     slug: 'hydraulic-vs-mechanical-disc-brakes-ebike-safety',
@@ -494,7 +501,7 @@ export const POSTS = [
     category: 'Safety & Tech',
     date: '2026-05-30',
     readTime: '5 min read',
-    image: 'https://picsum.photos/seed/ieb-post7/1200/800',
+    image: '/images/categories/accessories.webp',
   },
   {
     slug: 'electric-scooter-laws-victoria-and-australia-2026',
@@ -503,7 +510,7 @@ export const POSTS = [
     category: 'E-Scooter Guide',
     date: '2026-05-12',
     readTime: '6 min read',
-    image: 'https://picsum.photos/seed/ieb-post8/1200/800',
+    image: '/images/categories/electric-scooters.webp',
   },
   {
     slug: 'how-to-secure-your-ebike-locks-gps-and-insurance',
@@ -512,7 +519,7 @@ export const POSTS = [
     category: 'Security Guides',
     date: '2026-04-25',
     readTime: '7 min read',
-    image: 'https://picsum.photos/seed/ieb-post9/1200/800',
+    image: '/images/home/hero-2.webp',
   },
   {
     slug: 'cryptocurrency-ebike-buying-discount-guide',
@@ -521,7 +528,7 @@ export const POSTS = [
     category: 'Buying & Discounts',
     date: '2026-04-10',
     readTime: '4 min read',
-    image: 'https://picsum.photos/seed/ieb-post10/1200/800',
+    image: '/images/home/hero-3.webp',
   },
 ];
 

@@ -68,7 +68,7 @@ export function productsInCategory(node: CategoryNode): Product[] {
   });
 }
 
-function productCategoryLabel(p: Product): string {
+export function productCategoryLabel(p: Product): string {
   const main = MASTER_TAXONOMY.find((m) => m.slug === p.category);
   const sub = main?.subcategories.find((s) => s.slug === p.subcategory);
   const leaf = sub?.items?.find((i) => i.slug === p.subSubcategory);

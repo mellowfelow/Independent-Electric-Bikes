@@ -1980,8 +1980,7 @@ export const SKATEBOARD_ITEMS: Product[] = [
       "frame": "Reinforced Alloy Frame",
       "gears": "Multi-Speed Drive System"
     }
-  }
-,
+  },
   {
     "slug": "evolve-bamboo-gtr-series-2-street",
     "name": "Evolve Bamboo GTR Series 2 Street",

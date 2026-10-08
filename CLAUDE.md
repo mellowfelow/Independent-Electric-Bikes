@@ -43,3 +43,6 @@ Set in Vercel Dashboard Settings -> Environment Variables:
 Only products listed in `config/data/verified.ts` show technical specs, appear on `/compare/`, or match the motor/assist/brake/range/compliance filters. `config/site.ts` strips the bundled placeholder specs from every other product. To verify a model: read the manufacturer page, add an entry keyed by the product slug with the source URL, the date and only the values the manufacturer states (omit anything unclear or variant-dependent). Never add unverified or estimated values.
 Shop filters live in `lib/shopFilters.ts` (state is the URL query) with UI in `components/ShopClientView.tsx` and `components/FacetedFilterSidebar.tsx`.
 Redis is picked in `lib/redis.ts`: the Vercel KV integration pair first, placeholder values ignored.
+
+## Images
+Product photos, hero slides and category tiles are generated from your "Website Images" folder by `node scripts/images.mjs` (trims each bike, centres it on a white 4:3 canvas, writes WebP to `public/images/` and the manifest `config/data/productImages.ts`). Product photos are matched by file name = product name. Products without a photo show `public/images/product-placeholder.svg`.

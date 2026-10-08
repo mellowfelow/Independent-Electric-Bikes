@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { brandNameOf, productCategoryLabel } from '@/lib/catalog';
 import Link from 'next/link';
 import { Plus, Minus, ShoppingBag, Check, Zap } from 'lucide-react';
 import { Product, SITE } from '@/config/site';
@@ -90,8 +91,8 @@ export function ProductCard({ product, className = '' }: ProductCardProps) {
       className={`bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between transition-all hover:border-emerald-500/50 hover:shadow-2xl group ${className}`}
     >
       {/* Product Image Frame */}
-      <div className="relative bg-white aspect-[4/3] p-4 flex items-center justify-center overflow-hidden">
-        {product.badge && (
+      <div className="relative bg-white aspect-[4/3] overflow-hidden">
+        {product.badge && product.badge !== 'none' && (
           <span className="absolute top-3 left-3 z-10 px-2.5 py-1 bg-emerald-600 text-white font-extrabold text-[10px] uppercase tracking-wider rounded-md shadow">
             {product.badge}
           </span>
@@ -104,11 +105,16 @@ export function ProductCard({ product, className = '' }: ProductCardProps) {
           </span>
         )}
 
-        <Link href={productUrl} className="w-full h-full flex items-center justify-center">
+        <Link href={productUrl} className="block h-full w-full">
+          {/* Photos are pre-framed to 4:3 on white by scripts/images.mjs, so every card lines up. */}
           <img
             src={product.images[0]}
             alt={product.name}
-            className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
+            width={1200}
+            height={900}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
           />
         </Link>
       </div>
@@ -117,14 +123,12 @@ export function ProductCard({ product, className = '' }: ProductCardProps) {
       <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
         <div>
           <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate">
-            {product.category}
+            {brandNameOf(product)}
           </div>
           <h3 className="text-xs font-extrabold text-white mt-0.5 group-hover:text-emerald-400 transition-colors line-clamp-1">
             <Link href={productUrl}>{product.name}</Link>
           </h3>
-          <p className="text-[11px] text-slate-300 mt-1 line-clamp-2 leading-relaxed">
-            {product.shortDescription}
-          </p>
+          <p className="text-[11px] text-slate-400 mt-1 line-clamp-1 leading-relaxed">{productCategoryLabel(product)}</p>
         </div>
 
         {/* Crypto Discount Badge */}

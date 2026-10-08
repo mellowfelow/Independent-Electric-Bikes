@@ -1320,8 +1320,7 @@ export const SELFBALANCING_ITEMS: Product[] = [
       "frame": "Reinforced Alloy Frame",
       "gears": "Multi-Speed Drive System"
     }
-  }
-,
+  },
   {
     "slug": "begode-master-pro-v2-euc-134v",
     "name": "Begode Master Pro V2 EUC 134V",
