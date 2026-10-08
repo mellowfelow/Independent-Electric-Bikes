@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   other: {
     'og:updated_time': new Date().toISOString(),
-    'google-site-verification': SITE.gscVerification,
+    ...(SITE.gscVerification ? { 'google-site-verification': SITE.gscVerification } : {}),
   },
 };
 

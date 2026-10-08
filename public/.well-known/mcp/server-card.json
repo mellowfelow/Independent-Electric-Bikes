@@ -12,7 +12,7 @@
   },
   "transport": {
     "type": "streamable-http",
-    "endpoint": "https://independentelectricbikes.com.au/api/mcp"
+    "endpoint": "https://independentelectricbikes.com.au/api/mcp/"
   },
   "capabilities": {
     "tools": [
@@ -49,7 +49,7 @@
       },
       {
         "name": "get_policies",
-        "description": "Get express shipping rules, warranty policies, minimum order ($300 AUD), and payment options (Bank Transfer, PayID, 10% Crypto discount)",
+        "description": "Get express shipping rules, warranty policies, minimum order ($350 AUD), and payment options (Bank Transfer, PayID, 10% Crypto discount)",
         "inputSchema": {
           "type": "object",
           "properties": {}
@@ -76,7 +76,7 @@
       "ordering": "human-assisted-whatsapp-or-form",
       "payment": ["bank-transfer", "payid", "crypto-BTC", "crypto-USDT"],
       "currency": "AUD",
-      "minimumOrder": "300",
+      "minimumOrder": "350",
       "freeShipping": "1500"
     }
   },

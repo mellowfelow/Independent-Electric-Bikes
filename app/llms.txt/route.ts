@@ -18,7 +18,7 @@ export function GET() {
     `- **Email:** ${CONTACT.email}`,
     `- **Minimum Order:** $${SHOP.minOrder} ${SITE.currency}`,
     `- **Free Express Freight:** Orders over $${SHOP.freeShippingThreshold.toLocaleString('en-AU')} ${SITE.currency}`,
-    `- **Discounts:** ${SHOP.cryptoDiscount}% discount on cryptocurrency payments (BTC / USDT) and direct bank transfer / PayID`,
+    `- **Payment:** Bank transfer, PayID and cryptocurrency (BTC / USDT). ${SHOP.cryptoDiscount}% discount when paying by cryptocurrency`,
     `- **Catalogue size:** ${PRODUCTS.length} products`,
     '',
     '## Product Categories',

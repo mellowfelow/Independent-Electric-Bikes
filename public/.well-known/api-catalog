@@ -18,22 +18,22 @@
       "title": "INDEPENDENT ELECTRIC BIKES Comparison Matrix"
     },
     {
-      "anchor": "https://independentelectricbikes.com.au/api/products",
+      "anchor": "https://independentelectricbikes.com.au/api/products/",
       "type": "application/json",
       "title": "INDEPENDENT ELECTRIC BIKES Products API"
     },
     {
-      "anchor": "https://independentelectricbikes.com.au/api/categories",
+      "anchor": "https://independentelectricbikes.com.au/api/categories/",
       "type": "application/json",
       "title": "INDEPENDENT ELECTRIC BIKES Categories API"
     },
     {
-      "anchor": "https://independentelectricbikes.com.au/api/search",
+      "anchor": "https://independentelectricbikes.com.au/api/search/",
       "type": "application/json",
       "title": "INDEPENDENT ELECTRIC BIKES Search API"
     },
     {
-      "anchor": "https://independentelectricbikes.com.au/api/mcp",
+      "anchor": "https://independentelectricbikes.com.au/api/mcp/",
       "type": "application/json",
       "https://www.iana.org/assignments/link-relations/service-desc": [
         { "href": "https://independentelectricbikes.com.au/.well-known/mcp/server-card.json" }

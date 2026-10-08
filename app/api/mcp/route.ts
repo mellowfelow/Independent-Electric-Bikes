@@ -99,7 +99,7 @@ export async function POST(req: NextRequest) {
             },
             {
               name: 'get_policies',
-              description: 'Get express shipping rules, warranty policies, minimum order ($300 AUD), and payment options (Bank Transfer, PayID, 10% Crypto discount)',
+              description: `Get express shipping rules, warranty policies, minimum order ($${SHOP.minOrder} AUD), and payment options (Bank Transfer, PayID, ${SHOP.cryptoDiscount}% Crypto discount)`,
               inputSchema: {
                 type: 'object',
                 properties: {},

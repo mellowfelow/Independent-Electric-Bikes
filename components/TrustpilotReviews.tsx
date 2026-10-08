@@ -61,7 +61,7 @@ const REVIEWS_DATA: ReviewItem[] = [
     content:
       'Visited the Brunswick showroom on Sydney Rd. The staff spent 45 minutes walking me through battery safety and riding dynamics. The Tern GSD is a game changer for two toddlers. Exceptional customer service.',
     productName: 'Tern GSD S10 LX Cargo',
-    productSlug: 'tern-gsd-s10-lx-cargo',
+    productSlug: 'tern-gsd-s10-lx',
     category: 'service',
     verified: true,
     helpfulCount: 18,

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { SITE, SHOP } from '@/config/site';
+import { SITE, SHOP, CONTACT } from '@/config/site';
 
 export async function GET() {
   return NextResponse.json(
@@ -17,13 +17,13 @@ export async function GET() {
         {
           id: 'mcp-server',
           type: 'mcp',
-          url: `https://${SITE.domain}/api/mcp`,
+          url: `https://${SITE.domain}/api/mcp/`,
           description: 'Streamable HTTP MCP Server',
         },
         {
           id: 'order',
           type: 'commerce',
-          url: `https://wa.me/61480811308`,
+          url: `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(`Hi ${SITE.name}, `)}`,
           description: 'Order electric bikes via WhatsApp or Email',
         },
       ],

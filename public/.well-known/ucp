@@ -16,13 +16,13 @@
     {
       "id": "mcp-server",
       "type": "mcp",
-      "url": "https://independentelectricbikes.com.au/api/mcp",
+      "url": "https://independentelectricbikes.com.au/api/mcp/",
       "description": "Streamable HTTP MCP Server"
     },
     {
       "id": "order",
       "type": "commerce",
-      "url": "https://wa.me/61480811308",
+      "url": "https://wa.me/61480811308?text=Hi%20INDEPENDENT%20ELECTRIC%20BIKES%2C%20",
       "description": "Place electric bike orders via WhatsApp or Email"
     },
     {
@@ -34,7 +34,7 @@
   ],
   "capabilities": ["browse", "search", "inquiry", "compare", "mcp"],
   "endpoints": {
-    "mcp": "https://independentelectricbikes.com.au/api/mcp",
+    "mcp": "https://independentelectricbikes.com.au/api/mcp/",
     "catalog": "https://independentelectricbikes.com.au/shop/",
     "contact": "https://independentelectricbikes.com.au/contact/",
     "agent_skills": "https://independentelectricbikes.com.au/.well-known/agent-skills/index.json",
@@ -43,7 +43,7 @@
     "llms_txt": "https://independentelectricbikes.com.au/llms.txt"
   },
   "currency": "AUD",
-  "minimum_order_usd": "300",
+  "minimum_order_aud": "350",
   "payment_methods": ["bank-transfer", "payid", "crypto-BTC", "crypto-USDT"],
   "legal": {
     "age_restriction": "none",

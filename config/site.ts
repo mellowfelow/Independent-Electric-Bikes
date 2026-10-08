@@ -10,7 +10,7 @@ export const SITE = {
   target: 'vercel',
   primaryColor: '#16a34a',
   headerDark: '#0f172a',
-  gscVerification: 'GSC_IEB_2026_VERIFIED',
+  gscVerification: process.env.GSC_VERIFICATION || '', // Google Search Console token; set GSC_VERIFICATION in Vercel (meta tag is omitted while empty)
   indexNowKey: 'ieb2026indexnowkey998877',
   cartKey: 'ieb-cart-v1',
   entityName: 'VYRON INDUSTRIES PTY LTD',

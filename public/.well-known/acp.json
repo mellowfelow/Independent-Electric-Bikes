@@ -10,11 +10,11 @@
     "ordering": "human-assisted",
     "payment_methods": ["bank-transfer", "payid", "crypto-BTC", "crypto-USDT"],
     "currency": "AUD",
-    "minimum_order_usd": "300",
-    "free_shipping_threshold_usd": "1500"
+    "minimum_order_aud": "350",
+    "free_shipping_threshold_aud": "1500"
   },
   "contact": {
-    "whatsapp": "https://wa.me/61480811308",
+    "whatsapp": "https://wa.me/61480811308?text=Hi%20INDEPENDENT%20ELECTRIC%20BIKES%2C%20",
     "email": "sales@independentelectricbikes.com.au"
   },
   "legal": {

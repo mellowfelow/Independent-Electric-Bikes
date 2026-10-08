@@ -18,7 +18,7 @@
           if (query) params.set('q', query);
           if (category) params.set('category', category);
           if (max_price) params.set('max_price', max_price);
-          const res = await fetch(`https://independentelectricbikes.com.au/api/search?${params}`);
+          const res = await fetch(`https://independentelectricbikes.com.au/api/search/?${params}`);
           return res.json();
         }
       },
@@ -39,7 +39,7 @@
       },
       {
         name: "order_via_whatsapp",
-        description: "Initiate an e-bike order on WhatsApp. Minimum order $300 AUD. Human customer completes.",
+        description: "Initiate an e-bike order on WhatsApp. Minimum order $350 AUD. Human customer completes.",
         inputSchema: {
           type: "object",
           properties: {
