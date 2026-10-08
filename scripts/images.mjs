@@ -19,7 +19,7 @@ const OUT = 'public/images';
 const W = 1200;
 const H = 900;
 const FILL_W = 0.92; // product occupies at most 92% of the canvas width
-const FILL_H = 0.88;
+const FILL_H = 0.94;
 const MAX_KB = 150;
 
 const norm = (s) => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9+]/g, '');
