@@ -58,15 +58,15 @@ export function Nav() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 gap-4">
             {/* Brand Logo & Name */}
-            <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white shadow-lg shadow-emerald-950/50 group-hover:scale-105 transition-transform">
+            <Link href="/" className="flex min-w-0 items-center gap-2.5 sm:gap-3 group">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white shadow-lg shadow-emerald-950/50 group-hover:scale-105 transition-transform">
                 <Bike className="w-6 h-6" />
               </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-lg sm:text-xl tracking-tight text-white leading-none">
-                  INDEPENDENT <span className="text-emerald-400 font-black">ELECTRIC BIKES</span>
+              <div className="flex min-w-0 flex-col">
+                <span className="font-extrabold text-[13px] sm:text-xl tracking-tight text-white leading-tight sm:leading-none">
+                  <span className="block sm:inline">INDEPENDENT</span> <span className="block sm:inline text-emerald-400 font-black">ELECTRIC BIKES</span>
                 </span>
-                <span className="text-[10px] text-slate-400 tracking-wider uppercase font-semibold mt-1">
+                <span className="hidden sm:block text-[10px] text-slate-400 tracking-wider uppercase font-semibold mt-1">
                   VYRON Industries · Brunswick VIC
                 </span>
               </div>
@@ -190,7 +190,7 @@ export function Nav() {
             </nav>
 
             {/* Right Actions: Search Form + Cart Toggle */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
               {/* Search Bar */}
               <form onSubmit={handleSearchSubmit} className="hidden sm:flex items-center relative">
                 <input

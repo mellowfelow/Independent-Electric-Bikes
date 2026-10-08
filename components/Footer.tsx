@@ -145,6 +145,18 @@ export function Footer() {
                 Contact & Showroom
               </Link>
             </li>
+            {[
+              ['/shipping/', 'Shipping & Delivery'],
+              ['/returns/', 'Returns & Warranty'],
+              ['/privacy/', 'Privacy Policy'],
+              ['/terms/', 'Terms of Sale'],
+            ].map(([href, label]) => (
+              <li key={href}>
+                <Link href={href} className="hover:text-emerald-400 transition-colors">
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

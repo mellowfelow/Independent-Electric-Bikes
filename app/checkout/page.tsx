@@ -537,6 +537,11 @@ export default function CheckoutPage() {
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
+                <p className="pt-1 text-center text-[11px] leading-relaxed text-slate-500">
+                  By placing an order you agree to our <Link href="/terms/" className="text-slate-300 underline hover:text-emerald-400">Terms of Sale</Link>. See{' '}
+                  <Link href="/shipping/" className="text-slate-300 underline hover:text-emerald-400">shipping</Link>, <Link href="/returns/" className="text-slate-300 underline hover:text-emerald-400">returns &amp; warranty</Link> and{' '}
+                  <Link href="/privacy/" className="text-slate-300 underline hover:text-emerald-400">privacy</Link>.
+                </p>
 
                 <div className="flex items-center justify-center gap-2 text-xs text-slate-400 pt-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />

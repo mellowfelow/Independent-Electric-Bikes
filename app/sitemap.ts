@@ -10,7 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({ url: `${base}${path}`, ...(lastModified ? { lastModified } : {}), changeFrequency, priority, ...(images?.length ? { images } : {}) });
 
   add('/', 1, 'daily');
-  for (const p of ['/shop/', '/brands/', '/blog/', '/compare/', '/about/', '/faq/', '/contact/']) add(p, 0.8, 'weekly');
+  for (const p of ['/shop/', '/brands/', '/blog/', '/compare/', '/about/', '/faq/', '/contact/', '/shipping/', '/returns/']) add(p, 0.8, 'weekly');
+
+  for (const p of ['/privacy/', '/terms/']) add(p, 0.3, 'monthly');
 
   const seen = new Set<string>();
   for (const main of MASTER_TAXONOMY) {
