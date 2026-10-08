@@ -7,7 +7,8 @@ Deployed via Vercel / Next.js App Router.
 `config/site.ts` is the single source of truth for products, categories, contact information, and `SITE.reply` config.
 Adding or editing entries in `PRODUCTS` / `CATEGORIES` automatically updates pages, routes, metadata, JSON-LD schemas, sitemap, and agent discovery files.
 
-Never hand-edit generated files (`llms.txt`, `.well-known/*`, `robots.txt`, `auth.md`, `webmcp.js`).
+`sitemap.xml`, `robots.txt` and `llms.txt` are generated from `config/` by `app/sitemap.ts`, `app/robots.txt/route.ts` and `app/llms.txt/route.ts` - edit the config, never add static copies to `public/`.
+The `public/.well-known/*`, `auth.md` and `js/webmcp.js` files are static declarations: update them by hand when endpoints or contact details change.
 
 ## Reply Portal (Gated Admin Dashboard)
 - Location: `/admin` (Passcode Gated, default passcode: `orderreply`)

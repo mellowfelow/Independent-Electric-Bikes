@@ -19,7 +19,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
   const fetchOrder = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/admin/orders/${resolvedParams.id}/?passcode=${encodeURIComponent(passcode || '')}`, {
+      const res = await fetch(`/api/admin/orders/${resolvedParams.id}/`, {
         headers: { 'X-Admin-Passcode': passcode || '' },
       });
       if (res.ok) {
@@ -46,7 +46,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
 
   const handleUpdateStatus = async (newStatus: OrderRecord['status']) => {
     try {
-      const res = await fetch(`/api/admin/orders/${resolvedParams.id}/?passcode=${encodeURIComponent(passcode || '')}`, {
+      const res = await fetch(`/api/admin/orders/${resolvedParams.id}/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
   const handleDelete = async () => {
     if (!confirm('Are you sure you want to delete this order record?')) return;
     try {
-      const res = await fetch(`/api/admin/orders/${resolvedParams.id}/?passcode=${encodeURIComponent(passcode || '')}`, {
+      const res = await fetch(`/api/admin/orders/${resolvedParams.id}/`, {
         method: 'DELETE',
         headers: { 'X-Admin-Passcode': passcode || '' },
       });

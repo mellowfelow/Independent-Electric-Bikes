@@ -25,7 +25,7 @@ function SendPaymentEmailContent() {
 
   const fetchOrder = useCallback(async (id: string) => {
     try {
-      const res = await fetch(`/api/admin/orders/${id}/?passcode=${encodeURIComponent(passcode || '')}`, {
+      const res = await fetch(`/api/admin/orders/${id}/`, {
         headers: { 'X-Admin-Passcode': passcode || '' },
       });
       if (res.ok) {
@@ -61,7 +61,7 @@ function SendPaymentEmailContent() {
     setSuccessMsg('');
 
     try {
-      const res = await fetch(`/api/admin/send-payment-email/?passcode=${encodeURIComponent(passcode || '')}`, {
+      const res = await fetch(`/api/admin/send-payment-email/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

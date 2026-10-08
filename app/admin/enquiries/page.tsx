@@ -14,7 +14,7 @@ export default function AdminEnquiriesListPage() {
   const fetchEnquiries = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/admin/enquiries/?passcode=${encodeURIComponent(passcode || '')}`, {
+      const res = await fetch(`/api/admin/enquiries/`, {
         headers: { 'X-Admin-Passcode': passcode || '' },
       });
       if (res.ok) {
@@ -40,7 +40,7 @@ export default function AdminEnquiriesListPage() {
   const handleDelete = async (id: string) => {
     if (!confirm(`Delete enquiry #${id}?`)) return;
     try {
-      await fetch(`/api/admin/enquiries/${id}/?passcode=${encodeURIComponent(passcode || '')}`, {
+      await fetch(`/api/admin/enquiries/${id}/`, {
         method: 'DELETE',
         headers: { 'X-Admin-Passcode': passcode || '' },
       });

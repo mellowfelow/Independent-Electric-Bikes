@@ -6,7 +6,6 @@ export function checkAdminPasscode(request: NextRequest): NextResponse | null {
   const providedPasscode = (
     request.headers.get('X-Admin-Passcode') ||
     request.cookies.get('ieb_admin_passcode')?.value ||
-    new URL(request.url).searchParams.get('passcode') ||
     ''
   ).trim();
 

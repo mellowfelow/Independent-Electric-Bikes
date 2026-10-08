@@ -20,7 +20,7 @@ function ReplyEnquiryContent() {
 
   const fetchEnquiry = useCallback(async (id: string) => {
     try {
-      const res = await fetch(`/api/admin/enquiries/${id}/?passcode=${encodeURIComponent(passcode || '')}`, {
+      const res = await fetch(`/api/admin/enquiries/${id}/`, {
         headers: { 'X-Admin-Passcode': passcode || '' },
       });
       if (res.ok) {
@@ -53,7 +53,7 @@ function ReplyEnquiryContent() {
     setSuccessMsg('');
 
     try {
-      const res = await fetch(`/api/admin/reply-enquiry/?passcode=${encodeURIComponent(passcode || '')}`, {
+      const res = await fetch(`/api/admin/reply-enquiry/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

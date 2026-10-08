@@ -17,8 +17,8 @@ export default function AdminHubPage() {
     setLoading(true);
     try {
       const [ordersRes, enquiriesRes] = await Promise.all([
-        fetch(`/api/admin/orders/?passcode=${encodeURIComponent(passcode || '')}`, { headers: { 'X-Admin-Passcode': passcode || '' } }),
-        fetch(`/api/admin/enquiries/?passcode=${encodeURIComponent(passcode || '')}`, { headers: { 'X-Admin-Passcode': passcode || '' } }),
+        fetch(`/api/admin/orders/`, { headers: { 'X-Admin-Passcode': passcode || '' } }),
+        fetch(`/api/admin/enquiries/`, { headers: { 'X-Admin-Passcode': passcode || '' } }),
       ]);
 
       if (ordersRes.ok) {

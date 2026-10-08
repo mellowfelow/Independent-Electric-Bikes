@@ -94,11 +94,11 @@
       ]
     },
     {
-      "source": "/api/:path*",
+      "source": "/api/:route(mcp|products|categories|search|acp|ucp)/:path*",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Accept, Mcp-Session-Id, X-Admin-Passcode" }
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Accept, Mcp-Session-Id" }
       ]
     }
   ]

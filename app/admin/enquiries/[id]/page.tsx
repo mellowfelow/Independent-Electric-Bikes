@@ -16,7 +16,7 @@ export default function EnquiryDetailPage({ params }: { params: Promise<{ id: st
   const fetchEnquiry = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/admin/enquiries/${resolvedParams.id}/?passcode=${encodeURIComponent(passcode || '')}`, {
+      const res = await fetch(`/api/admin/enquiries/${resolvedParams.id}/`, {
         headers: { 'X-Admin-Passcode': passcode || '' },
       });
       if (res.ok) {
@@ -44,7 +44,7 @@ export default function EnquiryDetailPage({ params }: { params: Promise<{ id: st
   const handleDelete = async () => {
     if (!confirm('Are you sure you want to delete this enquiry record?')) return;
     try {
-      const res = await fetch(`/api/admin/enquiries/${resolvedParams.id}/?passcode=${encodeURIComponent(passcode || '')}`, {
+      const res = await fetch(`/api/admin/enquiries/${resolvedParams.id}/`, {
         method: 'DELETE',
         headers: { 'X-Admin-Passcode': passcode || '' },
       });
