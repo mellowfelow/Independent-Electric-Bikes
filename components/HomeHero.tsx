@@ -60,8 +60,8 @@ export function HomeHero() {
       ))}
 
       {/* Legibility: heavy on the left where the headline sits, lighter to the right so the photo still shows. */}
-      <div className="pointer-events-none absolute inset-0 bg-slate-950/50 md:bg-gradient-to-r md:from-slate-950/85 md:via-slate-950/40 md:to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-slate-950/90 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-slate-950/35 md:bg-gradient-to-r md:from-slate-950/65 md:via-slate-950/20 md:to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/5 bg-gradient-to-t from-slate-950/70 to-transparent" />
 
       <div
         className="absolute inset-x-0 bottom-0 z-20 mx-auto flex max-w-7xl items-end justify-end gap-3 px-4 pb-4 sm:px-6 sm:pb-6 lg:px-8"

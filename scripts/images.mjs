@@ -11,7 +11,9 @@ import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = process.argv[2] || 'C:/Users/rtutc/Desktop/Independent Electric Bikes/Website Images';
+const ARGS = process.argv.slice(2);
+const HOME_ONLY = ARGS.includes('--home-only');
+const ROOT = ARGS.find((a) => !a.startsWith('--')) || 'C:/Users/rtutc/Desktop/Independent Electric Bikes/Website Images';
 const OUT = 'public/images';
 const W = 1200;
 const H = 900;
@@ -53,6 +55,18 @@ async function cornerColour(buf) {
   const mean = border.reduce((a, b) => a + b, 0) / border.length;
   const sd = Math.sqrt(border.reduce((a, b) => a + (b - mean) ** 2, 0) / border.length);
   return mean >= 226 && sd <= 16 ? [Math.min(232, mean - 2), Math.min(232, mean - 2), Math.min(232, mean - 2)] : null;
+}
+
+/**
+ * Brightens a hero photo toward a comfortable mean luminance (gamma only, so highlights are not clipped),
+ * with a small saturation lift so lifted shadows do not look grey.
+ */
+async function brightenHero(pipeline, target = 132) {
+  const { channels } = await pipeline.clone().resize(200).stats();
+  const mean = channels.slice(0, 3).reduce((a, c) => a + c.mean, 0) / 3;
+  const gamma = Math.min(1.9, Math.max(1, Math.log(mean / 255) / Math.log(target / 255)));
+  console.log(`  hero mean ${mean.toFixed(0)} -> gamma ${gamma.toFixed(2)}`);
+  return pipeline.gamma(gamma).modulate({ saturation: 1.06 });
 }
 
 /** Studio shot -> product trimmed from its background, centred and enlarged on a white 4:3 canvas. */
@@ -114,7 +128,7 @@ const manifest = {};
 const unmatched = [];
 const lowRes = [];
 const productDir = path.join(ROOT, 'product images');
-if (fs.existsSync(productDir)) {
+if (!HOME_ONLY && fs.existsSync(productDir)) {
   // Oldest first, so when two files share a product name (e.g. an old .webp and a replacement .avif) the newest wins.
   const productFiles = walk(productDir).sort((x, y) => fs.statSync(x).mtimeMs - fs.statSync(y).mtimeMs);
   for (const file of productFiles) {
@@ -148,8 +162,10 @@ if (fs.existsSync(heroDir)) {
   for (const [i, f] of files.entries()) {
     // The hero fills the whole section: a wide desktop crop and a tall mobile crop, both around the main subject.
     const src = () => sharp(path.join(heroDir, f)).rotate();
-    fs.writeFileSync(`${OUT}/home/hero-${i + 1}.webp`, await encodeWebp(src().resize(2000, 1125, { fit: 'cover', position: sharp.strategy.attention }), 240));
-    fs.writeFileSync(`${OUT}/home/hero-${i + 1}-m.webp`, await encodeWebp(src().resize(900, 1200, { fit: 'cover', position: sharp.strategy.attention }), 150));
+    const wide = await brightenHero(src().resize(2000, 1125, { fit: 'cover', position: sharp.strategy.attention }));
+    fs.writeFileSync(`${OUT}/home/hero-${i + 1}.webp`, await encodeWebp(wide, 260));
+    const tall = await brightenHero(src().resize(900, 1200, { fit: 'cover', position: sharp.strategy.attention }));
+    fs.writeFileSync(`${OUT}/home/hero-${i + 1}-m.webp`, await encodeWebp(tall, 170));
   }
   console.log(`hero slides: ${files.length}`);
 }
