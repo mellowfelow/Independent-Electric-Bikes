@@ -53,4 +53,17 @@ export const VERIFIED: Record<string, VerifiedInfo> = {
     },
     filters: { motorType: 'Mid-Drive', brakeType: 'Hydraulic Disc' },
   },
+  'giant-trance-x-advanced-e-2': {
+    checked: '2026-10-08',
+    sources: [{ label: 'Giant Bicycles - Trance X Advanced E+ 2 (2023)', url: 'https://www.giant-bicycles.com/gb/trance-x-advanced-eplus-2-2023' }],
+    note: 'Specifications are for the 2023 model year as published by Giant; Giant does not publish a weight, range or load limit on this page, and earlier model years used a smaller battery. Confirm the current-year configuration with us before ordering.',
+    specs: {
+      motor: 'Giant SyncDrive Pro2 (powered by Yamaha), 85 Nm',
+      battery: 'Giant EnergyPak 800 Wh',
+      brakes: 'Shimano SLX BR-M7120 4-piston hydraulic disc, 203 mm rotors',
+      frame: 'Advanced-grade composite, 140 mm Maestro rear suspension, Fox 36 Float 150 mm fork',
+      gears: 'Shimano Deore SLX 12-speed, 10-51T cassette',
+    },
+    filters: { motorType: 'Mid-Drive', brakeType: 'Hydraulic Disc' },
+  },
 };

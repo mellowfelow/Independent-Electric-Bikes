@@ -52,7 +52,7 @@ async function cornerColour(buf) {
   for (let x = 0; x < info.width; x++) for (const y of [0, 1, info.height - 2, info.height - 1]) border.push(px(x, y)[0]);
   const mean = border.reduce((a, b) => a + b, 0) / border.length;
   const sd = Math.sqrt(border.reduce((a, b) => a + (b - mean) ** 2, 0) / border.length);
-  return mean >= 236 && sd <= 12 ? [232, 232, 232] : null;
+  return mean >= 226 && sd <= 16 ? [Math.min(232, mean - 2), Math.min(232, mean - 2), Math.min(232, mean - 2)] : null;
 }
 
 /** Studio shot -> product trimmed from its background, centred and enlarged on a white 4:3 canvas. */
@@ -76,6 +76,14 @@ async function productCanvas(file) {
     if (trimmed.info.width >= meta.width * 0.12 && trimmed.info.height >= meta.height * 0.12) subject = trimmed.data;
   } catch {
     /* uniform image or trim failed: use as is */
+  }
+  // The backdrop may only become the border after trimming a white margin (a grey box inside white): lift it again.
+  const bg2 = await cornerColour(subject);
+  if (bg2 && bg2.every((c) => c >= 225 && c < 254)) {
+    subject = await sharp(subject)
+      .linear(bg2.map((c) => Math.min(1.15, 255 / c)), [0, 0, 0])
+      .png()
+      .toBuffer();
   }
   const sm = await sharp(subject).metadata();
   const scale = Math.min((W * FILL_W) / sm.width, (H * FILL_H) / sm.height);
