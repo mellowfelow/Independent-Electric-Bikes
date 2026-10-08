@@ -4917,38 +4917,5 @@ export const EBIKE_ITEMS: Product[] = [
       "frame": "Rugged Steel Frame Moped Style",
       "gears": "Shimano 7-Speed"
     }
-  },
-  {
-    "slug": "vallkree-black-cow-500w",
-    "name": "Vallkree Black Cow 500W",
-    "price": 4699,
-    "category": "electric-bikes",
-    "subcategory": "fat-tyre-lifestyle-ebikes",
-    "subSubcategory": "moped-style-ebikes",
-    "badge": "Premium",
-    "featured": false,
-    "filters": {
-      "motorType": "Rear Hub",
-      "sensorType": "Cadence Sensor",
-      "compliance": "EN15194 Certified",
-      "brakeType": "Hydraulic Disc",
-      "batteryRange": "50km+ Long Range"
-    },
-    "description": "Vallkree Black Cow 500W is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Vallkree Black Cow 500W featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/vallkree-black-cow-500w/1200/900"
-    ],
-    "specs": {
-      "motor": "500W Dapu Rear Hub Drive",
-      "battery": "48V 17.5Ah Samsung Lithium",
-      "range": "Up to 85 km",
-      "topSpeed": "25 km/h (AU Compliant)",
-      "brakes": "Tektro Hydraulic 4-Piston",
-      "weight": "34.0 kg",
-      "payload": "150 kg",
-      "frame": "Custom Australian Vintage Scrambler Alloy",
-      "gears": "Shimano Acera 7-Speed"
-    }
   }
 ];

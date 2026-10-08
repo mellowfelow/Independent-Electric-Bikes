@@ -107,7 +107,6 @@ export const PRODUCT_IMAGES: Record<string, string> = {
   'lekker-jordaan-urban-8sp': '/images/products/lekker-jordaan-urban-8sp.be1e5127.webp',
   'meepo-hurricane-ultra-street': '/images/products/meepo-hurricane-ultra-street.3cd62be7.webp',
   'meepo-v5-er-longboard': '/images/products/meepo-v5-er-longboard.cbc3dded.webp',
-  'meepo-v5-er-street-shortboard': '/images/products/meepo-v5-er-street-shortboard.b8f69325.webp',
   'mercane-widewheel-pro-v2': '/images/products/mercane-widewheel-pro-v2.f41b8208.webp',
   'merida-ebig-nine-400': '/images/products/merida-ebig-nine-400.cfdd5a40.webp',
   'merida-eone-forty-400': '/images/products/merida-eone-forty-400.60263bfe.webp',

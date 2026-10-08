@@ -438,8 +438,10 @@ The removed entries remain in git history (commit before this change) if any nee
 | GPS Smart Tracker Alarm for E-Bikes | $179 | Generic unbranded tracker with no model or brand |
 | InMotion V11 Suspension EUW | $2899 | Same product as "InMotion V11 Suspension EUC" (EUW and EUC are two names for an electric unicycle), kept the EUC listing |
 
-## Flagged, NOT removed (needs your confirmation)
+## Flagged items, removed after confirmation
 
-- **Vallkree Black Cow 500W**: no Vallkree model with this name was found on retailer or manufacturer pages.
-- **Meepo V5 ER Street Shortboard**: sources describe the Meepo V5 only as a longboard; the Longboard listing is kept.
-- **Begode Master Pro High Voltage** vs **Begode Master Pro V2 EUC 134V**: possibly the same wheel under two names.
+| Removed product | Listed price | Reason |
+|---|---|---|
+| Vallkree Black Cow 500W | $4699 | No Vallkree model with this name was found on retailer or manufacturer pages |
+| Begode Master Pro High Voltage | $4899 | Probably the same wheel as "Begode Master Pro V2 EUC 134V", which is kept |
+| Meepo V5 ER Street Shortboard | $799 | Sources describe the Meepo V5 only as a longboard; the Longboard listing is kept |

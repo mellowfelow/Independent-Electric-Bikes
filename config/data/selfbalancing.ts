@@ -2,39 +2,6 @@ import type { Product } from '../site';
 
 export const SELFBALANCING_ITEMS: Product[] = [
   {
-    "slug": "begode-master-pro-high-voltage",
-    "name": "Begode Master Pro High Voltage",
-    "price": 4899,
-    "category": "self-balancing-ev",
-    "subcategory": "electric-unicycles",
-    "subSubcategory": "electric-unicycles",
-    "badge": "Premium",
-    "featured": false,
-    "filters": {
-      "motorType": "Hub Drive",
-      "sensorType": "Gyroscopic",
-      "compliance": "CE Certified",
-      "brakeType": "Regenerative",
-      "batteryRange": "50km+ Long Range"
-    },
-    "description": "Begode Master Pro High Voltage is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Begode Master Pro High Voltage featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/begode-master-pro-high-voltage/1200/900"
-    ],
-    "specs": {
-      "motor": "Hub Drive Power Drive System",
-      "battery": "Lithium-Ion Power Cell",
-      "range": "Up to 80 km",
-      "topSpeed": "25 km/h (AU Compliant)",
-      "brakes": "Regenerative",
-      "weight": "20.0 kg",
-      "payload": "120 kg",
-      "frame": "Reinforced Alloy Frame",
-      "gears": "Multi-Speed Drive System"
-    }
-  },
-  {
     "slug": "kingsong-16x-high-torque-euw",
     "name": "KingSong 16X High-Torque EUW",
     "price": 2499,

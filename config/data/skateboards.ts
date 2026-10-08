@@ -629,39 +629,6 @@ export const SKATEBOARD_ITEMS: Product[] = [
     }
   },
   {
-    "slug": "meepo-v5-er-street-shortboard",
-    "name": "Meepo V5 ER Street Shortboard",
-    "price": 799,
-    "category": "electric-skateboards",
-    "subcategory": "street-electric-skateboards",
-    "subSubcategory": "street-electric-skateboards",
-    "badge": "Sale",
-    "featured": false,
-    "filters": {
-      "motorType": "Dual Motor",
-      "sensorType": "Throttle",
-      "compliance": "CE Certified",
-      "brakeType": "Regenerative",
-      "batteryRange": "Under 50km"
-    },
-    "description": "Meepo V5 ER Street Shortboard is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Meepo V5 ER Street Shortboard featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/meepo-v5-er-street-shortboard/1200/900"
-    ],
-    "specs": {
-      "motor": "Dual 500W Hub Motors",
-      "battery": "10S2P 288Wh Battery",
-      "range": "Up to 30 km",
-      "topSpeed": "25 km/h (AU Compliant)",
-      "brakes": "Smooth Pocket Remote Braking",
-      "weight": "8.0 kg",
-      "payload": "100 kg",
-      "frame": "8-Ply Canadian Maple Deck",
-      "gears": "4-Speed Pocket Remote"
-    }
-  },
-  {
     "slug": "wowgo-pioneer-4-street",
     "name": "WowGo Pioneer 4 Street",
     "price": 999,
