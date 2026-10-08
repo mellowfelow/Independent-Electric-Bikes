@@ -249,7 +249,7 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-5 min-[520px]:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 min-[520px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 xl:gap-5">
             {pageItems.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}

@@ -46,3 +46,6 @@ Redis is picked in `lib/redis.ts`: the Vercel KV integration pair first, placeho
 
 ## Images
 Product photos, hero slides and category tiles are generated from your "Website Images" folder by `node scripts/images.mjs` (trims each bike, centres it on a white 4:3 canvas, writes WebP to `public/images/` and the manifest `config/data/productImages.ts`). Product photos are matched by file name = product name. Products without a photo show `public/images/product-placeholder.svg`.
+
+## Search
+Ranking lives in `lib/search.ts` (all words must match; synonyms, typo tolerance, price intent such as "under $2000"). It powers `/search`, the nav autocomplete (`components/SearchBox.tsx`) and `/api/search`. Add new spelling aliases to `PHRASES` there.

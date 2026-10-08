@@ -107,7 +107,9 @@ const unmatched = [];
 const lowRes = [];
 const productDir = path.join(ROOT, 'product images');
 if (fs.existsSync(productDir)) {
-  for (const file of walk(productDir)) {
+  // Oldest first, so when two files share a product name (e.g. an old .webp and a replacement .avif) the newest wins.
+  const productFiles = walk(productDir).sort((x, y) => fs.statSync(x).mtimeMs - fs.statSync(y).mtimeMs);
+  for (const file of productFiles) {
     const base = path.basename(file).replace(/\.[^.]+$/, '');
     const product = byName.get(norm(base));
     if (!product) {
@@ -136,8 +138,10 @@ const heroDir = path.join(ROOT, 'homepage images', 'hero images');
 if (fs.existsSync(heroDir)) {
   const files = fs.readdirSync(heroDir).filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f)).sort();
   for (const [i, f] of files.entries()) {
-    const p = sharp(path.join(heroDir, f)).rotate().resize(W, H, { fit: 'cover', position: sharp.strategy.attention });
-    fs.writeFileSync(`${OUT}/home/hero-${i + 1}.webp`, await encodeWebp(p, 170));
+    // The hero fills the whole section: a wide desktop crop and a tall mobile crop, both around the main subject.
+    const src = () => sharp(path.join(heroDir, f)).rotate();
+    fs.writeFileSync(`${OUT}/home/hero-${i + 1}.webp`, await encodeWebp(src().resize(2000, 1125, { fit: 'cover', position: sharp.strategy.attention }), 240));
+    fs.writeFileSync(`${OUT}/home/hero-${i + 1}-m.webp`, await encodeWebp(src().resize(900, 1200, { fit: 'cover', position: sharp.strategy.attention }), 150));
   }
   console.log(`hero slides: ${files.length}`);
 }

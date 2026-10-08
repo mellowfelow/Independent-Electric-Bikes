@@ -95,10 +95,10 @@ export default function HomePage() {
       <JsonLd data={faqSchema} />
 
       {/* 1. HERO SECTION */}
-      <section className="relative bg-slate-950 text-white pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden border-b border-slate-800">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-950/40 via-slate-950 to-slate-950 pointer-events-none" />
+      <section className="relative bg-slate-950 text-white pt-14 pb-28 lg:pt-24 lg:pb-36 min-h-[600px] lg:min-h-[680px] flex items-center overflow-hidden border-b border-slate-800">
+        <HomeHero />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6 text-left">
@@ -151,10 +151,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Hero Slideshow */}
-            <div className="lg:col-span-5 relative">
-              <HomeHero />
-            </div>
           </div>
         </div>
       </section>

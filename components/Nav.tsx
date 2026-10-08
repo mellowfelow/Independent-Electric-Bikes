@@ -1,16 +1,17 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Bike, ShoppingBag, Search, Menu, X, ChevronDown, ChevronRight, Zap } from 'lucide-react';
 import { SITE, MASTER_TAXONOMY } from '@/config/site';
 import { CartDrawer } from './CartDrawer';
+import { SearchBox } from './SearchBox';
 
 export function Nav() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  const [searchQuery, setSearchQuery] = useState('');
+  const mobileSearchRef = useRef<HTMLInputElement>(null);
   const [isMegaOpen, setIsMegaOpen] = useState(false);
   const [activeCategorySlug, setActiveCategorySlug] = useState('electric-bikes');
 
@@ -42,13 +43,6 @@ export function Nav() {
       window.removeEventListener('ieb-open-cart', handleOpenCart);
     };
   }, []);
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      window.location.href = `/search/?q=${encodeURIComponent(searchQuery.trim())}`;
-    }
-  };
 
   const activeCategory = MASTER_TAXONOMY.find((m) => m.slug === activeCategorySlug) || MASTER_TAXONOMY[0];
 
@@ -192,16 +186,20 @@ export function Nav() {
             {/* Right Actions: Search Form + Cart Toggle */}
             <div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
               {/* Search Bar */}
-              <form onSubmit={handleSearchSubmit} className="hidden sm:flex items-center relative">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search e-bikes, scooters, eMTB..."
-                  className="bg-slate-900 border border-slate-800 text-xs rounded-full pl-9 pr-4 py-2 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 w-44 lg:w-56 transition-all"
-                />
-                <Search className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
-              </form>
+              <SearchBox className="hidden sm:block w-48 lg:w-60" />
+
+              {/* Phones: a visible search button that opens the menu with the search field focused */}
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMobileOpen(true);
+                  setTimeout(() => mobileSearchRef.current?.focus(), 50);
+                }}
+                aria-label="Search the store"
+                className="sm:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-white"
+              >
+                <Search className="w-5 h-5" />
+              </button>
 
               {/* Cart Drawer Button */}
               <button
@@ -234,16 +232,7 @@ export function Nav() {
         {/* Mobile Dropdown Navigation */}
         {isMobileOpen && (
           <div className="lg:hidden border-t border-slate-800 bg-slate-950 px-4 pt-4 pb-6 space-y-4 animate-in slide-in-from-top-3 max-h-[85vh] overflow-y-auto">
-            <form onSubmit={handleSearchSubmit} className="flex items-center relative">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search products..."
-                className="w-full bg-slate-900 border border-slate-800 text-sm rounded-xl pl-10 pr-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
-              />
-              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 pointer-events-none" />
-            </form>
+            <SearchBox className="w-full" inputClassName="rounded-xl py-3 text-sm" placeholder="Search products, brands..." inputRef={mobileSearchRef} onNavigate={() => setIsMobileOpen(false)} />
 
             <nav className="flex flex-col space-y-3 font-bold text-slate-200 text-sm">
               <Link
