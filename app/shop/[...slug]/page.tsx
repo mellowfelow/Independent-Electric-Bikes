@@ -198,43 +198,57 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
             <div className="mt-16 bg-slate-900 border border-slate-800 rounded-2xl p-8">
               <h2 className="text-xl font-extrabold text-white mb-6 border-b border-slate-800 pb-4 flex items-center gap-2">
                 <Bike className="w-5 h-5 text-emerald-400" />
-                <span>Full Technical Specifications — {product.name}</span>
+                <span>Technical Specifications - {product.name}</span>
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-medium">
-                <div className="flex justify-between p-3 bg-slate-950 rounded-lg border border-slate-800/80">
-                  <span className="text-slate-400">Motor Drive:</span>
-                  <span className="text-white font-bold">{product.specs.motor}</span>
-                </div>
-                <div className="flex justify-between p-3 bg-slate-950 rounded-lg border border-slate-800/80">
-                  <span className="text-slate-400">Battery Chemistry:</span>
-                  <span className="text-white font-bold">{product.specs.battery}</span>
-                </div>
-                <div className="flex justify-between p-3 bg-slate-950 rounded-lg border border-slate-800/80">
-                  <span className="text-slate-400">Maximum Range:</span>
-                  <span className="text-white font-bold">{product.specs.range}</span>
-                </div>
-                <div className="flex justify-between p-3 bg-slate-950 rounded-lg border border-slate-800/80">
-                  <span className="text-slate-400">Top Speed:</span>
-                  <span className="text-white font-bold">{product.specs.topSpeed}</span>
-                </div>
-                <div className="flex justify-between p-3 bg-slate-950 rounded-lg border border-slate-800/80">
-                  <span className="text-slate-400">Braking System:</span>
-                  <span className="text-white font-bold">{product.specs.brakes}</span>
-                </div>
-                <div className="flex justify-between p-3 bg-slate-950 rounded-lg border border-slate-800/80">
-                  <span className="text-slate-400">Net Weight:</span>
-                  <span className="text-white font-bold">{product.specs.weight}</span>
-                </div>
-                <div className="flex justify-between p-3 bg-slate-950 rounded-lg border border-slate-800/80">
-                  <span className="text-slate-400">Payload Load:</span>
-                  <span className="text-white font-bold">{product.specs.payload}</span>
-                </div>
-                <div className="flex justify-between p-3 bg-slate-950 rounded-lg border border-slate-800/80">
-                  <span className="text-slate-400">Frame Alloy:</span>
-                  <span className="text-white font-bold">{product.specs.frame}</span>
-                </div>
-              </div>
+              {product.verified ? (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-medium">
+                    {(
+                      [
+                        ['Motor', product.specs.motor],
+                        ['Battery', product.specs.battery],
+                        ['Claimed range', product.specs.range],
+                        ['Assisted top speed', product.specs.topSpeed],
+                        ['Brakes', product.specs.brakes],
+                        ['Weight', product.specs.weight],
+                        ['Payload / load limit', product.specs.payload],
+                        ['Frame', product.specs.frame],
+                        ['Gears', product.specs.gears],
+                      ] as [string, string][]
+                    )
+                      .filter(([, value]) => value)
+                      .map(([label, value]) => (
+                        <div key={label} className="flex justify-between gap-4 p-3 bg-slate-950 rounded-lg border border-slate-800/80">
+                          <span className="text-slate-400 shrink-0">{label}:</span>
+                          <span className="text-white font-bold text-right">{value}</span>
+                        </div>
+                      ))}
+                  </div>
+                  <div className="mt-5 space-y-2 text-[11px] leading-relaxed text-slate-400">
+                    {product.verified.note && <p>{product.verified.note}</p>}
+                    <p>
+                      Verified {product.verified.checked} against{' '}
+                      {product.verified.sources.map((src, i) => (
+                        <span key={src.url}>
+                          {i > 0 && ', '}
+                          <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-emerald-400 underline hover:text-emerald-300">
+                            {src.label}
+                          </a>
+                        </span>
+                      ))}
+                      . Manufacturers can change specifications by model year and market.
+                    </p>
+                  </div>
+                </>
+              ) : (
+                <p className="text-sm leading-relaxed text-slate-300">
+                  We are verifying the full specification for this model with the manufacturer. Contact us for the manufacturer spec sheet and to confirm Australian road-legal status before you order.
+                  <Link href="/contact/" className="ml-1 font-bold text-emerald-400 underline hover:text-emerald-300">
+                    Ask about this model
+                  </Link>
+                </p>
+              )}
             </div>
 
             {/* Related Products Grid */}

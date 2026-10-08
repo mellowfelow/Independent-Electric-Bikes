@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CONTACT, SHOP, SITE } from '@/config/site';
 import { fitDesc, fitTitle } from '@/lib/catalog';
+import { EmailText } from '@/components/EmailText';
 import { LegalPage, P, UL } from '@/components/LegalPage';
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function TermsPage() {
           heading: 'Who you are buying from',
           body: (
             <P>
-              {SITE.name} is operated by {SITE.entityName} (ABN {SITE.abn}), {CONTACT.address}. Contact: {CONTACT.email}, {CONTACT.phoneDisplay}.
+              {SITE.name} is operated by {SITE.entityName} (ABN {SITE.abn}), {CONTACT.address}. Contact: <EmailText email={CONTACT.email} />, {CONTACT.phoneDisplay}.
             </P>
           ),
         },
@@ -90,8 +91,7 @@ export default function TermsPage() {
           body: (
             <>
               <P>
-                Electric bikes sold for road use are designed to meet the EN 15194 pedal-assist standard (250W continuous rated power, assistance up to 25 km/h). Other products, such as some scooters, skateboards and off-road vehicles, may be restricted to private land or may not be legal on
-                public roads or paths in your state or territory.
+                Whether a product may be ridden on public roads or paths depends on the model and on your state or territory. In Australia an e-bike is treated as a bicycle only when it meets the pedal-assist standard (250W continuous rated power, assistance cutting out at 25 km/h); other bikes, and many scooters, skateboards and off-road vehicles, may be restricted to private land. Ask us to confirm the road-legal status of a model before you order.
               </P>
               <P>You are responsible for checking and following the road rules that apply where you ride, wearing a helmet and appropriate protective gear, charging batteries only with the supplied charger, and following the manual.</P>
             </>

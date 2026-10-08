@@ -1,4 +1,5 @@
 import { EBIKE_PRODUCTS } from './products';
+import { VERIFIED, type VerifiedInfo } from './data/verified';
 
 export const SITE = {
   name: 'INDEPENDENT ELECTRIC BIKES',
@@ -371,6 +372,8 @@ export interface ProductFilters {
 }
 
 export interface Product {
+  /** Present only when specs and filters were confirmed against the manufacturer's own pages (see config/data/verified.ts). */
+  verified?: VerifiedInfo;
   slug: string;
   name: string;
   price: number;
@@ -396,7 +399,38 @@ export interface Product {
   };
 }
 
-export const PRODUCTS: Product[] = EBIKE_PRODUCTS;
+const EMPTY_SPECS: Product['specs'] = { motor: '', battery: '', range: '', topSpeed: '', brakes: '', weight: '', payload: '', frame: '', gears: '' };
+
+function categoryLabel(p: Product): string {
+  const main = MASTER_TAXONOMY.find((m) => m.slug === p.category);
+  const sub = main?.subcategories.find((s) => s.slug === p.subcategory || s.items?.some((i) => i.slug === p.subcategory));
+  return (sub?.name || main?.name || 'Electric vehicle').trim();
+}
+
+/**
+ * Products without manufacturer-verified data carry no technical specs or filter values (the bundled figures were
+ * generic placeholders) and neutral descriptions, so nothing unverified is presented to customers as fact.
+ */
+function applyVerification(p: Product): Product {
+  const v = VERIFIED[p.slug];
+  if (v) {
+    return {
+      ...p,
+      verified: v,
+      specs: { ...EMPTY_SPECS, ...v.specs },
+      filters: { ...v.filters },
+    };
+  }
+  return {
+    ...p,
+    specs: { ...EMPTY_SPECS },
+    filters: {},
+    shortDescription: `${p.name} - ${categoryLabel(p)}`,
+    description: `${p.name} is available from ${SITE.entityName}. Ask us for the manufacturer specification sheet and Australian road-legal status before ordering.`,
+  };
+}
+
+export const PRODUCTS: Product[] = EBIKE_PRODUCTS.map(applyVerification);
 
 export const POSTS = [
   {
@@ -494,11 +528,11 @@ export const POSTS = [
 export const FAQ = [
   {
     question: 'Are VYRON Electric Bikes legal to ride on public roads and bike paths in Australia?',
-    answer: 'Yes! All standard Independent Electric Bikes sold by VYRON Industries adhere strictly to Australian EN15194 safety standards and Victorian road rules. They feature a 250W-500W pedal assist mode capped at 25 km/h, making them 100% legal on all public roads, shared footpaths, and council cycleways without requiring a driver’s license or vehicle registration.',
+    answer: 'In Australia an electric bike is treated as a bicycle on public roads and paths only when its motor is limited to 250W continuous rated power and assistance cuts out at 25 km/h (the EN 15194 pedal-assist standard). More powerful, throttle-only or faster models may be restricted to private land, and rules differ slightly between states and territories, so check with your state road authority. Each product page states what the manufacturer publishes for that model, and we confirm the road-legal status of a bike with you before you order.',
   },
   {
     question: 'What distance range can I expect on a single battery charge?',
-    answer: 'Depending on the model and battery capacity, our e-bikes provide between 45km to 140km per charge. For example, the Lekker Jordaan Urban 8sp achieves up to 80km on pedal assist level 2, while the dual-battery Tern GSD cargo e-bike reaches up to 140km under heavy loads.',
+    answer: 'Range depends on battery capacity, rider weight, load, terrain and assist level. Manufacturers publish a claimed range for each model; on verified models we show that figure on the product page with a link to the manufacturer source. Real-world range is usually lower than the claim, especially with heavy loads or hilly routes.',
   },
   {
     question: 'How does shipping and freight work across Victoria and interstate Australia?',
@@ -531,5 +565,5 @@ export const COMPLIANCE = {
   ageGate: false,
   ageMinimum: null,
   gdpr: false,
-  disclaimer: 'All Independent Electric Bikes sold for Australian public road use comply with EN15194 25km/h pedal-assist regulations.',
+  disclaimer: 'Check each product page and ask us to confirm the Australian road-legal status of a model before you order.',
 };

@@ -92,7 +92,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
 
             <h2 className="text-2xl font-bold text-white pt-4">1. Motor Wattage & Torque Output (Bafang Systems)</h2>
             <p>
-              Australian EN15194 regulations permit 250W-500W pedal assist motors capped at 25 km/h for public road compliance. However, wattage alone does not determine how easily a bike climbs hills—torque (measured in Newton-meters) is key. Flagship VYRON electric bikes utilize 80Nm high-torque Bafang rear hub motors that deliver immediate assistance as soon as pedal sensors engage.
+              Under the EN 15194 pedal-assist standard used in Australia, a bike ridden as a bicycle on public roads has a motor limited to 250W continuous rated power with assistance cutting out at 25 km/h; more powerful or faster bikes may be restricted to private land. Wattage alone does not determine how easily a bike climbs hills—torque (measured in Newton-meters) is key. Flagship VYRON electric bikes utilize 80Nm high-torque Bafang rear hub motors that deliver immediate assistance as soon as pedal sensors engage.
             </p>
 
             <h2 className="text-2xl font-bold text-white pt-4">2. Battery Cell Chemistry & Thermal Safety</h2>

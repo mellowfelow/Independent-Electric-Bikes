@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CONTACT, SITE } from '@/config/site';
 import { fitDesc, fitTitle } from '@/lib/catalog';
+import { EmailText } from '@/components/EmailText';
 import { LegalPage, P, UL } from '@/components/LegalPage';
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function PrivacyPage() {
           heading: 'Who we are',
           body: (
             <P>
-              {SITE.name} is operated by {SITE.entityName} (ABN {SITE.abn}), {CONTACT.address}. In this policy &ldquo;we&rdquo; means that company. You can reach us at {CONTACT.email} or {CONTACT.phoneDisplay}.
+              {SITE.name} is operated by {SITE.entityName} (ABN {SITE.abn}), {CONTACT.address}. In this policy &ldquo;we&rdquo; means that company. You can reach us at <EmailText email={CONTACT.email} /> or {CONTACT.phoneDisplay}.
             </P>
           ),
         },
@@ -98,7 +99,7 @@ export default function PrivacyPage() {
           body: (
             <>
               <P>
-                You can ask to see the personal information we hold about you, or to have it corrected or deleted where we are not required to keep it, by contacting us at {CONTACT.email}. We will respond within a reasonable time.
+                You can ask to see the personal information we hold about you, or to have it corrected or deleted where we are not required to keep it, by contacting us at <EmailText email={CONTACT.email} />. We will respond within a reasonable time.
               </P>
               <P>
                 If you are not satisfied with our response you can complain to the Office of the Australian Information Commissioner at{' '}

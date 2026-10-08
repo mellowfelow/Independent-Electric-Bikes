@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CONTACT, SHOP, SITE } from '@/config/site';
 import { fitDesc, fitTitle } from '@/lib/catalog';
+import { EmailText } from '@/components/EmailText';
 import { LegalPage, P, UL } from '@/components/LegalPage';
 
 const free = `$${SHOP.freeShippingThreshold.toLocaleString('en-AU')}`;
@@ -72,7 +73,7 @@ export default function ShippingPage() {
               <UL>
                 <li>Note the damage on the courier paperwork if you can, and keep all packaging.</li>
                 <li>
-                  Contact us as soon as possible with your order reference and photos: email {CONTACT.email}, phone or WhatsApp {CONTACT.phoneDisplay}, or use our{' '}
+                  Contact us as soon as possible with your order reference and photos: email <EmailText email={CONTACT.email} />, phone or WhatsApp {CONTACT.phoneDisplay}, or use our{' '}
                   <Link href="/contact/" className="text-emerald-400 hover:underline">
                     contact page
                   </Link>
@@ -103,7 +104,7 @@ export default function ShippingPage() {
           heading: 'Questions',
           body: (
             <P>
-              Contact {SITE.name} ({SITE.entityName}) on {CONTACT.phoneDisplay} or {CONTACT.email}.
+              Contact {SITE.name} ({SITE.entityName}) on {CONTACT.phoneDisplay} or <EmailText email={CONTACT.email} />.
             </P>
           ),
         },

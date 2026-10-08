@@ -28,7 +28,13 @@ export function brandOf(p: Product): BrandDef | null {
 }
 
 export function brandNameOf(p: Product): string {
-  return brandOf(p)?.name ?? p.name.split(' ')[0];
+  const known = brandOf(p);
+  if (known) return known.name;
+  // Brands missing from the brand list: use the leading token(s) of the name, never a bare initial or a spec like "36V".
+  const [first, second] = p.name.split(' ');
+  if (/^d/.test(first)) return 'Other';
+  if (first.replace(/[^A-Za-z]/g, '').length <= 2 && second) return `${first} ${second}`;
+  return first;
 }
 
 export interface CategoryNode {
@@ -101,13 +107,14 @@ export function productDescription(p: Product): string {
   const brand = brandNameOf(p);
   const parts: string[] = [`${p.name} is a ${brand} model in our ${productCategoryLabel(p)} range, priced at ${money0(p.price)} AUD.`];
 
-  const drive = [f.motorType && `${f.motorType.toLowerCase()} motor`, f.sensorType && `${f.sensorType.toLowerCase()} pedal assist`].filter(Boolean);
+  const verified = !!p.verified;
+  const drive = verified ? [f.motorType && `${f.motorType.toLowerCase()} motor`, f.sensorType && `${f.sensorType.toLowerCase()} pedal assist`].filter(Boolean) : [];
   if (drive.length) parts.push(`It pairs a ${drive.join(' with ')}${f.brakeType ? ` and ${f.brakeType.toLowerCase()} brakes` : ''}.`);
-  else if (f.brakeType) parts.push(`It is fitted with ${f.brakeType.toLowerCase()} brakes.`);
+  else if (verified && f.brakeType) parts.push(`It is fitted with ${f.brakeType.toLowerCase()} brakes.`);
 
-  const figures = [s.range && `range ${s.range.toLowerCase()}`, s.topSpeed && `top speed ${s.topSpeed}`, s.weight && `weight ${s.weight}`, s.payload && `payload ${s.payload}`].filter(Boolean);
+  const figures = !verified ? [] : [s.range && `range ${s.range.toLowerCase()}`, s.topSpeed && `top speed ${s.topSpeed}`, s.weight && `weight ${s.weight}`, s.payload && `payload ${s.payload}`].filter(Boolean);
   if (figures.length) parts.push(`Key figures: ${figures.join(', ')}.`);
-  if (f.compliance) parts.push(`Compliance: ${f.compliance}.`);
+  if (verified && f.compliance) parts.push(`Compliance: ${f.compliance}.`);
 
   parts.push(`Sold by ${SITE.entityName} in Brunswick, Victoria with a 2-year frame warranty and a ${SHOP.cryptoDiscount}% discount when paying by cryptocurrency.`);
   return parts.join(' ');

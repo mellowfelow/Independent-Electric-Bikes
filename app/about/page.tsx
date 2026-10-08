@@ -99,7 +99,7 @@ export default function AboutPage() {
               Victorian & Australian E-Bike Legal Standards (EN15194)
             </h3>
             <p>
-              All standard electric commuter and cargo bikes supplied by Independent Electric Bikes strictly comply with Australian EN15194 safety standards and state road rules. Equipped with 250W-500W pedal-assist systems capped at a maximum assisted speed of 25 km/h, our e-bikes are 100% legal to ride on public roads, bicycle lanes, and council shared paths across Victoria, New South Wales, Queensland, and all Australian states without requiring a driver’s license, vehicle registration, or third-party compulsory insurance.
+              In Australia an electric bike is treated as a bicycle on public roads and paths only when its motor is limited to 250W continuous rated power and assistance cuts out at 25 km/h (the EN 15194 pedal-assist standard). More powerful, throttle-only or faster models may be restricted to private land, and rules differ slightly between states and territories, so check with your state road authority. We confirm the road-legal status of the bike you are buying before you order.
             </p>
           </div>
 

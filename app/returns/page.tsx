@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CONTACT, SITE } from '@/config/site';
 import { fitDesc, fitTitle } from '@/lib/catalog';
+import { EmailText } from '@/components/EmailText';
 import { LegalPage, P, UL } from '@/components/LegalPage';
 
 export const metadata: Metadata = {
@@ -58,7 +59,7 @@ export default function ReturnsPage() {
             <>
               <UL>
                 <li>
-                  Contact us by email at {CONTACT.email}, by phone or WhatsApp on {CONTACT.phoneDisplay}, or through the{' '}
+                  Contact us by email at <EmailText email={CONTACT.email} />, by phone or WhatsApp on {CONTACT.phoneDisplay}, or through the{' '}
                   <Link href="/contact/" className="text-emerald-400 hover:underline">
                     contact page
                   </Link>

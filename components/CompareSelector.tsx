@@ -2,219 +2,147 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import type { ComparableProduct } from '@/lib/compare';
+import { ArrowRight, Plus, X } from 'lucide-react';
+import { COMPARE_ROWS, type ComparableProduct } from '@/lib/compare';
+import { SHOP } from '@/config/site';
 import { money } from '@/lib/order';
-import { Zap, CheckCircle2, AlertTriangle, XCircle, ArrowRight, ArrowLeftRight } from 'lucide-react';
+
+const MAX_COLUMNS = 3;
 
 export function CompareSelector({ products }: { products: ComparableProduct[] }) {
-  const [productASlug, setProductASlug] = useState<string>(products[0]?.slug || '');
-  const [productBSlug, setProductBSlug] = useState<string>(products[1]?.slug || '');
+  const [slugs, setSlugs] = useState<string[]>(() => products.slice(0, 2).map((p) => p.slug));
 
-  const productA = products.find((p) => p.slug === productASlug) || products[0];
-  const productB = products.find((p) => p.slug === productBSlug) || products[1];
+  const chosen = slugs.map((s) => products.find((p) => p.slug === s)).filter((p): p is ComparableProduct => !!p);
 
-  // Helper to extract voltage number from battery string
-  const getVoltage = (batteryStr: string) => {
-    const match = batteryStr.match(/(\d+)\s*V/i);
-    return match ? match[1] + 'V' : '36V/48V';
+  const setAt = (index: number, slug: string) => setSlugs((cur) => cur.map((s, i) => (i === index ? slug : s)));
+  const remove = (index: number) => setSlugs((cur) => cur.filter((_, i) => i !== index));
+  const add = () => {
+    const next = products.find((p) => !slugs.includes(p.slug));
+    if (next) setSlugs((cur) => [...cur, next.slug]);
   };
 
-  const voltA = getVoltage(productA?.specs?.battery || '');
-  const voltB = getVoltage(productB?.specs?.battery || '');
-
-  // Battery Compatibility Logic
-  const getBatteryCompatibility = () => {
-    if (!productA || !productB) return null;
-
-    if (voltA === voltB) {
-      if (productA.category === productB.category) {
-        return {
-          status: 'Direct Battery Swappable',
-          color: 'bg-emerald-500/10 border-emerald-500/40 text-emerald-400',
-          icon: <CheckCircle2 className="w-5 h-5 text-emerald-400" />,
-          notes: `Both models operate on a matching ${voltA} electrical system. Batteries and chargers can be shared with matching mounting cradles.`,
-        };
-      }
-      return {
-        status: 'Voltage Compatible (Adapter Mount Needed)',
-        color: 'bg-amber-500/10 border-amber-500/40 text-amber-400',
-        icon: <AlertTriangle className="w-5 h-5 text-amber-400" />,
-        notes: `Both models use a ${voltA} power system, but frame physical mounting points differ. An external cable adapter is required.`,
-      };
-    }
-
-    return {
-      status: 'Incompatible System Voltages',
-      color: 'bg-rose-500/10 border-rose-500/40 text-rose-400',
-      icon: <XCircle className="w-5 h-5 text-rose-400" />,
-      notes: `Voltage mismatch (${voltA} vs ${voltB}). Attempting to cross-connect batteries will damage motor controllers and BMS boards.`,
-    };
-  };
-
-  const compatibility = getBatteryCompatibility();
+  // A spec row is highlighted when the compared models differ, so the differences stand out.
+  const differs = (key: (typeof COMPARE_ROWS)[number]['key']) => new Set(chosen.map((p) => p.specs[key] || '-')).size > 1;
 
   return (
-    <div className="space-y-10">
-      {/* Interactive Custom Selector Bar */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl space-y-6">
-        <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-emerald-400">
-          <ArrowLeftRight className="w-4 h-4" />
-          <span>Custom Product & Battery Comparison Bar</span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Select Product A */}
-          <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-300 block">Select First Model (Item A)</label>
-            <select
-              value={productASlug}
-              onChange={(e) => setProductASlug(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs font-bold text-white focus:ring-2 focus:ring-emerald-500 focus:outline-none"
-            >
-              {products.map((p) => (
-                <option key={p.slug} value={p.slug}>
-                  {p.name} — {money(p.price)}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Select Product B */}
-          <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-300 block">Select Second Model (Item B)</label>
-            <select
-              value={productBSlug}
-              onChange={(e) => setProductBSlug(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs font-bold text-white focus:ring-2 focus:ring-emerald-500 focus:outline-none"
-            >
-              {products.map((p) => (
-                <option key={p.slug} value={p.slug}>
-                  {p.name} — {money(p.price)}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        {/* Battery Compatibility Banner */}
-        {compatibility && (
-          <div className={`p-4 rounded-xl border ${compatibility.color} flex items-start gap-3.5`}>
-            <div className="flex-shrink-0 mt-0.5">{compatibility.icon}</div>
-            <div className="space-y-1">
-              <div className="font-extrabold text-xs uppercase tracking-wider">{compatibility.status}</div>
-              <p className="text-xs font-normal opacity-90 leading-relaxed">{compatibility.notes}</p>
+    <div className="space-y-6">
+      <div className="rounded-2xl border border-slate-800 bg-slate-900 p-4 sm:p-6">
+        <div className={`grid gap-4 ${chosen.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
+          {slugs.map((slug, i) => (
+            <div key={i} className="space-y-1.5">
+              <div className="flex items-center justify-between">
+                <label htmlFor={`compare-${i}`} className="text-xs font-bold text-slate-300">
+                  Model {String.fromCharCode(65 + i)}
+                </label>
+                {slugs.length > 2 && (
+                  <button type="button" onClick={() => remove(i)} aria-label={`Remove model ${String.fromCharCode(65 + i)}`} className="rounded p-1 text-slate-400 hover:text-white">
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+              <select
+                id={`compare-${i}`}
+                value={slug}
+                onChange={(e) => setAt(i, e.target.value)}
+                className="min-h-[44px] w-full rounded-xl border border-slate-700 bg-slate-950 px-3 text-sm font-semibold text-white focus:border-emerald-500 focus:outline-none"
+              >
+                {products.map((p) => (
+                  <option key={p.slug} value={p.slug} disabled={slugs.includes(p.slug) && p.slug !== slug}>
+                    {p.name}
+                  </option>
+                ))}
+              </select>
             </div>
-          </div>
+          ))}
+        </div>
+        {slugs.length < MAX_COLUMNS && slugs.length < products.length && (
+          <button type="button" onClick={add} className="mt-4 inline-flex min-h-[40px] items-center gap-1.5 rounded-xl border border-slate-700 px-3 text-xs font-bold text-slate-200 hover:border-emerald-500">
+            <Plus className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+            Add a third model
+          </button>
         )}
       </div>
 
-      {/* Side-By-Side Comparison Grid */}
-      {productA && productB && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Card A */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between">
-            <div className="p-6 space-y-4">
-              <div className="relative bg-white aspect-[4/3] rounded-xl p-4 flex items-center justify-center overflow-hidden">
-                <span className="absolute top-3 left-3 bg-emerald-600 text-white font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">
-                  Item A
-                </span>
-                <img src={productA.images[0]} alt={productA.name} className="object-contain max-h-full" />
-              </div>
+      <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900">
+        <table className="w-full min-w-[560px] text-left text-sm">
+          <caption className="sr-only">Side-by-side specification comparison</caption>
+          <thead>
+            <tr className="border-b border-slate-800 bg-slate-950">
+              <th scope="col" className="sticky left-0 z-10 w-36 bg-slate-950 p-4 text-[11px] font-extrabold uppercase tracking-wider text-slate-400">
+                Specification
+              </th>
+              {chosen.map((p) => (
+                <th key={p.slug} scope="col" className="min-w-[200px] p-4 align-top">
+                  <Link href={`/shop/${p.category}/${p.slug}/`} className="font-extrabold text-white hover:text-emerald-400">
+                    {p.name}
+                  </Link>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-800 text-slate-200">
+            <tr>
+              <th scope="row" className="sticky left-0 z-10 bg-slate-900 p-4 text-xs font-bold text-slate-400">
+                Our price (AUD)
+              </th>
+              {chosen.map((p) => (
+                <td key={p.slug} className="p-4">
+                  <div className="text-lg font-black text-white">{money(p.price)}</div>
+                  <div className="text-xs text-emerald-400">{money(Math.round(p.price * (1 - SHOP.cryptoDiscount / 100)))} paying with crypto</div>
+                </td>
+              ))}
+            </tr>
+            {COMPARE_ROWS.map((row) => (
+              <tr key={row.key} className={differs(row.key) ? 'bg-emerald-500/[0.04]' : undefined}>
+                <th scope="row" className={`sticky left-0 z-10 p-4 text-xs font-bold text-slate-400 ${differs(row.key) ? 'bg-slate-900' : 'bg-slate-900'}`}>
+                  {row.label}
+                </th>
+                {chosen.map((p) => (
+                  <td key={p.slug} className="p-4 leading-snug">
+                    {p.specs[row.key] || <span className="text-slate-600">Not published</span>}
+                  </td>
+                ))}
+              </tr>
+            ))}
+            <tr>
+              <th scope="row" className="sticky left-0 z-10 bg-slate-900 p-4 text-xs font-bold text-slate-400">
+                Source
+              </th>
+              {chosen.map((p) => (
+                <td key={p.slug} className="p-4 text-xs text-slate-400">
+                  {p.sources.map((s) => (
+                    <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer" className="block text-emerald-400 underline hover:text-emerald-300">
+                      {s.label}
+                    </a>
+                  ))}
+                  <span className="mt-1 block">Verified {p.checked}</span>
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <th scope="row" className="sticky left-0 z-10 bg-slate-900 p-4" />
+              {chosen.map((p) => (
+                <td key={p.slug} className="p-4">
+                  <Link href={`/shop/${p.category}/${p.slug}/`} className="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg bg-emerald-600 px-4 text-xs font-bold text-white hover:bg-emerald-500">
+                    View product <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-              <div>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{productA.category}</span>
-                <h3 className="text-lg font-black text-white">{productA.name}</h3>
-              </div>
-
-              {/* Prices */}
-              <div className="space-y-1 bg-slate-950 p-4 rounded-xl border border-slate-800">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-400">Regular Price:</span>
-                  <span className="font-black text-white">{money(productA.price)}</span>
-                </div>
-                <div className="flex items-center justify-between text-xs text-emerald-400 font-bold">
-                  <span className="flex items-center gap-1">
-                    <Zap className="w-3.5 h-3.5" /> 10% Crypto Discount:
-                  </span>
-                  <span className="font-black text-sm">{money(Math.round(productA.price * 0.9))}</span>
-                </div>
-              </div>
-
-              {/* Specs Table */}
-              <div className="space-y-2 text-xs divide-y divide-slate-800/60 pt-2">
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">System Voltage:</span> <strong className="text-emerald-400 font-bold">{voltA}</strong></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Motor Drive:</span> <span className="font-semibold">{productA.specs.motor}</span></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Battery Pack:</span> <span className="font-semibold">{productA.specs.battery}</span></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Max Range:</span> <span className="font-bold text-emerald-400">{productA.specs.range}</span></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Braking:</span> <span>{productA.specs.brakes}</span></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Weight:</span> <span>{productA.specs.weight}</span></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Payload:</span> <span>{productA.specs.payload}</span></div>
-              </div>
-            </div>
-
-            <div className="p-6 pt-0">
-              <Link
-                href={`/shop/${productA.category}/${productA.slug}/`}
-                className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs rounded-xl transition-all text-center flex items-center justify-center gap-2"
-              >
-                <span>View Full {productA.name} Specs</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Card B */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between">
-            <div className="p-6 space-y-4">
-              <div className="relative bg-white aspect-[4/3] rounded-xl p-4 flex items-center justify-center overflow-hidden">
-                <span className="absolute top-3 left-3 bg-blue-600 text-white font-extrabold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded">
-                  Item B
-                </span>
-                <img src={productB.images[0]} alt={productB.name} className="object-contain max-h-full" />
-              </div>
-
-              <div>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{productB.category}</span>
-                <h3 className="text-lg font-black text-white">{productB.name}</h3>
-              </div>
-
-              {/* Prices */}
-              <div className="space-y-1 bg-slate-950 p-4 rounded-xl border border-slate-800">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-slate-400">Regular Price:</span>
-                  <span className="font-black text-white">{money(productB.price)}</span>
-                </div>
-                <div className="flex items-center justify-between text-xs text-emerald-400 font-bold">
-                  <span className="flex items-center gap-1">
-                    <Zap className="w-3.5 h-3.5" /> 10% Crypto Discount:
-                  </span>
-                  <span className="font-black text-sm">{money(Math.round(productB.price * 0.9))}</span>
-                </div>
-              </div>
-
-              {/* Specs Table */}
-              <div className="space-y-2 text-xs divide-y divide-slate-800/60 pt-2">
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">System Voltage:</span> <strong className="text-emerald-400 font-bold">{voltB}</strong></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Motor Drive:</span> <span className="font-semibold">{productB.specs.motor}</span></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Battery Pack:</span> <span className="font-semibold">{productB.specs.battery}</span></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Max Range:</span> <span className="font-bold text-emerald-400">{productB.specs.range}</span></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Braking:</span> <span>{productB.specs.brakes}</span></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Weight:</span> <span>{productB.specs.weight}</span></div>
-                <div className="flex justify-between py-1.5"><span className="text-slate-400">Payload:</span> <span>{productB.specs.payload}</span></div>
-              </div>
-            </div>
-
-            <div className="p-6 pt-0">
-              <Link
-                href={`/shop/${productB.category}/${productB.slug}/`}
-                className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs rounded-xl transition-all text-center flex items-center justify-center gap-2"
-              >
-                <span>View Full {productB.name} Specs</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
+      {chosen.some((p) => p.note) && (
+        <ul className="space-y-2 text-xs leading-relaxed text-slate-400">
+          {chosen
+            .filter((p) => p.note)
+            .map((p) => (
+              <li key={p.slug}>
+                <strong className="text-slate-200">{p.name}:</strong> {p.note}
+              </li>
+            ))}
+        </ul>
       )}
     </div>
   );
