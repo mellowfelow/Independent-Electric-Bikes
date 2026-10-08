@@ -324,3 +324,98 @@ The removed entries remain in git history (commit before this change) if any nee
 | Xiaomi Mi Electric Scooter 1S V4 | $999 | `xiaomi-mi-electric-scooter-1s` |
 | Inokim Light 2 Hero V4 | $1799 | `inokim-light-2-hero` |
 | Navee S65 Commuter Scooter V4 | $1899 | `navee-s65-commuter-scooter` |
+
+---
+
+# Second pass (2026-10-08): numbered "Edition N" / "Pro N" ladders
+
+79 more generated clones removed. Each family is a real product plus several numbered copies whose prices rise by a constant step (+$120), with no manufacturer source. "Polygon Path E+ 5" was kept: it is a genuine model, not part of a ladder.
+
+## Self-Balancing EV (33)
+
+| Removed product | Listed price | Kept product |
+|---|---|---|
+| InMotion V11 Suspension EUW Edition 2 | $3139 | InMotion V11 Suspension EUW |
+| InMotion V11 Suspension EUW Edition 3 | $3259 | InMotion V11 Suspension EUW |
+| InMotion V11 Suspension EUW Edition 4 | $3379 | InMotion V11 Suspension EUW |
+| InMotion V11 Suspension EUW Edition 5 | $3499 | InMotion V11 Suspension EUW |
+| InMotion V11 Suspension EUW Edition 6 | $3619 | InMotion V11 Suspension EUW |
+| Begode Master Pro High Voltage Edition 2 | $5139 | Begode Master Pro High Voltage |
+| Begode Master Pro High Voltage Edition 3 | $5259 | Begode Master Pro High Voltage |
+| Begode Master Pro High Voltage Edition 4 | $5379 | Begode Master Pro High Voltage |
+| Begode Master Pro High Voltage Edition 5 | $5499 | Begode Master Pro High Voltage |
+| Begode Master Pro High Voltage Edition 6 | $5619 | Begode Master Pro High Voltage |
+| KingSong 16X High-Torque EUW Edition 2 | $2739 | KingSong 16X High-Torque EUW |
+| KingSong 16X High-Torque EUW Edition 3 | $2859 | KingSong 16X High-Torque EUW |
+| KingSong 16X High-Torque EUW Edition 4 | $2979 | KingSong 16X High-Torque EUW |
+| KingSong 16X High-Torque EUW Edition 5 | $3099 | KingSong 16X High-Torque EUW |
+| KingSong 16X High-Torque EUW Edition 6 | $3219 | KingSong 16X High-Torque EUW |
+| Veteran Patton Suspension EUW Edition 2 | $4239 | Veteran Patton Suspension EUW |
+| Veteran Patton Suspension EUW Edition 3 | $4359 | Veteran Patton Suspension EUW |
+| Veteran Patton Suspension EUW Edition 4 | $4479 | Veteran Patton Suspension EUW |
+| Veteran Patton Suspension EUW Edition 5 | $4599 | Veteran Patton Suspension EUW |
+| Veteran Patton Suspension EUW Edition 6 | $4719 | Veteran Patton Suspension EUW |
+| Segway-Ninebot S Plus Hoverboard Edition 2 | $1539 | Segway-Ninebot S Plus Hoverboard |
+| Segway-Ninebot S Plus Hoverboard Edition 3 | $1659 | Segway-Ninebot S Plus Hoverboard |
+| Segway-Ninebot S Plus Hoverboard Edition 4 | $1779 | Segway-Ninebot S Plus Hoverboard |
+| Segway-Ninebot S Plus Hoverboard Edition 5 | $1899 | Segway-Ninebot S Plus Hoverboard |
+| Segway-Ninebot S Plus Hoverboard Edition 6 | $2019 | Segway-Ninebot S Plus Hoverboard |
+| Swagtron T6 Outlaw Off-Road Edition 2 | $839 | Swagtron T6 Outlaw Off-Road |
+| Swagtron T6 Outlaw Off-Road Edition 3 | $959 | Swagtron T6 Outlaw Off-Road |
+| Swagtron T6 Outlaw Off-Road Edition 4 | $1079 | Swagtron T6 Outlaw Off-Road |
+| Swagtron T6 Outlaw Off-Road Edition 5 | $1199 | Swagtron T6 Outlaw Off-Road |
+| Hover-1 Titan All-Terrain Board Edition 2 | $739 | Hover-1 Titan All-Terrain Board |
+| Hover-1 Titan All-Terrain Board Edition 3 | $859 | Hover-1 Titan All-Terrain Board |
+| Hover-1 Titan All-Terrain Board Edition 4 | $979 | Hover-1 Titan All-Terrain Board |
+| Hover-1 Titan All-Terrain Board Edition 5 | $1099 | Hover-1 Titan All-Terrain Board |
+
+## E-Skateboards (46)
+
+| Removed product | Listed price | Kept product |
+|---|---|---|
+| Evolve Carbon GTR Street Series 2 Pro 2 | $2659 | Evolve Carbon GTR Street Series 2 |
+| Evolve Carbon GTR Street Series 2 Pro 3 | $2739 | Evolve Carbon GTR Street Series 2 |
+| Evolve Carbon GTR Street Series 2 Pro 4 | $2819 | Evolve Carbon GTR Street Series 2 |
+| Evolve Carbon GTR Street Series 2 Pro 5 | $2899 | Evolve Carbon GTR Street Series 2 |
+| Exway Flex Riot Street Board Pro 2 | $1259 | Exway Flex Riot Street Board |
+| Exway Flex Riot Street Board Pro 3 | $1339 | Exway Flex Riot Street Board |
+| Exway Flex Riot Street Board Pro 4 | $1419 | Exway Flex Riot Street Board |
+| Exway Flex Riot Street Board Pro 5 | $1499 | Exway Flex Riot Street Board |
+| Backfire Zealot S Street Pro 2 | $1359 | Backfire Zealot S Street |
+| Backfire Zealot S Street Pro 3 | $1439 | Backfire Zealot S Street |
+| Backfire Zealot S Street Pro 4 | $1519 | Backfire Zealot S Street |
+| Backfire Zealot S Street Pro 5 | $1599 | Backfire Zealot S Street |
+| Meepo V5 ER Longboard Pro 2 | $1059 | Meepo V5 ER Longboard |
+| Meepo V5 ER Longboard Pro 3 | $1139 | Meepo V5 ER Longboard |
+| Meepo V5 ER Longboard Pro 4 | $1219 | Meepo V5 ER Longboard |
+| Meepo V5 ER Longboard Pro 5 | $1299 | Meepo V5 ER Longboard |
+| WowGo 3X Max Street Pro 2 | $1010 | WowGo 3X Max Street |
+| WowGo 3X Max Street Pro 3 | $1090 | WowGo 3X Max Street |
+| WowGo 3X Max Street Pro 4 | $1170 | WowGo 3X Max Street |
+| Evolve Hadean Carbon All-Terrain Pro 2 | $3559 | Evolve Hadean Carbon All-Terrain |
+| Evolve Hadean Carbon All-Terrain Pro 3 | $3639 | Evolve Hadean Carbon All-Terrain |
+| Evolve Hadean Carbon All-Terrain Pro 4 | $3719 | Evolve Hadean Carbon All-Terrain |
+| Exway Atlas 4WD Carbon AT Pro 2 | $3059 | Exway Atlas 4WD Carbon AT |
+| Exway Atlas 4WD Carbon AT Pro 3 | $3139 | Exway Atlas 4WD Carbon AT |
+| Exway Atlas 4WD Carbon AT Pro 4 | $3219 | Exway Atlas 4WD Carbon AT |
+| Backfire Hammer S All-Terrain Pro 2 | $2359 | Backfire Hammer S All-Terrain |
+| Backfire Hammer S All-Terrain Pro 3 | $2439 | Backfire Hammer S All-Terrain |
+| Backfire Hammer S All-Terrain Pro 4 | $2519 | Backfire Hammer S All-Terrain |
+| Tynee Board Explorer All-Terrain Pro 2 | $1859 | Tynee Board Explorer All-Terrain |
+| Tynee Board Explorer All-Terrain Pro 3 | $1939 | Tynee Board Explorer All-Terrain |
+| Tynee Board Explorer All-Terrain Pro 4 | $2019 | Tynee Board Explorer All-Terrain |
+| Meepo Hurricane V2 Pneumatic Pro 2 | $2559 | Meepo Hurricane V2 Pneumatic |
+| Meepo Hurricane V2 Pneumatic Pro 3 | $2639 | Meepo Hurricane V2 Pneumatic |
+| Meepo Hurricane V2 Pneumatic Pro 4 | $2719 | Meepo Hurricane V2 Pneumatic |
+| Exway Wave Riot Shortboard Pro 2 | $1580 | Exway Wave Riot Shortboard |
+| Exway Wave Riot Shortboard Pro 3 | $1660 | Exway Wave Riot Shortboard |
+| Exway Wave Riot Shortboard Pro 4 | $1740 | Exway Wave Riot Shortboard |
+| Backfire Mini V2 Cruiser Pro 2 | $1009 | Backfire Mini V2 Cruiser |
+| Backfire Mini V2 Cruiser Pro 3 | $1089 | Backfire Mini V2 Cruiser |
+| Backfire Mini V2 Cruiser Pro 4 | $1169 | Backfire Mini V2 Cruiser |
+| Meepo Mini 3s Deluxe Pro 2 | $859 | Meepo Mini 3s Deluxe |
+| Meepo Mini 3s Deluxe Pro 3 | $939 | Meepo Mini 3s Deluxe |
+| Meepo Mini 3s Deluxe Pro 4 | $1019 | Meepo Mini 3s Deluxe |
+| WowGo Mini 2 Pro Pro 2 | $809 | WowGo Mini 2 Pro |
+| WowGo Mini 2 Pro Pro 3 | $889 | WowGo Mini 2 Pro |
+| WowGo Mini 2 Pro Pro 4 | $969 | WowGo Mini 2 Pro |
