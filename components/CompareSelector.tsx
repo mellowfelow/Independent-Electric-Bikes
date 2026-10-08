@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Product } from '@/config/site';
+import type { ComparableProduct } from '@/lib/compare';
 import { money } from '@/lib/order';
 import { Zap, CheckCircle2, AlertTriangle, XCircle, ArrowRight, ArrowLeftRight } from 'lucide-react';
 
-export function CompareSelector({ products }: { products: Product[] }) {
+export function CompareSelector({ products }: { products: ComparableProduct[] }) {
   const [productASlug, setProductASlug] = useState<string>(products[0]?.slug || '');
   const [productBSlug, setProductBSlug] = useState<string>(products[1]?.slug || '');
 

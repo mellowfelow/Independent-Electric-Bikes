@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import nodemailer, { type Transporter } from 'nodemailer';
 import { FORMS, SITE } from '@/config/site';
 
 export interface SendMailOptions {
@@ -8,6 +8,17 @@ export interface SendMailOptions {
   text: string;
   replyTo?: string;
   from?: string;
+}
+
+let cached: { key: string; transporter: Transporter } | null = null;
+
+/** Lazy singleton: reuses one SMTP transport per warm instance instead of reconnecting for every email. */
+function getTransporter(host: string, port: number, user: string, pass: string) {
+  const key = `${host}:${port}:${user}`;
+  if (!cached || cached.key !== key) {
+    cached = { key, transporter: nodemailer.createTransport({ host, port, secure: port === 465, auth: { user, pass } }) };
+  }
+  return cached.transporter;
 }
 
 export async function sendMail(opts: SendMailOptions): Promise<{ sent: boolean; reason?: string }> {
@@ -26,15 +37,7 @@ export async function sendMail(opts: SendMailOptions): Promise<{ sent: boolean; 
     // Ensure sender display name uses SITE.name (e.g., "INDEPENDENT ELECTRIC BIKES" <sales@...>)
     const formattedFrom = rawFrom.includes('<') ? rawFrom : `"${SITE.name}" <${rawFrom}>`;
 
-    const transporter = nodemailer.createTransport({
-      host,
-      port,
-      secure: port === 465,
-      auth: {
-        user,
-        pass,
-      },
-    });
+    const transporter = getTransporter(host, port, user, pass);
 
     await transporter.sendMail({
       from: formattedFrom,

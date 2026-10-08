@@ -31,12 +31,12 @@ export function AdminPasscodeProvider({ children }: { children: ReactNode }) {
     if (code) {
       localStorage.setItem('ieb_admin_passcode', code);
       if (typeof document !== 'undefined') {
-        document.cookie = `ieb_admin_passcode=${encodeURIComponent(code)}; path=/; max-age=86400; SameSite=Lax`;
+        document.cookie = `ieb_admin_passcode=${encodeURIComponent(code)}; path=/; max-age=86400; SameSite=Strict${window.location.protocol === 'https:' ? '; Secure' : ''}`;
       }
     } else {
       localStorage.removeItem('ieb_admin_passcode');
       if (typeof document !== 'undefined') {
-        document.cookie = `ieb_admin_passcode=; path=/; max-age=0; SameSite=Lax`;
+        document.cookie = `ieb_admin_passcode=; path=/; max-age=0; SameSite=Strict`;
       }
     }
     setPasscodeState(code);

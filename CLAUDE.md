@@ -8,6 +8,7 @@ Deployed via Vercel / Next.js App Router.
 Adding or editing entries in `PRODUCTS` / `CATEGORIES` automatically updates pages, routes, metadata, JSON-LD schemas, sitemap, and agent discovery files.
 
 `sitemap.xml`, `robots.txt` and `llms.txt` are generated from `config/` by `app/sitemap.ts`, `app/robots.txt/route.ts` and `app/llms.txt/route.ts` - edit the config, never add static copies to `public/`.
+Agent declarations in `public/.well-known/*` must match `config/site.ts` (minimum order, shipping, payment). After editing skills run `npm run agent:hash`. Set `GSC_VERIFICATION` in Vercel for the Search Console meta tag.
 The `public/.well-known/*`, `auth.md` and `js/webmcp.js` files are static declarations: update them by hand when endpoints or contact details change.
 
 ## Reply Portal (Gated Admin Dashboard)

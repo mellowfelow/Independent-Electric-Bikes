@@ -52,9 +52,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script src="/js/webmcp.js" defer />
       </head>
       <body className="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col font-sans">
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         <AnnouncementBar />
         <Nav />
-        <main id="main" className="flex-1">
+        <main id="main" tabIndex={-1} className="flex-1 outline-none">
           {children}
         </main>
         <Footer />

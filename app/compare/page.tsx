@@ -6,6 +6,7 @@ import { money } from '@/lib/order';
 import { ArrowRight, Zap } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { CompareSelector } from '@/components/CompareSelector';
+import { toComparable } from '@/lib/compare';
 
 export const metadata: Metadata = {
   title: fitTitle('Compare Electric Bike Specs & Prices'),
@@ -40,7 +41,7 @@ export default function ComparePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
           {/* Interactive Custom Bar Chooser & Battery Compatibility */}
-          <CompareSelector products={PRODUCTS} />
+          <CompareSelector products={PRODUCTS.map(toComparable)} />
 
           {/* Full 500-Item Technical Table */}
           <div className="space-y-4">
