@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PRODUCTS, MASTER_TAXONOMY, SITE, SHOP } from '@/config/site';
 import { money } from '@/lib/order';
+import { productSrcSet } from '@/lib/productImage';
 import { brandNameOf, categoryMetaDescription, categoryTitle, productDescription, productMetaDescription, productTitle, resolveCategory } from '@/lib/catalog';
 import { JsonLd } from '@/components/JsonLd';
 import { ShopClientView } from '@/components/ShopClientView';
@@ -129,7 +130,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               <div className="lg:col-span-7 space-y-4">
                 <div className="bg-white rounded-2xl border border-slate-800 aspect-[4/3] overflow-hidden">
-                  <img src={product.images[0]} alt={product.name} width={1200} height={900} className="h-full w-full object-contain" />
+                  <img src={product.images[0]} srcSet={productSrcSet(product.images[0])} sizes="(min-width: 1024px) 58vw, 100vw" alt={product.name} width={1200} height={900} fetchPriority="high" className="h-full w-full object-contain" />
                 </div>
                 {product.images.length > 1 && (
                   <div className="grid grid-cols-3 gap-3">

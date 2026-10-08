@@ -250,8 +250,8 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-4 min-[520px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 xl:gap-5">
-            {pageItems.map((product) => (
-              <ProductCard key={product.slug} product={product} />
+            {pageItems.map((product, i) => (
+              <ProductCard key={product.slug} product={product} priority={i < 4} />
             ))}
           </div>
         )}

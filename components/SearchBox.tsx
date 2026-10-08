@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from 'react';
 import { Search, X } from 'lucide-react';
+import { thumbSrc } from '@/lib/productImage';
 
 interface Suggestion {
   slug: string;
@@ -149,7 +150,7 @@ export function SearchBox({ placeholder = 'Search e-bikes, scooters, brands...',
                   className={`flex items-center gap-3 px-3 py-2 text-left ${i === active ? 'bg-slate-800' : 'hover:bg-slate-800/70'}`}
                 >
                   <span className="flex h-12 w-16 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white">
-                    {it.image ? <img src={new URL(it.image).pathname} alt="" width={64} height={48}  decoding="async" className="h-full w-full object-contain" /> : <Search className="h-4 w-4 text-slate-300" aria-hidden="true" />}
+                    {it.image ? <img src={thumbSrc(new URL(it.image).pathname)} alt="" width={64} height={48}  decoding="async" className="h-full w-full object-contain" /> : <Search className="h-4 w-4 text-slate-300" aria-hidden="true" />}
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-xs font-bold text-white">{it.title}</span>

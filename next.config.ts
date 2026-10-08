@@ -34,6 +34,10 @@ const nextConfig: NextConfig = {
       "object-src 'none'",
     ].join('; ');
     return [
+      // Product photos have content-hashed names (scripts/images.mjs), so they can be cached for a year and never revalidated.
+      { source: '/images/products/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
+      // Hero, category and brand images keep stable names: cache for a day, then refresh in the background for a week.
+      { source: '/images/:path((?!products/).*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }] },
       {
         source: '/:path*',
         headers: [

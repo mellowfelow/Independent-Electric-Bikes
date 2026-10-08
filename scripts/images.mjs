@@ -10,6 +10,7 @@
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const ARGS = process.argv.slice(2);
 const HOME_ONLY = ARGS.includes('--home-only');
@@ -122,6 +123,7 @@ fs.mkdirSync(`${OUT}/home`, { recursive: true });
 fs.mkdirSync(`${OUT}/categories`, { recursive: true });
 
 // ---------- products ----------
+if (!HOME_ONLY) for (const f of fs.readdirSync(`${OUT}/products`)) fs.unlinkSync(`${OUT}/products/${f}`);
 const products = loadProducts();
 const byName = new Map(products.map((p) => [norm(p.name), p]));
 const manifest = {};
@@ -131,6 +133,7 @@ const productDir = path.join(ROOT, 'product images');
 if (!HOME_ONLY && fs.existsSync(productDir)) {
   // Oldest first, so when two files share a product name (e.g. an old .webp and a replacement .avif) the newest wins.
   const productFiles = walk(productDir).sort((x, y) => fs.statSync(x).mtimeMs - fs.statSync(y).mtimeMs);
+  const newest = new Map(); // slug -> latest file for that product
   for (const file of productFiles) {
     const base = path.basename(file).replace(/\.[^.]+$/, '');
     const product = byName.get(norm(base));
@@ -138,10 +141,21 @@ if (!HOME_ONLY && fs.existsSync(productDir)) {
       unmatched.push(path.relative(productDir, file));
       continue;
     }
+    newest.set(product.slug, { file, base, product });
+  }
+  for (const { file, base, product } of newest.values()) {
     const { pipeline, upscale, srcShort } = await productCanvas(file);
-    const buf = await encodeWebp(pipeline);
-    fs.writeFileSync(`${OUT}/products/${product.slug}.webp`, buf);
-    manifest[product.slug] = `/images/products/${product.slug}.webp`;
+    const canvas = await pipeline.png().toBuffer(); // finished 1200x900 white canvas; smaller sizes are cut from this
+    const buf = await encodeWebp(sharp(canvas));
+    // Content-hashed names let the CDN and browsers cache these files forever (see next.config.ts headers).
+    const hash = crypto.createHash('sha1').update(buf).digest('hex').slice(0, 8);
+    const outBase = `${OUT}/products/${product.slug}.${hash}`;
+    fs.writeFileSync(`${outBase}.webp`, buf);
+    // Smaller renditions for cards (about 240-480 css px wide) and thumbnails, so cards never download the 1200px file.
+    for (const [width, maxKb] of [[800, 55], [400, 24]]) {
+      fs.writeFileSync(`${outBase}-${width}.webp`, await encodeWebp(sharp(canvas).resize(width, Math.round((width * H) / W), { kernel: 'lanczos3' }), maxKb));
+    }
+    manifest[product.slug] = `/images/products/${product.slug}.${hash}.webp`;
     if (srcShort < 450 || upscale > 2.2) lowRes.push(`${base} (shortest side ${srcShort}px, enlarged ${upscale.toFixed(1)}x)`);
   }
 }

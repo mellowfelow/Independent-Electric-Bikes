@@ -2,17 +2,20 @@
 
 import { useState, useEffect } from 'react';
 import { brandNameOf, productCategoryLabel } from '@/lib/catalog';
+import { CARD_SIZES, productSrcSet } from '@/lib/productImage';
 import Link from 'next/link';
 import { Plus, Minus, ShoppingBag, Check, Zap } from 'lucide-react';
 import { Product, SITE } from '@/config/site';
 import { money } from '@/lib/order';
 
 interface ProductCardProps {
+  /** Load this card's photo immediately (use for the first row of a grid). */
+  priority?: boolean;
   product: Product;
   className?: string;
 }
 
-export function ProductCard({ product, className = '' }: ProductCardProps) {
+export function ProductCard({ product, className = '', priority = false }: ProductCardProps) {
   const [quantity, setQuantity] = useState(1);
   const [cartQty, setCartQty] = useState(0);
   const [added, setAdded] = useState(false);
@@ -110,9 +113,13 @@ export function ProductCard({ product, className = '' }: ProductCardProps) {
           <img
             src={product.images[0]}
             alt={product.name}
+            srcSet={productSrcSet(product.images[0])}
+            sizes={CARD_SIZES}
             width={1200}
             height={900}
-            loading="lazy"
+            // The first row is what the shopper sees first: fetch it right away; everything else loads as it scrolls in.
+            loading={priority ? 'eager' : 'lazy'}
+            fetchPriority={priority ? 'high' : 'auto'}
             decoding="async"
             className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
           />

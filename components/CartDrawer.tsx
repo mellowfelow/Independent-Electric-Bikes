@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { thumbSrc } from '@/lib/productImage';
+const PLACEHOLDER = '/images/product-placeholder.svg';
 import { useRouter } from 'next/navigation';
 import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Truck, AlertTriangle } from 'lucide-react';
 import { SITE, SHOP } from '@/config/site';
@@ -168,8 +170,15 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   >
                     <div className="w-16 h-16 bg-white rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center p-1">
                       <img
-                        src={item.image || 'https://picsum.photos/seed/ieb-bike/200/150'}
+                        src={thumbSrc(item.image || PLACEHOLDER)}
                         alt={item.name}
+                        width={96}
+                        height={72}
+                        loading="lazy"
+                        // Carts saved before photos were renamed can point at a file that no longer exists.
+                        onError={(e) => {
+                          if (!e.currentTarget.src.endsWith(PLACEHOLDER)) e.currentTarget.src = PLACEHOLDER;
+                        }}
                         className="object-contain max-h-full"
                       />
                     </div>

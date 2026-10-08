@@ -49,3 +49,5 @@ Product photos, hero slides and category tiles are generated from your "Website 
 
 ## Search
 Ranking lives in `lib/search.ts` (all words must match; synonyms, typo tolerance, price intent such as "under $2000"). It powers `/search`, the nav autocomplete (`components/SearchBox.tsx`) and `/api/search`. Add new spelling aliases to `PHRASES` there.
+
+Product photos are written as `<slug>.<hash>.webp` plus `-800` and `-400` renditions (content-hashed so they are cached for a year, `next.config.ts`). Components use `lib/productImage.ts` (`productSrcSet`, `thumbSrc`) - never hard-code a photo path.

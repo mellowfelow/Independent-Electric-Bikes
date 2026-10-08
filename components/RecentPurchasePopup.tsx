@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { X, CheckCircle, ShoppingBag, ArrowRight } from 'lucide-react';
 import { PRODUCTS, SITE } from '@/config/site';
+import { thumbSrc } from '@/lib/productImage';
 
 interface PurchaseNotification {
   id: string;
@@ -194,9 +195,10 @@ export function RecentPurchasePopup() {
           {/* Product Thumbnail */}
           <div className="relative w-16 h-16 rounded-xl bg-slate-950 border border-slate-800 shrink-0 overflow-hidden group-hover:scale-105 transition-transform">
             <Image
-              src={current.image}
+              src={thumbSrc(current.image)}
               alt={current.productName}
               fill
+              unoptimized
               sizes="64px"
               referrerPolicy="no-referrer"
               className="object-contain p-1"
