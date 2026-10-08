@@ -1,5 +1,6 @@
 'use client';
 
+import { EmailText } from '@/components/EmailText';
 import { useState } from 'react';
 import { MessageSquare, Phone, Mail, X, Send, Bike } from 'lucide-react';
 import { SITE, CONTACT, CHAT } from '@/config/site';
@@ -64,13 +65,13 @@ export function ChatHub() {
             </a>
 
             <a
-              href={`mailto:${CONTACT.email}`}
+              href={`mailto:${CONTACT.email.replace("@", "%40")}`}
               className="flex items-center gap-3 p-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold transition-colors border border-slate-700"
             >
               <Mail className="w-4 h-4 text-emerald-400" />
               <div className="text-left">
                 <div>Email Support Team</div>
-                <div className="text-[10px] font-normal text-slate-400">{CONTACT.email}</div>
+                <div className="text-[10px] font-normal text-slate-400"><EmailText email={CONTACT.email} /></div>
               </div>
             </a>
           </div>

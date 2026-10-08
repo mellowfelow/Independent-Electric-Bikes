@@ -1,10 +1,11 @@
+import { fitTitle, fitDesc } from '@/lib/catalog';
 import { Metadata } from 'next';
 import { FAQ, SITE } from '@/config/site';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: `Electric Bike FAQ & Warranty Support | ${SITE.name}`,
-  description: `Frequently asked questions regarding Victorian e-bike laws, battery range expectations, express freight, and 2-Year warranty claims.`,
+  title: fitTitle('Electric Bike FAQ, Laws & Warranty'),
+  description: fitDesc('Answers on Victorian e-bike laws, battery range, express freight, cryptocurrency and PayID payments, and 2-year frame warranty claims.'),
   alternates: { canonical: `https://${SITE.domain}/faq/` },
 };
 

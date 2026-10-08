@@ -1,5 +1,6 @@
 'use client';
 
+import { EmailText } from '@/components/EmailText';
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { SITE, CONTACT } from '@/config/site';
@@ -9,6 +10,7 @@ export default function ContactPage() {
   const router = useRouter();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState(''); // honeypot
   const [phone, setPhone] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
@@ -26,6 +28,7 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           formName: 'contact',
+          website,
           name,
           email,
           phone,
@@ -90,7 +93,7 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white block">Sales & Support Email:</strong>
-                    <span>{CONTACT.email}</span>
+                    <span><EmailText email={CONTACT.email} /></span>
                   </div>
                 </div>
 
@@ -122,6 +125,8 @@ export default function ContactPage() {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-4">
+                <input type="text" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+                <input type="text" name="website" value={website} onChange={(e) => setWebsite(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">

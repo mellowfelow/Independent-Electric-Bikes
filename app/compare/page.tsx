@@ -1,3 +1,4 @@
+import { fitTitle, fitDesc } from '@/lib/catalog';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { PRODUCTS, SITE } from '@/config/site';
@@ -7,8 +8,8 @@ import { JsonLd } from '@/components/JsonLd';
 import { CompareSelector } from '@/components/CompareSelector';
 
 export const metadata: Metadata = {
-  title: `Compare Electric Bike Specifications & Battery Compatibility | ${SITE.name}`,
-  description: `Side-by-side technical comparison of electric commuter, cargo, folding, and fat tire e-bikes. Motor wattage, battery voltage compatibility, weights, and 10% crypto prices.`,
+  title: fitTitle('Compare Electric Bike Specs & Prices'),
+  description: fitDesc('Side-by-side comparison of electric commuter, cargo, folding and fat tyre e-bikes: motor, battery, range, weight and price.'),
   alternates: { canonical: `https://${SITE.domain}/compare/` },
 };
 

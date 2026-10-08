@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE, BRAND, CONTACT } from '@/config/site';
+import { fitTitle, fitDesc } from '@/lib/catalog';
 import { Bike, ShieldCheck, Award, MapPin, CheckCircle2, Phone, Mail } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: `About VYRON Industries — Independent Electric Bikes Brunswick VIC | ${SITE.name}`,
-  description: `Learn about VYRON Industries Pty Ltd (ABN 23 618 699 479). Established 2017 in Brunswick, Victoria. High torque e-bike engineering & local service.`,
+  title: fitTitle('About Independent Electric Bikes, Brunswick VIC'),
+  description: fitDesc('Independent Electric Bikes is operated by VYRON Industries Pty Ltd (ABN 23 618 699 479), established 2017 in Brunswick, Victoria.'),
   alternates: { canonical: `https://${SITE.domain}/about/` },
 };
 

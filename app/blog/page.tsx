@@ -1,11 +1,12 @@
+import { fitTitle, fitDesc } from '@/lib/catalog';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { POSTS, SITE } from '@/config/site';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: `Australian E-Bike Guides & Commuter Advice | ${SITE.name}`,
-  description: `Expert articles on choosing the best electric commuter bike in Australia, Victorian e-bike laws, and dual-battery cargo bike advice.`,
+  title: fitTitle('Australian E-Bike Guides & Commuter Advice'),
+  description: fitDesc('Expert articles on choosing the best electric commuter bike in Australia, Victorian e-bike laws, and dual-battery cargo bike advice.'),
   alternates: { canonical: `https://${SITE.domain}/blog/` },
 };
 

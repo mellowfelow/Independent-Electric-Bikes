@@ -1,13 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getOrder } from '@/lib/orderStore';
+import { isValidOrderRef, rateLimited } from '@/lib/security';
+import { REPLY } from '@/config/site';
 import { money, paymentMethodParts, paymentTermsLines } from '@/lib/order';
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const id = searchParams.get('id');
+  if (await rateLimited(req, 'payment-details', 30, 600)) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
 
-  if (!id) {
-    return NextResponse.json({ error: 'Order ID is required' }, { status: 400 });
+  const { searchParams } = new URL(req.url);
+  const id = (searchParams.get('id') || '').trim().toUpperCase();
+
+  if (!isValidOrderRef(id, REPLY.orderPrefix)) {
+    return NextResponse.json({ error: 'A valid order ID is required' }, { status: 400 });
   }
 
   const order = await getOrder(id);

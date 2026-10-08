@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ALL_BRANDS, getBrandBySlug, getProductsByBrand } from '@/config/brands';
 import { SITE } from '@/config/site';
+import { fitTitle, fitDesc } from '@/lib/catalog';
 import { JsonLd } from '@/components/JsonLd';
 import { BrandDetailClient } from '@/components/BrandDetailClient';
 
@@ -29,8 +30,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const products = getProductsByBrand(brandSlug);
 
   return {
-    title: `${brand.name} Models Australia — Official ${brand.category} Range | ${SITE.name}`,
-    description: `Shop official ${brand.name} ${brand.category} in Australia. ${products.length} models in stock with express freight, 2-year warranty, and 10% crypto discount.`,
+    title: fitTitle(`${brand.name} ${brand.category} Australia`),
+    description: fitDesc(`Shop ${brand.name} ${brand.category.toLowerCase()} in Australia: ${products.length} ${products.length === 1 ? 'model' : 'models'} with express freight, a 2-year frame warranty and a 10% cryptocurrency discount.`),
     alternates: {
       canonical: `https://${SITE.domain}/brands/${brandSlug}/`,
     },
@@ -38,8 +39,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'website',
       siteName: SITE.name,
       title: `${brand.name} ${brand.category} Australia`,
-      description: brand.description,
+      description: fitDesc(brand.description),
       url: `https://${SITE.domain}/brands/${brandSlug}/`,
+      images: [{ url: `https://${SITE.domain}/og.png` }],
     },
   };
 }

@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { PRODUCTS, MASTER_TAXONOMY, SITE } from '@/config/site';
+import { PRODUCTS, MASTER_TAXONOMY, SITE, SHOP } from '@/config/site';
 import { money } from '@/lib/order';
+import { brandNameOf, categoryMetaDescription, categoryTitle, productDescription, productMetaDescription, productTitle, resolveCategory } from '@/lib/catalog';
 import { JsonLd } from '@/components/JsonLd';
 import { ShopClientView } from '@/components/ShopClientView';
 import { ProductClientActions } from '@/components/ProductClientActions';
@@ -45,23 +46,23 @@ export async function generateMetadata(props: { params: Promise<{ slug: string[]
   const product = PRODUCTS.find((p) => p.slug === lastSegment);
   if (product) {
     return {
-      title: `${product.name} | ${SITE.name}`,
-      description: `${product.shortDescription} Buy direct from VYRON Industries with 2-Year warranty & fast freight.`,
-      alternates: { canonical: `https://${SITE.domain}/shop/${slugSegments.join('/')}/` },
+      title: productTitle(product),
+      description: productMetaDescription(product),
+      alternates: { canonical: `https://${SITE.domain}/shop/${product.category}/${product.slug}/` },
       openGraph: {
         title: `${product.name} — ${SITE.name}`,
-        description: product.shortDescription,
+        description: productMetaDescription(product),
         images: [{ url: product.images[0] }],
       },
     };
   }
 
-  // Check if main category
-  const mainCat = MASTER_TAXONOMY.find((m) => m.slug === lastSegment || m.slug === slugSegments[0]);
-  if (mainCat) {
+  // Category / subcategory / leaf
+  const node = resolveCategory(slugSegments);
+  if (node) {
     return {
-      title: `${mainCat.name} Australia | ${SITE.name}`,
-      description: `${mainCat.description} Engineered for Australian roads by VYRON Industries.`,
+      title: categoryTitle(node),
+      description: categoryMetaDescription(node),
       alternates: { canonical: `https://${SITE.domain}/shop/${slugSegments.join('/')}/` },
     };
   }
@@ -82,11 +83,18 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
       '@type': 'Product',
       name: product.name,
       image: product.images,
-      description: product.description,
+      description: productDescription(product),
       sku: product.slug,
-      brand: { '@type': 'Brand', name: 'VYRON Electric Bikes' },
+      url: `https://${SITE.domain}/shop/${product.category}/${product.slug}/`,
+      brand: { '@type': 'Brand', name: brandNameOf(product) },
       offers: {
         '@type': 'Offer',
+        url: `https://${SITE.domain}/shop/${product.category}/${product.slug}/`,
+        shippingDetails: {
+          '@type': 'OfferShippingDetails',
+          shippingRate: { '@type': 'MonetaryAmount', value: product.price >= SHOP.freeShippingThreshold ? 0 : SHOP.shippingFee, currency: 'AUD' },
+          shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'AU' },
+        },
         priceCurrency: 'AUD',
         price: product.price,
         itemCondition: 'https://schema.org/NewCondition',
@@ -101,7 +109,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: `https://${SITE.domain}/` },
         { '@type': 'ListItem', position: 2, name: 'Shop', item: `https://${SITE.domain}/shop/` },
-        { '@type': 'ListItem', position: 3, name: product.name, item: `https://${SITE.domain}/shop/${slugSegments.join('/')}/` },
+        { '@type': 'ListItem', position: 3, name: product.name, item: `https://${SITE.domain}/shop/${product.category}/${product.slug}/` },
       ],
     };
 
@@ -144,7 +152,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed border-y border-slate-800 py-4">
-                  {product.description}
+                  {productDescription(product)}
                 </p>
 
                 {/* Filter Pills */}
@@ -263,7 +271,8 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
   const targetSubcategorySlug = slugSegments[1];
 
   const mainCategory = MASTER_TAXONOMY.find((m) => m.slug === targetCategorySlug);
-  if (!mainCategory) {
+  const categoryNode = resolveCategory(slugSegments);
+  if (!mainCategory || !categoryNode) {
     notFound();
   }
 
@@ -274,6 +283,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
       { '@type': 'ListItem', position: 1, name: 'Home', item: `https://${SITE.domain}/` },
       { '@type': 'ListItem', position: 2, name: 'Shop', item: `https://${SITE.domain}/shop/` },
       { '@type': 'ListItem', position: 3, name: mainCategory.name, item: `https://${SITE.domain}/shop/${mainCategory.slug}/` },
+      ...(categoryNode.sub ? [{ '@type': 'ListItem', position: 4, name: categoryNode.name, item: `https://${SITE.domain}/shop/${slugSegments.join('/')}/` }] : []),
     ],
   };
 
@@ -287,8 +297,8 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
               Master EV Collection
             </span>
-            <h1 className="text-3xl sm:text-5xl font-black text-white">{mainCategory.name}</h1>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">{mainCategory.description}</p>
+            <h1 className="text-3xl sm:text-5xl font-black text-white">{categoryNode.name}</h1>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">{categoryNode.description}</p>
           </div>
         </div>
 

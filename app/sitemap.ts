@@ -3,12 +3,11 @@ import { SITE, MASTER_TAXONOMY, PRODUCTS, POSTS } from '@/config/site';
 import { ALL_BRANDS } from '@/config/brands';
 
 const base = `https://${SITE.domain}`;
-const today = new Date();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
-  const add = (path: string, priority: number, changeFrequency: 'daily' | 'weekly' | 'monthly', lastModified: Date = today, images?: string[]) =>
-    entries.push({ url: `${base}${path}`, lastModified, changeFrequency, priority, ...(images?.length ? { images } : {}) });
+  const add = (path: string, priority: number, changeFrequency: 'daily' | 'weekly' | 'monthly', lastModified?: Date, images?: string[]) =>
+    entries.push({ url: `${base}${path}`, ...(lastModified ? { lastModified } : {}), changeFrequency, priority, ...(images?.length ? { images } : {}) });
 
   add('/', 1, 'daily');
   for (const p of ['/shop/', '/brands/', '/blog/', '/compare/', '/about/', '/faq/', '/contact/']) add(p, 0.8, 'weekly');
@@ -27,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const path = `/shop/${p.category}/${p.slug}/`;
     if (seen.has(path)) continue;
     seen.add(path);
-    add(path, 0.6, 'weekly', today, p.images?.[0]?.startsWith('http') ? [p.images[0]] : undefined);
+    add(path, 0.6, 'weekly', undefined, p.images?.[0]?.startsWith('http') ? [p.images[0]] : undefined);
   }
 
   for (const b of ALL_BRANDS) add(`/brands/${b.slug}/`, 0.6, 'weekly');

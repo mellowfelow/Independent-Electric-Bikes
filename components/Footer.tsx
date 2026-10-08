@@ -1,3 +1,4 @@
+import { EmailText } from '@/components/EmailText';
 import Link from 'next/link';
 import { Bike, Phone, Mail, MapPin, ShieldCheck, Lock, ExternalLink } from 'lucide-react';
 import { SITE, CONTACT, CATEGORIES } from '@/config/site';
@@ -87,7 +88,7 @@ export function Footer() {
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-              <span>{CONTACT.email}</span>
+              <span><EmailText email={CONTACT.email} /></span>
             </div>
           </div>
         </div>

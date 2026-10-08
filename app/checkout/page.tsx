@@ -20,9 +20,10 @@ import {
   Clock,
   Sparkles,
 } from 'lucide-react';
-import { SITE, SHOP, CONTACT } from '@/config/site';
+import { SITE, SHOP, CONTACT, REPLY } from '@/config/site';
 import { money } from '@/lib/order';
 import { waOrderLink } from '@/lib/whatsapp';
+import { randomRef } from '@/lib/security';
 
 export interface CartItem {
   slug: string;
@@ -47,6 +48,7 @@ export default function CheckoutPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderCompleteRef, setOrderCompleteRef] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState('');
+  const [website, setWebsite] = useState(''); // honeypot
 
   const loadCart = () => {
     try {
@@ -133,7 +135,7 @@ export default function CheckoutPage() {
     setIsSubmitting(true);
 
     try {
-      const orderRefGuess = `IEB-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
+      const orderRefGuess = randomRef(REPLY.orderPrefix);
       const itemsFormattedText = items.map((i) => `${i.name} x ${i.quantity} (${money(i.price * i.quantity)})`).join('\n');
       const waUrl = waOrderLink(orderRefGuess, customerName, itemsFormattedText, money(finalTotal));
 
@@ -146,6 +148,8 @@ export default function CheckoutPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           formName: 'order',
+          orderRef: orderRefGuess,
+          website,
           name: customerName,
           email,
           phone,
@@ -153,7 +157,6 @@ export default function CheckoutPage() {
           paymentMethod,
           channel,
           items,
-          totalAmount: finalTotal,
         }),
       });
 

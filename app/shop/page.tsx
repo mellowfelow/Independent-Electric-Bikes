@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
 import { SITE } from '@/config/site';
+import { SITE_SHORT } from '@/lib/catalog';
 import { ShopClientView } from '@/components/ShopClientView';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: `Shop Electric Vehicles Australia — E-Bikes, Scooters & Skateboards | ${SITE.name}`,
-  description: `Master Store Taxonomy catalog. Electric commuter bikes, cargo e-bikes, eMTBs, e-scooters, electric skateboards, and personal EVs. Direct prices & fast Australian freight.`,
+  title: `Shop Electric Bikes, Scooters & Skateboards | ${SITE_SHORT}`,
+  description: `Shop electric commuter and cargo e-bikes, eMTBs, e-scooters, skateboards and personal EVs. Direct prices and express Australian freight from Brunswick, VIC.`,
   alternates: { canonical: `https://${SITE.domain}/shop/` },
 };
 

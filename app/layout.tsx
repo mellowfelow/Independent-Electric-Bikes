@@ -8,8 +8,9 @@ import { RecentPurchasePopup } from '@/components/RecentPurchasePopup';
 import { SITE } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: `${SITE.name} — ${SITE.tagline}`,
-  description: `Australia's premier independent electric commuter, cargo, and folding bike specialist based in Brunswick, Victoria. High torque 500W motors & Samsung batteries.`,
+  metadataBase: new URL(`https://${SITE.domain}`),
+  title:`${SITE.name} | Premium E-Bikes Australia`,
+  description: `Independent electric commuter, cargo and folding e-bike specialist in Brunswick, Victoria. Shop e-bikes, scooters and EVs with express Australian freight.`,
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -21,15 +22,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE.name,
-    title: `${SITE.name} — Australia's Premier E-Bike Specialist`,
-    description: `Australia's premier independent electric commuter, cargo, and folding bike specialist based in Brunswick, Victoria.`,
+    title: `${SITE.name} | Premium E-Bikes Australia`,
+    description: `Independent electric commuter, cargo and folding e-bike specialist in Brunswick, Victoria.`,
     url: `https://${SITE.domain}/`,
-    images: [{ url: `https://${SITE.domain}/images/og-cover.jpg` }],
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: SITE.name }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE.name} — Australia's Premier E-Bike Specialist`,
-    description: `Australia's premier independent electric commuter, cargo, and folding bike specialist based in Brunswick, Victoria.`,
+    images: ['/og.png'],
+    title: `${SITE.name} | Premium E-Bikes Australia`,
+    description: `Independent electric commuter, cargo and folding e-bike specialist in Brunswick, Victoria.`,
   },
   alternates: {
     canonical: `https://${SITE.domain}/`,

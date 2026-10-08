@@ -1,3 +1,4 @@
+import { fitTitle, fitDesc } from '@/lib/catalog';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -14,8 +15,8 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   if (!post) return {};
 
   return {
-    title: `${post.title} | ${SITE.name}`,
-    description: post.excerpt,
+    title: fitTitle(post.title),
+    description: fitDesc(post.excerpt, ' Read the full guide from Independent Electric Bikes.'),
     alternates: { canonical: `https://${SITE.domain}/blog/${post.slug}/` },
   };
 }
