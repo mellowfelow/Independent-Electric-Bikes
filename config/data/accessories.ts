@@ -2,105 +2,6 @@ import type { Product } from '../site';
 
 export const ACCESSORY_ITEMS: Product[] = [
   {
-    "slug": "36v-10ah-lithium-ion-replacement-battery",
-    "name": "36V 10Ah Lithium-Ion Replacement Battery",
-    "price": 450,
-    "category": "accessories",
-    "subcategory": "replacement-batteries-chargers",
-    "subSubcategory": "replacement-batteries-chargers",
-    "badge": "Best Seller",
-    "featured": false,
-    "filters": {
-      "motorType": "Rear Hub",
-      "sensorType": "Throttle",
-      "compliance": "EN15194 Certified",
-      "brakeType": "V-Brake",
-      "batteryRange": "Under 50km"
-    },
-    "description": "36V 10Ah Lithium-Ion Replacement Battery is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "36V 10Ah Lithium-Ion Replacement Battery featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/36v-10ah-lithium-ion-replacement-battery/1200/900"
-    ],
-    "specs": {
-      "motor": "Rear Hub Power Drive System",
-      "battery": "Lithium-Ion Power Cell",
-      "range": "Up to 35 km",
-      "topSpeed": "25 km/h (AU Compliant)",
-      "brakes": "V-Brake",
-      "weight": "20.0 kg",
-      "payload": "120 kg",
-      "frame": "Reinforced Alloy Frame",
-      "gears": "Multi-Speed Drive System"
-    }
-  },
-  {
-    "slug": "52v-20ah-high-capacity-pack",
-    "name": "52V 20Ah High-Capacity Pack",
-    "price": 950,
-    "category": "accessories",
-    "subcategory": "replacement-batteries-chargers",
-    "subSubcategory": "replacement-batteries-chargers",
-    "badge": "Popular",
-    "featured": false,
-    "filters": {
-      "motorType": "Rear Hub",
-      "sensorType": "Throttle",
-      "compliance": "EN15194 Certified",
-      "brakeType": "V-Brake",
-      "batteryRange": "Under 50km"
-    },
-    "description": "52V 20Ah High-Capacity Pack is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "52V 20Ah High-Capacity Pack featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/52v-20ah-high-capacity-pack/1200/900"
-    ],
-    "specs": {
-      "motor": "Rear Hub Power Drive System",
-      "battery": "Lithium-Ion Power Cell",
-      "range": "Up to 35 km",
-      "topSpeed": "25 km/h (AU Compliant)",
-      "brakes": "V-Brake",
-      "weight": "20.0 kg",
-      "payload": "120 kg",
-      "frame": "Reinforced Alloy Frame",
-      "gears": "Multi-Speed Drive System"
-    }
-  },
-  {
-    "slug": "48v-3a-smart-battery-charger",
-    "name": "48V 3A Smart Battery Charger",
-    "price": 110,
-    "category": "accessories",
-    "subcategory": "replacement-batteries-chargers",
-    "subSubcategory": "replacement-batteries-chargers",
-    "badge": "Best Value",
-    "featured": false,
-    "filters": {
-      "motorType": "Rear Hub",
-      "sensorType": "Throttle",
-      "compliance": "EN15194 Certified",
-      "brakeType": "V-Brake",
-      "batteryRange": "Under 50km"
-    },
-    "description": "48V 3A Smart Battery Charger is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "48V 3A Smart Battery Charger featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/48v-3a-smart-battery-charger/1200/900"
-    ],
-    "specs": {
-      "motor": "Rear Hub Power Drive System",
-      "battery": "Lithium-Ion Power Cell",
-      "range": "Up to 35 km",
-      "topSpeed": "25 km/h (AU Compliant)",
-      "brakes": "V-Brake",
-      "weight": "20.0 kg",
-      "payload": "120 kg",
-      "frame": "Reinforced Alloy Frame",
-      "gears": "Multi-Speed Drive System"
-    }
-  },
-  {
     "slug": "kryptonite-evolution-standard-u-lock",
     "name": "Kryptonite Evolution Standard U-Lock",
     "price": 169,
@@ -365,72 +266,6 @@ export const ACCESSORY_ITEMS: Product[] = [
     }
   },
   {
-    "slug": "pannier-waterproof-saddle-bags-set",
-    "name": "Pannier Waterproof Saddle Bags Set",
-    "price": 129,
-    "category": "accessories",
-    "subcategory": "utility-cargo-add-ons",
-    "subSubcategory": "utility-cargo-add-ons",
-    "badge": "Popular",
-    "featured": false,
-    "filters": {
-      "motorType": "Rear Hub",
-      "sensorType": "Throttle",
-      "compliance": "EN15194 Certified",
-      "brakeType": "V-Brake",
-      "batteryRange": "Under 50km"
-    },
-    "description": "Pannier Waterproof Saddle Bags Set is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Pannier Waterproof Saddle Bags Set featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/pannier-waterproof-saddle-bags-set/1200/900"
-    ],
-    "specs": {
-      "motor": "Rear Hub Power Drive System",
-      "battery": "Lithium-Ion Power Cell",
-      "range": "Up to 35 km",
-      "topSpeed": "25 km/h (AU Compliant)",
-      "brakes": "V-Brake",
-      "weight": "20.0 kg",
-      "payload": "120 kg",
-      "frame": "Reinforced Alloy Frame",
-      "gears": "Multi-Speed Drive System"
-    }
-  },
-  {
-    "slug": "samsung-48v-20ah-lithium-replacement-battery-pack",
-    "name": "Samsung 48V 20Ah Lithium Replacement Battery Pack",
-    "price": 899,
-    "category": "accessories",
-    "subcategory": "replacement-batteries-chargers",
-    "subSubcategory": "replacement-batteries-chargers",
-    "badge": "Best Seller",
-    "featured": false,
-    "filters": {
-      "motorType": "Hub Drive",
-      "sensorType": "Cadence Sensor",
-      "compliance": "CE Certified",
-      "brakeType": "V-Brake",
-      "batteryRange": "50km+ Long Range"
-    },
-    "description": "Samsung 48V 20Ah Lithium Replacement Battery Pack is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Samsung 48V 20Ah Lithium Replacement Battery Pack featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/samsung-48v-20ah-lithium-replacement-battery-pack/1200/900"
-    ],
-    "specs": {
-      "motor": "N/A Accessory Item",
-      "battery": "48V 20Ah 960Wh Samsung 21700",
-      "range": "Up to 100 km extra range",
-      "topSpeed": "N/A",
-      "brakes": "N/A",
-      "weight": "4.5 kg",
-      "payload": "N/A",
-      "frame": "Waterproof Key-Lock Case",
-      "gears": "N/A"
-    }
-  },
-  {
     "slug": "bosch-fast-charger-6a-smart-system",
     "name": "Bosch Fast Charger 6A Smart System",
     "price": 249,
@@ -464,39 +299,6 @@ export const ACCESSORY_ITEMS: Product[] = [
     }
   },
   {
-    "slug": "lg-52v-24ah-extended-long-range-battery",
-    "name": "LG 52V 24Ah Extended Long-Range Battery",
-    "price": 1099,
-    "category": "accessories",
-    "subcategory": "replacement-batteries-chargers",
-    "subSubcategory": "replacement-batteries-chargers",
-    "badge": "Premium",
-    "featured": false,
-    "filters": {
-      "motorType": "Hub Drive",
-      "sensorType": "Cadence Sensor",
-      "compliance": "CE Certified",
-      "brakeType": "V-Brake",
-      "batteryRange": "50km+ Long Range"
-    },
-    "description": "LG 52V 24Ah Extended Long-Range Battery is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "LG 52V 24Ah Extended Long-Range Battery featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/lg-52v-24ah-extended-long-range-battery/1200/900"
-    ],
-    "specs": {
-      "motor": "N/A Accessory Item",
-      "battery": "52V 24Ah 1248Wh LG MJ1 Cells",
-      "range": "Up to 120 km extra range",
-      "topSpeed": "N/A",
-      "brakes": "N/A",
-      "weight": "5.8 kg",
-      "payload": "N/A",
-      "frame": "Heavy Duty Hailong Case",
-      "gears": "N/A"
-    }
-  },
-  {
     "slug": "shimano-steps-4a-fast-battery-charger",
     "name": "Shimano STEPS 4A Fast Battery Charger",
     "price": 199,
@@ -526,39 +328,6 @@ export const ACCESSORY_ITEMS: Product[] = [
       "weight": "0.9 kg",
       "payload": "N/A",
       "frame": "OEM Weatherproof Housing",
-      "gears": "N/A"
-    }
-  },
-  {
-    "slug": "universal-48v-3a-smart-charger-xlr",
-    "name": "Universal 48V 3A Smart Charger XLR",
-    "price": 129,
-    "category": "accessories",
-    "subcategory": "replacement-batteries-chargers",
-    "subSubcategory": "replacement-batteries-chargers",
-    "badge": "Sale",
-    "featured": false,
-    "filters": {
-      "motorType": "Hub Drive",
-      "sensorType": "Cadence Sensor",
-      "compliance": "CE Certified",
-      "brakeType": "V-Brake",
-      "batteryRange": "Under 50km"
-    },
-    "description": "Universal 48V 3A Smart Charger XLR is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Universal 48V 3A Smart Charger XLR featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/universal-48v-3a-smart-charger-xlr/1200/900"
-    ],
-    "specs": {
-      "motor": "N/A Accessory Item",
-      "battery": "48V 3A Auto-Cutoff Charger",
-      "range": "Full charge in 4-6 hrs",
-      "topSpeed": "N/A",
-      "brakes": "N/A",
-      "weight": "0.7 kg",
-      "payload": "N/A",
-      "frame": "Anodized Aluminium Cooling Shell",
       "gears": "N/A"
     }
   },
@@ -691,39 +460,6 @@ export const ACCESSORY_ITEMS: Product[] = [
       "weight": "1.6 kg",
       "payload": "N/A",
       "frame": "13mm Hardened Max-Performance Steel",
-      "gears": "N/A"
-    }
-  },
-  {
-    "slug": "gps-smart-tracker-alarm-for-e-bikes",
-    "name": "GPS Smart Tracker Alarm for E-Bikes",
-    "price": 179,
-    "category": "accessories",
-    "subcategory": "security-locks",
-    "subSubcategory": "security-locks",
-    "badge": "New",
-    "featured": false,
-    "filters": {
-      "motorType": "Hub Drive",
-      "sensorType": "Cadence Sensor",
-      "compliance": "CE Certified",
-      "brakeType": "V-Brake",
-      "batteryRange": "Under 50km"
-    },
-    "description": "GPS Smart Tracker Alarm for E-Bikes is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "GPS Smart Tracker Alarm for E-Bikes featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/gps-smart-tracker-alarm-for-e-bikes/1200/900"
-    ],
-    "specs": {
-      "motor": "N/A Accessory Item",
-      "battery": "1000mAh Internal Rechargeable",
-      "range": "120 days standby",
-      "topSpeed": "N/A",
-      "brakes": "N/A",
-      "weight": "0.2 kg",
-      "payload": "N/A",
-      "frame": "Hidden Frame-Mounted IP67 Casing",
       "gears": "N/A"
     }
   },

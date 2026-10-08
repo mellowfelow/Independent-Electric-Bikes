@@ -2,39 +2,6 @@ import type { Product } from '../site';
 
 export const SELFBALANCING_ITEMS: Product[] = [
   {
-    "slug": "inmotion-v11-suspension-euw",
-    "name": "InMotion V11 Suspension EUW",
-    "price": 2899,
-    "category": "self-balancing-ev",
-    "subcategory": "electric-unicycles",
-    "subSubcategory": "electric-unicycles",
-    "badge": "Best Seller",
-    "featured": false,
-    "filters": {
-      "motorType": "Hub Drive",
-      "sensorType": "Gyroscopic",
-      "compliance": "CE Certified",
-      "brakeType": "Regenerative",
-      "batteryRange": "50km+ Long Range"
-    },
-    "description": "InMotion V11 Suspension EUW is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "InMotion V11 Suspension EUW featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/inmotion-v11-suspension-euw/1200/900"
-    ],
-    "specs": {
-      "motor": "Hub Drive Power Drive System",
-      "battery": "Lithium-Ion Power Cell",
-      "range": "Up to 80 km",
-      "topSpeed": "25 km/h (AU Compliant)",
-      "brakes": "Regenerative",
-      "weight": "20.0 kg",
-      "payload": "120 kg",
-      "frame": "Reinforced Alloy Frame",
-      "gears": "Multi-Speed Drive System"
-    }
-  },
-  {
     "slug": "begode-master-pro-high-voltage",
     "name": "Begode Master Pro High Voltage",
     "price": 4899,

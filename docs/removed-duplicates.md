@@ -419,3 +419,27 @@ The removed entries remain in git history (commit before this change) if any nee
 | WowGo Mini 2 Pro Pro 2 | $809 | WowGo Mini 2 Pro |
 | WowGo Mini 2 Pro Pro 3 | $889 | WowGo Mini 2 Pro |
 | WowGo Mini 2 Pro Pro 4 | $969 | WowGo Mini 2 Pro |
+
+---
+
+# Third pass (2026-10-08): duplicate labelling and generic unbranded items
+
+9 more entries removed.
+
+| Removed product | Listed price | Reason |
+|---|---|---|
+| 36V 10Ah Lithium-Ion Replacement Battery | $450 | Generic unbranded lithium pack with no compatibility information |
+| 52V 20Ah High-Capacity Pack | $950 | Generic unbranded lithium pack with no compatibility information |
+| 48V 3A Smart Battery Charger | $110 | Generic unbranded charger (near-duplicate of the Universal 48V charger) |
+| Pannier Waterproof Saddle Bags Set | $129 | Generic unbranded set (branded Ortlieb panniers remain) |
+| Samsung 48V 20Ah Lithium Replacement Battery Pack | $899 | Generic pack labelled with a cell maker, not a battery brand or compatible model |
+| LG 52V 24Ah Extended Long-Range Battery | $1099 | Generic pack labelled with a cell maker, not a battery brand or compatible model |
+| Universal 48V 3A Smart Charger XLR | $129 | Generic unbranded charger; chargers must match the battery, so a "universal" listing is unsafe |
+| GPS Smart Tracker Alarm for E-Bikes | $179 | Generic unbranded tracker with no model or brand |
+| InMotion V11 Suspension EUW | $2899 | Same product as "InMotion V11 Suspension EUC" (EUW and EUC are two names for an electric unicycle), kept the EUC listing |
+
+## Flagged, NOT removed (needs your confirmation)
+
+- **Vallkree Black Cow 500W**: no Vallkree model with this name was found on retailer or manufacturer pages.
+- **Meepo V5 ER Street Shortboard**: sources describe the Meepo V5 only as a longboard; the Longboard listing is kept.
+- **Begode Master Pro High Voltage** vs **Begode Master Pro V2 EUC 134V**: possibly the same wheel under two names.
