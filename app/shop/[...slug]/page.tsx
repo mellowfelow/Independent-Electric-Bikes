@@ -10,6 +10,7 @@ import { ShopClientView } from '@/components/ShopClientView';
 import { ProductClientActions } from '@/components/ProductClientActions';
 import { ProductCard } from '@/components/ProductCard';
 import { CompatibilityPanel } from '@/components/CompatibilityPanel';
+import { relatedProducts } from '@/lib/compat';
 import { isVehicle } from '@/lib/shopFilters';
 import { ShieldCheck, Truck, Bike, Check, Sparkles } from 'lucide-react';
 
@@ -266,7 +267,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>Cross-Catalog Recommendations</span>
                   </span>
-                  <h2 className="text-xl sm:text-2xl font-black text-white mt-1">{isVehicle(product) ? 'Related E-Bikes & Models' : 'More in this range'}</h2>
+                  <h2 className="text-xl sm:text-2xl font-black text-white mt-1">{isVehicle(product) ? 'Compatible Parts & Related Models' : 'Compatible Models & Related Parts'}</h2>
                 </div>
                 <Link href="/shop/" className="text-xs font-bold text-emerald-400 hover:text-emerald-300">
                   Explore Full Catalog ({PRODUCTS.length}) &rarr;
@@ -274,8 +275,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {PRODUCTS.filter((p) => p.category === product.category && p.slug !== product.slug)
-                  .slice(0, 4)
+                {relatedProducts(product, !isVehicle(product))
                   .map((relProduct) => (
                     <ProductCard key={relProduct.slug} product={relProduct} />
                   ))}

@@ -49,3 +49,23 @@ export function fitSummary(part: Product): string | null {
   const first = all[0].name;
   return all.length === 1 ? `Fits ${first}` : `Fits ${first} and ${all.length - 1} more`;
 }
+
+/** Related products for a product page: compatible parts or vehicles first, then more from the same range. */
+export function relatedProducts(product: Product, isPart: boolean, limit = 8): Product[] {
+  const out: Product[] = [];
+  const push = (p: Product) => {
+    if (p.slug !== product.slug && !out.some((o) => o.slug === p.slug)) out.push(p);
+  };
+  if (isPart) {
+    const f = fitsOfPart(product);
+    f?.confirmed.forEach(push);
+    f?.system.forEach(push);
+    PRODUCTS.filter((p) => p.category === product.category && p.subcategory === product.subcategory).forEach(push);
+  } else {
+    partsForVehicle(product).forEach(({ part }) => push(part));
+    PRODUCTS.filter((p) => p.category === product.category && p.subcategory === product.subcategory).forEach(push);
+    PRODUCTS.filter((p) => p.category === product.category).forEach(push);
+  }
+  PRODUCTS.filter((p) => p.category === product.category).forEach(push);
+  return out.slice(0, limit);
+}

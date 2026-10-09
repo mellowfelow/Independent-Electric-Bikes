@@ -354,9 +354,9 @@ export const MASTER_TAXONOMY: MainCategory[] = [
       },
       {
         slug: 'scooter-batteries',
-        name: 'Scooter Batteries',
+        name: 'Scooter, Board & Mobility Batteries',
         path: '/shop/batteries-parts-kits/scooter-batteries',
-        description: 'Replacement packs for performance e-scooters.',
+        description: 'Replacement packs for e-scooters, electric skateboards, hoverboards and mobility scooters.',
       },
       {
         slug: 'scooter-skate-chargers',

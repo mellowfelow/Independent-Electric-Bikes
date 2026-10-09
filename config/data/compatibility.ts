@@ -135,4 +135,39 @@ export const PART_FITS: Record<string, PartFit> = {
   'Shimano SLX RT66 Disc Rotor 180mm': { rule: '180mm rotor. Needs a caliper and adaptor set up for 180mm.' },
   'SwissStop Disc 27E Brake Pads (Shimano/Tektro)': { rule: 'E-bike brake pads for several Shimano and Tektro hydraulic calipers. Match your caliper model before ordering.' },
   'Tektro Mechanical Disc Brake Pads': { rule: 'For Tektro Novela, IOX and Lyra mechanical disc brakes.' },
+  // Batteries for more vehicles (USD sources converted to AUD at 1.43)
+  'Bosch PowerTube 500 Vertical Battery': { system: BOSCH_BIKES, rule: 'Bosch PowerTube 500Wh, vertical mount. Smart System generation: confirm the battery code and mount on your bike.' },
+  'Bosch PowerTube 500 Horizontal Battery (BBP3750)': { system: BOSCH_BIKES, rule: 'Bosch PowerTube 500Wh BBP3750, horizontal mount (Smart System). Confirm your bike takes a horizontal PowerTube.' },
+  'Bosch PowerTube 625 Horizontal Battery': { system: BOSCH_BIKES, rule: 'Bosch PowerTube 625Wh, horizontal mount. Confirm your bike takes a horizontal PowerTube.' },
+  'Specialized U2-710 Battery (Turbo Tero, Vado and Como Gen 2)': {
+    confirmed: ['Specialized Turbo Tero 3.0', 'Specialized Turbo Vado 4.0'],
+    system: ['Specialized Turbo Vado 3.0', 'Specialized Turbo Como 3.0'],
+    rule: 'Specialized says the 710Wh U2 fits all Turbo Tero and second-generation Vado and Como. It does not fit first-generation bikes or the SL range.',
+  },
+  'Lectric XPedition 2.0 Spare Battery': { system: ['Lectric XPedition Dual Battery'], rule: 'Spare pack for the Lectric XPedition 2.0. Confirm your bike generation with us.' },
+  'Aventon Level Replacement Battery 48V 14Ah': {
+    confirmed: ['Aventon Level 3 Step-Through', 'Aventon Level 3 Step-Over'],
+    rule: '48V 14Ah (672Wh) Level pack. Not for the Soltera.2 (36V 360Wh). V1 Level bikes may need a V2 terminal.',
+  },
+  'Fiido C11 and C11 Pro Replacement Battery': {
+    confirmed: ['Fiido C11 Step-Through', 'Fiido C11 Pro Long Range'],
+    rule: 'Current C11 and C11 Pro battery. Older C11 packs with a black switch button are a different version.',
+  },
+  'Brompton Electric Replacement Battery 36V 8.55Ah (Original)': {
+    system: ['Brompton Electric C Line 6-Speed'],
+    rule: 'Original-generation Brompton Electric battery. Works with the original Brompton charger only.',
+  },
+  'Evolve Standard Electric Skateboard Battery': {
+    system: ['Evolve Bamboo GTR Series 2 Street', 'Evolve Carbon GTR Series 2 All-Terrain', 'Evolve Carbon GTR Street Series 2', 'Evolve Hadean Bamboo All-Terrain', 'Evolve Hadean Carbon All-Terrain', 'Evolve Stoke Series 2 Shortboard', 'Evolve GTR Bamboo Series 2 All-Terrain', 'Evolve GTR Bamboo Series 2 Two-in-One', 'Evolve Fusion Bamboo Electric Skateboard', 'Evolve Diablo Bamboo Street'],
+    rule: 'Evolve standard-range pack. Evolve board packs differ by model, so confirm yours with us (we work with an authorised Evolve service centre).',
+  },
+  'Hoverboard 36V 4.4Ah 10S2P Replacement Battery': {
+    system: ['Bullet SX-2500 6.5 Inch Hoverboard', 'Bullet Gen III SX-3000 6.5 Inch Hoverboard', 'Vivid V500 6.5 Inch Street Hoverboard', 'E-Glide 65B Street Hoverboard'],
+    rule: 'Generic 36V 4.4Ah pack for 6.5 inch hoverboards. Match the plug and pack size to your board.',
+  },
+  'Mobility Scooter 12V 35Ah AGM Replacement Battery': { rule: 'Fits by size: 12V 35Ah sealed lead-acid (AGM) mobility scooter battery. Match terminal type and dimensions to your current battery; most scooters use two in series.' },
+  'InMotion V12 Charger 100.8V 2.3A': { confirmed: ['InMotion V12 HT High Torque EUC'], rule: '100.8V 2.3A GX16-5 pin charger for the InMotion V12.' },
+  '100.8V 8A Rapid Charger for Begode EX.N, RS, Sherman and InMotion V12': { confirmed: ['InMotion V12 HT High Torque EUC'], rule: '100.8V 8A rapid charger, GX16-5 pin, for Begode EX.N, RS, Sherman and InMotion V12.' },
+  '84.2V 5A Rapid Charger for KingSong 16X/18XL and InMotion V11/V10F': { confirmed: ['KingSong 16X High-Torque EUW', 'InMotion V11 Suspension EUC'], rule: '84.2V 5A rapid charger for KingSong 16X and 18XL, InMotion V11 and V10F.' },
+  'InMotion V11 18 x 3 CST C-1488 Tyre': { confirmed: ['InMotion V11 Suspension EUC'], rule: '18 x 3 inch tyre for the InMotion V11 (also fits MSP and RS).' },
 };

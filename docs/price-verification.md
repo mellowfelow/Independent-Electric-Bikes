@@ -1,8 +1,8 @@
 # Price verification (checked 2026-10-09)
 
-Prices are AUD, taken from Australian retailer pages found by search. Pages are not always dated, so re-check before promoting. Products have no photo yet (placeholder shown) and no verified specs.
+Prices are AUD from Australian retailer pages unless a note says converted. Converted rows use US$1 = A$1.43 (late-July 2026 mid-market; RBA rate not checked), rounded, with no freight, GST, import duty or margin added: set retail prices before promoting these. Products have no photo yet and no verified specs.
 
-| Product | Price | Retailer | Note |
+| Product | Price | Source | Note |
 |---|---|---|---|
 | Fatboy DNA V3 Performance E-Bike | $2490 | Twelve Board Store |  |
 | Fatboy Harlem V3 Ultra E-Bike | $3890 | Twelve Board Store |  |
@@ -84,14 +84,43 @@ Prices are AUD, taken from Australian retailer pages found by search. Pages are 
 | Quad Lock Stem/Handlebar Bike Mount | $35 | Highside | $34.95 |
 | Quad Lock Out Front Bike Mount | $50 | Locally | $49.99 |
 | Quad Lock Out Front Mount Pro | $75 | Locally / Trek AU | $74.99 |
+| Shimano STEPS BT-E8035 Integrated Down Tube Battery 504Wh | $860 | Pushys | Pushys listings $859.99 to $949.99; BikeExchange $875 to $1,199 |
+| Shimano STEPS BT-E8010 Down Tube Battery 504Wh | $750 | 99 Bikes | sale, was $899 |
+| Shimano STEPS EC-E6002 Battery Charger | $99 | 99 Bikes | sale, was $109.99 |
+| Bosch 4A Standard Charger Smart System (BPC3400) | $199 | 99 Bikes | PedL listed $195 (sold out) |
+| Giant EnergyPak Smart Charger | $284 | Giant Australia | RRP |
+| Segway-Ninebot Fast Charger for MAX Scooters | $150 | Segway Australia | $149.95; page about four years old |
+| Original Ninebot by Segway Scooter Charger 42V 1.7A | $100 | PedL | $99.99 |
+| Multi-Voltage Charger for Kaabo, Dualtron, Apollo and Vsett Scooters | $99 | PedL | 48V/52V/60V/72V outputs; match pack voltage |
+| Evolve 5A Charger for Hadean, Diablo and Renegade | $171 | Twelve Board Store |  |
+| Onewheel Pint Car Charger | $150 | Twelve Board Store | $149.99 sale |
+| Stacyc 18V Smart Battery Charger | $219 | Stacyc Australia |  |
+| Evolve Replacement Trucks (Hadean, GT, GTR) | $72 | Twelve Board Store |  |
+| Exway Riot 15mm Replacement Belt (Pair) | $35 | Twelve Board Store |  |
+| Stacyc Replacement Throttle for 12eDrive and 16eDrive | $139 | Stacyc Australia | RRP |
+| Xiaomi Scooter 8.5 x 2.0 Inner Tube with Bent Valve | $20 | PedL | $19.99 |
+| Entity Inner Tube 700c | $7 | Reid Cycles | $6.99; Presta and Schrader options |
+| Freedom to Ride Schrader Tube 27.5 x 2.1-2.5 | $10 | 99 Bikes | $9.90 |
+| Specialized U2-710 Battery (Turbo Tero, Vado and Como Gen 2) | $1716 | Specialized USA | US$1,199.99 converted at 1.43 |
+| Lectric XPedition 2.0 Spare Battery | $608 | Lectric | US$425 converted at 1.43 |
+| Aventon Level Replacement Battery 48V 14Ah | $715 | Aventon (list via Treefort Bikes) | US$499.99 converted at 1.43; Treefort sale US$373.99 |
+| Fiido C11 and C11 Pro Replacement Battery | $382 | Fiido | US$267 converted at 1.43; new version only |
+| Brompton Electric Replacement Battery 36V 8.55Ah (Original) | $1143 | Clever Cycles USA | US$799 incl. tax converted at 1.43; original charger only |
+| Evolve Standard Electric Skateboard Battery | $763 | Twelve Board Store | 'from' price AUD |
+| Hoverboard 36V 4.4Ah 10S2P Replacement Battery | $109 | Amazon AU | AUD; generic pack, 6.5 inch boards |
+| Mobility Scooter 12V 35Ah AGM Replacement Battery | $164 | Walmart USA | US$114.99 converted at 1.43 |
+| InMotion V12 Charger 100.8V 2.3A | $153 | ewheels USA | US$107 converted at 1.43 |
+| 100.8V 8A Rapid Charger for Begode EX.N, RS, Sherman and InMotion V12 | $285 | ewheels USA | US$199 converted at 1.43 |
+| 84.2V 5A Rapid Charger for KingSong 16X/18XL and InMotion V11/V10F | $215 | ewheels USA | US$150 converted at 1.43 |
+| InMotion V11 18 x 3 CST C-1488 Tyre | $76 | ewheels USA | US$53 converted at 1.43 |
 
 ## Existing prices corrected
 - Stacyc 12eDrive 1099 -> 1299 (stacyc.com.au)
 - Segway Ninebot F3 Pro 1199 -> 1398 (Harvey Norman)
 - Ortlieb Back-Roller Classic 289 -> 199 (99 Bikes)
 
-## Not added: no verified Australian price found
-Electric unicycles (King Song, Begode, InMotion), Tern/Urban Arrow/Riese & Muller cargo bikes, Fiido D11, Dahon e-bikes, e-gravel bikes, Tern Vektron, Bosch SmartphoneGrip, 2-bike e-bike car racks, Knog (non-light), KMC chains, Shimano cassettes, hub-motor conversion kits, 250W BBS01B kit (only an undated deal), Pride/Shoprider/Invacare mobility scooters (only price ranges), Gotrax/Hover-1 hoverboards, Stacyc 18eDrive, Sherco/Zippi balance bikes, Bosch PowerTube 625 Vertical, Onewheel GT (conflicting prices), sold-out Kaabo Wolf Warrior 11+/GT.
+## No battery listed: no price or fit found
+NCM (forum prices only, 2021), DiroDi, Mokwheel, Eunorau (used listing only), Super73 (only the unconfirmed PRO 750 pack), Engwe (EUR only), Tenways (fixed in frame), Ampler (workshop-fitted, no price), Rad Power (CAD only), Pedego and Blix (no official price), Giant EnergyPak 500 (only fits MY17-19 bikes), Specialized SL and Levo packs (no current price), Segway/Xiaomi scooter packs, Kaabo, Apollo, Inokim and other scooter packs, Meepo/Backfire/WowGo/Tynee boards, Stacyc batteries, Razor, Thumpstar, Sur-Ron kids bikes, Begode/KingSong 100V+ batteries, mobility scooter packs matched to specific Pride/Shoprider/Merits/Drive models.
 
 ## Existing catalogue
 The other ~340 prices were not re-verified in this pass.
