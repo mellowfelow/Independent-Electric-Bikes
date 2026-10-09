@@ -170,4 +170,16 @@ export const PART_FITS: Record<string, PartFit> = {
   '100.8V 8A Rapid Charger for Begode EX.N, RS, Sherman and InMotion V12': { confirmed: ['InMotion V12 HT High Torque EUC'], rule: '100.8V 8A rapid charger, GX16-5 pin, for Begode EX.N, RS, Sherman and InMotion V12.' },
   '84.2V 5A Rapid Charger for KingSong 16X/18XL and InMotion V11/V10F': { confirmed: ['KingSong 16X High-Torque EUW', 'InMotion V11 Suspension EUC'], rule: '84.2V 5A rapid charger for KingSong 16X and 18XL, InMotion V11 and V10F.' },
   'InMotion V11 18 x 3 CST C-1488 Tyre': { confirmed: ['InMotion V11 Suspension EUC'], rule: '18 x 3 inch tyre for the InMotion V11 (also fits MSP and RS).' },
+  // Replacement batteries above A$350 for brands that had none (USD at 1.43, EUR at 1.63)
+  'Eunorau Universal 48V 15Ah Secondary Battery': { system: ["Eunorau META26 X2.0","Eunorau E-Fat-Step Pro","Eunorau G30 Max Cargo","Eunorau E-Fat-Step 20","Eunorau 1000W FAT-HD All-Terrain Fat Tyre E-Bike"], rule: 'Universal 48V 15Ah add-on pack with RA4, Bullet and XT60-F ports. Eunorau lists it for the FAT-AWD 3.0 and G20-Cargo; confirm the port and mount for your model.' },
+  'Mokwheel Basalt Series Battery 48V 19.6Ah': { confirmed: ['Mokwheel Basalt Step-Thru', 'Mokwheel Basalt Deluxe ST'], rule: '48V 19.6Ah removable pack for the Mokwheel Basalt, Scoria, Obsidian and Onyx series.' },
+  'DiroDi Rover G5-6 Battery 52V 20Ah': { confirmed: ['DiroDi Rover Plus Gen 6 Step-Thru'], rule: '52V 20Ah pack for DiroDi Rover generations 5 and 6.' },
+  'DiroDi Rover Pro/Dual Battery 52V 20Ah': { confirmed: ['DiroDi Rover Gen 6 1000W Dual'], rule: '52V 20Ah pack for the DiroDi Rover Pro and Dual.' },
+  'DiroDi Rover Gen 1-4 Battery 48V 17.4Ah': { system: ['DiroDi Rover Plus Low-Step 48V', 'DiroDi Rover Plus 750W'], rule: '48V 17.4Ah pack for DiroDi Rover generations 1 to 4. Check your generation and voltage first (Gen 1 250W bikes are 36V).' },
+  'DiroDi Rover Gen 1-4 Battery 48V 15.6Ah': { system: ['DiroDi Rover Plus Low-Step 48V', 'DiroDi Rover Plus 750W'], rule: '48V 15.6Ah pack for DiroDi Rover generations 1 to 4. Check your generation and voltage first (Gen 1 250W bikes are 36V).' },
+  'Rad Power Safe Shield Semi-Integrated Battery 14Ah': { confirmed: ['Rad Power RadWagon 4 Pro'], system: ['Rad Power RadExpand 5'], rule: '48V 14Ah (589 to 672Wh) Rad battery. It only works with Rad\'s updated charger, not older Rad or third-party chargers.' },
+  'Pedego Long Range Cargo Battery 48V 20Ah': { system: ['Pedego Stretch Cargo'], rule: 'Genuine UL 2271 replacement for the Pedego Cargo. Confirm your battery voltage and connector.' },
+  'Bosch PowerTube 750 Horizontal Battery (BBP3770)': { system: BOSCH_BIKES, rule: 'Bosch PowerTube 750Wh BBP3770, horizontal mount (Smart System). Mainly for cargo and touring bikes that take a 750Wh pack: confirm yours does.' },
+  'Giant EnergyPak 500 Top Load Battery': { rule: "Giant lists it for MY17-18 e-bike models and MY19 FastRoad E+ and Quick E. Check your model year with a Giant dealer." },
+  'Engwe EP-2 Pro Battery 13Ah': { confirmed: ['Engwe EP-2 Pro Fat Folder'], rule: '13Ah battery for the Engwe EP-2 Pro.' },
 };

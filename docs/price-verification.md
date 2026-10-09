@@ -1,6 +1,6 @@
 # Price verification (checked 2026-10-09)
 
-Prices are AUD from Australian retailer pages unless a note says converted. Converted rows use US$1 = A$1.43 (late-July 2026 mid-market; RBA rate not checked), rounded, with no freight, GST, import duty or margin added: set retail prices before promoting these. Products have no photo yet and no verified specs.
+Prices are AUD from Australian retailer pages unless a note says converted. Converted rows use US$1 = A$1.43 and EUR 1 = A$1.63 (late-July 2026 mid-market; RBA rate not checked), rounded, with no freight, GST, import duty or margin added: set retail prices before promoting these. Products have no photo yet and no verified specs.
 
 | Product | Price | Source | Note |
 |---|---|---|---|
@@ -113,19 +113,30 @@ Prices are AUD from Australian retailer pages unless a note says converted. Conv
 | 100.8V 8A Rapid Charger for Begode EX.N, RS, Sherman and InMotion V12 | $285 | ewheels USA | US$199 converted at 1.43 |
 | 84.2V 5A Rapid Charger for KingSong 16X/18XL and InMotion V11/V10F | $215 | ewheels USA | US$150 converted at 1.43 |
 | InMotion V11 18 x 3 CST C-1488 Tyre | $76 | ewheels USA | US$53 converted at 1.43 |
+| Eunorau Universal 48V 15Ah Secondary Battery | $699 | Eunorau Australia | AUD; RA4/Bullet/XT60-F ports |
+| Mokwheel Basalt Series Battery 48V 19.6Ah | $858 | Mokwheel | US$599.99 converted at 1.43 (sale US$299.99 while stock lasts) |
+| DiroDi Rover G5-6 Battery 52V 20Ah | $890 | DiroDi Australia | AUD; listed 'not available for sale' at check |
+| DiroDi Rover Pro/Dual Battery 52V 20Ah | $950 | DiroDi Australia | AUD; listed 'not available for sale' at check |
+| DiroDi Rover Gen 1-4 Battery 48V 17.4Ah | $790 | DiroDi Australia | AUD; listed 'not available for sale' at check |
+| DiroDi Rover Gen 1-4 Battery 48V 15.6Ah | $730 | DiroDi Australia | AUD; listed 'not available for sale' at check |
+| Rad Power Safe Shield Semi-Integrated Battery 14Ah | $714 | Rad Power Bikes USA | US$499 converted at 1.43; needs updated Rad charger |
+| Pedego Long Range Cargo Battery 48V 20Ah | $1572 | Pedego USA | US$1,099 converted at 1.43 |
+| Bosch PowerTube 750 Horizontal Battery (BBP3770) | $1599 | 99 Bikes | AUD; pre-order at check |
+| Giant EnergyPak 500 Top Load Battery | $1199 | Giant Australia | AUD RRP; charger sold separately |
+| Engwe EP-2 Pro Battery 13Ah | $487 | Engwe | EUR 299 converted at 1.63 |
 
 ## Existing prices corrected
 - Stacyc 12eDrive 1099 -> 1299 (stacyc.com.au)
 - Segway Ninebot F3 Pro 1199 -> 1398 (Harvey Norman)
 - Ortlieb Back-Roller Classic 289 -> 199 (99 Bikes)
 
-## No battery listed: no price or fit found
-NCM (forum prices only, 2021), DiroDi, Mokwheel, Eunorau (used listing only), Super73 (only the unconfirmed PRO 750 pack), Engwe (EUR only), Tenways (fixed in frame), Ampler (workshop-fitted, no price), Rad Power (CAD only), Pedego and Blix (no official price), Giant EnergyPak 500 (only fits MY17-19 bikes), Specialized SL and Levo packs (no current price), Segway/Xiaomi scooter packs, Kaabo, Apollo, Inokim and other scooter packs, Meepo/Backfire/WowGo/Tynee boards, Stacyc batteries, Razor, Thumpstar, Sur-Ron kids bikes, Begode/KingSong 100V+ batteries, mobility scooter packs matched to specific Pride/Shoprider/Merits/Drive models.
+## Still no battery: no price or fit found
+NCM (2021 forum prices only), Super73 (PRO 750 pack fit unconfirmed for S2/RX), Tenways (fixed in frame), Ampler (workshop-fitted, no price), Blix (rival-blog price only), Lectric other models, Specialized SL/Levo/Creo packs (no current price), Segway/Xiaomi scooter packs, Kaabo, Apollo, Inokim and other scooter packs, Meepo/Backfire/WowGo/Tynee boards, Stacyc batteries, Razor, Thumpstar, Sur-Ron kids bikes, Begode/KingSong 100V+ batteries, mobility packs matched to specific Pride/Shoprider/Merits/Drive models.
 
 ## Existing catalogue
 The other ~340 prices were not re-verified in this pass.
 
-## Products priced above $350 (43 of 109)
+## Products priced above $350 (54 of 120)
 
 | Product | Price | Category / subcategory | Source | Note |
 |---|---|---|---|---|
@@ -152,23 +163,34 @@ The other ~340 prices were not re-verified in this pass.
 | Onewheel Pint | $1799 | electric-skateboards / onewheel-style-boards | Twelve Board Store | listing date unconfirmed |
 | Specialized U2-710 Battery (Turbo Tero, Vado and Como Gen 2) | $1716 | batteries-parts-kits / ebike-batteries | Specialized USA | US$1,199.99 converted at 1.43 |
 | Segway Ninebot MAX G3 E-Scooter | $1699 | electric-scooters / long-range-electric-scooters | JB Hi-Fi | Harvey Norman lists $1,598 |
+| Bosch PowerTube 750 Horizontal Battery (BBP3770) | $1599 | batteries-parts-kits / ebike-batteries | 99 Bikes | AUD; pre-order at check |
+| Pedego Long Range Cargo Battery 48V 20Ah | $1572 | batteries-parts-kits / ebike-batteries | Pedego USA | US$1,099 converted at 1.43 |
 | Bosch PowerTube 625 Horizontal Battery | $1399 | batteries-parts-kits / ebike-batteries | 99 Bikes |  |
 | Equipmed Ultra-Lightweight Folding Mobility Scooter | $1299 | mobility-scooters / travel-mobility-scooters | Amazon AU |  |
 | Bosch PowerTube 500 Horizontal Battery (BBP3750) | $1299 | batteries-parts-kits / ebike-batteries | 99 Bikes |  |
 | Exway Wave Riot Plus Headlight Shortboard | $1262 | electric-skateboards / mini-electric-skateboards | Twelve Board Store | was $1,393 |
 | Mamba Nomad Origins 20 Inch Folding E-Bike | $1249 | electric-bikes / foldable-electric-bikes | PedL |  |
+| Giant EnergyPak 500 Top Load Battery | $1199 | batteries-parts-kits / ebike-batteries | Giant Australia | AUD RRP; charger sold separately |
 | Segway Ninebot F3 E-Scooter | $1198 | electric-scooters / commuter-electric-scooters | Harvey Norman |  |
 | Bafang BBSHD 48V 1000W Mid-Drive Conversion Kit | $1150 | batteries-parts-kits / mid-drive-conversion-kits | PedL | off-road/private land only |
 | Bosch PowerTube 500 Vertical Battery | $1149 | batteries-parts-kits / ebike-batteries | 99 Bikes | BikeExchange lists $999 |
 | Brompton Electric Replacement Battery 36V 8.55Ah (Original) | $1143 | batteries-parts-kits / ebike-batteries | Clever Cycles USA | US$799 incl. tax converted at 1.43; original charger only |
 | Equipmed SmartPacer+ Folding Mobility Scooter | $1099 | mobility-scooters / travel-mobility-scooters | Amazon AU |  |
 | Exway Flex 2 Pro Electric Skateboard | $1097 | electric-skateboards / street-electric-skateboards | Twelve Board Store | was $1,296 |
+| DiroDi Rover Pro/Dual Battery 52V 20Ah | $950 | batteries-parts-kits / ebike-batteries | DiroDi Australia | AUD; listed 'not available for sale' at check |
 | Easybike 20 Inch Folding E-Bike 36V 8Ah | $899 | electric-bikes / foldable-electric-bikes | PedL |  |
+| DiroDi Rover G5-6 Battery 52V 20Ah | $890 | batteries-parts-kits / ebike-batteries | DiroDi Australia | AUD; listed 'not available for sale' at check |
 | Shimano STEPS BT-E8035 Integrated Down Tube Battery 504Wh | $860 | batteries-parts-kits / ebike-batteries | Pushys | Pushys listings $859.99 to $949.99; BikeExchange $875 to $1,199 |
+| Mokwheel Basalt Series Battery 48V 19.6Ah | $858 | batteries-parts-kits / ebike-batteries | Mokwheel | US$599.99 converted at 1.43 (sale US$299.99 while stock lasts) |
 | Bafang BBS02B 48V 750W Mid-Drive Conversion Kit | $849 | batteries-parts-kits / mid-drive-conversion-kits | PedL | out of stock at check; off-road/private land only |
+| DiroDi Rover Gen 1-4 Battery 48V 17.4Ah | $790 | batteries-parts-kits / ebike-batteries | DiroDi Australia | AUD; listed 'not available for sale' at check |
 | Evolve Standard Electric Skateboard Battery | $763 | batteries-parts-kits / scooter-batteries | Twelve Board Store | 'from' price AUD |
 | Shimano STEPS BT-E8010 Down Tube Battery 504Wh | $750 | batteries-parts-kits / ebike-batteries | 99 Bikes | sale, was $899 |
+| DiroDi Rover Gen 1-4 Battery 48V 15.6Ah | $730 | batteries-parts-kits / ebike-batteries | DiroDi Australia | AUD; listed 'not available for sale' at check |
 | Aventon Level Replacement Battery 48V 14Ah | $715 | batteries-parts-kits / ebike-batteries | Aventon (list via Treefort Bikes) | US$499.99 converted at 1.43; Treefort sale US$373.99 |
+| Rad Power Safe Shield Semi-Integrated Battery 14Ah | $714 | batteries-parts-kits / ebike-batteries | Rad Power Bikes USA | US$499 converted at 1.43; needs updated Rad charger |
+| Eunorau Universal 48V 15Ah Secondary Battery | $699 | batteries-parts-kits / ebike-batteries | Eunorau Australia | AUD; RA4/Bullet/XT60-F ports |
 | Lectric XPedition 2.0 Spare Battery | $608 | batteries-parts-kits / ebike-batteries | Lectric | US$425 converted at 1.43 |
+| Engwe EP-2 Pro Battery 13Ah | $487 | batteries-parts-kits / ebike-batteries | Engwe | EUR 299 converted at 1.63 |
 | Fiido C11 and C11 Pro Replacement Battery | $382 | batteries-parts-kits / ebike-batteries | Fiido | US$267 converted at 1.43; new version only |
 | Vivid V500 6.5 Inch Street Hoverboard | $360 | self-balancing-ev / hoverboards | Scooter Hut | $359.99, was $449.99 |
