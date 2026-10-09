@@ -445,3 +445,12 @@ The removed entries remain in git history (commit before this change) if any nee
 | Vallkree Black Cow 500W | $4699 | No Vallkree model with this name was found on retailer or manufacturer pages |
 | Begode Master Pro High Voltage | $4899 | Probably the same wheel as "Begode Master Pro V2 EUC 134V", which is kept |
 | Meepo V5 ER Street Shortboard | $799 | Sources describe the Meepo V5 only as a longboard; the Longboard listing is kept |
+
+---
+
+# Fourth pass: products with no photo
+
+| Removed product | Listed price | Reason |
+|---|---|---|
+| Vallkree Scrambler 250W | $4199 | No product photo supplied |
+| Burmax E-Balance 16 Pro | $999 | No product photo supplied |

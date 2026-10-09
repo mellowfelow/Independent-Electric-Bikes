@@ -4556,39 +4556,6 @@ export const EBIKE_ITEMS: Product[] = [
     }
   },
   {
-    "slug": "vallkree-scrambler-250w",
-    "name": "Vallkree Scrambler 250W",
-    "price": 4199,
-    "category": "electric-bikes",
-    "subcategory": "fat-tyre-lifestyle-ebikes",
-    "subSubcategory": "moped-style-ebikes",
-    "badge": "Premium",
-    "featured": false,
-    "filters": {
-      "motorType": "Rear Hub",
-      "sensorType": "Cadence Sensor",
-      "compliance": "EN15194 Certified",
-      "brakeType": "Hydraulic Disc",
-      "batteryRange": "50km+ Long Range"
-    },
-    "description": "Vallkree Scrambler 250W is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Vallkree Scrambler 250W featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/vallkree-scrambler-250w/1200/900"
-    ],
-    "specs": {
-      "motor": "250W Dapu Rear Hub Engine",
-      "battery": "48V 15Ah Samsung Lithium",
-      "range": "Up to 70 km",
-      "topSpeed": "25 km/h (AU Compliant)",
-      "brakes": "Tektro Hydraulic Disc Brakes",
-      "weight": "33.0 kg",
-      "payload": "140 kg",
-      "frame": "Custom Australian Designed Alloy Scrambler",
-      "gears": "Shimano Acera 7-Speed"
-    }
-  },
-  {
     "slug": "murf-the-alpha-cargo-cruiser",
     "name": "Murf The Alpha Cargo Cruiser",
     "price": 4499,

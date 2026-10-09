@@ -662,39 +662,6 @@ export const KIDS_ITEMS: Product[] = [
     }
   },
   {
-    "slug": "burmax-e-balance-16-pro",
-    "name": "Burmax E-Balance 16 Pro",
-    "price": 999,
-    "category": "kids-off-road-ev",
-    "subcategory": "electric-balance-bikes",
-    "subSubcategory": "electric-balance-bikes",
-    "badge": "Sale",
-    "featured": false,
-    "filters": {
-      "motorType": "Rear Hub",
-      "sensorType": "Throttle",
-      "compliance": "Off-Road Private Land",
-      "brakeType": "Mechanical Disc",
-      "batteryRange": "Under 50km"
-    },
-    "description": "Burmax E-Balance 16 Pro is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Burmax E-Balance 16 Pro featuring high torque motor, heavy-duty frame, and long-range battery.",
-    "images": [
-      "https://picsum.photos/seed/burmax-e-balance-16-pro/1200/900"
-    ],
-    "specs": {
-      "motor": "350W Brushless Motor",
-      "battery": "24V 5.8Ah Removable",
-      "range": "Up to 60 minutes run time",
-      "topSpeed": "20 km/h (Child Speed Modes)",
-      "brakes": "Rear Mechanical Disc",
-      "weight": "10.2 kg",
-      "payload": "45 kg",
-      "frame": "Aluminium Alloy Balance Frame",
-      "gears": "3 Speed Settings"
-    }
-  },
-  {
     "slug": "mondraker-grommy-16-kids-e-bike",
     "name": "Mondraker Grommy 16 Kids E-Bike",
     "price": 2299,
