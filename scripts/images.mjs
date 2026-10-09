@@ -27,7 +27,7 @@ const kb = (n) => Math.round(n / 1024);
 
 function loadProducts() {
   const out = [];
-  for (const f of fs.readdirSync('config/data').filter((f) => f.endsWith('.ts') && f !== 'verified.ts' && f !== 'productImages.ts')) {
+  for (const f of fs.readdirSync('config/data').filter((f) => f.endsWith('.ts') && !['verified.ts', 'productImages.ts', 'accessoryRedirects.ts', 'compatibility.ts'].includes(f))) {
     const t = fs.readFileSync(`config/data/${f}`, 'utf8').replace(/\r\n/g, '\n');
     JSON.parse(t.slice(t.indexOf('= [') + 2, t.lastIndexOf(']') + 1)).forEach((p) => out.push({ slug: p.slug, name: p.name, category: p.category }));
   }
@@ -214,6 +214,9 @@ if (fs.existsSync(catDir)) {
     fs.writeFileSync(`${OUT}/categories/${slug}.webp`, await encodeWebp(p, 140));
   }
 }
+
+// The accessories tile is shared by the merged parts and safety categories.
+if (fs.existsSync(`${OUT}/categories/accessories.webp`)) for (const n of ['batteries-parts-kits', 'safety-security-carry']) fs.copyFileSync(`${OUT}/categories/accessories.webp`, `${OUT}/categories/${n}.webp`);
 
 console.log(`product photos matched: ${Object.keys(manifest).length}`);
 if (unmatched.length) console.log(`NOT matched to a product (check the name or whether it was a removed duplicate):\n  ${unmatched.join('\n  ')}`);
