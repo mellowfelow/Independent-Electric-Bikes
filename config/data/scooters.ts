@@ -1,6 +1,6 @@
 import type { Product } from '../site';
 
-export const SCOOTER_ITEMS: Product[] =  [
+export const SCOOTER_ITEMS: Product[] = [
   {
     "slug": "segway-ninebot-e2-pro-kickscooter",
     "name": "Segway-Ninebot E2 Pro KickScooter",

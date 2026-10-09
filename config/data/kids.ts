@@ -1,6 +1,6 @@
 import type { Product } from '../site';
 
-export const KIDS_ITEMS: Product[] =  [
+export const KIDS_ITEMS: Product[] = [
   {
     "slug": "ampd-bros-lil-rippa-16-kids",
     "name": "Ampd Bros Lil Rippa 16\" Kids",

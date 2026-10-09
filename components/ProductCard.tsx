@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Plus, Minus, ShoppingBag, Check, Zap } from 'lucide-react';
 import { Product, SITE } from '@/config/site';
 import { money } from '@/lib/order';
+import { fitSummary } from '@/lib/compat';
 
 interface ProductCardProps {
   /** Load this card's photo immediately (use for the first row of a grid). */
@@ -19,6 +20,7 @@ export function ProductCard({ product, className = '', priority = false }: Produ
   const [quantity, setQuantity] = useState(1);
   const [cartQty, setCartQty] = useState(0);
   const [added, setAdded] = useState(false);
+  const fit = fitSummary(product);
 
   // Sync with cart state in localStorage
   useEffect(() => {
@@ -136,6 +138,7 @@ export function ProductCard({ product, className = '', priority = false }: Produ
             <Link href={productUrl}>{product.name}</Link>
           </h3>
           <p className="text-[11px] text-slate-400 mt-1 line-clamp-1 leading-relaxed">{productCategoryLabel(product)}</p>
+          {fit && <p className="text-[11px] font-bold text-emerald-400 mt-1 line-clamp-1">{fit}</p>}
         </div>
 
         {/* Crypto Discount Badge */}

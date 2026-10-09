@@ -1,6 +1,6 @@
 import type { Product } from '../site';
 
-export const ACCESSORY_ITEMS: Product[] =  [
+export const ACCESSORY_ITEMS: Product[] = [
   {
     "slug": "kryptonite-evolution-standard-u-lock",
     "name": "Kryptonite Evolution Standard U-Lock",

@@ -9,6 +9,8 @@ import { JsonLd } from '@/components/JsonLd';
 import { ShopClientView } from '@/components/ShopClientView';
 import { ProductClientActions } from '@/components/ProductClientActions';
 import { ProductCard } from '@/components/ProductCard';
+import { CompatibilityPanel } from '@/components/CompatibilityPanel';
+import { isVehicle } from '@/lib/shopFilters';
 import { ShieldCheck, Truck, Bike, Check, Sparkles } from 'lucide-react';
 
 export async function generateStaticParams() {
@@ -196,6 +198,9 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
               </div>
             </div>
 
+            <CompatibilityPanel product={product} isPart={!isVehicle(product)} />
+
+            {isVehicle(product) && (
             <div className="mt-16 bg-slate-900 border border-slate-800 rounded-2xl p-8">
               <h2 className="text-xl font-extrabold text-white mb-6 border-b border-slate-800 pb-4 flex items-center gap-2">
                 <Bike className="w-5 h-5 text-emerald-400" />
@@ -251,6 +256,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
                 </p>
               )}
             </div>
+            )}
 
             {/* Related Products Grid */}
             <div className="mt-16">
@@ -260,7 +266,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>Cross-Catalog Recommendations</span>
                   </span>
-                  <h2 className="text-xl sm:text-2xl font-black text-white mt-1">Related E-Bikes & Models</h2>
+                  <h2 className="text-xl sm:text-2xl font-black text-white mt-1">{isVehicle(product) ? 'Related E-Bikes & Models' : 'More in this range'}</h2>
                 </div>
                 <Link href="/shop/" className="text-xs font-bold text-emerald-400 hover:text-emerald-300">
                   Explore Full Catalog ({PRODUCTS.length}) &rarr;

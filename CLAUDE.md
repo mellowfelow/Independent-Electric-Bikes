@@ -51,3 +51,6 @@ Product photos, hero slides and category tiles are generated from your "Website 
 Ranking lives in `lib/search.ts` (all words must match; synonyms, typo tolerance, price intent such as "under $2000"). It powers `/search`, the nav autocomplete (`components/SearchBox.tsx`) and `/api/search`. Add new spelling aliases to `PHRASES` there.
 
 Product photos are written as `<slug>.<hash>.webp` plus `-800` and `-400` renditions (content-hashed so they are cached for a year, `next.config.ts`). Components use `lib/productImage.ts` (`productSrcSet`, `thumbSrc`) - never hard-code a photo path.
+
+## Compatibility (parts <-> vehicles)
+`config/data/compatibility.ts` lists which batteries, chargers and parts suit which vehicles (`PART_FITS`, keyed by part name; vehicle names must match exactly). Two levels: `confirmed` (a manufacturer/retailer page names the model) and `system` (same drive system, customer must confirm). Only add a fit when a source states it; fit-by-size parts (tyres, tubes, rotors, pads) have a rule and no model list. `lib/compat.ts` resolves it for `components/CompatibilityPanel.tsx` (part pages list vehicles, vehicle pages list parts) and the card line in `ProductCard`.

@@ -1,6 +1,6 @@
 import type { Product } from '../site';
 
-export const SKATEBOARD_ITEMS: Product[] =  [
+export const SKATEBOARD_ITEMS: Product[] = [
   {
     "slug": "evolve-carbon-gtr-street-series-2",
     "name": "Evolve Carbon GTR Street Series 2",

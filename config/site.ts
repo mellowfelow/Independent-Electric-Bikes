@@ -359,6 +359,18 @@ export const MASTER_TAXONOMY: MainCategory[] = [
         description: 'Replacement packs for performance e-scooters.',
       },
       {
+        slug: 'scooter-skate-chargers',
+        name: 'Scooter, Skate & Kids Chargers',
+        path: '/shop/batteries-parts-kits/scooter-skate-chargers',
+        description: 'Chargers matched to scooters, electric skateboards, Onewheel and kids e-balance bikes.',
+      },
+      {
+        slug: 'scooter-skate-parts',
+        name: 'Scooter, Skate & Kids Parts',
+        path: '/shop/batteries-parts-kits/scooter-skate-parts',
+        description: 'Trucks, belts, throttles and inner tubes for scooters, skateboards and kids bikes.',
+      },
+      {
         slug: 'tyres-tubes',
         name: 'Tyres & Tubes',
         path: '/shop/batteries-parts-kits/tyres-tubes',
