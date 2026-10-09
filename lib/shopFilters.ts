@@ -95,7 +95,8 @@ export function facetLabel(key: FacetKey, value: string): string {
   return value;
 }
 
-export const isVehicle = (p: Product) => p.category !== 'accessories';
+const NON_VEHICLE = new Set(['batteries-chargers', 'parts-components', 'conversion-kits', 'safety-gear', 'locks-security', 'bags-racks-carry']);
+export const isVehicle = (p: Product) => !NON_VEHICLE.has(p.category);
 
 function matchesFacets(p: Product, state: FilterState, skip?: FacetKey): boolean {
   for (const f of FACETS) {

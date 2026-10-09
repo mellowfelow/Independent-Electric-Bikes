@@ -1,4 +1,5 @@
 import type {NextConfig} from 'next';
+import { ACCESSORY_REDIRECTS } from './config/data/accessoryRedirects';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -19,6 +20,9 @@ const nextConfig: NextConfig = {
     ],
   },
   output: 'standalone',
+  async redirects() {
+    return ACCESSORY_REDIRECTS.map((r) => ({ ...r, permanent: true }));
+  },
   async headers() {
     // Next injects small inline bootstrap scripts, so script-src needs 'unsafe-inline' (no nonce pipeline on static pages).
     const csp = [

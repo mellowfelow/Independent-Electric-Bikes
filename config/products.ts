@@ -5,6 +5,7 @@ import { SELFBALANCING_ITEMS } from './data/selfbalancing';
 import { KIDS_ITEMS } from './data/kids';
 import { MOBILITY_ITEMS } from './data/mobility';
 import { ACCESSORY_ITEMS } from './data/accessories';
+import { EXPANSION_ITEMS } from './data/expansion';
 
 export const EBIKE_PRODUCTS = [
   ...EBIKE_ITEMS,
@@ -14,4 +15,5 @@ export const EBIKE_PRODUCTS = [
   ...KIDS_ITEMS,
   ...MOBILITY_ITEMS,
   ...ACCESSORY_ITEMS,
+  ...EXPANSION_ITEMS,
 ];

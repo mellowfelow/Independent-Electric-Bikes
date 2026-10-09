@@ -1,6 +1,6 @@
 import type { Product } from '../site';
 
-export const SCOOTER_ITEMS: Product[] = [
+export const SCOOTER_ITEMS: Product[] =  [
   {
     "slug": "segway-ninebot-e2-pro-kickscooter",
     "name": "Segway-Ninebot E2 Pro KickScooter",
@@ -70,7 +70,7 @@ export const SCOOTER_ITEMS: Product[] = [
   {
     "slug": "segway-ninebot-f3-pro",
     "name": "Segway Ninebot F3 Pro",
-    "price": 1199,
+    "price": 1398,
     "category": "electric-scooters",
     "subcategory": "commuter-electric-scooters",
     "subSubcategory": "commuter-electric-scooters",

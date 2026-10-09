@@ -1,6 +1,6 @@
 import type { Product } from '../site';
 
-export const KIDS_ITEMS: Product[] = [
+export const KIDS_ITEMS: Product[] =  [
   {
     "slug": "ampd-bros-lil-rippa-16-kids",
     "name": "Ampd Bros Lil Rippa 16\" Kids",
@@ -499,7 +499,7 @@ export const KIDS_ITEMS: Product[] = [
   {
     "slug": "stacyc-12edrive-balance-bike",
     "name": "Stacyc 12eDrive Balance Bike",
-    "price": 1099,
+    "price": 1299,
     "category": "kids-off-road-ev",
     "subcategory": "electric-balance-bikes",
     "subSubcategory": "electric-balance-bikes",

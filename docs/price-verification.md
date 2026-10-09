@@ -1,0 +1,97 @@
+# Price verification (checked 2026-10-09)
+
+Prices are AUD, taken from Australian retailer pages found by search. Pages are not always dated, so re-check before promoting. Products have no photo yet (placeholder shown) and no verified specs.
+
+| Product | Price | Retailer | Note |
+|---|---|---|---|
+| Fatboy DNA V3 Performance E-Bike | $2490 | Twelve Board Store |  |
+| Fatboy Harlem V3 Ultra E-Bike | $3890 | Twelve Board Store |  |
+| Fatboy Bagus V3 Ultra E-Bike | $4490 | Twelve Board Store |  |
+| Fatboy Scrambler V2 E-Bike | $3590 | Twelve Board Store |  |
+| Ampd Bros Ace X Pro E-Bike | $4190 | Ampd Bros |  |
+| Eunorau 1000W FAT-HD All-Terrain Fat Tyre E-Bike | $3099 | PedL | sold out at check (pre-order); off-road/private land |
+| Fatfish OG 2.0 Fat Tyre E-Bike | $2499 | Velocity Frequent Flyer (Ride Electric) | was $2,999 |
+| Fatfish Biggie Fat Tyre E-Bike | $2999 | Velocity Frequent Flyer (Ride Electric) |  |
+| Super73 ZX Special Edition | $4850 | PedL | 'from' price; throttle models private land only |
+| Super73 R Adventure Special Edition | $7849 | PedL | top of PedL Super73 range; private land only |
+| Vamos Doblez Foldable E-Bike | $3995 | Vamos Bikes | Harvey Norman lists $3,295 online-only |
+| Brompton Electric C Line Explore 12-Speed Mid | $7290 | Omafiets | sale price, was $7,580 |
+| Mamba Nomad Origins 20 Inch Folding E-Bike | $1249 | PedL |  |
+| Easybike 20 Inch Folding E-Bike 36V 8Ah | $899 | PedL |  |
+| Segway Ninebot MAX G3 E-Scooter | $1699 | JB Hi-Fi | Harvey Norman lists $1,598 |
+| Segway Ninebot F3 E-Scooter | $1198 | Harvey Norman |  |
+| Kaabo Mantis 10 Plus V2 Dual Motor | $1999 | Scooter Hut | was $2,699 |
+| Kaabo Wolf Warrior X Plus (2026) | $2399 | Scooter Hut / PedL | was $3,399 |
+| Exway Flex 2 Pro Electric Skateboard | $1097 | Twelve Board Store | was $1,296 |
+| Exway Wave Riot Plus Headlight Shortboard | $1262 | Twelve Board Store | was $1,393 |
+| Evolve GTR Bamboo Series 2 All-Terrain | $1899 | Twelve Board Store | 'from' price |
+| Evolve GTR Bamboo Series 2 Two-in-One | $2039 | Twelve Board Store | 'from' price |
+| Evolve Fusion Bamboo Electric Skateboard | $2299 | Twelve Board Store | 'from' price |
+| Evolve Diablo Bamboo Street | $2849 | Twelve Board Store | 'from' price |
+| Onewheel Pint | $1799 | Twelve Board Store | listing date unconfirmed |
+| Onewheel XR Classic | $3805 | Twelve Board Store | sale, was $4,113 |
+| Bullet SX-2500 6.5 Inch Hoverboard | $199 | BIG W | $199 to $255 by colour |
+| Bullet Gen III SX-3000 6.5 Inch Hoverboard | $259 | BIG W |  |
+| Vivid V500 6.5 Inch Street Hoverboard | $360 | Scooter Hut | $359.99, was $449.99 |
+| E-Glide 65B Street Hoverboard | $319 | Scooter Hut | was $399 |
+| Bullet KART-X Hoverboard Go-Kart Attachment | $92 | Harvey Norman | online only |
+| Equipmed SmartPacer+ Folding Mobility Scooter | $1099 | Amazon AU |  |
+| Equipmed Ultra-Lightweight Folding Mobility Scooter | $1299 | Amazon AU |  |
+| Bosch PowerTube 500 Vertical Battery | $1149 | 99 Bikes | BikeExchange lists $999 |
+| Bosch PowerTube 500 Horizontal Battery (BBP3750) | $1299 | 99 Bikes |  |
+| Bosch PowerTube 625 Horizontal Battery | $1399 | 99 Bikes |  |
+| Dualtron Thunder 60V 35Ah Replacement Battery | $4099 | E-Scooters Australia (PedL) |  |
+| Schwalbe Marathon E-Plus 27.5 x 2.0 Wire Bead Tyre | $80 | Pushys | $79.95 |
+| Schwalbe Marathon Plus 700C Wire Bead Tyre | $60 | Pushys | $59.99 to $69.99 by size |
+| Schwalbe Marathon Plus Tour Reflective 700C Tyre | $80 | Pushys | $79.95 |
+| Schwalbe Marathon Plus E-25 Hybrid Tyre 700 x 35c | $80 | 99 Bikes |  |
+| Tektro 180mm Disc Brake Rotor | $23 | Reid Cycles | $22.99 |
+| Shimano Deore RT56 6-Bolt Disc Rotor 160mm | $27 | 99 Bikes |  |
+| Shimano SLX RT66 Disc Rotor 180mm | $45 | 99 Bikes |  |
+| SwissStop Disc 27E Brake Pads (Shimano/Tektro) | $35 | Pushys | $34.99 |
+| Tektro Mechanical Disc Brake Pads | $18 | 99 Bikes |  |
+| Bafang BBS02B 48V 750W Mid-Drive Conversion Kit | $849 | PedL | out of stock at check; off-road/private land only |
+| Bafang BBSHD 48V 1000W Mid-Drive Conversion Kit | $1150 | PedL | off-road/private land only |
+| Giro Escape MIPS Helmet | $200 | 99 Bikes | was $249.99 |
+| Bell Gage MIPS Road/Urban Helmet | $140 | Pushys | $139.99 |
+| Giro Syntax MIPS Helmet | $113 | 99 Bikes | was $219.99 |
+| Kask Valegro Road Helmet | $224 | Pushys | $223.99 small sizes, $274.99 largest |
+| Knog Blinder 600/Plus 20 Light Set | $109 | 99 Bikes |  |
+| Knog Blinder 700/Plus 20 USB Light Set | $145 | 99 Bikes |  |
+| Knog Blinder 900/Mid Cobber 170 Light Set | $214 | 99 Bikes |  |
+| Knog Blinder Mini Square 50/30 Light Set | $75 | Pushys | $74.99 |
+| Moon Rigel Pro and Helix Sense 1000/150 Light Set | $155 | 99 Bikes | $154.99 |
+| Moon Rigel Lite 500 and Helix Lite 100 Light Set | $115 | 99 Bikes |  |
+| Hiplok Lite Wearable Chain Lock 75cm | $100 | Pushys | $99.99; 99 Bikes shows conflicting $99 to $112 |
+| Hiplok Original Chain Lock 85cm | $140 | 99 Bikes |  |
+| Abus Steel-O-Chain 5805 Key Lock 75cm | $55 | 99 Bikes |  |
+| Hiplok Switch Folding Lock | $115 | Pushys | $114.99 |
+| Abus Bordo Lite 6055 Folding Lock 60cm | $89 | 99 Bikes |  |
+| Kryptonite KryptoLok 685 Folding Lock 85cm | $115 | 99 Bikes |  |
+| Abus Bordo U-Grip 5700 Key Lock 80cm | $115 | 99 Bikes |  |
+| Hiplok DX D-Lock with 2m Cable | $135 | Pushys | $134.99 |
+| Abus 402 U-Lock 230mm | $75 | 99 Bikes | 'from' price |
+| Kryptonite KryptoLok Series 2 Mini-7 U-Lock | $98 | Pushys | $97.99 |
+| Kryptonite KryptoLok Combination U-Lock | $89 | 99 Bikes |  |
+| Thule Pack n Pedal Tour Pannier Rack | $199 | 99 Bikes | listing about 15 months old |
+| Topeak Explorer Tubular Rear Rack | $50 | Reid Cycles | $49.99 |
+| Topeak Explorer 29er Pannier Rack (Non-Disc) | $75 | 99 Bikes |  |
+| Topeak Explorer 2.0 Rack with Disc Mount | $80 | 99 Bikes |  |
+| Topeak Uni Supertourist 2.0 Rack with Disc Mount | $89 | 99 Bikes |  |
+| Topeak DryBag 20L Single Pannier | $119 | Pushys | $118.99 |
+| Ortlieb Back-Roller Plus QL2.1 Pannier Pair | $230 | Pushys | $229.99 |
+| Quad Lock Bike Mount Pro | $35 | BikeNow | $34.95 |
+| Quad Lock Stem/Handlebar Bike Mount | $35 | Highside | $34.95 |
+| Quad Lock Out Front Bike Mount | $50 | Locally | $49.99 |
+| Quad Lock Out Front Mount Pro | $75 | Locally / Trek AU | $74.99 |
+
+## Existing prices corrected
+- Stacyc 12eDrive 1099 -> 1299 (stacyc.com.au)
+- Segway Ninebot F3 Pro 1199 -> 1398 (Harvey Norman)
+- Ortlieb Back-Roller Classic 289 -> 199 (99 Bikes)
+
+## Not added: no verified Australian price found
+Electric unicycles (King Song, Begode, InMotion), Tern/Urban Arrow/Riese & Muller cargo bikes, Fiido D11, Dahon e-bikes, e-gravel bikes, Tern Vektron, Bosch SmartphoneGrip, 2-bike e-bike car racks, Knog (non-light), KMC chains, Shimano cassettes, hub-motor conversion kits, 250W BBS01B kit (only an undated deal), Pride/Shoprider/Invacare mobility scooters (only price ranges), Gotrax/Hover-1 hoverboards, Stacyc 18eDrive, Sherco/Zippi balance bikes, Bosch PowerTube 625 Vertical, Onewheel GT (conflicting prices), sold-out Kaabo Wolf Warrior 11+/GT.
+
+## Existing catalogue
+The other ~340 prices were not re-verified in this pass.

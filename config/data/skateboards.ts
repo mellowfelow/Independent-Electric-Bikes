@@ -1,6 +1,6 @@
 import type { Product } from '../site';
 
-export const SKATEBOARD_ITEMS: Product[] = [
+export const SKATEBOARD_ITEMS: Product[] =  [
   {
     "slug": "evolve-carbon-gtr-street-series-2",
     "name": "Evolve Carbon GTR Street Series 2",
@@ -798,8 +798,8 @@ export const SKATEBOARD_ITEMS: Product[] = [
     "name": "Onewheel GT S-Series All-Terrain",
     "price": 4299,
     "category": "electric-skateboards",
-    "subcategory": "all-terrain-electric-skateboards",
-    "subSubcategory": "all-terrain-electric-skateboards",
+    "subcategory": "onewheel-style-boards",
+    "subSubcategory": "onewheel-style-boards",
     "badge": "Premium",
     "featured": false,
     "filters": {
@@ -996,8 +996,8 @@ export const SKATEBOARD_ITEMS: Product[] = [
     "name": "Onewheel Pint X All-Terrain",
     "price": 2299,
     "category": "electric-skateboards",
-    "subcategory": "all-terrain-electric-skateboards",
-    "subSubcategory": "all-terrain-electric-skateboards",
+    "subcategory": "onewheel-style-boards",
+    "subSubcategory": "onewheel-style-boards",
     "badge": "Popular",
     "featured": false,
     "filters": {
