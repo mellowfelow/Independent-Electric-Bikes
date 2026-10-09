@@ -19,6 +19,7 @@ export const PRODUCT_IMAGES: Record<string, string> = {
   'aventon-soltera-2-lightweight': '/images/products/aventon-soltera-2-lightweight.b218804a.webp',
   'aventon-soltera-2-special-edition': '/images/products/aventon-soltera-2-special-edition.75e9f608.webp',
   'aventon-soltera-2-step-through': '/images/products/aventon-soltera-2-step-through.363b062b.webp',
+  'backfire-hammer-s-all-terrain': '/images/products/backfire-hammer-s-all-terrain.6b0b1007.webp',
   'backfire-mini-v2-cruiser': '/images/products/backfire-mini-v2-cruiser.67e1256f.webp',
   'backfire-ranger-x3-pneumatic': '/images/products/backfire-ranger-x3-pneumatic.e4b489ec.webp',
   'backfire-zealot-s-street': '/images/products/backfire-zealot-s-street.3d7969ea.webp',
