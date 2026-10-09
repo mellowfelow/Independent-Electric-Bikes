@@ -124,3 +124,51 @@ NCM (forum prices only, 2021), DiroDi, Mokwheel, Eunorau (used listing only), Su
 
 ## Existing catalogue
 The other ~340 prices were not re-verified in this pass.
+
+## Products priced above $350 (43 of 109)
+
+| Product | Price | Category / subcategory | Source | Note |
+|---|---|---|---|---|
+| Super73 R Adventure Special Edition | $7849 | electric-bikes / fat-tyre-lifestyle-ebikes | PedL | top of PedL Super73 range; private land only |
+| Brompton Electric C Line Explore 12-Speed Mid | $7290 | electric-bikes / foldable-electric-bikes | Omafiets | sale price, was $7,580 |
+| Super73 ZX Special Edition | $4850 | electric-bikes / fat-tyre-lifestyle-ebikes | PedL | 'from' price; throttle models private land only |
+| Fatboy Bagus V3 Ultra E-Bike | $4490 | electric-bikes / fat-tyre-lifestyle-ebikes | Twelve Board Store |  |
+| Ampd Bros Ace X Pro E-Bike | $4190 | electric-bikes / fat-tyre-lifestyle-ebikes | Ampd Bros |  |
+| Dualtron Thunder 60V 35Ah Replacement Battery | $4099 | batteries-parts-kits / scooter-batteries | E-Scooters Australia (PedL) |  |
+| Vamos Doblez Foldable E-Bike | $3995 | electric-bikes / foldable-electric-bikes | Vamos Bikes | Harvey Norman lists $3,295 online-only |
+| Fatboy Harlem V3 Ultra E-Bike | $3890 | electric-bikes / fat-tyre-lifestyle-ebikes | Twelve Board Store |  |
+| Onewheel XR Classic | $3805 | electric-skateboards / onewheel-style-boards | Twelve Board Store | sale, was $4,113 |
+| Fatboy Scrambler V2 E-Bike | $3590 | electric-bikes / fat-tyre-lifestyle-ebikes | Twelve Board Store |  |
+| Eunorau 1000W FAT-HD All-Terrain Fat Tyre E-Bike | $3099 | electric-bikes / fat-tyre-lifestyle-ebikes | PedL | sold out at check (pre-order); off-road/private land |
+| Fatfish Biggie Fat Tyre E-Bike | $2999 | electric-bikes / fat-tyre-lifestyle-ebikes | Velocity Frequent Flyer (Ride Electric) |  |
+| Evolve Diablo Bamboo Street | $2849 | electric-skateboards / street-electric-skateboards | Twelve Board Store | 'from' price |
+| Fatfish OG 2.0 Fat Tyre E-Bike | $2499 | electric-bikes / fat-tyre-lifestyle-ebikes | Velocity Frequent Flyer (Ride Electric) | was $2,999 |
+| Fatboy DNA V3 Performance E-Bike | $2490 | electric-bikes / fat-tyre-lifestyle-ebikes | Twelve Board Store |  |
+| Kaabo Wolf Warrior X Plus (2026) | $2399 | electric-scooters / long-range-electric-scooters | Scooter Hut / PedL | was $3,399 |
+| Evolve Fusion Bamboo Electric Skateboard | $2299 | electric-skateboards / street-electric-skateboards | Twelve Board Store | 'from' price |
+| Evolve GTR Bamboo Series 2 Two-in-One | $2039 | electric-skateboards / all-terrain-electric-skateboards | Twelve Board Store | 'from' price |
+| Kaabo Mantis 10 Plus V2 Dual Motor | $1999 | electric-scooters / long-range-electric-scooters | Scooter Hut | was $2,699 |
+| Evolve GTR Bamboo Series 2 All-Terrain | $1899 | electric-skateboards / all-terrain-electric-skateboards | Twelve Board Store | 'from' price |
+| Onewheel Pint | $1799 | electric-skateboards / onewheel-style-boards | Twelve Board Store | listing date unconfirmed |
+| Specialized U2-710 Battery (Turbo Tero, Vado and Como Gen 2) | $1716 | batteries-parts-kits / ebike-batteries | Specialized USA | US$1,199.99 converted at 1.43 |
+| Segway Ninebot MAX G3 E-Scooter | $1699 | electric-scooters / long-range-electric-scooters | JB Hi-Fi | Harvey Norman lists $1,598 |
+| Bosch PowerTube 625 Horizontal Battery | $1399 | batteries-parts-kits / ebike-batteries | 99 Bikes |  |
+| Equipmed Ultra-Lightweight Folding Mobility Scooter | $1299 | mobility-scooters / travel-mobility-scooters | Amazon AU |  |
+| Bosch PowerTube 500 Horizontal Battery (BBP3750) | $1299 | batteries-parts-kits / ebike-batteries | 99 Bikes |  |
+| Exway Wave Riot Plus Headlight Shortboard | $1262 | electric-skateboards / mini-electric-skateboards | Twelve Board Store | was $1,393 |
+| Mamba Nomad Origins 20 Inch Folding E-Bike | $1249 | electric-bikes / foldable-electric-bikes | PedL |  |
+| Segway Ninebot F3 E-Scooter | $1198 | electric-scooters / commuter-electric-scooters | Harvey Norman |  |
+| Bafang BBSHD 48V 1000W Mid-Drive Conversion Kit | $1150 | batteries-parts-kits / mid-drive-conversion-kits | PedL | off-road/private land only |
+| Bosch PowerTube 500 Vertical Battery | $1149 | batteries-parts-kits / ebike-batteries | 99 Bikes | BikeExchange lists $999 |
+| Brompton Electric Replacement Battery 36V 8.55Ah (Original) | $1143 | batteries-parts-kits / ebike-batteries | Clever Cycles USA | US$799 incl. tax converted at 1.43; original charger only |
+| Equipmed SmartPacer+ Folding Mobility Scooter | $1099 | mobility-scooters / travel-mobility-scooters | Amazon AU |  |
+| Exway Flex 2 Pro Electric Skateboard | $1097 | electric-skateboards / street-electric-skateboards | Twelve Board Store | was $1,296 |
+| Easybike 20 Inch Folding E-Bike 36V 8Ah | $899 | electric-bikes / foldable-electric-bikes | PedL |  |
+| Shimano STEPS BT-E8035 Integrated Down Tube Battery 504Wh | $860 | batteries-parts-kits / ebike-batteries | Pushys | Pushys listings $859.99 to $949.99; BikeExchange $875 to $1,199 |
+| Bafang BBS02B 48V 750W Mid-Drive Conversion Kit | $849 | batteries-parts-kits / mid-drive-conversion-kits | PedL | out of stock at check; off-road/private land only |
+| Evolve Standard Electric Skateboard Battery | $763 | batteries-parts-kits / scooter-batteries | Twelve Board Store | 'from' price AUD |
+| Shimano STEPS BT-E8010 Down Tube Battery 504Wh | $750 | batteries-parts-kits / ebike-batteries | 99 Bikes | sale, was $899 |
+| Aventon Level Replacement Battery 48V 14Ah | $715 | batteries-parts-kits / ebike-batteries | Aventon (list via Treefort Bikes) | US$499.99 converted at 1.43; Treefort sale US$373.99 |
+| Lectric XPedition 2.0 Spare Battery | $608 | batteries-parts-kits / ebike-batteries | Lectric | US$425 converted at 1.43 |
+| Fiido C11 and C11 Pro Replacement Battery | $382 | batteries-parts-kits / ebike-batteries | Fiido | US$267 converted at 1.43; new version only |
+| Vivid V500 6.5 Inch Street Hoverboard | $360 | self-balancing-ev / hoverboards | Scooter Hut | $359.99, was $449.99 |
