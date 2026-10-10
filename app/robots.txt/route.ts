@@ -18,7 +18,7 @@ export function GET() {
     'Content-Signal: search=yes, ai-input=yes, ai-train=no',
     '',
     '# AI Crawlers',
-    ...AI_BOTS.flatMap((b) => [`User-agent: ${b}`, 'Allow: /', '']),
+    ...AI_BOTS.flatMap((b) => [`User-agent: ${b}`, 'Allow: /', ...DISALLOW.map((p) => `Disallow: ${p}`), '']),
     '# Agent Resources',
     `# llms.txt: ${origin}/llms.txt`,
     `# API Catalog: ${origin}/.well-known/api-catalog`,

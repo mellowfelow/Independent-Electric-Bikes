@@ -100,7 +100,7 @@ export function Nav() {
                             onMouseEnter={() => setActiveCategorySlug(cat.slug)}
                             className={`w-full text-left px-3 py-2.5 rounded-xl font-bold text-xs flex items-center justify-between transition-all ${
                               isActive
-                                ? 'bg-emerald-600 text-white shadow-md'
+                                ? 'bg-emerald-700 text-white shadow-md'
                                 : 'text-slate-300 hover:bg-slate-800 hover:text-white'
                             }`}
                           >

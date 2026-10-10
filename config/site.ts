@@ -70,13 +70,13 @@ export const REPLY = {
     {
       id: 'bank-transfer',
       label: 'Direct Bank Transfer (EFT)',
-      opening: 'Please transfer exactly {amount} AUD for Order #{ref} to our Australian business bank account below.',
+      opening: 'Please transfer exactly {amount} for Order #{ref} to our Australian business bank account below.',
       closing: 'Include Order #{ref} as your payment reference. Bank transfers clear within 1-2 business hours.',
     },
     {
       id: 'payid',
       label: 'PayID / Osko (Instant Fast Payments)',
-      opening: 'Transfer {amount} AUD instantly via PayID for Order #{ref}.',
+      opening: 'Transfer {amount} instantly via PayID for Order #{ref}.',
       closing: 'Instant clearing via Australian Osko bank network.',
     },
     {

@@ -4,13 +4,15 @@ import { notFound } from 'next/navigation';
 import { PRODUCTS, MASTER_TAXONOMY, SITE, SHOP } from '@/config/site';
 import { money } from '@/lib/order';
 import { productSrcSet } from '@/lib/productImage';
-import { brandNameOf, categoryMetaDescription, categoryTitle, productDescription, productMetaDescription, productTitle, resolveCategory } from '@/lib/catalog';
+import { brandOf, brandNameOf, productTrail, categoryMetaDescription, categoryTitle, productDescription, productMetaDescription, productTitle, resolveCategory } from '@/lib/catalog';
 import { JsonLd } from '@/components/JsonLd';
 import { ShopClientView } from '@/components/ShopClientView';
 import { ProductClientActions } from '@/components/ProductClientActions';
 import { ProductCard } from '@/components/ProductCard';
 import { CompatibilityPanel } from '@/components/CompatibilityPanel';
 import { relatedProducts } from '@/lib/compat';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { CategoryLinks } from '@/components/CategoryLinks';
 import { isVehicle } from '@/lib/shopFilters';
 import { ShieldCheck, Truck, Bike, Check, Sparkles } from 'lucide-react';
 
@@ -107,28 +109,16 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
       },
     };
 
-    const breadcrumbSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `https://${SITE.domain}/` },
-        { '@type': 'ListItem', position: 2, name: 'Shop', item: `https://${SITE.domain}/shop/` },
-        { '@type': 'ListItem', position: 3, name: product.name, item: `https://${SITE.domain}/shop/${product.category}/${product.slug}/` },
-      ],
-    };
+    const trail = [...productTrail(product), { name: product.name, href: `/shop/${product.category}/${product.slug}/` }];
+    const brand = brandOf(product);
 
     return (
       <>
         <JsonLd data={productSchema} />
-        <JsonLd data={breadcrumbSchema} />
 
         <div className="bg-slate-950 text-slate-100 min-h-screen py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav className="text-xs text-slate-400 mb-6 flex items-center gap-2">
-              <Link href="/" className="hover:text-emerald-400">Home</Link> /
-              <Link href="/shop/" className="hover:text-emerald-400">Shop</Link> /
-              <span className="text-slate-200 font-bold truncate">{product.name}</span>
-            </nav>
+            <Breadcrumbs items={trail} />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               <div className="lg:col-span-7 space-y-4">
@@ -148,7 +138,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
 
               <div className="lg:col-span-5 space-y-6">
                 <div>
-                  <span className="inline-block px-3 py-1 bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 font-extrabold text-[11px] uppercase tracking-wider rounded-md mb-2">
+                  <span className="inline-block px-3 py-1 bg-emerald-700/20 border border-emerald-500/30 text-emerald-400 font-extrabold text-[11px] uppercase tracking-wider rounded-md mb-2">
                     {product.badge}
                   </span>
                   <h1 className="text-2xl sm:text-3xl font-black text-white">{product.name}</h1>
@@ -158,6 +148,13 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed border-y border-slate-800 py-4">
                   {productDescription(product)}
                 </p>
+
+                <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs font-bold">
+                  {trail.slice(2, -1).map((t) => (
+                    <li key={t.href}><Link href={t.href} className="inline-block py-2 text-emerald-400 hover:text-emerald-300">More in {t.name} &rarr;</Link></li>
+                  ))}
+                  {brand && <li><Link href={`/brands/${brand.slug}/`} className="inline-block py-2 text-emerald-400 hover:text-emerald-300">More from {brand.name} &rarr;</Link></li>}
+                </ul>
 
                 {/* Filter Pills */}
                 {product.filters && (
@@ -297,21 +294,15 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
     notFound();
   }
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://${SITE.domain}/` },
-      { '@type': 'ListItem', position: 2, name: 'Shop', item: `https://${SITE.domain}/shop/` },
-      { '@type': 'ListItem', position: 3, name: mainCategory.name, item: `https://${SITE.domain}/shop/${mainCategory.slug}/` },
-      ...(categoryNode.sub ? [{ '@type': 'ListItem', position: 4, name: categoryNode.name, item: `https://${SITE.domain}/shop/${slugSegments.join('/')}/` }] : []),
-    ],
-  };
+  const catTrail = [
+    { name: 'Home', href: '/' },
+    { name: 'Shop', href: '/shop/' },
+    { name: mainCategory.name, href: `/shop/${mainCategory.slug}/` },
+    ...(categoryNode.sub ? [{ name: categoryNode.name, href: `/shop/${slugSegments.join('/')}/` }] : []),
+  ];
 
   return (
     <>
-      <JsonLd data={breadcrumbSchema} />
-
       <div className="bg-slate-950 text-white min-h-screen pb-20">
         <div className="bg-slate-900 border-b border-slate-800 py-12 px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-2">
@@ -322,6 +313,11 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">{categoryNode.description}</p>
           </div>
         </div>
+
+        <div className="mx-auto max-w-[1600px] px-4 pt-6 sm:px-6 lg:px-8">
+          <Breadcrumbs items={catTrail} />
+        </div>
+        <CategoryLinks categorySlug={mainCategory.slug} subSlug={categoryNode.sub?.slug} />
 
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <ShopClientView initialCategory={targetSubcategorySlug || targetCategorySlug} />

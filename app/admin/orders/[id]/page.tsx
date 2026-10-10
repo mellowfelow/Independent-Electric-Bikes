@@ -109,7 +109,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
         <div className="flex flex-wrap items-center gap-2">
           <Link
             href={`/admin/send-payment-email/?orderId=${order.id}`}
-            className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl flex items-center gap-2 transition-all shadow"
+            className="px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl flex items-center gap-2 transition-all shadow"
           >
             <Mail className="w-4 h-4" />
             <span>Send Payment Email / WA</span>

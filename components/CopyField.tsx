@@ -33,8 +33,8 @@ export function CopyField({ label, value }: CopyFieldProps) {
           aria-label={`Copy ${label}`}
           className={`flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-bold transition-all ${
             copied
-              ? 'bg-emerald-600 text-white'
-              : 'bg-slate-200 hover:bg-emerald-600 hover:text-white dark:bg-slate-800 dark:hover:bg-emerald-600 text-slate-700 dark:text-slate-300'
+              ? 'bg-emerald-700 text-white'
+              : 'bg-slate-200 hover:bg-emerald-700 hover:text-white dark:bg-slate-800 dark:hover:bg-emerald-700 text-slate-700 dark:text-slate-300'
           }`}
         >
           {copied ? (

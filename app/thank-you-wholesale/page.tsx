@@ -20,7 +20,7 @@ export default function ThankYouWholesalePage() {
           Thank you for your commercial e-bike fleet inquiry. Our commercial sales manager will review your specs and contact you with wholesale pricing tiers.
         </p>
         <div className="pt-4">
-          <Link href="/" className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl inline-block">
+          <Link href="/" className="px-6 py-3 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl inline-block">
             Return to Store
           </Link>
         </div>

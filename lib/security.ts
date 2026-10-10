@@ -56,3 +56,23 @@ export async function rateLimited(req: NextRequest, bucket: string, limit: numbe
   hit.count += 1;
   return hit.count > limit;
 }
+
+/** Read-only check: has this IP already used up its failures in the bucket? (No increment.) */
+export async function isLockedOut(req: NextRequest, bucket: string, limit: number): Promise<boolean> {
+  const key = `rl:${bucket}:${clientIp(req)}`;
+  if (redis) {
+    try {
+      const n = Number((await redis.get<number>(key)) || 0);
+      return n >= limit;
+    } catch {
+      /* fall through to memory */
+    }
+  }
+  const hit = memoryHits.get(key);
+  return !!hit && hit.reset >= Date.now() && hit.count >= limit;
+}
+
+/** Counts one failure against the bucket for `windowSec` seconds. */
+export async function recordFailure(req: NextRequest, bucket: string, windowSec: number): Promise<void> {
+  await rateLimited(req, bucket, Number.MAX_SAFE_INTEGER, windowSec);
+}

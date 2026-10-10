@@ -40,7 +40,7 @@ export default function BlogIndexPage() {
             {POSTS.map((post) => (
               <article key={post.slug} className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col group hover:border-emerald-500/50 transition-all">
                 <div className="aspect-[16/9] overflow-hidden bg-slate-950">
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <img src={post.image} alt={post.title} width={2000} height={1125} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                   <div>

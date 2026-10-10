@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { preload } from 'react-dom';
 import { Bike, ShieldCheck, Zap, Truck, ArrowRight, CheckCircle2, ChevronRight, Award, Calendar, Clock, BookOpen } from 'lucide-react';
 import { SITE, PRODUCTS, CATEGORIES, BRAND, FAQ, POSTS } from '@/config/site';
 import { money } from '@/lib/order';
@@ -9,6 +10,10 @@ import { ProductCard } from '@/components/ProductCard';
 import { HomeHero } from '@/components/HomeHero';
 
 export default function HomePage() {
+  // The first hero slide is the largest paint: hint it early, with the right file for each screen size.
+  preload('/images/home/hero-1-m.webp', { as: 'image', fetchPriority: 'high', media: '(max-width: 767px)' });
+  preload('/images/home/hero-1.webp', { as: 'image', fetchPriority: 'high', media: '(min-width: 768px)' });
+
   const hasPhoto = (p: (typeof PRODUCTS)[number]) => !p.images[0].endsWith('.svg');
   const featuredProducts = [...PRODUCTS.filter((p) => p.featured)].sort((a, b) => Number(hasPhoto(b)) - Number(hasPhoto(a))).slice(0, 8);
   const latestPosts = POSTS.slice(0, 3);
@@ -120,7 +125,7 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   href="/shop/"
-                  className="px-7 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm transition-all shadow-xl shadow-emerald-950/50 hover:scale-105 flex items-center gap-2"
+                  className="px-7 py-4 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-extrabold text-sm transition-all shadow-xl shadow-emerald-950/50 hover:scale-105 flex items-center gap-2"
                 >
                   <span>Explore E-Bike Range</span>
                   <ArrowRight className="w-4 h-4" />
@@ -164,7 +169,7 @@ export default function HomePage() {
                 <Truck className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-white text-xs">Express Freight VIC & AU</h4>
+                <p className="font-bold text-white text-xs">Express Freight VIC & AU</p>
                 <p className="text-[11px] text-slate-400">Free courier shipping over $1,500 AUD</p>
               </div>
             </div>
@@ -174,7 +179,7 @@ export default function HomePage() {
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-white text-xs">2-Year VYRON Warranty</h4>
+                <p className="font-bold text-white text-xs">2-Year VYRON Warranty</p>
                 <p className="text-[11px] text-slate-400">Full Australian local service & parts</p>
               </div>
             </div>
@@ -184,7 +189,7 @@ export default function HomePage() {
                 <Zap className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-white text-xs">Samsung & Bafang Drive</h4>
+                <p className="font-bold text-white text-xs">Samsung & Bafang Drive</p>
                 <p className="text-[11px] text-slate-400">80Nm hill climbing torque tech</p>
               </div>
             </div>
@@ -194,7 +199,7 @@ export default function HomePage() {
                 <Award className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-white text-xs">ABN Registered 2017</h4>
+                <p className="font-bold text-white text-xs">ABN Registered 2017</p>
                 <p className="text-[11px] text-slate-400">VYRON Industries Pty Ltd VIC</p>
               </div>
             </div>
@@ -225,6 +230,11 @@ export default function HomePage() {
                 <img
                   src={cat.image}
                   alt={cat.name}
+                  width={1200}
+                  height={900}
+                  loading="lazy"
+                  fetchPriority="low"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
@@ -290,9 +300,13 @@ export default function HomePage() {
                   <img
                     src={post.image}
                     alt={post.title}
+                    width={2000}
+                    height={1125}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 left-3 bg-emerald-600 text-white font-extrabold text-[10px] uppercase tracking-wider px-3 py-1 rounded-md shadow">
+                  <span className="absolute top-3 left-3 bg-emerald-700 text-white font-extrabold text-[10px] uppercase tracking-wider px-3 py-1 rounded-md shadow">
                     {post.category}
                   </span>
                 </div>

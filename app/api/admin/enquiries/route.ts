@@ -3,7 +3,7 @@ import { checkAdminPasscode } from '@/lib/adminAuth';
 import { listEnquiries } from '@/lib/enquiryStore';
 
 export async function GET(req: NextRequest) {
-  const authErr = checkAdminPasscode(req);
+  const authErr = await checkAdminPasscode(req);
   if (authErr) return authErr;
 
   const enquiries = await listEnquiries();

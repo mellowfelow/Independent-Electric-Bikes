@@ -212,7 +212,7 @@ export default function CheckoutPage() {
             <p className="text-sm text-slate-400 mb-6">You need at least one electric bike or accessory in your cart to proceed with checkout.</p>
             <Link
               href="/shop/"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-extrabold transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-700 hover:bg-emerald-600 text-white rounded-xl text-xs font-extrabold transition-all shadow-lg"
             >
               <span>Explore E-Bikes Catalog</span>
               <ArrowRight className="w-4 h-4" />
@@ -226,7 +226,7 @@ export default function CheckoutPage() {
               {/* Step 1: Customer Details */}
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
                 <div className="flex items-center gap-3 pb-3 border-b border-slate-800">
-                  <div className="w-8 h-8 rounded-full bg-emerald-600 text-white font-extrabold text-sm flex items-center justify-center shadow-md">
+                  <div className="w-8 h-8 rounded-full bg-emerald-700 text-white font-extrabold text-sm flex items-center justify-center shadow-md">
                     1
                   </div>
                   <div>
@@ -398,7 +398,7 @@ export default function CheckoutPage() {
               {/* Step 2: Payment Method */}
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
                 <div className="flex items-center gap-3 mb-5 pb-3 border-b border-slate-800">
-                  <div className="w-8 h-8 rounded-full bg-emerald-600 text-white font-extrabold text-sm flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-emerald-700 text-white font-extrabold text-sm flex items-center justify-center">
                     2
                   </div>
                   <div>
@@ -502,7 +502,7 @@ export default function CheckoutPage() {
               {/* Step 3: Order Actions */}
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
                 <div className="flex items-center gap-3 pb-3 border-b border-slate-800">
-                  <div className="w-8 h-8 rounded-full bg-emerald-600 text-white font-extrabold text-sm flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-emerald-700 text-white font-extrabold text-sm flex items-center justify-center">
                     3
                   </div>
                   <div>
@@ -531,7 +531,7 @@ export default function CheckoutPage() {
                     type="button"
                     disabled={!isMinOrderMet || isSubmitting}
                     onClick={(e) => handleCheckoutSubmit(e, 'whatsapp')}
-                    className="w-full py-4 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white font-extrabold rounded-xl text-sm flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-emerald-950/50 cursor-pointer disabled:cursor-not-allowed"
+                    className="w-full py-4 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 text-white font-extrabold rounded-xl text-sm flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-emerald-950/50 cursor-pointer disabled:cursor-not-allowed"
                   >
                     <span>Order via WhatsApp</span>
                     <ArrowRight className="w-4 h-4" />

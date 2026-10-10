@@ -91,7 +91,7 @@ export default function EnquiryDetailPage({ params }: { params: Promise<{ id: st
         <div className="flex items-center gap-2">
           <Link
             href={`/admin/reply-enquiry/?enquiryId=${enquiry.id}`}
-            className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl flex items-center gap-2 transition-all shadow"
+            className="px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl flex items-center gap-2 transition-all shadow"
           >
             <Send className="w-4 h-4" />
             <span>Compose Reply</span>

@@ -203,7 +203,7 @@ export function RecentPurchasePopup() {
               referrerPolicy="no-referrer"
               className="object-contain p-1"
             />
-            <div className="absolute bottom-0 inset-x-0 bg-emerald-600/90 text-[9px] font-bold text-center text-white py-0.5">
+            <div className="absolute bottom-0 inset-x-0 bg-emerald-700/90 text-[9px] font-bold text-center text-white py-0.5">
               ORDERED
             </div>
           </div>

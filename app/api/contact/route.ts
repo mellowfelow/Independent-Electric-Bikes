@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
         orderRef = randomRef(REPLY.orderPrefix);
       }
 
-      await saveOrder({
+      const stored = await saveOrder({
         id: orderRef,
         createdAt: new Date().toISOString(),
         customerName: name,
@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
       const adminEmail = process.env.ORDER_EMAIL || FORMS.destinations.order || CONTACT.email;
       const itemsListText = items.map((i) => `- ${i.name} x ${i.quantity} ($${i.price * i.quantity})`).join('\n');
 
-      await sendMail({
+      const adminMail = await sendMail({
         to: adminEmail,
         subject: `New Order Received #${orderRef} from ${name}`,
         text: `New order received on ${SITE.name}!\n\nOrder Ref: ${orderRef}\nCustomer: ${name} (${email}, ${phone})\nAddress: ${address}\nPayment Method: ${paymentMethod}\nChannel: ${channel}\n\nItems:\n${itemsListText}\n\nTotal: $${total} AUD`,
@@ -71,14 +71,24 @@ export async function POST(req: NextRequest) {
       });
 
       // Unconditional confirmation to the customer - fires for every channel, including WhatsApp.
-      await sendMail({
+      const customerMail = await sendMail({
         to: email,
         subject: `Order Confirmation #${orderRef} - ${SITE.name}`,
         text: `Hi ${name}, thank you for your order #${orderRef} on ${SITE.name}! Total: $${total} AUD. We will email you payment details shortly.`,
         html: orderConfirmationEmail({ id: orderRef, customerName: name, items, totalAmount: total }),
       });
 
-      return NextResponse.json({ success: true, orderRef, message: 'Order received successfully! Confirmation email sent.' });
+      if (!adminMail.sent && !customerMail.sent && !stored.persisted) {
+        console.error('[Contact API] Order could not be stored or emailed:', orderRef);
+        return fail('We could not process your order right now. Please message us on WhatsApp or call so we can take it manually.', 502);
+      }
+
+      return NextResponse.json({
+        success: true,
+        orderRef,
+        emailSent: customerMail.sent,
+        message: customerMail.sent ? 'Order received successfully! Confirmation email sent.' : 'Order received. We could not send the confirmation email, so please keep your order reference and we will contact you shortly.',
+      });
     }
 
     // 2. CONTACT / WHOLESALE / GENERAL ENQUIRY

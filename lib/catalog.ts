@@ -27,9 +27,18 @@ export function brandOf(p: Product): BrandDef | null {
   return best;
 }
 
+/** Generic parts whose names start with a spec rather than a brand. */
+const GENERIC_BRANDS: [RegExp, string][] = [
+  [/^original ninebot by segway/i, 'Segway-Ninebot'],
+  [/^(multi-voltage|d+(.d+)?v )/i, 'Universal'],
+  [/^(hoverboard|mobility scooter) /i, 'Universal'],
+];
+
 export function brandNameOf(p: Product): string {
   const known = brandOf(p);
   if (known) return known.name;
+  const generic = GENERIC_BRANDS.find(([re]) => re.test(p.name));
+  if (generic) return generic[1];
   // Brands missing from the brand list: use the leading token(s) of the name, never a bare initial or a spec like "36V".
   const [first, second] = p.name.split(' ');
   if (/^d/.test(first)) return 'Other';
@@ -153,4 +162,44 @@ export function fitDesc(text: string, tail = ' Shipped across Australia from Bru
   let t = text.replace(/\s+/g, ' ').trim();
   if (t.length < 120 && tail) t = `${t.replace(/[.!?]?$/, '.')}${tail}`;
   return trim(t, 158);
+}
+
+export interface TrailItem {
+  name: string;
+  href: string;
+}
+
+const productSub = (p: Product) => {
+  const main = MASTER_TAXONOMY.find((m) => m.slug === p.category);
+  const sub = main?.subcategories.find((s) => s.slug === p.subcategory || s.items?.some((i) => i.slug === p.subcategory));
+  return { main, sub };
+};
+
+/** Home > Shop > Category > Subcategory for a product page (the product itself is added by the caller). */
+export function productTrail(p: Product): TrailItem[] {
+  const { main, sub } = productSub(p);
+  const trail: TrailItem[] = [
+    { name: 'Home', href: '/' },
+    { name: 'Shop', href: '/shop/' },
+  ];
+  if (main) trail.push({ name: main.name, href: `/shop/${main.slug}/` });
+  if (main && sub) trail.push({ name: sub.name, href: `/shop/${main.slug}/${sub.slug}/` });
+  return trail;
+}
+
+/** Brands with the most products in a category or subcategory, as link targets. */
+export function topBrandsFor(categorySlug: string, subSlug?: string, limit = 8): { slug: string; name: string; count: number }[] {
+  const main = MASTER_TAXONOMY.find((m) => m.slug === categorySlug);
+  const sub = main?.subcategories.find((s) => s.slug === subSlug);
+  const counts = new Map<string, { slug: string; name: string; count: number }>();
+  for (const p of PRODUCTS) {
+    if (p.category !== categorySlug) continue;
+    if (sub && !(p.subcategory === sub.slug || sub.items?.some((i) => i.slug === p.subcategory || i.slug === p.subSubcategory))) continue;
+    const b = brandOf(p);
+    if (!b) continue;
+    const row = counts.get(b.slug) ?? { slug: b.slug, name: b.name, count: 0 };
+    row.count++;
+    counts.set(b.slug, row);
+  }
+  return [...counts.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name)).slice(0, limit);
 }

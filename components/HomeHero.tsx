@@ -20,6 +20,8 @@ const INTERVAL_MS = 6500;
  */
 export function HomeHero() {
   const [index, setIndex] = useState(0);
+  // Slides already shown or about to be: later slides are not requested until needed.
+  const [reached, setReached] = useState<number[]>([0]);
   const [paused, setPaused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
@@ -37,13 +39,25 @@ export function HomeHero() {
     return () => clearInterval(t);
   }, [paused, reduceMotion]);
 
-  const go = (n: number) => setIndex((n + SLIDES.length) % SLIDES.length);
+  // Warm the next slide a few seconds before it is shown.
+  useEffect(() => {
+    const next = (index + 1) % SLIDES.length;
+    const t = setTimeout(() => setReached((r) => (r.includes(next) ? r : [...r, next])), 3000);
+    return () => clearTimeout(t);
+  }, [index]);
+
+  const show = (n: number) => {
+    const k = (n + SLIDES.length) % SLIDES.length;
+    setReached((r) => (r.includes(k) ? r : [...r, k]));
+    setIndex(k);
+  };
+  const go = show;
   const current = SLIDES[index];
 
   return (
     <div className="absolute inset-0" role="region" aria-roledescription="carousel" aria-label="Featured product ranges">
-      {SLIDES.map((s, i) => (
-        <picture key={s.n} aria-hidden={i !== index}>
+      {SLIDES.map((s, i) => (i === index || reached.includes(i) ? (
+        <picture key={s.n}>
           <source media="(max-width: 767px)" srcSet={`/images/home/hero-${s.n}-m.webp`} />
           <img
             src={`/images/home/hero-${s.n}.webp`}
@@ -54,10 +68,11 @@ export function HomeHero() {
             loading={i === 0 ? 'eager' : 'lazy'}
             fetchPriority={i === 0 ? 'high' : 'auto'}
             decoding="async"
+            aria-hidden={i !== index}
             className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 motion-reduce:transition-none ${i === index ? 'opacity-100' : 'opacity-0'}`}
           />
         </picture>
-      ))}
+      ) : null))}
 
       {/* Legibility: heavy on the left where the headline sits, lighter to the right so the photo still shows. */}
       <div className="pointer-events-none absolute inset-0 bg-slate-950/35 md:bg-gradient-to-r md:from-slate-950/65 md:via-slate-950/20 md:to-transparent" />
@@ -90,8 +105,8 @@ export function HomeHero() {
                 role="tab"
                 aria-selected={i === index}
                 aria-label={`Slide ${i + 1}: ${s.label}`}
-                onClick={() => setIndex(i)}
-                className="flex h-10 w-5 items-center justify-center"
+                onClick={() => show(i)}
+                className="flex h-10 w-6 items-center justify-center"
               >
                 <span className={`h-1.5 rounded-full transition-all ${i === index ? 'w-5 bg-emerald-400' : 'w-1.5 bg-white/50'}`} />
               </button>

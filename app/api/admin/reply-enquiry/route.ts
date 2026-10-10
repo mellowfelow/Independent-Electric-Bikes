@@ -6,7 +6,7 @@ import { sendMail } from '@/lib/mailer';
 import { SITE } from '@/config/site';
 
 export async function POST(req: NextRequest) {
-  const authErr = checkAdminPasscode(req);
+  const authErr = await checkAdminPasscode(req);
   if (authErr) return authErr;
 
   try {

@@ -133,7 +133,7 @@ export default function AdminHubPage() {
 
                 <Link
                   href={`/admin/send-payment-email/?orderId=${o.id}`}
-                  className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl self-start sm:self-auto"
+                  className="px-3.5 py-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl self-start sm:self-auto"
                 >
                   Send Payment Details &rarr;
                 </Link>

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { SITE, MASTER_TAXONOMY, PRODUCTS, POSTS } from '@/config/site';
-import { ALL_BRANDS } from '@/config/brands';
+import { GUIDE_LINKS } from '@/config/blogLinks';
+import { ACTIVE_BRANDS } from '@/config/brands';
 
 const base = `https://${SITE.domain}`;
 
@@ -31,8 +32,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(path, 0.6, 'weekly', undefined, p.images?.[0]?.startsWith('http') ? [p.images[0]] : undefined);
   }
 
-  for (const b of ALL_BRANDS) add(`/brands/${b.slug}/`, 0.6, 'weekly');
-  for (const post of POSTS) add(`/blog/${post.slug}/`, 0.6, 'monthly', new Date(post.date));
+  for (const b of ACTIVE_BRANDS) add(`/brands/${b.slug}/`, 0.6, 'weekly');
+  for (const post of POSTS.filter((x) => GUIDE_LINKS[x.slug]?.body)) add(`/blog/${post.slug}/`, 0.6, 'monthly', new Date(post.date));
 
   return entries;
 }

@@ -63,7 +63,7 @@ export function PasscodeGate({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-8">
         <div className="flex flex-col items-center text-center mb-6">
-          <div className="w-14 h-14 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-500/30">
+          <div className="w-14 h-14 rounded-2xl bg-emerald-700/20 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-500/30">
             <Lock className="w-7 h-7" />
           </div>
           <h1 className="text-xl font-black text-white">{SITE.name}</h1>
@@ -95,7 +95,7 @@ export function PasscodeGate({ children }: { children: ReactNode }) {
           <button
             type="submit"
             disabled={isChecking}
-            className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+            className="w-full py-3 bg-emerald-700 hover:bg-emerald-600 text-white font-bold rounded-xl text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50"
           >
             <span>{isChecking ? 'Verifying...' : 'Unlock Reply Portal'}</span>
             <ArrowRight className="w-4 h-4" />

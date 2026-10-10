@@ -130,7 +130,7 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
   const subOptions = options.sub;
   const quickPill = (active: boolean) =>
     `shrink-0 whitespace-nowrap rounded-full border px-4 py-2.5 text-xs font-bold transition-colors ${
-      active ? 'border-emerald-500 bg-emerald-600 text-white shadow-md' : 'border-slate-800 bg-slate-900 text-slate-300 hover:border-slate-600 hover:bg-slate-800'
+      active ? 'border-emerald-500 bg-emerald-700 text-white shadow-md' : 'border-slate-800 bg-slate-900 text-slate-300 hover:border-slate-600 hover:bg-slate-800'
     }`;
 
   return (
@@ -190,7 +190,7 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
           >
             <SlidersHorizontal className="h-4 w-4 text-emerald-400" aria-hidden="true" />
             Filters
-            {activeCount > 0 && <span className="rounded-full bg-emerald-600 px-2 py-0.5 text-[10px]">{activeCount}</span>}
+            {activeCount > 0 && <span className="rounded-full bg-emerald-700 px-2 py-0.5 text-[10px]">{activeCount}</span>}
           </button>
           <p className="flex-1 text-xs text-slate-400" role="status" aria-live="polite">
             {filtered.length === 0 ? (
@@ -226,7 +226,7 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
                 key={c.id}
                 type="button"
                 onClick={c.remove}
-                className="inline-flex min-h-[32px] items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/10 py-1 pl-3 pr-2 text-xs font-semibold text-emerald-200 hover:bg-emerald-500/20"
+                className="inline-flex min-h-[32px] items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/10 py-1 pl-3 pr-2 text-xs font-semibold text-emerald-200 hover:bg-emerald-600/20"
                 aria-label={`Remove filter ${c.label}`}
               >
                 {c.label}
@@ -244,7 +244,7 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
           <div className="rounded-2xl border border-slate-800 bg-slate-900 p-10 text-center">
             <p className="text-sm font-bold text-white">No products match these filters</p>
             <p className="mt-1 text-xs text-slate-400">Try removing a filter or widening the price range.</p>
-            <button type="button" onClick={clearAll} className="mt-5 min-h-[44px] rounded-xl bg-emerald-600 px-5 text-xs font-bold text-white hover:bg-emerald-500">
+            <button type="button" onClick={clearAll} className="mt-5 min-h-[44px] rounded-xl bg-emerald-700 px-5 text-xs font-bold text-white hover:bg-emerald-600">
               Clear all filters
             </button>
           </div>
@@ -282,7 +282,7 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
                   type="button"
                   onClick={() => goToPage(n)}
                   aria-current={n === page ? 'page' : undefined}
-                  className={`h-11 w-11 rounded-xl text-xs font-bold ${n === page ? 'bg-emerald-600 text-white' : 'border border-slate-800 bg-slate-900 text-slate-300 hover:bg-slate-800'}`}
+                  className={`h-11 w-11 rounded-xl text-xs font-bold ${n === page ? 'bg-emerald-700 text-white' : 'border border-slate-800 bg-slate-900 text-slate-300 hover:bg-slate-800'}`}
                 >
                   {n}
                 </button>
@@ -317,7 +317,7 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
               <button type="button" onClick={clearAll} disabled={activeCount === 0} className="min-h-[48px] flex-1 rounded-xl border border-slate-700 text-xs font-bold text-white disabled:opacity-40">
                 Clear all
               </button>
-              <button type="button" onClick={() => setDrawerOpen(false)} className="min-h-[48px] flex-[2] rounded-xl bg-emerald-600 text-xs font-extrabold text-white hover:bg-emerald-500">
+              <button type="button" onClick={() => setDrawerOpen(false)} className="min-h-[48px] flex-[2] rounded-xl bg-emerald-700 text-xs font-extrabold text-white hover:bg-emerald-600">
                 Show {filtered.length} {filtered.length === 1 ? 'product' : 'products'}
               </button>
             </div>

@@ -1,4 +1,5 @@
-import { PRODUCTS, Product } from './site';
+import { PRODUCTS, Product, SITE } from './site';
+import { EXTRA_BRANDS } from './brandsExtra';
 
 export interface BrandDef {
   slug: string;
@@ -11,7 +12,7 @@ export interface BrandDef {
   featured?: boolean;
 }
 
-export const ALL_BRANDS: BrandDef[] = [
+const CORE_BRANDS: BrandDef[] = [
   // E-Bikes
   {
     slug: 'specialized',
@@ -571,6 +572,12 @@ export const ALL_BRANDS: BrandDef[] = [
   },
 ];
 
+/** Every brand, including those added without a hand-written profile. */
+export const ALL_BRANDS: BrandDef[] = [...CORE_BRANDS, ...EXTRA_BRANDS];
+
+/** Brands that have at least one product: only these get a page, a sitemap entry and links. */
+export const ACTIVE_BRANDS: BrandDef[] = ALL_BRANDS.filter((b) => getProductsByBrandDef(b).length > 0);
+
 export function getBrandBySlug(slug: string): BrandDef | undefined {
   const brand = ALL_BRANDS.find((b) => b.slug.toLowerCase() === slug.toLowerCase());
   if (brand) return brand;
@@ -586,16 +593,13 @@ export function getBrandBySlug(slug: string): BrandDef | undefined {
     name: cleanName,
     category: 'Electric Bikes',
     tagline: `${cleanName} E-Mobility Products in Australia`,
-    description: `Explore the full range of ${cleanName} models available at VYRON Electric Bikes with local Australian warranty, express shipping, and 10% crypto discount.`,
+    description: `Explore the full range of ${cleanName} models available at ${SITE.name} with local Australian warranty, express shipping, and 10% crypto discount.`,
   };
 }
 
-export function getProductsByBrand(brandSlug: string): Product[] {
-  const brandDef = getBrandBySlug(brandSlug);
-  if (!brandDef) return [];
-
+function getProductsByBrandDef(brandDef: BrandDef): Product[] {
   const brandNameLower = brandDef.name.toLowerCase();
-  const slugLower = brandSlug.toLowerCase();
+  const slugLower = brandDef.slug.toLowerCase();
   const aliasList = brandDef.aliases
     ? brandDef.aliases.map((a) => a.toLowerCase())
     : [brandNameLower, slugLower.replace(/-/g, ' ')];
@@ -614,6 +618,11 @@ export function getProductsByBrand(brandSlug: string): Product[] {
     }
     return false;
   });
+}
+
+export function getProductsByBrand(brandSlug: string): Product[] {
+  const brandDef = getBrandBySlug(brandSlug);
+  return brandDef ? getProductsByBrandDef(brandDef) : [];
 }
 
 export function getBrandProductCount(brandSlug: string): number {

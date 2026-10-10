@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Product, SITE, SHOP } from '@/config/site';
-import { BrandDef, ALL_BRANDS } from '@/config/brands';
+import { BrandDef, ACTIVE_BRANDS } from '@/config/brands';
 import { ProductCard } from '@/components/ProductCard';
 import { money } from '@/lib/order';
 import {
@@ -62,7 +62,7 @@ export function BrandDetailClient({ brand, products }: BrandDetailClientProps) {
 
   // Related brands in same category
   const relatedBrands = useMemo(() => {
-    return ALL_BRANDS.filter(
+    return ACTIVE_BRANDS.filter(
       (b) => b.category === brand.category && b.slug !== brand.slug
     ).slice(0, 4);
   }, [brand]);
@@ -200,7 +200,7 @@ export function BrandDetailClient({ brand, products }: BrandDetailClientProps) {
                     onClick={() => setSelectedSubcategory(sub)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap shrink-0 ${
                       isActive
-                        ? 'bg-emerald-600 text-white shadow-md'
+                        ? 'bg-emerald-700 text-white shadow-md'
                         : 'bg-slate-950 text-slate-300 hover:text-white border border-slate-800'
                     }`}
                   >
@@ -240,7 +240,7 @@ export function BrandDetailClient({ brand, products }: BrandDetailClientProps) {
             <p className="text-xs text-slate-400">Try clearing your series filter above.</p>
             <button
               onClick={() => setSelectedSubcategory('All')}
-              className="mt-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg transition-colors"
+              className="mt-2 px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold rounded-lg transition-colors"
             >
               Show All {brand.name} Models
             </button>

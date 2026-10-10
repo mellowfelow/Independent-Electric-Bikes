@@ -142,7 +142,7 @@ export default function AboutPage() {
               Test ride our entire electric commuter, cargo, and folding bike lineup at <strong>{CONTACT.address}</strong>.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-              <a href={`tel:${CONTACT.phone}`} className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs">
+              <a href={`tel:${CONTACT.phone}`} className="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-600 text-white font-bold rounded-xl text-xs">
                 Call {CONTACT.phoneDisplay}
               </a>
               <Link href="/contact/" className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl text-xs border border-slate-700">

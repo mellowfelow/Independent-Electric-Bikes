@@ -98,7 +98,7 @@ export function ProductCard({ product, className = '', priority = false }: Produ
       {/* Product Image Frame */}
       <div className="relative bg-white aspect-[4/3] overflow-hidden">
         {product.badge && product.badge !== 'none' && (
-          <span className="absolute top-3 left-3 z-10 px-2.5 py-1 bg-emerald-600 text-white font-extrabold text-[10px] uppercase tracking-wider rounded-md shadow">
+          <span className="absolute top-3 left-3 z-10 px-2.5 py-1 bg-emerald-700 text-white font-extrabold text-[10px] uppercase tracking-wider rounded-md shadow">
             {product.badge}
           </span>
         )}
@@ -134,9 +134,9 @@ export function ProductCard({ product, className = '', priority = false }: Produ
           <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate">
             {brandNameOf(product)}
           </div>
-          <h3 className="text-xs font-extrabold text-white mt-0.5 group-hover:text-emerald-400 transition-colors line-clamp-1">
+          <h2 className="text-xs font-extrabold text-white mt-0.5 group-hover:text-emerald-400 transition-colors line-clamp-1">
             <Link href={productUrl}>{product.name}</Link>
-          </h3>
+          </h2>
           <p className="text-[11px] text-slate-400 mt-1 line-clamp-1 leading-relaxed">{productCategoryLabel(product)}</p>
           {fit && <p className="text-[11px] font-bold text-emerald-400 mt-1 line-clamp-1">{fit}</p>}
         </div>
@@ -192,8 +192,8 @@ export function ProductCard({ product, className = '', priority = false }: Produ
             onClick={handleAddToCart}
             className={`col-span-7 py-2 px-3 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-md ${
               added
-                ? 'bg-emerald-600 text-white'
-                : 'bg-emerald-600 hover:bg-emerald-500 text-white active:scale-95'
+                ? 'bg-emerald-700 text-white'
+                : 'bg-emerald-700 hover:bg-emerald-600 text-white active:scale-95'
             }`}
           >
             {added ? (

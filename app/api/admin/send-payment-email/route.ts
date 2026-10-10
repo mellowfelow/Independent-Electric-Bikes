@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { checkAdminPasscode } from '@/lib/adminAuth';
-import { getOrder, markOrderSent } from '@/lib/orderStore';
+import { getOrder, markOrderSent, saveOrder } from '@/lib/orderStore';
 import { parsePaymentDetail, paymentMethodParts } from '@/lib/order';
 import { paymentDetailsEmail } from '@/utils/emailTemplates';
 import { sendMail } from '@/lib/mailer';
 import { SITE } from '@/config/site';
 
 export async function POST(req: NextRequest) {
-  const authErr = checkAdminPasscode(req);
+  const authErr = await checkAdminPasscode(req);
   if (authErr) return authErr;
 
   try {
@@ -31,9 +31,6 @@ export async function POST(req: NextRequest) {
     const openingText = openingOverride || methodParts.opening;
     const closingText = closingOverride || methodParts.closing;
 
-    // 3. Mark order sent in store
-    await markOrderSent(orderId, parsedFields);
-
     // 4. Build and send HTML email to customer
     const emailHtml = paymentDetailsEmail({
       orderId: order.id,
@@ -51,6 +48,10 @@ export async function POST(req: NextRequest) {
       text: `Payment details for Order #${order.id}. Total Due: $${order.totalAmount} AUD. Payment method: ${methodParts.label}. Please reply to this email once payment is sent.`,
       html: emailHtml,
     });
+
+    // 5. Only a delivered email moves the order to "payment details sent"; otherwise keep the fields so the customer page works.
+    if (mailRes.sent) await markOrderSent(orderId, parsedFields);
+    else await saveOrder({ ...order, parsedPaymentDetails: parsedFields });
 
     return NextResponse.json({
       success: mailRes.sent,

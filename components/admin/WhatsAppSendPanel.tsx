@@ -73,7 +73,7 @@ Please use your Order Number (#${orderRef}) as your payment description/referenc
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg transition-all shadow-md"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold rounded-lg transition-all shadow-md"
         >
           <Send className="w-3.5 h-3.5" />
           <span>Open WhatsApp Chat directly &rarr;</span>

@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { checkAdminPasscode } from '@/lib/adminAuth';
-import { getOrder, deleteOrder, saveOrder } from '@/lib/orderStore';
+import { getOrder, deleteOrder, saveOrder, type OrderRecord } from '@/lib/orderStore';
+
+const ORDER_STATUSES: OrderRecord['status'][] = ['new', 'payment_details_sent', 'payment_confirmed', 'dispatched', 'cancelled'];
 
 export async function GET(req: NextRequest, props: { params: Promise<{ id: string }> }) {
-  const authErr = checkAdminPasscode(req);
+  const authErr = await checkAdminPasscode(req);
   if (authErr) return authErr;
 
   const params = await props.params;
@@ -15,7 +17,7 @@ export async function GET(req: NextRequest, props: { params: Promise<{ id: strin
 }
 
 export async function DELETE(req: NextRequest, props: { params: Promise<{ id: string }> }) {
-  const authErr = checkAdminPasscode(req);
+  const authErr = await checkAdminPasscode(req);
   if (authErr) return authErr;
 
   const params = await props.params;
@@ -25,7 +27,7 @@ export async function DELETE(req: NextRequest, props: { params: Promise<{ id: st
 }
 
 export async function PATCH(req: NextRequest, props: { params: Promise<{ id: string }> }) {
-  const authErr = checkAdminPasscode(req);
+  const authErr = await checkAdminPasscode(req);
   if (authErr) return authErr;
 
   const params = await props.params;
@@ -34,8 +36,11 @@ export async function PATCH(req: NextRequest, props: { params: Promise<{ id: str
   if (!order) return NextResponse.json({ error: 'Order not found' }, { status: 404 });
 
   const body = await req.json();
-  if (body.status) order.status = body.status;
-  if (body.notes) order.notes = body.notes;
+  if (body.status !== undefined) {
+    if (!ORDER_STATUSES.includes(body.status)) return NextResponse.json({ error: 'Unknown status' }, { status: 400 });
+    order.status = body.status;
+  }
+  if (typeof body.notes === 'string') order.notes = body.notes.slice(0, 2000);
 
   await saveOrder(order);
   return NextResponse.json({ success: true, order });

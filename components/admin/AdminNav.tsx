@@ -21,7 +21,7 @@ export function AdminNav() {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-between min-h-16 py-2 gap-2">
           <Link href="/admin/" className="flex items-center gap-2 font-black text-xs sm:text-sm tracking-tight text-white py-1">
-            <div className="p-1.5 bg-emerald-600 rounded-lg text-white">
+            <div className="p-1.5 bg-emerald-700 rounded-lg text-white">
               <Bike className="w-4 h-4" />
             </div>
             <span>{SITE.name} <span className="text-emerald-400 font-normal text-[11px] font-mono ml-1">/ Admin</span></span>
@@ -37,7 +37,7 @@ export function AdminNav() {
                   href={link.href}
                   className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all ${
                     isActive
-                      ? 'bg-emerald-600 text-white'
+                      ? 'bg-emerald-700 text-white'
                       : 'text-slate-300 hover:bg-slate-800 hover:text-white'
                   }`}
                 >

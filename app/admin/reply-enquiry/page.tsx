@@ -132,7 +132,7 @@ function ReplyEnquiryContent() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-50"
+            className="w-full py-3.5 bg-emerald-700 hover:bg-emerald-600 text-white font-extrabold text-xs rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-50"
           >
             <Send className="w-4 h-4" />
             <span>{isSubmitting ? 'Sending Reply...' : `Send Reply Email to ${enquiry?.email || 'Customer'}`}</span>

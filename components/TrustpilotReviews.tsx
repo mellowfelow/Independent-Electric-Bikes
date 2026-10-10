@@ -275,7 +275,7 @@ export function TrustpilotReviews() {
     <section className="py-20 bg-slate-950 text-white border-b border-slate-900 relative overflow-hidden">
       {/* Background glow effects */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#00b67a]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-700/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* TRUSTPILOT HEADER BAR */}
@@ -384,7 +384,7 @@ export function TrustpilotReviews() {
               }}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 activeTab === 'all'
-                  ? 'bg-[#00b67a] text-white shadow-lg shadow-[#00b67a]/20'
+                  ? 'bg-emerald-700 text-white shadow-lg shadow-emerald-950/30'
                   : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
@@ -527,9 +527,9 @@ export function TrustpilotReviews() {
 
                       {/* Review Title & Body */}
                       <div>
-                        <h4 className="text-sm font-extrabold text-white group-hover:text-[#00b67a] transition-colors leading-snug line-clamp-2">
+                        <h3 className="text-sm font-extrabold text-white group-hover:text-[#00b67a] transition-colors leading-snug line-clamp-2">
                           &quot;{review.title}&quot;
-                        </h4>
+                        </h3>
                         <p className="text-xs text-slate-300 mt-2 leading-relaxed font-normal line-clamp-4">
                           {review.content}
                         </p>
@@ -597,10 +597,10 @@ export function TrustpilotReviews() {
                 setCurrentIndex(idx);
               }}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`h-2 rounded-full transition-all ${
-                idx === currentIndex ? 'w-8 bg-[#00b67a]' : 'w-2 bg-slate-800 hover:bg-slate-700'
-              }`}
-            />
+              className="group flex h-6 min-w-6 items-center justify-center"
+            >
+              <span className={`block h-2 rounded-full transition-all ${idx === currentIndex ? 'w-8 bg-[#00b67a]' : 'w-2 bg-slate-700 group-hover:bg-slate-600'}`} />
+            </button>
           ))}
         </div>
       </div>

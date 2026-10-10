@@ -17,7 +17,7 @@ export function ChatHub() {
         <div className="bg-slate-900 border border-slate-800 text-white rounded-2xl shadow-2xl p-5 mb-4 w-[340px] max-w-[90vw] animate-in fade-in slide-in-from-bottom-5">
           <div className="flex items-center justify-between pb-3 border-b border-slate-800">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center text-white">
+              <div className="w-9 h-9 rounded-full bg-emerald-700 flex items-center justify-center text-white">
                 <Bike className="w-5 h-5" />
               </div>
               <div>
@@ -44,7 +44,7 @@ export function ChatHub() {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 p-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md hover:shadow-emerald-900/30"
+              className="flex items-center gap-3 p-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold transition-all shadow-md hover:shadow-emerald-900/30"
             >
               <Send className="w-4 h-4" />
               <div className="text-left">
@@ -83,7 +83,7 @@ export function ChatHub() {
         type="button"
         aria-label="Open Chat Hub"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2.5 px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-full shadow-xl hover:scale-105 transition-all text-xs border border-emerald-400/30"
+        className="flex items-center gap-2.5 px-4 py-3 bg-emerald-700 hover:bg-emerald-600 text-white font-bold rounded-full shadow-xl hover:scale-105 transition-all text-xs border border-emerald-400/30"
       >
         <MessageSquare className="w-5 h-5 fill-current" />
         <span className="hidden sm:inline">Questions? Chat with Us</span>

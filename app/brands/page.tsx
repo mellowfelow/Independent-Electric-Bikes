@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { ALL_BRANDS, getProductsByBrand, BrandDef } from '@/config/brands';
+import { ACTIVE_BRANDS, getProductsByBrand, BrandDef } from '@/config/brands';
 import { SITE } from '@/config/site';
 import { JsonLd } from '@/components/JsonLd';
 import { Search, ShieldCheck, Zap, Cpu, ArrowRight, Layers, Award, Bike, Sparkles } from 'lucide-react';
@@ -24,7 +24,7 @@ export default function BrandsPage() {
 
   // Calculate product counts for every brand
   const brandsWithCounts = useMemo(() => {
-    return ALL_BRANDS.map((brand) => ({
+    return ACTIVE_BRANDS.map((brand) => ({
       ...brand,
       productCount: getProductsByBrand(brand.slug).length,
     })).filter((brand) => brand.productCount > 0);
@@ -128,7 +128,7 @@ export default function BrandsPage() {
                     onClick={() => setSelectedCategory(cat)}
                     className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all whitespace-nowrap shrink-0 ${
                       isActive
-                        ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-950/50'
+                        ? 'bg-emerald-700 text-white shadow-lg shadow-emerald-950/50'
                         : 'bg-slate-950 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800'
                     }`}
                   >
@@ -165,7 +165,7 @@ export default function BrandsPage() {
                   setSearchQuery('');
                   setSelectedCategory('All');
                 }}
-                className="mt-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg transition-colors"
+                className="mt-2 px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold rounded-lg transition-colors"
               >
                 Reset Filters
               </button>

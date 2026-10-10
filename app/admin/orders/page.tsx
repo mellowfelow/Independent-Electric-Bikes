@@ -88,7 +88,7 @@ export default function AdminOrdersListPage() {
                 <div className="flex items-center gap-2">
                   <Link
                     href={`/admin/send-payment-email/?orderId=${o.id}`}
-                    className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl flex items-center gap-1.5 shadow-md"
+                    className="px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl flex items-center gap-1.5 shadow-md"
                   >
                     <span>Send Payment Email</span>
                     <ArrowRight className="w-3.5 h-3.5" />

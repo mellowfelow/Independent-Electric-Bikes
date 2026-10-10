@@ -108,7 +108,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
           {/* Header */}
           <div className="p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-emerald-600/20 rounded-lg text-emerald-400">
+              <div className="p-2 bg-emerald-700/20 rounded-lg text-emerald-400">
                 <ShoppingBag className="w-5 h-5" />
               </div>
               <div>
@@ -156,7 +156,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 <button
                   type="button"
                   onClick={onClose}
-                  className="mt-4 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold"
+                  className="mt-4 px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded-lg text-xs font-bold"
                 >
                   Browse Electric Bikes
                 </button>
@@ -262,7 +262,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               <button
                 type="button"
                 onClick={handleProceedToCheckout}
-                className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold rounded-xl text-sm flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-emerald-900/40 cursor-pointer active:scale-98"
+                className="w-full py-3.5 bg-emerald-700 hover:bg-emerald-600 text-white font-extrabold rounded-xl text-sm flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-emerald-900/40 cursor-pointer active:scale-98"
               >
                 <span>Proceed to Checkout</span>
                 <ArrowRight className="w-4 h-4" />

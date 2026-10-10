@@ -31,19 +31,21 @@ const REDIS_KEY = `${REPLY.orderPrefix.toLowerCase()}:orders`;
 // In-memory fallback
 const memoryOrdersMap = new Map<string, OrderRecord>();
 
-export async function saveOrder(order: OrderRecord): Promise<OrderRecord> {
+export async function saveOrder(order: OrderRecord): Promise<OrderRecord & { persisted: boolean }> {
   const cleanId = (order.id || '').trim().replace(/\/$/, '');
   order.id = cleanId;
 
+  let persisted = false;
   if (redis) {
     try {
       await redis.hset(REDIS_KEY, { [cleanId]: JSON.stringify(order) });
+      persisted = true;
     } catch (err) {
       console.error('[OrderStore] Redis save failed:', err);
     }
   }
   memoryOrdersMap.set(cleanId, order);
-  return order;
+  return Object.assign(order, { persisted });
 }
 
 export async function listOrders(): Promise<OrderRecord[]> {

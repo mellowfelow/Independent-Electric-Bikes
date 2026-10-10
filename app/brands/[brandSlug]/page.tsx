@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { ALL_BRANDS, getBrandBySlug, getProductsByBrand } from '@/config/brands';
+import { ACTIVE_BRANDS, getBrandBySlug, getProductsByBrand } from '@/config/brands';
 import { SITE } from '@/config/site';
 import { fitTitle, fitDesc } from '@/lib/catalog';
 import { JsonLd } from '@/components/JsonLd';
@@ -11,7 +11,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return ALL_BRANDS.map((brand) => ({
+  return ACTIVE_BRANDS.map((brand) => ({
     brandSlug: brand.slug,
   }));
 }

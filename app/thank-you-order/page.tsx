@@ -41,7 +41,7 @@ export default async function ThankYouOrderPage({
             <span>Next Steps for Your Order:</span>
           </div>
           <p className="text-[11px] text-emerald-200/90 leading-relaxed">
-            Our Melbourne showroom team is reviewing your selection. We will email you payment details (BSB/Account, PayID, or Crypto deposit address) shortly.
+            Our Brunswick team is reviewing your selection. We will email you payment details (BSB/Account, PayID, or Crypto deposit address) shortly.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default async function ThankYouOrderPage({
         </div>
 
         <div className="pt-2">
-          <Link href="/shop/" className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl inline-block transition-all shadow-lg">
+          <Link href="/shop/" className="px-6 py-3 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl inline-block transition-all shadow-lg">
             Return to Store Catalog
           </Link>
         </div>

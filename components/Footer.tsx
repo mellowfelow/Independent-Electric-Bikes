@@ -56,7 +56,7 @@ export function Footer() {
         {/* Brand Column */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-black text-lg">
+            <div className="w-10 h-10 rounded-xl bg-emerald-700 flex items-center justify-center text-white font-black text-lg">
               <Bike className="w-5 h-5" />
             </div>
             <span className="font-extrabold text-base text-white tracking-tight">
@@ -162,7 +162,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-900 bg-slate-950 py-6 px-4 text-slate-500 text-[11px]">
+      <div className="border-t border-slate-900 bg-slate-950 py-6 px-4 text-slate-400 text-[11px]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div>
             &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved. Registered Australian Business{' '}
@@ -170,7 +170,7 @@ export function Footer() {
               href="https://abr.business.gov.au/ABN/View?id=23618699479"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-emerald-400 hover:underline"
+              className="text-slate-300 underline hover:text-emerald-400"
             >
               ABN {SITE.abn}
             </a>

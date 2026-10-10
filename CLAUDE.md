@@ -54,3 +54,10 @@ Product photos are written as `<slug>.<hash>.webp` plus `-800` and `-400` rendit
 
 ## Compatibility (parts <-> vehicles)
 `config/data/compatibility.ts` lists which batteries, chargers and parts suit which vehicles (`PART_FITS`, keyed by part name; vehicle names must match exactly). Two levels: `confirmed` (a manufacturer/retailer page names the model) and `system` (same drive system, customer must confirm). Only add a fit when a source states it; fit-by-size parts (tyres, tubes, rotors, pads) have a rule and no model list. `lib/compat.ts` resolves it for `components/CompatibilityPanel.tsx` (part pages list vehicles, vehicle pages list parts) and the card line in `ProductCard`.
+
+## Internal linking and portal notes (2026-10-10 audit)
+- Brands: `config/brands.ts` (hand-written profiles) + `config/brandsExtra.ts` (generated profiles). Only brands with products (`ACTIVE_BRANDS`) get pages and sitemap entries. A new product's brand is the leading words of its name, so add an alias when the brand is more than one word.
+- Product and category pages use `components/Breadcrumbs.tsx` (visible trail + BreadcrumbList) and `components/CategoryLinks.tsx`; never hand-write breadcrumb JSON-LD.
+- Blog: `config/blogLinks.ts` lists each guide's related shop links and whether it has a written body. Guides without a body are noindex and out of the sitemap; set `body: true` and add the article text when written.
+- Admin API: `checkAdminPasscode` is async (await it). Wrong passcodes lock an IP out for 10 minutes. Orders are only marked "payment details sent" when the email really sent.
+- Delete the placeholder `UPSTASH_REDIS_REST_*` variables in Vercel; the KV_* integration variables are the live Redis.

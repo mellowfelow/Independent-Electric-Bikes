@@ -123,7 +123,7 @@ export function CompareSelector({ products }: { products: ComparableProduct[] })
               <th scope="row" className="sticky left-0 z-10 bg-slate-900 p-4" />
               {chosen.map((p) => (
                 <td key={p.slug} className="p-4">
-                  <Link href={`/shop/${p.category}/${p.slug}/`} className="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg bg-emerald-600 px-4 text-xs font-bold text-white hover:bg-emerald-500">
+                  <Link href={`/shop/${p.category}/${p.slug}/`} className="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg bg-emerald-700 px-4 text-xs font-bold text-white hover:bg-emerald-600">
                     View product <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 </td>

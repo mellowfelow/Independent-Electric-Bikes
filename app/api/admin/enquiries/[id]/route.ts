@@ -3,7 +3,7 @@ import { checkAdminPasscode } from '@/lib/adminAuth';
 import { getEnquiry, deleteEnquiry } from '@/lib/enquiryStore';
 
 export async function GET(req: NextRequest, props: { params: Promise<{ id: string }> }) {
-  const authErr = checkAdminPasscode(req);
+  const authErr = await checkAdminPasscode(req);
   if (authErr) return authErr;
 
   const params = await props.params;
@@ -15,7 +15,7 @@ export async function GET(req: NextRequest, props: { params: Promise<{ id: strin
 }
 
 export async function DELETE(req: NextRequest, props: { params: Promise<{ id: string }> }) {
-  const authErr = checkAdminPasscode(req);
+  const authErr = await checkAdminPasscode(req);
   if (authErr) return authErr;
 
   const params = await props.params;

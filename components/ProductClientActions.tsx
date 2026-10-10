@@ -50,8 +50,8 @@ export function ProductClientActions({ product }: { product: Product }) {
           onClick={handleAddToCart}
           className={`w-full py-3.5 px-4 font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-2 ${
             added
-              ? 'bg-emerald-600 text-white'
-              : 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-950/50'
+              ? 'bg-emerald-700 text-white'
+              : 'bg-emerald-700 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-950/50'
           }`}
         >
           {added ? (
