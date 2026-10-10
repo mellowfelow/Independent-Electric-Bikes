@@ -229,6 +229,15 @@ export const PART_FITS: Record<string, PartFit> = {
   '84.2V 5A Rapid Charger for KingSong 16X/18XL and InMotion V11/V10F': { confirmed: ['KingSong 16X High-Torque EUW', 'InMotion V11 Suspension EUC'], rule: '84.2V 5A rapid charger for KingSong 16X and 18XL, InMotion V11 and V10F.' },
   'InMotion V11 18 x 3 CST C-1488 Tyre': { confirmed: ['InMotion V11 Suspension EUC'], rule: '18 x 3 inch tyre for the InMotion V11 (also fits MSP and RS).' },
   'Bosch SmartphoneGrip Smart System Mount': { system: BOSCH_BIKES, rule: 'Works only with Bosch Smart System bikes (2022 onward), not older Bosch systems. Check that your bike has the Smart System before ordering.' },
+  'Razor MX650 12V 12Ah Sealed Lead Acid Battery (3-Pack)': {
+    confirmed: ['Razor MX650 Dirt Rocket Pit Bike'],
+    rule: 'Three 12V 12Ah sealed lead-acid batteries (36V in series). The retailer lists this pack for the Razor MX650 and MX500. Charge with the original Razor 36V charger. Not for lithium-powered bikes.',
+  },
+  'Stacyc 18V 5Ah Battery': {
+    confirmed: STACYC_BIKES,
+    system: STACYC_FAMILY,
+    rule: 'Stacyc 18V (20V max) 5Ah battery for the 18V platform. The 16eDrive ships with a 4Ah pack, so confirm the pack size you need. Not for the 36V 16eDrive Elite, 18eDrive or 20eDrive.',
+  },
   // Conversion kits
   'Bafang BBS02B 48V 750W Mid-Drive Conversion Kit': { rule: 'Fits bikes with a threaded 68 to 73mm bottom bracket shell (33.5mm inner diameter). 750W is above the 250W limit for road e-bikes in Australia: for private land or off-road use. Not matched to a bike on this site.' },
   'Bafang BBSHD 48V 1000W Mid-Drive Conversion Kit': { rule: 'Sold for a 68mm bottom bracket shell (73mm and 100mm versions also exist, so confirm your shell width). 1000W is above the 250W limit for road e-bikes in Australia: for private land or off-road use. Not matched to a bike on this site.' },

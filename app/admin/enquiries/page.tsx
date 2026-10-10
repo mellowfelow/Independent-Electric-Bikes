@@ -1,110 +1,85 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
-import Link from 'next/link';
-import { useAdminPasscode } from '@/components/admin/AdminPasscodeContext';
-import { StatusBadge } from '@/components/admin/StatusBadge';
-import { Trash2, ArrowRight } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { Search, RefreshCw } from 'lucide-react';
+import { useAdminFetch } from '@/components/admin/useAdminFetch';
+import { EnquiryCard } from '@/components/admin/EnquiryCard';
+import { StorageNotice } from '@/components/admin/StorageNotice';
+import type { EnquiryRecord } from '@/lib/enquiryStore';
+
+type Filter = 'all' | 'new' | 'replied' | 'contact' | 'wholesale';
+const FILTERS: { id: Filter; label: string }[] = [
+  { id: 'all', label: 'All' },
+  { id: 'new', label: 'Unreplied' },
+  { id: 'replied', label: 'Replied' },
+  { id: 'contact', label: 'Contact form' },
+  { id: 'wholesale', label: 'Wholesale' },
+];
 
 export default function AdminEnquiriesListPage() {
-  const { passcode } = useAdminPasscode();
-  const [enquiries, setEnquiries] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { data, loading, reload, passcode } = useAdminFetch<{ enquiries: EnquiryRecord[] }>('/api/admin/enquiries/');
+  const [filter, setFilter] = useState<Filter>('all');
+  const [q, setQ] = useState('');
+  const enquiries = useMemo(() => data?.enquiries ?? [], [data]);
 
-  const fetchEnquiries = useCallback(async () => {
-    setLoading(true);
-    try {
-      const res = await fetch(`/api/admin/enquiries/`, {
-        headers: { 'X-Admin-Passcode': passcode || '' },
-      });
-      if (res.ok) {
-        const data = await res.json();
-        setEnquiries(data.enquiries || []);
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  }, [passcode]);
-
-  useEffect(() => {
-    if (passcode) {
-      const timer = setTimeout(() => {
-        fetchEnquiries();
-      }, 0);
-      return () => clearTimeout(timer);
-    }
-  }, [passcode, fetchEnquiries]);
+  const match = (e: EnquiryRecord, f: Filter) => f === 'all' || e.status === f || e.formName === f;
+  const counts = useMemo(() => Object.fromEntries(FILTERS.map((f) => [f.id, enquiries.filter((e) => match(e, f.id)).length])), [enquiries]);
+  const shown = useMemo(() => {
+    const needle = q.trim().toLowerCase();
+    return enquiries.filter((e) => match(e, filter) && (!needle || `${e.id} ${e.name} ${e.email} ${e.subject ?? ''} ${e.message}`.toLowerCase().includes(needle)));
+  }, [enquiries, filter, q]);
 
   const handleDelete = async (id: string) => {
-    if (!confirm(`Delete enquiry #${id}?`)) return;
-    try {
-      await fetch(`/api/admin/enquiries/${id}/`, {
-        method: 'DELETE',
-        headers: { 'X-Admin-Passcode': passcode || '' },
-      });
-      fetchEnquiries();
-    } catch (err) {
-      console.error(err);
-    }
+    if (!confirm(`Delete enquiry #${id}? This cannot be undone.`)) return;
+    await fetch(`/api/admin/enquiries/${id}/`, { method: 'DELETE', headers: { 'X-Admin-Passcode': passcode || '' } });
+    reload();
   };
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div className="flex flex-wrap items-end justify-between gap-3 border-b border-slate-800 pb-4">
         <div>
-          <h1 className="text-2xl font-black text-white">Enquiries Management</h1>
-          <p className="text-xs text-slate-400">View customer questions and reply directly via branded email.</p>
+          <h1 className="text-2xl font-black text-white">Enquiries</h1>
+          <p className="text-xs text-slate-400">Messages from the contact and wholesale forms. Replies go out as branded emails.</p>
         </div>
+        <button type="button" onClick={reload} className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-900 px-3.5 py-2 text-xs font-bold text-slate-200 hover:bg-slate-800">
+          <RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin' : ''}`} aria-hidden="true" /> Refresh
+        </button>
       </div>
 
-      {loading ? (
-        <div className="text-center py-12 text-slate-400 text-xs">Loading enquiries...</div>
-      ) : enquiries.length === 0 ? (
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center text-slate-400 text-xs">
-          No customer enquiries found.
+      <StorageNotice />
+
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div role="tablist" aria-label="Filter enquiries" className="flex flex-wrap gap-2">
+          {FILTERS.map((f) => (
+            <button
+              key={f.id}
+              type="button"
+              role="tab"
+              aria-selected={filter === f.id}
+              onClick={() => setFilter(f.id)}
+              className={`rounded-full border px-3.5 py-1.5 text-xs font-bold ${filter === f.id ? 'border-emerald-500 bg-emerald-700 text-white' : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-slate-500'}`}
+            >
+              {f.label} <span className="opacity-70">({counts[f.id] || 0})</span>
+            </button>
+          ))}
         </div>
+        <label className="relative block sm:w-72">
+          <span className="sr-only">Search enquiries</span>
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" aria-hidden="true" />
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search name, email or message" className="w-full rounded-xl border border-slate-700 bg-slate-900 py-2 pl-9 pr-3 text-xs text-white placeholder-slate-500 focus:border-emerald-500 focus:outline-none" />
+        </label>
+      </div>
+
+      {loading && enquiries.length === 0 ? (
+        <div className="py-12 text-center text-xs text-slate-400">Loading enquiries...</div>
+      ) : shown.length === 0 ? (
+        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-12 text-center text-xs text-slate-400">{enquiries.length === 0 ? 'No enquiries stored yet.' : 'No enquiries match this filter.'}</div>
       ) : (
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
-          <div className="divide-y divide-slate-800">
-            {enquiries.map((e) => (
-              <div key={e.id} className="p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono font-bold text-slate-400">#{e.id}</span>
-                    <StatusBadge status={e.status} />
-                    <span className="text-[10px] font-bold text-emerald-400 uppercase">Form: {e.formName}</span>
-                  </div>
-                  <div className="text-slate-200 font-bold text-sm">
-                    {e.name} ({e.email}, {e.phone || 'No phone'})
-                  </div>
-                  <p className="text-slate-300 italic bg-slate-950 p-2.5 rounded-lg border border-slate-800/80 max-w-xl">
-                    &quot;{e.message}&quot;
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Link
-                    href={`/admin/reply-enquiry/?enquiryId=${e.id}`}
-                    className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs rounded-xl border border-slate-700 flex items-center gap-1.5"
-                  >
-                    <span>Reply to Customer</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-
-                  <button
-                    type="button"
-                    onClick={() => handleDelete(e.id)}
-                    className="p-2 text-slate-500 hover:text-red-400 bg-slate-950 rounded-xl border border-slate-800"
-                    aria-label="Delete enquiry"
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+          {shown.map((e) => (
+            <EnquiryCard key={e.id} enquiry={e} onDelete={handleDelete} />
+          ))}
         </div>
       )}
     </div>

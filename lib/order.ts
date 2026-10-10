@@ -1,4 +1,4 @@
-import { SITE, REPLY } from '@/config/site';
+import { SITE, REPLY, CONTACT } from '@/config/site';
 
 export interface PaymentDetailField {
   label: string;
@@ -89,6 +89,7 @@ export function paymentTermsLines(ref: string): string[] {
   return [
     `This order is confirmed once payment is received — it is not yet final.`,
     `Use your order reference number — ${ref} — as the description/reference for your payment.`,
+    `Once you have paid, please send a screenshot of your payment receipt to ${CONTACT.email} or on WhatsApp to ${CONTACT.phoneDisplay}, quoting ${ref}. We match it to your order and then arrange dispatch.`,
     `${REPLY.dispatchLine}`,
     `All electric bike purchases are backed by VYRON Industries 2-Year Frame and 12-Month Electrical Warranty.`,
   ];

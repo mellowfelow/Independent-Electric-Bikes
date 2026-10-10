@@ -371,6 +371,12 @@ export const MASTER_TAXONOMY: MainCategory[] = [
         description: 'Trucks, belts, throttles and inner tubes for scooters, skateboards and kids bikes.',
       },
       {
+        slug: 'kids-dirt-bike-batteries',
+        name: 'Kids & Dirt Bike Batteries',
+        path: '/shop/batteries-parts-kits/kids-dirt-bike-batteries',
+        description: 'Replacement batteries for kids electric balance bikes and youth electric pit bikes.',
+      },
+      {
         slug: 'tyres-tubes',
         name: 'Tyres & Tubes',
         path: '/shop/batteries-parts-kits/tyres-tubes',

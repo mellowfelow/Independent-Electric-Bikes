@@ -21,19 +21,21 @@ const REDIS_KEY = `${REPLY.orderPrefix.toLowerCase()}:enquiries`;
 // In-memory fallback
 const memoryEnquiriesMap = new Map<string, EnquiryRecord>();
 
-export async function saveEnquiry(enquiry: EnquiryRecord): Promise<EnquiryRecord> {
+export async function saveEnquiry(enquiry: EnquiryRecord): Promise<EnquiryRecord & { persisted: boolean }> {
   const cleanId = (enquiry.id || '').trim().replace(/\/$/, '');
   enquiry.id = cleanId;
 
+  let persisted = false;
   if (redis) {
     try {
       await redis.hset(REDIS_KEY, { [cleanId]: JSON.stringify(enquiry) });
+      persisted = true;
     } catch (err) {
       console.error('[EnquiryStore] Redis save failed:', err);
     }
   }
   memoryEnquiriesMap.set(cleanId, enquiry);
-  return enquiry;
+  return Object.assign(enquiry, { persisted });
 }
 
 export async function listEnquiries(): Promise<EnquiryRecord[]> {

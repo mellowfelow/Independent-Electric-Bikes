@@ -25,8 +25,11 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
       if (res.ok) {
         const data = await res.json();
         setOrder(data.order);
+        setError('');
+      } else if (res.status === 401 || res.status === 429) {
+        setError('Your admin passcode was not accepted. Lock and sign in again.');
       } else {
-        setError('Order not found');
+        setError('Order not found. It may have been placed before permanent storage was connected: use Add order (with the order number from the email) to restore it.');
       }
     } catch {
       setError('Connection error fetching order');

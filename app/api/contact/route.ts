@@ -5,7 +5,7 @@ import { saveOrder, getOrder } from '@/lib/orderStore';
 import { saveEnquiry } from '@/lib/enquiryStore';
 import { priceOrder } from '@/lib/pricing';
 import { clean, cleanLine, isEmail, isValidOrderRef, randomRef, rateLimited } from '@/lib/security';
-import { orderConfirmationEmail, adminNewOrderEmail, escapeHtml } from '@/utils/emailTemplates';
+import { orderConfirmationEmail, adminNewOrderEmail, adminNewEnquiryEmail, enquiryAcknowledgementEmail } from '@/utils/emailTemplates';
 
 const FORM_NAMES = ['order', 'contact', 'wholesale', 'general'] as const;
 const CHANNELS = ['email', 'whatsapp', 'both'] as const;
@@ -98,7 +98,7 @@ export async function POST(req: NextRequest) {
     if (!message) return fail('Please include a message.');
 
     const enqRef = randomRef('ENQ');
-    await saveEnquiry({
+    const stored = await saveEnquiry({
       id: enqRef,
       createdAt: new Date().toISOString(),
       name,
@@ -116,15 +116,26 @@ export async function POST(req: NextRequest) {
         ? process.env.WHOLESALE_EMAIL || FORMS.destinations.wholesale || CONTACT.email
         : process.env.CONTACT_EMAIL || FORMS.destinations.contact || CONTACT.email;
 
-    await sendMail({
+    const enquiryMail = await sendMail({
       to: destEmail,
       subject: `${SITE.name} ${formName.toUpperCase()} Inquiry #${enqRef} - ${name}`,
       text: `Inquiry #${enqRef}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${companyName || 'N/A'}\nSubject: ${subject}\n\nMessage:\n${message}`,
-      html: `<p><strong>Inquiry #${escapeHtml(enqRef)}</strong></p><p><strong>Name:</strong> ${escapeHtml(name)} (${escapeHtml(email)}, ${escapeHtml(phone)})</p>${
-        companyName ? `<p><strong>Company:</strong> ${escapeHtml(companyName)}</p>` : ''
-      }<p><strong>Subject:</strong> ${escapeHtml(subject)}</p><p><strong>Message:</strong></p><blockquote style="background:#f8fafc; padding:12px; border-left:4px solid #16a34a; white-space:pre-wrap;">${escapeHtml(message)}</blockquote>`,
+      html: adminNewEnquiryEmail({ id: enqRef, formName, name, email, phone, companyName, subject, message }),
       replyTo: email,
     });
+
+    // Customer acknowledgement (branded HTML), so they know the message arrived.
+    await sendMail({
+      to: email,
+      subject: `We received your message #${enqRef} - ${SITE.name}`,
+      text: `Hi ${name}, thank you for contacting ${SITE.name}. We have received your message (reference ${enqRef}) and will reply shortly.`,
+      html: enquiryAcknowledgementEmail({ id: enqRef, name, subject, message }),
+    });
+
+    if (!enquiryMail.sent && !stored.persisted) {
+      console.error('[Contact API] Enquiry could not be stored or emailed:', enqRef);
+      return fail('We could not send your message right now. Please call or message us on WhatsApp.', 502);
+    }
 
     return NextResponse.json({ success: true, enquiryRef: enqRef, message: 'Thank you for your message! Our Brunswick team will get back to you shortly.' });
   } catch (err) {

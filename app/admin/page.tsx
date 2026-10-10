@@ -1,185 +1,96 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useMemo } from 'react';
 import Link from 'next/link';
-import { useAdminPasscode } from '@/components/admin/AdminPasscodeContext';
-import { StatusBadge } from '@/components/admin/StatusBadge';
-import { ShoppingCart, MessageSquare, ArrowRight, RefreshCw, DollarSign } from 'lucide-react';
+import { ShoppingCart, MessageSquare, ArrowRight, RefreshCw, DollarSign, Plus } from 'lucide-react';
+import { useAdminFetch } from '@/components/admin/useAdminFetch';
+import { OrderCard } from '@/components/admin/OrderCard';
+import { EnquiryCard } from '@/components/admin/EnquiryCard';
+import { StorageNotice } from '@/components/admin/StorageNotice';
 import { money } from '@/lib/order';
+import type { OrderRecord } from '@/lib/orderStore';
+import type { EnquiryRecord } from '@/lib/enquiryStore';
 
 export default function AdminHubPage() {
-  const { passcode } = useAdminPasscode();
-  const [orders, setOrders] = useState<any[]>([]);
-  const [enquiries, setEnquiries] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const o = useAdminFetch<{ orders: OrderRecord[] }>('/api/admin/orders/');
+  const e = useAdminFetch<{ enquiries: EnquiryRecord[] }>('/api/admin/enquiries/');
+  const orders = useMemo(() => o.data?.orders ?? [], [o.data]);
+  const enquiries = useMemo(() => e.data?.enquiries ?? [], [e.data]);
+  const loading = o.loading || e.loading;
+  const refresh = () => {
+    o.reload();
+    e.reload();
+  };
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const [ordersRes, enquiriesRes] = await Promise.all([
-        fetch(`/api/admin/orders/`, { headers: { 'X-Admin-Passcode': passcode || '' } }),
-        fetch(`/api/admin/enquiries/`, { headers: { 'X-Admin-Passcode': passcode || '' } }),
-      ]);
+  const awaitingInvoice = orders.filter((x) => x.status === 'new').length;
+  const unreplied = enquiries.filter((x) => x.status === 'new').length;
+  const pipeline = orders.filter((x) => x.status !== 'cancelled').reduce((sum, x) => sum + (x.totalAmount || 0), 0);
 
-      if (ordersRes.ok) {
-        const oData = await ordersRes.json();
-        setOrders(oData.orders || []);
-      }
-
-      if (enquiriesRes.ok) {
-        const eData = await enquiriesRes.json();
-        setEnquiries(eData.enquiries || []);
-      }
-    } catch (err) {
-      console.error('[Admin Hub] Fetch error:', err);
-    } finally {
-      setLoading(false);
-    }
-  }, [passcode]);
-
-  useEffect(() => {
-    if (passcode) {
-      const timer = setTimeout(() => {
-        fetchData();
-      }, 0);
-      return () => clearTimeout(timer);
-    }
-  }, [passcode, fetchData]);
-
-  const newOrdersCount = orders.filter((o) => o.status === 'new').length;
-  const newEnquiriesCount = enquiries.filter((e) => e.status === 'new').length;
-  const totalRevenue = orders.reduce((acc, o) => acc + (o.totalAmount || 0), 0);
-
+  const stat = 'rounded-2xl border border-slate-800 bg-slate-900 p-6';
   return (
     <div className="space-y-8">
-      {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+      <div className="flex flex-col gap-4 border-b border-slate-800 pb-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-black text-white">Reply Portal Dashboard</h1>
-          <p className="text-xs text-slate-400 mt-1">Live order requests, enquiry replies, and payment details composer hub.</p>
+          <h1 className="text-2xl font-black text-white sm:text-3xl">Reply Portal Dashboard</h1>
+          <p className="mt-1 text-xs text-slate-400">All orders and enquiries in one place. Reply by branded email or WhatsApp.</p>
         </div>
-
-        <button
-          type="button"
-          onClick={fetchData}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-bold rounded-xl border border-slate-800 transition-all self-start sm:self-auto"
-        >
-          <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
-          <span>Refresh Live Data</span>
-        </button>
-      </div>
-
-      {/* Metrics Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Live Orders</span>
-            <div className="p-2 bg-amber-500/10 text-amber-400 rounded-lg">
-              <ShoppingCart className="w-5 h-5" />
-            </div>
-          </div>
-          <div className="text-3xl font-black text-white mt-3">{orders.length}</div>
-          <div className="text-xs text-amber-400 font-bold mt-1">{newOrdersCount} pending payment details</div>
-        </div>
-
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Live Enquiries</span>
-            <div className="p-2 bg-blue-500/10 text-blue-400 rounded-lg">
-              <MessageSquare className="w-5 h-5" />
-            </div>
-          </div>
-          <div className="text-3xl font-black text-white mt-3">{enquiries.length}</div>
-          <div className="text-xs text-blue-400 font-bold mt-1">{newEnquiriesCount} unreplied inquiries</div>
-        </div>
-
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Gross Pipeline</span>
-            <div className="p-2 bg-emerald-500/10 text-emerald-400 rounded-lg">
-              <DollarSign className="w-5 h-5" />
-            </div>
-          </div>
-          <div className="text-3xl font-black text-emerald-400 mt-3">{money(totalRevenue)}</div>
-          <div className="text-xs text-slate-400 font-medium mt-1">Total across submitted drafts</div>
-        </div>
-      </div>
-
-      {/* Recent Orders Section */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-          <h2 className="text-base font-extrabold text-white">Recent E-Bike Orders</h2>
-          <Link href="/admin/orders/" className="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
-            <span>View All ({orders.length})</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+        <div className="flex gap-2">
+          <button type="button" onClick={refresh} className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-bold text-slate-200 hover:bg-slate-800">
+            <RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin' : ''}`} aria-hidden="true" /> Refresh
+          </button>
+          <Link href="/admin/orders/new/" className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-600">
+            <Plus className="h-3.5 w-3.5" aria-hidden="true" /> Add order
           </Link>
         </div>
+      </div>
 
+      <StorageNotice />
+
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+        <div className={stat}>
+          <div className="flex items-center justify-between"><span className="text-xs font-bold uppercase tracking-wider text-slate-400">Orders</span><span className="rounded-lg bg-amber-500/10 p-2 text-amber-400"><ShoppingCart className="h-5 w-5" aria-hidden="true" /></span></div>
+          <div className="mt-3 text-3xl font-black text-white">{orders.length}</div>
+          <div className="mt-1 text-xs font-bold text-amber-400">{awaitingInvoice} waiting for a payment invoice</div>
+        </div>
+        <div className={stat}>
+          <div className="flex items-center justify-between"><span className="text-xs font-bold uppercase tracking-wider text-slate-400">Enquiries</span><span className="rounded-lg bg-sky-500/10 p-2 text-sky-400"><MessageSquare className="h-5 w-5" aria-hidden="true" /></span></div>
+          <div className="mt-3 text-3xl font-black text-white">{enquiries.length}</div>
+          <div className="mt-1 text-xs font-bold text-sky-400">{unreplied} unreplied</div>
+        </div>
+        <div className={stat}>
+          <div className="flex items-center justify-between"><span className="text-xs font-bold uppercase tracking-wider text-slate-400">Order value</span><span className="rounded-lg bg-emerald-500/10 p-2 text-emerald-400"><DollarSign className="h-5 w-5" aria-hidden="true" /></span></div>
+          <div className="mt-3 text-3xl font-black text-emerald-400">{money(pipeline)}</div>
+          <div className="mt-1 text-xs font-medium text-slate-400">All orders except cancelled</div>
+        </div>
+      </div>
+
+      <section aria-label="Recent orders" className="space-y-4">
+        <div className="flex items-center justify-between">
+          <h2 className="text-base font-extrabold text-white">Recent orders</h2>
+          <Link href="/admin/orders/" className="flex items-center gap-1 text-xs font-bold text-emerald-400 hover:text-emerald-300">View all ({orders.length}) <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" /></Link>
+        </div>
         {orders.length === 0 ? (
-          <div className="text-xs text-slate-400 py-6 text-center">No order drafts submitted yet.</div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-8 text-center text-xs text-slate-400">No orders stored yet.</div>
         ) : (
-          <div className="divide-y divide-slate-800">
-            {orders.slice(0, 5).map((o) => (
-              <div key={o.id} className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono font-black text-white text-sm">#{o.id}</span>
-                    <StatusBadge status={o.status} />
-                  </div>
-                  <div className="text-slate-300 font-medium mt-0.5">
-                    {o.customerName} ({o.email}) · <span className="text-emerald-400 font-bold">{money(o.totalAmount)}</span>
-                  </div>
-                </div>
-
-                <Link
-                  href={`/admin/send-payment-email/?orderId=${o.id}`}
-                  className="px-3.5 py-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl self-start sm:self-auto"
-                >
-                  Send Payment Details &rarr;
-                </Link>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+            {orders.slice(0, 4).map((x) => <OrderCard key={x.id} order={x} />)}
           </div>
         )}
-      </div>
+      </section>
 
-      {/* Recent Enquiries Section */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-          <h2 className="text-base font-extrabold text-white">Recent Customer Enquiries</h2>
-          <Link href="/admin/enquiries/" className="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
-            <span>View All ({enquiries.length})</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+      <section aria-label="Recent enquiries" className="space-y-4">
+        <div className="flex items-center justify-between">
+          <h2 className="text-base font-extrabold text-white">Recent enquiries</h2>
+          <Link href="/admin/enquiries/" className="flex items-center gap-1 text-xs font-bold text-emerald-400 hover:text-emerald-300">View all ({enquiries.length}) <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" /></Link>
         </div>
-
         {enquiries.length === 0 ? (
-          <div className="text-xs text-slate-400 py-6 text-center">No customer enquiries submitted yet.</div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-8 text-center text-xs text-slate-400">No enquiries stored yet.</div>
         ) : (
-          <div className="divide-y divide-slate-800">
-            {enquiries.slice(0, 5).map((e) => (
-              <div key={e.id} className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono font-bold text-slate-300">#{e.id}</span>
-                    <StatusBadge status={e.status} />
-                  </div>
-                  <div className="text-slate-300 font-medium mt-0.5">
-                    {e.name} ({e.email}) — <span className="text-slate-400 font-normal truncate max-w-xs">{e.message}</span>
-                  </div>
-                </div>
-
-                <Link
-                  href={`/admin/reply-enquiry/?enquiryId=${e.id}`}
-                  className="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs rounded-xl border border-slate-700 self-start sm:self-auto"
-                >
-                  Compose Reply &rarr;
-                </Link>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+            {enquiries.slice(0, 4).map((x) => <EnquiryCard key={x.id} enquiry={x} />)}
           </div>
         )}
-      </div>
+      </section>
     </div>
   );
 }

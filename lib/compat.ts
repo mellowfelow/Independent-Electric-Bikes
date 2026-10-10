@@ -69,3 +69,21 @@ export function relatedProducts(product: Product, isPart: boolean, limit = 8): P
   PRODUCTS.filter((p) => p.category === product.category).forEach(push);
   return out.slice(0, limit);
 }
+
+/** Parts that fit at least one vehicle in a category (and subcategory), most widely fitting first. */
+export function partsForCategory(categorySlug: string, subSlug?: string, limit = 8): { part: Product; fits: number }[] {
+  const vehicles = PRODUCTS.filter((p) => {
+    if (p.category !== categorySlug) return false;
+    if (!subSlug) return true;
+    return p.subcategory === subSlug || p.subSubcategory === subSlug;
+  });
+  const names = new Set(vehicles.map((v) => v.name));
+  const out: { part: Product; fits: number }[] = [];
+  for (const [partName, fit] of Object.entries(PART_FITS)) {
+    const part = byName.get(partName);
+    if (!part) continue;
+    const fits = new Set([...(fit.confirmed ?? []), ...(fit.system ?? [])].filter((n) => names.has(n))).size;
+    if (fits > 0) out.push({ part, fits });
+  }
+  return out.sort((a, b) => b.fits - a.fits || a.part.price - b.part.price).slice(0, limit);
+}

@@ -3001,5 +3001,55 @@ export const EXPANSION_ITEMS: Product[] = [
       "frame": "",
       "gears": ""
     }
+  },
+  {
+    "slug": "razor-mx650-12v-12ah-sealed-lead-acid-battery-3-pack",
+    "name": "Razor MX650 12V 12Ah Sealed Lead Acid Battery (3-Pack)",
+    "price": 171,
+    "category": "batteries-parts-kits",
+    "subcategory": "kids-dirt-bike-batteries",
+    "subSubcategory": "kids-dirt-bike-batteries",
+    "badge": "none",
+    "featured": false,
+    "filters": {},
+    "description": "",
+    "shortDescription": "",
+    "images": [],
+    "specs": {
+      "motor": "",
+      "battery": "",
+      "range": "",
+      "topSpeed": "",
+      "brakes": "",
+      "weight": "",
+      "payload": "",
+      "frame": "",
+      "gears": ""
+    }
+  },
+  {
+    "slug": "stacyc-18v-5ah-battery",
+    "name": "Stacyc 18V 5Ah Battery",
+    "price": 329,
+    "category": "batteries-parts-kits",
+    "subcategory": "kids-dirt-bike-batteries",
+    "subSubcategory": "kids-dirt-bike-batteries",
+    "badge": "none",
+    "featured": false,
+    "filters": {},
+    "description": "",
+    "shortDescription": "",
+    "images": [],
+    "specs": {
+      "motor": "",
+      "battery": "",
+      "range": "",
+      "topSpeed": "",
+      "brakes": "",
+      "weight": "",
+      "payload": "",
+      "frame": "",
+      "gears": ""
+    }
   }
 ];
