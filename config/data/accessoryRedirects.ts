@@ -50,7 +50,7 @@ export const ACCESSORY_REDIRECTS: { source: string; destination: string }[] = [
   },
   {
     "source": "/shop/accessories/bosch-fast-charger-6a-smart-system",
-    "destination": "/shop/batteries-parts-kits/ebike-chargers/bosch-fast-charger-6a-smart-system"
+    "destination": "/shop/batteries-parts-kits/ebike-chargers/bosch-fast-charger-6a-for-system-2-batteries"
   },
   {
     "source": "/shop/accessories/shimano-steps-4a-fast-battery-charger",
@@ -128,4 +128,5 @@ export const ACCESSORY_REDIRECTS: { source: string; destination: string }[] = [
   { source: '/shop/locks-security/:path*', destination: '/shop/safety-security-carry/:path*' },
   { source: '/shop/bags-racks-carry', destination: '/shop/safety-security-carry' },
   { source: '/shop/bags-racks-carry/:path*', destination: '/shop/safety-security-carry/:path*' },
+  { source: '/shop/batteries-parts-kits/bosch-fast-charger-6a-smart-system', destination: '/shop/batteries-parts-kits/bosch-fast-charger-6a-for-system-2-batteries' },
 ];

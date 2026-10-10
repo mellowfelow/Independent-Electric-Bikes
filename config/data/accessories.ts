@@ -266,8 +266,8 @@ export const ACCESSORY_ITEMS: Product[] = [
     }
   },
   {
-    "slug": "bosch-fast-charger-6a-smart-system",
-    "name": "Bosch Fast Charger 6A Smart System",
+    "slug": "bosch-fast-charger-6a-for-system-2-batteries",
+    "name": "Bosch Fast Charger 6A for System 2 Batteries",
     "price": 249,
     "category": "batteries-parts-kits",
     "subcategory": "ebike-chargers",

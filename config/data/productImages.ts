@@ -55,7 +55,7 @@ export const PRODUCT_IMAGES: Record<string, string> = {
   'bolzzen-atom-lite-e-scooter': '/images/products/bolzzen-atom-lite-e-scooter.722ecb4e.webp',
   'bolzzen-atom-pro-e-scooter': '/images/products/bolzzen-atom-pro-e-scooter.ed1abe34.webp',
   'bosch-4a-standard-charger-smart-system-bpc3400': '/images/products/bosch-4a-standard-charger-smart-system-bpc3400.7f8a4a77.webp',
-  'bosch-fast-charger-6a-smart-system': '/images/products/bosch-fast-charger-6a-smart-system.cad2bab8.webp',
+  'bosch-fast-charger-6a-for-system-2-batteries': '/images/products/bosch-fast-charger-6a-for-system-2-batteries.cad2bab8.webp',
   'bosch-powertube-500-horizontal-battery-bbp3750': '/images/products/bosch-powertube-500-horizontal-battery-bbp3750.cc6ff5b0.webp',
   'bosch-powertube-500-vertical-battery': '/images/products/bosch-powertube-500-vertical-battery.04820576.webp',
   'bosch-powertube-625-horizontal-battery': '/images/products/bosch-powertube-625-horizontal-battery.6d73308d.webp',

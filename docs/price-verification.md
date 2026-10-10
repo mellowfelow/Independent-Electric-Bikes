@@ -194,3 +194,7 @@ The other ~340 prices were not re-verified in this pass.
 | Engwe EP-2 Pro Battery 13Ah | $487 | batteries-parts-kits / ebike-batteries | Engwe | EUR 299 converted at 1.63 |
 | Fiido C11 and C11 Pro Replacement Battery | $382 | batteries-parts-kits / ebike-batteries | Fiido | US$267 converted at 1.43; new version only |
 | Vivid V500 6.5 Inch Street Hoverboard | $360 | self-balancing-ev / hoverboards | Scooter Hut | $359.99, was $449.99 |
+
+## Fitment audit (2026-10-10)
+Every entry in `config/data/compatibility.ts` was checked against manufacturer or retailer pages. Corrections: Bosch PowerTube batteries now link only to bikes with a frame-integrated PowerTube (rack-mounted PowerPack bikes removed); the Bosch 6A charger was renamed "Bosch Fast Charger 6A for System 2 Batteries" because Bosch lists the 4A BPC3400 for Smart System; Evolve battery limited to GTR and Hadean; Shimano batteries limited to Merida models whose pages name a 504Wh pack; Rad semi-integrated battery no longer linked to the RadExpand 5; Pedego and Giant batteries and the hoverboard and Bafang kits no longer linked to bikes that were not confirmed; Segway MAX charger and DiroDi Gen 6 packs downgraded to "same system"; Eunorau universal battery cut to the two cargo/fat-tyre models; tyre, rotor and pad rules corrected.
+Still unverified: the drive system of each bike is taken from the brand's range pages, not each model year; vehicle specs other than the three in `config/data/verified.ts`.
