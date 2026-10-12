@@ -15,9 +15,8 @@ function SendPaymentEmailContent() {
   const [orderId, setOrderId] = useState(initialOrderId);
   const [order, setOrder] = useState<any>(null);
   const [methodId, setMethodId] = useState('bank-transfer');
-  const [pastedDetails, setPastedDetails] = useState(
-    `BSB: 063-000\nAccount Number: 12345678\nAccount Name: VYRON Industries Pty Ltd\nBank: Commonwealth Bank Australia`
-  );
+  // Deliberately empty: payment details are always pasted by hand from the real account, never pre-filled.
+  const [pastedDetails, setPastedDetails] = useState('');
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
@@ -140,7 +139,7 @@ function SendPaymentEmailContent() {
               rows={5}
               value={pastedDetails}
               onChange={(e) => setPastedDetails(e.target.value)}
-              placeholder="Paste account details here (e.g. BSB: 063-000, Account: 12345678...)"
+              placeholder="Paste your real bank, PayID or wallet details here, one per line (Label: value)"
               className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs font-mono text-slate-200 focus:outline-none focus:border-emerald-500"
             />
           </div>

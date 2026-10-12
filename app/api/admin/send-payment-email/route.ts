@@ -18,6 +18,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, message: 'Order ID and payment details text are required.' }, { status: 400 });
     }
 
+    // Safety net: never email obvious sample or placeholder details to a customer.
+    if (/\b12345678\b|\b0{6,}\b|not real|test account|placeholder|lorem ipsum|xxxx/i.test(String(pastedDetails))) {
+      return NextResponse.json({ success: false, message: 'These payment details look like sample or placeholder text. Paste the real account details and try again.' }, { status: 400 });
+    }
+
     const order = await getOrder(orderId);
     if (!order) {
       return NextResponse.json({ success: false, message: 'Order not found.' }, { status: 404 });
