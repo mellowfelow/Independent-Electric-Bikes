@@ -145,11 +145,11 @@ export function RecentPurchasePopup() {
         setIsVisible(false);
       }, 5500);
     } else {
-      // Pause for 28.5 seconds (+20s interval), then show next purchase in loop
+      // Pause for 38.5 seconds between pop-ups, then show the next purchase in the loop
       nextTimer = setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % purchaseList.length);
         setIsVisible(true);
-      }, 28500);
+      }, 38500);
     }
 
     return () => {
