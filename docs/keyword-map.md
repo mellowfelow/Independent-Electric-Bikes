@@ -1,7 +1,7 @@
 # Keyword Map v5 — Independent Electric Bikes
 
 > Generated 2026-10-13 from 21560 SEMrush keywords (21560 usable after KD ≤ 54 filter)
-> Primaries: 448 | Secondaries: 1148 | Pages without primary: 168
+> Primaries: 471 | Secondaries: 1190 | Pages without primary: 206
 > Intent tie-break: T > C > I > Q > N | KD tiers: T1(0-19) T2(20-34) T3(35-54) X(55+ dropped)
 > Cannibalisation check: 3-level (URL primary, secondary registry, FAQ registry) — 0 conflicts
 
@@ -79,7 +79,7 @@
 
 ---
 
-## Main Categories (8) (8 pages, 8 with primary)
+## Main Categories (10) (10 pages, 10 with primary)
 
 ### E-Bikes
 **URL:** `/shop/electric-bikes/`
@@ -153,9 +153,24 @@
 - Secondary: "thule bike rack" (V:2900 KD:19 C $0.3)
 - Secondary: "bike light" (V:1900 KD:17 C $0.5)
 
+### Electric Quad Bikes & ATVs
+**URL:** `/shop/electric-quad-bikes/`
+
+- **Primary:** "electric quad bike" (V:1000 KD:13 C $0)
+- Secondary: "kids quad bike" (V:1600 KD:12 C $0)
+- Secondary: "childrens electric quad bike" (V:590 KD:7 C $0)
+- Secondary: "quad bikes australia" (V:260 KD:20 C $0)
+- Secondary: "electric quad bike australia" (V:110 KD:16 C $0)
+
+### Electric Water Sports
+**URL:** `/shop/electric-water-sports/`
+
+- **Primary:** "electric surfboard" (V:1000 KD:17 C $0)
+- Secondary: "electric surfboard australia" (V:140 KD:30 C $0)
+
 ---
 
-## Subcategories (38 pages, 37 with primary)
+## Subcategories (48 pages, 47 with primary)
 
 ### Urban & Commuter E-Bikes
 **URL:** `/shop/electric-bikes/urban-commuter-ebikes/`
@@ -429,6 +444,78 @@
 - Secondary: "quad lock iphone 17" (V:720 KD:11 T $0.7)
 - Secondary: "iphone 13 quad lock case" (V:390 KD:12 T $0.5)
 - Secondary: "quad lock iphone 11" (V:390 KD:12 T $0.46)
+
+### Electric Dirt & Motorbikes
+**URL:** `/shop/electric-bikes/electric-dirt-motorbikes/`
+
+- **Primary:** "electric motorbike" (V:6600 KD:18 C $0.45)
+- Secondary: "electric motorbikes" (V:590 KD:18 C $0.45)
+- Secondary: "kids electric motorbike" (V:720 KD:11 C $0.41)
+- Secondary: "electric road motorbike" (V:170 KD:22 C $0)
+- Secondary: "electric motorbike for adults" (V:260 KD:16 C $0)
+
+### Electric Mopeds
+**URL:** `/shop/electric-bikes/electric-mopeds/`
+
+- **Primary:** "electric moped" (V:1300 KD:39 C $0)
+- Secondary: "electric moped bike" (V:390 KD:23 I $0)
+- Secondary: "cheap electric moped" (V:1300 KD:18 C $0)
+
+### Electric Tricycles & Trikes
+**URL:** `/shop/electric-bikes/electric-tricycles/`
+
+- **Primary:** "electric tricycle" (V:170 KD:15 C $0)
+- Secondary: "electric trike" (V:110 KD:12 C $0)
+- Secondary: "electric tricycle australia" (V:30 KD:8 C $0)
+
+### Hub Motor Conversion Kits
+**URL:** `/shop/batteries-parts-kits/hub-motor-conversion-kits/`
+
+- **Primary:** "ebike kit" (V:1900 KD:13 C $0.27)
+- Secondary: "e bike kit" (V:1600 KD:5 C $0)
+- Secondary: "ebike kit with battery" (V:480 KD:8 C $0.27)
+- Secondary: "hub motor e bike" (V:30 KD:6 C $0)
+
+### Kids Electric Quad Bikes
+**URL:** `/shop/electric-quad-bikes/kids-electric-quads/`
+
+- **Primary:** "kids electric quad bike" (V:390 KD:7 C $0)
+- Secondary: "electric quad bike kids" (V:260 KD:7 C $0)
+- Secondary: "children's ride on quad bike" (V:110 KD:6 C $0)
+
+### Adult Electric Quad Bikes & ATVs
+**URL:** `/shop/electric-quad-bikes/adult-electric-quads/`
+
+- **Primary:** "electric atv australia" (V:50 KD:10 C $0)
+- Secondary: "adult electric quad" (V:30 KD:8 C $0)
+- Secondary: "48v electric quad bike" (V:30 KD:7 C $0)
+
+### Farm & Utility Electric Quads
+**URL:** `/shop/electric-quad-bikes/farm-utility-quads/`
+
+- **Primary:** "farming quad bikes for sale" (V:50 KD:5 C $0)
+- Secondary: "farm quad bike" (V:70 KD:8 C $0)
+- Secondary: "utility quad bike" (V:30 KD:6 C $0)
+
+### Electric Surfboards & Hydrofoils
+**URL:** `/shop/electric-water-sports/electric-surfboards/`
+
+- **Primary:** "electric hydrofoil" (V:110 KD:15 C $0)
+- Secondary: "efoil board australia" (V:50 KD:12 C $0)
+- Secondary: "efoil australia" (V:30 KD:10 C $0)
+
+### Electric Jetboards
+**URL:** `/shop/electric-water-sports/electric-jetboards/`
+
+- **Primary:** "electric jetboard" (V:50 KD:10 C $0)
+- Secondary: "motorised surfboard" (V:90 KD:12 C $0)
+
+### Electric Jet Skis & Personal Watercraft
+**URL:** `/shop/electric-water-sports/electric-jetskis/`
+
+- **Primary:** "electric jet ski" (V:260 KD:15 C $0)
+- Secondary: "electric jet ski australia" (V:50 KD:10 C $0)
+- Secondary: "electric personal watercraft" (V:30 KD:8 C $0)
 
 ---
 
@@ -1083,7 +1170,7 @@
 
 ---
 
-## Product Pages (463 pages, 301 with primary)
+## Product Pages (512 pages, 314 with primary)
 
 ### Lekker Jordaan Urban 8sp
 **URL:** `/product/lekker-jordaan-urban-8sp/`
@@ -4202,6 +4289,266 @@
 - Secondary: "ktm stacyc" (V:90 KD:10 C $0.57)
 - Secondary: "stacyc australia" (V:50 KD:9 C $0.6)
 
+### Sur-Ron Ultra Bee
+**URL:** `/product/sur-ron-ultra-bee/`
+
+- **Primary:** "surron ultra bee" (V:590 KD:17 C $0)
+- Secondary: "surron ultra bee australia" (V:110 KD:17 C $0)
+- Secondary: "surron ultra bee road legal australia" (V:110 KD:4 I $0)
+
+### Sur-Ron Storm Bee
+**URL:** `/product/sur-ron-storm-bee/`
+
+- **Primary:** "surron storm bee" (V:880 KD:17 I $0)
+- Secondary: "sur ron storm bee" (V:260 KD:17 C $0)
+
+### Sur-Ron Hyper Bee
+**URL:** `/product/sur-ron-hyper-bee/`
+
+- **Primary:** "sur ron hyper bee" (V:170 KD:9 C $0)
+
+### Talaria Komodo
+**URL:** `/product/talaria-komodo/`
+
+- **Primary:** "talaria e bike" (V:390 KD:16 C $0)
+- Secondary: "talaria bike" (V:390 KD:16 C $0)
+
+### Super 73 S2
+**URL:** `/product/super-73-s2/`
+
+- **Primary:** "super 73 s2" (V:2400 KD:38 T $0.18)
+
+### Super 73 ZX
+**URL:** `/product/super-73-zx/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Super 73 RX
+**URL:** `/product/super-73-rx/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Fatboy Scrambler V2
+**URL:** `/product/fatboy-scrambler-v2/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Fatboy Mini BMX Electric
+**URL:** `/product/fatboy-mini-bmx-electric/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### NIU NQi GTS Sport Electric Moped
+**URL:** `/product/niu-nqi-gts-sport-electric-moped/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Super SOCO CUx Electric Moped
+**URL:** `/product/super-soco-cux-electric-moped/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Tern GSD S10 Cargo E-Bike
+**URL:** `/product/tern-gsd-s10-cargo-e-bike/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Riese & Muller Load 75 Cargo
+**URL:** `/product/riese-muller-load-75-cargo/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Jorvik Electric Tricycle
+**URL:** `/product/jorvik-electric-tricycle/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Sur-Ron Light Bee X
+**URL:** `/product/sur-ron-light-bee-x/`
+
+- **Primary:** "sur ron light bee x" (V:590 KD:18 I $0)
+- Secondary: "sur-ron light bee x" (V:590 KD:16 I $0)
+- Secondary: "sur-ron light bee x australia" (V:170 KD:16 I $0)
+- Secondary: "light bee x" (V:880 KD:10 C $0)
+
+### Sur-Ron Light Bee S
+**URL:** `/product/sur-ron-light-bee-s/`
+
+- **Primary:** "surron light bee s" (V:260 KD:17 I $0)
+- Secondary: "sur ron light bee" (V:880 KD:10 C $0)
+
+### Talaria X3
+**URL:** `/product/talaria-x3/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+- Secondary: "talaria e bikes" (V:390 KD:16 C $0)
+
+### Talaria X3 Pro
+**URL:** `/product/talaria-x3-pro/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Talaria XXX
+**URL:** `/product/talaria-xxx/`
+
+- **Primary:** "talaria xxx top speed" (V:50 KD:6 I $0)
+
+### Kayo K6 250cc Dirt Bike
+**URL:** `/product/kayo-k6-250cc-dirt-bike/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+- Secondary: "kayo" (V:368000 KD:29 T $2.33)
+
+### Kayo T2 250cc Enduro
+**URL:** `/product/kayo-t2-250cc-enduro/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Thumpstar TSB 50cc Pit Bike
+**URL:** `/product/thumpstar-tsb-50cc-pit-bike/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Segway Ninebot E2 Pro
+**URL:** `/product/segway-ninebot-e2-pro/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+- Secondary: "ninebot electric scooter" (V:480 KD:34 C $0.42)
+
+### Segway Ninebot Max G2
+**URL:** `/product/segway-ninebot-max-g2/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Segway Ninebot Max G30
+**URL:** `/product/segway-ninebot-max-g30/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Bafang BBS02B 750W Mid-Drive Kit
+**URL:** `/product/bafang-bbs02b-750w-mid-drive-kit/`
+
+- **Primary:** "bafang conversion kit" (V:170 KD:7 I $0)
+- Secondary: "bafang ebike conversion kit" (V:170 KD:7 I $0)
+
+### Bafang BBSHD 1000W Mid-Drive Kit
+**URL:** `/product/bafang-bbshd-1000w-mid-drive-kit/`
+
+- **Primary:** "bafang 1000w mid drive kit" (V:50 KD:5 C $0)
+- Secondary: "bafang conversion kit with battery" (V:90 KD:19 C $0)
+
+### Voilamart 1500W Hub Motor Kit
+**URL:** `/product/voilamart-1500w-hub-motor-kit/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### EBIKELING 1200W Hub Motor Kit
+**URL:** `/product/ebikeling-1200w-hub-motor-kit/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Dragon GTR V2 Electric Skateboard
+**URL:** `/product/dragon-gtr-v2-electric-skateboard/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Dragon Cyclone Pro Electric Skateboard
+**URL:** `/product/dragon-cyclone-pro-electric-skateboard/`
+
+- **Primary:** "cyclone pro electric scooter" (V:210 KD:6 C $0)
+
+### Kayo Bull 200 Electric ATV
+**URL:** `/product/kayo-bull-200-electric-atv/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+- Secondary: "kayo quad bikes" (V:90 KD:2 T $0.69)
+
+### Kayo Fox 70 Kids Electric Quad
+**URL:** `/product/kayo-fox-70-kids-electric-quad/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Segway Villain SX10 Electric ATV
+**URL:** `/product/segway-villain-sx10-electric-atv/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### CFMoto CForce 110 Electric Quad
+**URL:** `/product/cfmoto-cforce-110-electric-quad/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Razor Dirt Quad 500
+**URL:** `/product/razor-dirt-quad-500/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Venom 800W Kids Electric Quad
+**URL:** `/product/venom-800w-kids-electric-quad/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### MotoTec 36V Kids Electric Quad
+**URL:** `/product/mototec-36v-kids-electric-quad/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### KAYO E-Tor 48V Adult Quad
+**URL:** `/product/kayo-e-tor-48v-adult-quad/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### InMotion V13 Challenger EUC
+**URL:** `/product/inmotion-v13-challenger-euc/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+- Secondary: "inmotion australia" (V:70 KD:9 C $0)
+
+### Lift eFoil 2 Electric Hydrofoil
+**URL:** `/product/lift-efoil-2-electric-hydrofoil/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Fliteboard AIR Electric Hydrofoil
+**URL:** `/product/fliteboard-air-electric-hydrofoil/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Radinn Freeride Electric Jetboard
+**URL:** `/product/radinn-freeride-electric-jetboard/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Awake RAVIK S Electric Surfboard
+**URL:** `/product/awake-ravik-s-electric-surfboard/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### YuJet Surfer Electric Bodyboard
+**URL:** `/product/yujet-surfer-electric-bodyboard/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Taiga Orca Carbon Electric Jet Ski
+**URL:** `/product/taiga-orca-carbon-electric-jet-ski/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Narke GT45 Electric Jet Ski
+**URL:** `/product/narke-gt45-electric-jet-ski/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Sea-Doo Rise Electric Jet Ski
+**URL:** `/product/sea-doo-rise-electric-jet-ski/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
+### Yamaha WaveRunner E Series
+**URL:** `/product/yamaha-waverunner-e-series/`
+
+- **Primary:** _(product name as long-tail — no verified match in pool)_
+
 ---
 
 ## Blog Posts (10 pages, 8 with primary)
@@ -4275,10 +4622,10 @@
 
 | Metric | Value |
 |---|---|
-| Total pages mapped | 616 |
-| Primaries assigned (verified) | 448 |
-| Secondaries assigned | 1148 |
-| Pages without primary | 168 |
+| Total pages mapped | 677 |
+| Primaries assigned (verified) | 471 |
+| Secondaries assigned | 1190 |
+| Pages without primary | 206 |
 | Cannibalisation conflicts | 0 |
 | Data source | all-keywords-fixed.json |
 | Raw keywords | 21560 |
@@ -4288,7 +4635,7 @@
 
 | Type | Count | Note |
 |---|---|---|
-| product | 162 | Use product name as long-tail primary |
+| product | 200 | Use product name as long-tail primary |
 | brand | 3 | Needs manual keyword research |
 | blog | 2 | Needs manual keyword research |
 | subcategory | 1 | Needs manual keyword research |
