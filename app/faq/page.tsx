@@ -4,8 +4,8 @@ import { FAQ, SITE } from '@/config/site';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: fitTitle('Electric Bike FAQ, Laws & Warranty'),
-  description: fitDesc('Answers on Victorian e-bike laws, battery range, express freight, cryptocurrency and PayID payments, and 2-year frame warranty claims.'),
+  title: fitTitle('E-Bike FAQ — Are E-Bikes Legal in QLD & AU?'),
+  description: fitDesc('Are e-bikes illegal in QLD? Answers on Australian e-bike laws by state, battery range, licences, express freight, PayID payments and warranty claims.'),
   alternates: { canonical: `https://${SITE.domain}/faq/` },
 };
 
@@ -41,7 +41,7 @@ export default function FAQPage() {
         <div className="bg-slate-900 border-b border-slate-800 py-12 px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Knowledge Base</span>
-            <h1 className="text-3xl sm:text-5xl font-black text-white">Frequently Asked Questions</h1>
+            <h1 className="text-3xl sm:text-5xl font-black text-white">E-Bike FAQ &amp; Australian Laws</h1>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
               Everything you need to know about battery charging, Australian road compliance, express delivery, and warranty support.
             </p>

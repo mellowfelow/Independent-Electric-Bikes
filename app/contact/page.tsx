@@ -55,7 +55,7 @@ export default function ContactPage() {
       <div className="bg-slate-900 border-b border-slate-800 py-12 px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-2">
           <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Get in Touch</span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white">Contact Our Brunswick Showroom</h1>
+          <h1 className="text-3xl sm:text-5xl font-black text-white">Electric Bike Repairs &amp; Contact</h1>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
             Test rides, sales inquiries, and technical warranty support from VYRON Industries.
           </p>

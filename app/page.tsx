@@ -114,7 +114,7 @@ export default function HomePage() {
 
               {/* SINGLE H1 FOR SEO */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight [text-shadow:0_2px_18px_rgba(2,6,23,0.75),0_1px_3px_rgba(2,6,23,0.6)]">
-                Find the <span className="text-emerald-400 underline decoration-emerald-500/40 decoration-4">Best Electric Commuter Bike</span> in Australia
+                Australia&apos;s Best <span className="text-emerald-400 underline decoration-emerald-500/40 decoration-4">Electric Bike</span> Shop
               </h1>
 
               <p className="text-base sm:text-lg text-white/95 leading-relaxed max-w-2xl font-normal [text-shadow:0_2px_18px_rgba(2,6,23,0.75),0_1px_3px_rgba(2,6,23,0.6)]">

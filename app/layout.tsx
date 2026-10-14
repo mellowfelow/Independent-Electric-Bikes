@@ -9,8 +9,8 @@ import { SITE } from '@/config/site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${SITE.domain}`),
-  title:`${SITE.name} | Premium E-Bikes Australia`,
-  description: `Independent electric commuter, cargo and folding e-bike specialist in Brunswick, Victoria. Shop e-bikes, scooters and EVs with express Australian freight.`,
+  title:`${SITE.name} | Electric Bike Australia`,
+  description: `Australia's independent electric bike specialist in Brunswick, VIC. Shop e-bikes, electric scooters, skateboards and EVs with express freight Australia-wide.`,
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -22,16 +22,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE.name,
-    title: `${SITE.name} | Premium E-Bikes Australia`,
-    description: `Independent electric commuter, cargo and folding e-bike specialist in Brunswick, Victoria.`,
+    title: `${SITE.name} | Electric Bike Australia`,
+    description: `Australia's independent electric bike specialist in Brunswick, Victoria. Shop e-bikes, scooters and EVs.`,
     url: `https://${SITE.domain}/`,
     images: [{ url: '/og.png', width: 1200, height: 630, alt: SITE.name }],
   },
   twitter: {
     card: 'summary_large_image',
     images: ['/og.png'],
-    title: `${SITE.name} | Premium E-Bikes Australia`,
-    description: `Independent electric commuter, cargo and folding e-bike specialist in Brunswick, Victoria.`,
+    title: `${SITE.name} | Electric Bike Australia`,
+    description: `Australia's independent electric bike specialist in Brunswick, Victoria. Shop e-bikes, scooters and EVs.`,
   },
   alternates: {
     canonical: `https://${SITE.domain}/`,

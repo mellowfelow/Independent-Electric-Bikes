@@ -4,8 +4,8 @@ import { fitTitle, fitDesc } from '@/lib/catalog';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: fitTitle('Contact Our Brunswick E-Bike Showroom'),
-  description: fitDesc(`Contact Independent Electric Bikes at ${CONTACT.address}. Call ${CONTACT.phoneDisplay}, WhatsApp or send an enquiry about e-bikes, orders or wholesale.`),
+  title: fitTitle('Electric Bike Repairs & Service — Contact Us'),
+  description: fitDesc(`Electric bike repairs, service and sales in Brunswick, VIC. Contact us at ${CONTACT.address}. Call ${CONTACT.phoneDisplay}, WhatsApp or send an enquiry.`),
   alternates: { canonical: `https://${SITE.domain}/contact/` },
 };
 

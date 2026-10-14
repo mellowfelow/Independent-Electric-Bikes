@@ -5,8 +5,8 @@ import { ShopClientView } from '@/components/ShopClientView';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: `Shop Electric Bikes, Scooters & Skateboards | ${SITE_SHORT}`,
-  description: `Shop electric commuter and cargo e-bikes, eMTBs, e-scooters, skateboards and personal EVs. Direct prices and express Australian freight from Brunswick, VIC.`,
+  title: `Electric Bikes for Sale Australia | ${SITE_SHORT}`,
+  description: `Electric bikes for sale — shop e-bikes, e-scooters, skateboards and personal EVs at direct prices. Express Australian freight from Brunswick, VIC.`,
   alternates: { canonical: `https://${SITE.domain}/shop/` },
 };
 
@@ -28,7 +28,7 @@ export default function ShopIndexPage() {
         <div className="bg-slate-900 border-b border-slate-800 py-12 px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Master EV Taxonomy</span>
-            <h1 className="text-3xl sm:text-5xl font-black text-white">Full Store Catalog</h1>
+            <h1 className="text-3xl sm:text-5xl font-black text-white">Electric Bikes for Sale</h1>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
               Browse our complete range of electric bikes, e-scooters, skateboards, and personal mobility EVs. Filter by motor, sensor, or compliance standards.
             </p>

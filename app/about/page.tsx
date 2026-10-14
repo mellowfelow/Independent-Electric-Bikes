@@ -6,8 +6,8 @@ import { Bike, ShieldCheck, Award, MapPin, CheckCircle2, Phone, Mail } from 'luc
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: fitTitle('About Independent Electric Bikes, Brunswick VIC'),
-  description: fitDesc('Independent Electric Bikes is operated by VYRON Industries Pty Ltd (ABN 23 618 699 479), established 2017 in Brunswick, Victoria.'),
+  title: fitTitle('About Us — E-Bike Melbourne, Brunswick VIC'),
+  description: fitDesc('Independent Electric Bikes: Melbourne e-bike specialist operated by VYRON Industries Pty Ltd (ABN 23 618 699 479), established 2017 in Brunswick, Victoria.'),
   alternates: { canonical: `https://${SITE.domain}/about/` },
 };
 
@@ -54,7 +54,7 @@ export default function AboutPage() {
         <div className="bg-slate-900 border-b border-slate-800 py-16 px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-3">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Our Story & History</span>
-            <h1 className="text-3xl sm:text-5xl font-black text-white">About Independent Electric Bikes</h1>
+            <h1 className="text-3xl sm:text-5xl font-black text-white">Melbourne E-Bike Specialist Since 2017</h1>
             <p className="text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
               Engineering, assembling, and distributing electric commuter, cargo, and folding bikes across Victoria and Australia since 2017.
             </p>

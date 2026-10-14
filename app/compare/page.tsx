@@ -7,8 +7,8 @@ import { CompareSelector } from '@/components/CompareSelector';
 import { toComparable, type ComparableProduct } from '@/lib/compare';
 
 export const metadata: Metadata = {
-  title: fitTitle('Compare Electric Bike Specs & Prices'),
-  description: fitDesc('Side-by-side comparison of manufacturer-verified e-bike specifications: motor, battery, claimed range, weight, load limit and price, with sources.'),
+  title: fitTitle('Best Electric Bike Australia — Compare Specs'),
+  description: fitDesc('Find the best electric bike in Australia. Side-by-side comparison of verified e-bike specs: motor, battery, range, weight, load limit and price.'),
   alternates: { canonical: `https://${SITE.domain}/compare/` },
 };
 
@@ -32,7 +32,7 @@ export default function ComparePage() {
         <div className="border-b border-slate-800 bg-slate-900 px-4 py-12 text-center">
           <div className="mx-auto max-w-3xl space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Compare</span>
-            <h1 className="text-3xl font-black text-white sm:text-5xl">Compare e-bike specifications</h1>
+            <h1 className="text-3xl font-black text-white sm:text-5xl">Best Electric Bike Australia — Compare Specs</h1>
             <p className="mx-auto max-w-xl text-xs text-slate-300 sm:text-sm">
               Every figure on this page is taken from the manufacturer&rsquo;s own product page, with the source linked under each model. We add models as we verify them.
             </p>
