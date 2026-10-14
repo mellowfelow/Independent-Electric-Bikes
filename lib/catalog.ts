@@ -63,7 +63,7 @@ export function resolveCategory(segments: string[]): CategoryNode | null {
   for (const sub of main.subcategories) {
     if (sub.slug === segments[1]) return { main, sub, name: sub.name, description: sub.description || main.description, segments };
     const leaf = sub.items?.find((i) => i.slug === segments[1]);
-    if (leaf) return { main, sub, leaf, name: leaf.name, description: sub.description || main.description, segments };
+    if (leaf) return { main, sub, leaf, name: leaf.name, description: leaf.description || sub.description || main.description, segments };
   }
   return null;
 }
