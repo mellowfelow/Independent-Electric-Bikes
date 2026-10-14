@@ -27,9 +27,10 @@ const kb = (n) => Math.round(n / 1024);
 
 function loadProducts() {
   const out = [];
-  for (const f of fs.readdirSync('config/data').filter((f) => f.endsWith('.ts') && !['verified.ts', 'productImages.ts', 'accessoryRedirects.ts', 'compatibility.ts'].includes(f))) {
+  for (const f of fs.readdirSync('config/data').filter((f) => f.endsWith('.ts') && !['verified.ts', 'productImages.ts', 'accessoryRedirects.ts', 'compatibility.ts', 'categoryFaqs.ts'].includes(f))) {
     const t = fs.readFileSync(`config/data/${f}`, 'utf8').replace(/\r\n/g, '\n');
-    JSON.parse(t.slice(t.indexOf('= [') + 2, t.lastIndexOf(']') + 1)).forEach((p) => out.push({ slug: p.slug, name: p.name, category: p.category }));
+    const arr = t.slice(t.indexOf('= [') + 2, t.lastIndexOf(']') + 1);
+    new Function(`return ${arr}`)().forEach((p) => out.push({ slug: p.slug, name: p.name, category: p.category }));
   }
   return out;
 }
