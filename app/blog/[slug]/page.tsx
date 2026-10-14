@@ -6,6 +6,7 @@ import { POSTS, SITE } from '@/config/site';
 import { JsonLd } from '@/components/JsonLd';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { GUIDE_LINKS } from '@/config/blogLinks';
+import { getBlogContent } from '@/lib/blog';
 
 export async function generateStaticParams() {
   return POSTS.map((post) => ({ slug: post.slug }));
@@ -54,6 +55,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
     { name: post.title, href: `/blog/${post.slug}/` },
   ];
   const moreGuides = POSTS.filter((x) => x.slug !== post.slug).slice(0, 3);
+  const html = getBlogContent(post.slug);
 
   return (
     <>
@@ -83,28 +85,11 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
               {post.excerpt}
             </p>
 
-            {guide.body ? (
-              <>
-            <p>
-              When evaluating the <strong>best electric commuter bike in Australia</strong>, riders must weigh several critical factors: motor wattage and hill climbing torque, battery cell quality, braking safety, and local service support. In Australian capital cities like Melbourne, Sydney, and Brisbane, commuter routes often mix flat arterial roads with sudden steep incline gradients.
-            </p>
-
-            <h2 className="text-2xl font-bold text-white pt-4">1. Motor Wattage & Torque Output (Bafang Systems)</h2>
-            <p>
-              Under the EN 15194 pedal-assist standard used in Australia, a bike ridden as a bicycle on public roads has a motor limited to 250W continuous rated power with assistance cutting out at 25 km/h; more powerful or faster bikes may be restricted to private land. Wattage alone does not determine how easily a bike climbs hills—torque (measured in Newton-meters) is key. Hub motors deliver assistance as soon as the pedal sensor engages, while mid-drive motors work through the gears and suit steep climbs. Check the torque figure on the manufacturer&apos;s page for the exact model.
-            </p>
-
-            <h2 className="text-2xl font-bold text-white pt-4">2. Battery Cell Chemistry & Thermal Safety</h2>
-            <p>
-              Not all e-bike batteries are created equal. Low-quality packs can lose capacity quickly or struggle in hot Australian summers. Look for a battery with a built-in Battery Management System (BMS) for thermal cut-off protection, and ask the seller which cell brand and certification the pack uses.
-            </p>
-
-            <h2 className="text-2xl font-bold text-white pt-4">3. Hydraulic Disc Brakes vs Mechanical Brakes</h2>
-            <p>
-              Because electric bikes travel faster and weigh more than traditional bicycles, hydraulic disc brakes (such as Tektro HD-M275) provide significantly better stopping power and require minimal hand lever pressure compared to mechanical cable brakes.
-            </p>
-
-              </>
+            {html ? (
+              <div
+                className="blog-content prose prose-invert prose-headings:text-white prose-h2:text-2xl prose-h2:font-bold prose-h2:pt-4 prose-h3:text-xl prose-h3:font-bold prose-h3:pt-2 prose-strong:text-white prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline max-w-none"
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
             ) : (
               <p>The full guide is being written. In the meantime, browse the related products below or <Link href="/contact/" className="text-emerald-400 underline">ask us a question</Link>.</p>
             )}

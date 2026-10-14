@@ -16,7 +16,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     ],
   },
   'melbourne-ebike-laws-and-safety-standards': {
-    body: false,
+    body: true,
     shop: [
       { label: 'E-bikes', href: '/shop/electric-bikes/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
@@ -25,7 +25,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     ],
   },
   'cargo-electric-bikes-replacing-second-family-car': {
-    body: false,
+    body: true,
     shop: [
       { label: 'Cargo & family e-bikes', href: '/shop/electric-bikes/cargo-family-ebikes/' },
       { label: 'Child seats', href: '/shop/safety-security-carry/child-seats/' },
@@ -34,7 +34,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     ],
   },
   'ebike-battery-care-and-range-maximization-guide': {
-    body: false,
+    body: true,
     shop: [
       { label: 'E-bike batteries', href: '/shop/batteries-parts-kits/ebike-batteries/' },
       { label: 'E-bike chargers', href: '/shop/batteries-parts-kits/ebike-chargers/' },
@@ -42,7 +42,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     ],
   },
   'belt-drive-vs-chain-ebikes-pros-cons-australia': {
-    body: false,
+    body: true,
     shop: [
       { label: 'Belt-drive commuters', href: '/shop/electric-bikes/belt-drive-commuters/' },
       { label: 'Urban & commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
@@ -50,7 +50,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     ],
   },
   'mid-drive-vs-hub-motors-australian-hills-comparison': {
-    body: false,
+    body: true,
     shop: [
       { label: 'Electric mountain bikes', href: '/shop/electric-bikes/electric-mountain-bikes/' },
       { label: 'Mid-drive conversion kits', href: '/shop/batteries-parts-kits/mid-drive-conversion-kits/' },
@@ -58,7 +58,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     ],
   },
   'hydraulic-vs-mechanical-disc-brakes-ebike-safety': {
-    body: false,
+    body: true,
     shop: [
       { label: 'Brake pads & rotors', href: '/shop/batteries-parts-kits/brakes-rotors-pads/' },
       { label: 'E-bikes', href: '/shop/electric-bikes/' },
@@ -66,7 +66,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     ],
   },
   'electric-scooter-laws-victoria-and-australia-2026': {
-    body: false,
+    body: true,
     shop: [
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter e-scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
@@ -74,7 +74,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     ],
   },
   'how-to-secure-your-ebike-locks-gps-and-insurance': {
-    body: false,
+    body: true,
     shop: [
       { label: 'U-locks & D-locks', href: '/shop/safety-security-carry/u-d-locks/' },
       { label: 'Folding locks', href: '/shop/safety-security-carry/folding-locks/' },
@@ -82,7 +82,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     ],
   },
   'cryptocurrency-ebike-buying-discount-guide': {
-    body: false,
+    body: true,
     shop: [
       { label: 'Shop all products', href: '/shop/' },
       { label: 'Shipping', href: '/shipping/' },
