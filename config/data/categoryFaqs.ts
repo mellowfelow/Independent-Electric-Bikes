@@ -13,7 +13,7 @@ export const CATEGORY_FAQS: Record<string, FaqItem[]> = {
   'electric-bikes': [
     {
       question: 'What size electric bike do I need?',
-      answer: 'E-bike sizing follows standard bicycle sizes based on your height. Riders 160–175 cm suit a medium frame, 175–185 cm a large. Step-through frames offer easier mounting for all heights. Check each product page for the manufacturer’s size chart and standover height.',
+      answer: 'E-bike sizing follows standard bicycle sizes based on your height. Riders 160–175 cm suit a medium frame, 175–185 cm a large. Step-through frames offer easier mounting for all heights. Check each product page for the manufacturer\'s size chart and standover height.',
     },
     {
       question: 'Do electric bikes need registration in Australia?',
@@ -32,7 +32,7 @@ export const CATEGORY_FAQS: Record<string, FaqItem[]> = {
     },
     {
       question: 'Are electric scooters waterproof?',
-      answer: 'Most electric scooters carry an IP54 rating, meaning they resist light rain and splashes but should not be submerged or ridden through deep puddles. Always dry your scooter after wet rides and avoid charging while damp. Our listings show each model’s IP rating.',
+      answer: 'Most electric scooters carry an IP54 rating, meaning they resist light rain and splashes but should not be submerged or ridden through deep puddles. Always dry your scooter after wet rides and avoid charging while damp. Our listings show each model\'s IP rating.',
     },
     {
       question: 'How long does an electric scooter battery last?',
@@ -65,11 +65,11 @@ export const CATEGORY_FAQS: Record<string, FaqItem[]> = {
   'kids-off-road-ev': [
     {
       question: 'What age is a kids electric dirt bike for?',
-      answer: 'Electric balance bikes suit ages 2–5 (12-inch wheels, 5–10 km/h). Kids pit bikes suit ages 5–10 (14–16 inch wheels, 15–25 km/h). Youth dirt bikes suit ages 10–16 (larger frames, 30–45 km/h). Always match the bike to the child’s height and riding confidence.',
+      answer: 'Electric balance bikes suit ages 2–5 (12-inch wheels, 5–10 km/h). Kids pit bikes suit ages 5–10 (14–16 inch wheels, 15–25 km/h). Youth dirt bikes suit ages 10–16 (larger frames, 30–45 km/h). Always match the bike to the child\'s height and riding confidence.',
     },
     {
       question: 'Do kids need a licence for an electric dirt bike?',
-      answer: 'On private property, no licence is required for kids electric dirt bikes in any Australian state. On public roads or trails, rules vary — most states classify electric dirt bikes as motor vehicles if they exceed 250 W or 25 km/h. Keep kids’ bikes on private land or designated tracks.',
+      answer: 'On private property, no licence is required for kids electric dirt bikes in any Australian state. On public roads or trails, rules vary — most states classify electric dirt bikes as motor vehicles if they exceed 250 W or 25 km/h. Keep kids\' bikes on private land or designated tracks.',
     },
   ],
 
@@ -87,18 +87,18 @@ export const CATEGORY_FAQS: Record<string, FaqItem[]> = {
   'batteries-parts-kits': [
     {
       question: 'Can I upgrade my e-bike battery for more range?',
-      answer: 'Yes, you can upgrade to a higher-capacity battery if it matches your bike’s voltage and connector. Moving from a 10 Ah to a 14 Ah battery at the same voltage adds roughly 40 % more range. Check our compatibility panel on each battery page to confirm it fits your specific bike model.',
+      answer: 'Yes, you can upgrade to a higher-capacity battery if it matches your bike\'s voltage and connector. Moving from a 10 Ah to a 14 Ah battery at the same voltage adds roughly 40 % more range. Check our compatibility panel on each battery page to confirm it fits your specific bike model.',
     },
     {
       question: 'How do I know which battery fits my electric bike?',
-      answer: 'Match three things: voltage (36 V or 48 V — must match your motor), connector type (varies by brand), and mounting style (frame, rack, or downtube). Our compatibility panel on each battery page lists confirmed and system-compatible bike models. Contact us if your model isn’t listed.',
+      answer: 'Match three things: voltage (36 V or 48 V — must match your motor), connector type (varies by brand), and mounting style (frame, rack, or downtube). Our compatibility panel on each battery page lists confirmed and system-compatible bike models. Contact us if your model isn\'t listed.',
     },
   ],
 
   'safety-security-carry': [
     {
       question: 'What type of lock is best for an electric bike?',
-      answer: 'A Sold Secure Gold-rated U-lock or folding lock provides the strongest theft protection for e-bikes. Pair it with a cable lock to secure both wheels. Budget at least 10 % of your bike’s value on a lock. Our lock range includes Abus, Kryptonite, and other certified brands.',
+      answer: 'A Sold Secure Gold-rated U-lock or folding lock provides the strongest theft protection for e-bikes. Pair it with a cable lock to secure both wheels. Budget at least 10 % of your bike\'s value on a lock. Our lock range includes Abus, Kryptonite, and other certified brands.',
     },
     {
       question: 'Do I need a special helmet for an electric bike?',
@@ -115,14 +115,14 @@ export const CATEGORY_FAQS: Record<string, FaqItem[]> = {
     },
     {
       question: 'Are commuter e-bikes good for hilly areas?',
-      answer: 'Yes — mid-drive commuter e-bikes handle hills better than hub motors because they use the bike’s gears for torque multiplication. For steep climbs, look for 65+ Nm torque. Our Urban range includes both hub and mid-drive options rated by hill-climbing ability.',
+      answer: 'Yes — mid-drive commuter e-bikes handle hills better than hub motors because they use the bike\'s gears for torque multiplication. For steep climbs, look for 65+ Nm torque. Our Urban range includes both hub and mid-drive options rated by hill-climbing ability.',
     },
   ],
 
   'cargo-family-ebikes': [
     {
       question: 'How much weight can a cargo e-bike carry?',
-      answer: 'Cargo e-bikes typically carry 80–200 kg total payload including the rider. Long-tail models suit 2 child seats plus groceries. Front-loader (bakfiets) styles carry larger, bulkier loads. Each product page lists the manufacturer’s maximum gross vehicle weight.',
+      answer: 'Cargo e-bikes typically carry 80–200 kg total payload including the rider. Long-tail models suit 2 child seats plus groceries. Front-loader (bakfiets) styles carry larger, bulkier loads. Each product page lists the manufacturer\'s maximum gross vehicle weight.',
     },
     {
       question: 'Can I use a cargo e-bike for school runs?',
@@ -155,7 +155,7 @@ export const CATEGORY_FAQS: Record<string, FaqItem[]> = {
   'fat-tyre-lifestyle-ebikes': [
     {
       question: 'What are fat tyre e-bikes good for?',
-      answer: 'Fat tyre e-bikes (4-inch+ tyres) excel on sand, snow, gravel, and loose surfaces where thin tyres sink. They’re also popular as cruiser-style lifestyle bikes for casual urban riding. The wide tyres provide a cushioned, stable ride without suspension on most surfaces.',
+      answer: 'Fat tyre e-bikes (4-inch+ tyres) excel on sand, snow, gravel, and loose surfaces where thin tyres sink. They\'re also popular as cruiser-style lifestyle bikes for casual urban riding. The wide tyres provide a cushioned, stable ride without suspension on most surfaces.',
     },
     {
       question: 'Are moped-style e-bikes road legal in Australia?',
@@ -209,7 +209,7 @@ export const CATEGORY_FAQS: Record<string, FaqItem[]> = {
   'youth-electric-dirt-bikes': [
     {
       question: 'What age is a youth electric dirt bike for?',
-      answer: 'Youth electric dirt bikes suit ages 8–16 depending on the frame size and motor power. Smaller pit bikes (14–16 inch wheels, up to 25 km/h) suit 8–12 year olds. Full-size youth models suit 12–16. Always match the bike to the child’s height and riding experience.',
+      answer: 'Youth electric dirt bikes suit ages 8–16 depending on the frame size and motor power. Smaller pit bikes (14–16 inch wheels, up to 25 km/h) suit 8–12 year olds. Full-size youth models suit 12–16. Always match the bike to the child\'s height and riding experience.',
     },
   ],
 
@@ -230,7 +230,95 @@ export const CATEGORY_FAQS: Record<string, FaqItem[]> = {
   'heavy-duty-mobility-scooters': [
     {
       question: 'What terrain can a heavy-duty mobility scooter handle?',
-      answer: 'Heavy-duty mobility scooters with 4 wheels and pneumatic tyres handle grass, gravel, gentle slopes, and uneven footpaths. They are not designed for steep hills, sand, or mud. Models with full suspension and larger wheels manage rougher surfaces. Check each product’s terrain rating.',
+      answer: 'Heavy-duty mobility scooters with 4 wheels and pneumatic tyres handle grass, gravel, gentle slopes, and uneven footpaths. They are not designed for steep hills, sand, or mud. Models with full suspension and larger wheels manage rougher surfaces. Check each product\'s terrain rating.',
+    },
+  ],
+
+  // ── New Categories & Subcategories ──────────────────────────────
+
+  'electric-dirt-motorbikes': [
+    {
+      question: 'Do I need a licence for an electric dirt bike in Australia?',
+      answer: 'On private property, no licence is required. On public roads, electric dirt bikes exceeding 250 W or 25 km/h are classified as motor vehicles in most states and require registration, a motorcycle licence, and compulsory third-party insurance. Keep high-power models on private land or designated tracks.',
+    },
+    {
+      question: 'What is the difference between Sur-Ron and Talaria electric dirt bikes?',
+      answer: 'Sur-Ron offers a wider model range from the entry-level Light Bee S to the road-registrable Storm Bee. Talaria focuses on high-torque off-road performance with the XXX and X3 series. Both brands use swappable lithium batteries. Parts availability in Australia is strong for both.',
+    },
+  ],
+
+  'electric-mopeds': [
+    {
+      question: 'Are electric mopeds road legal in Australia?',
+      answer: 'Electric mopeds that meet the definition of a moped (50 cc equivalent, max 50 km/h) are road legal in all Australian states with moped registration, a car or motorcycle licence, and a helmet. Models like the NIU NQi and Super SOCO CUx are designed for on-road use with full lighting and indicators.',
+    },
+    {
+      question: 'How far can an electric moped go on one charge?',
+      answer: 'Most electric mopeds deliver 60–100 km per charge depending on speed and rider weight. Dual-battery models like the NIU NQi GTS Sport can exceed 120 km. Charge times range from 4–7 hours on a standard household outlet.',
+    },
+  ],
+
+  'electric-tricycles': [
+    {
+      question: 'Who are electric tricycles best suited for?',
+      answer: 'Electric trikes suit riders who want extra stability — older adults, people with balance concerns, and anyone carrying heavy loads. The three-wheel design eliminates the need to balance at stops. Many models include a large rear cargo basket for shopping or deliveries.',
+    },
+  ],
+
+  'hub-motor-conversion-kits': [
+    {
+      question: 'What is the difference between a hub motor and mid-drive conversion kit?',
+      answer: 'Hub motor kits replace the front or rear wheel with a motorised wheel — they are simpler to install and cheaper. Mid-drive kits replace the bottom bracket and use the bike\'s gears for better torque and hill climbing. Hub kits suit flat commutes; mid-drives suit hilly terrain.',
+    },
+  ],
+
+  'electric-quad-bikes': [
+    {
+      question: 'Are electric quad bikes legal in Australia?',
+      answer: 'Electric quad bikes are legal on private property without any licence or registration. On public roads, they must meet ADR (Australian Design Rules) standards, be registered, and the rider must hold a motorcycle or car licence depending on the state. Most recreational models are for private land only.',
+    },
+    {
+      question: 'What age can kids ride electric quad bikes?',
+      answer: 'Electric quad bikes with speed limiters suit children from age 6. Models under 800 W with parental speed controls are safest for younger riders. Always supervise children, require a helmet, and start on flat, enclosed ground away from traffic.',
+    },
+  ],
+
+  'kids-electric-quads': [
+    {
+      question: 'What is the best electric quad bike for kids?',
+      answer: 'For ages 6–10, look for models under 800 W with adjustable speed limiters, a kill switch, and a sturdy roll bar. The Razor Dirt Quad 500 and MotoTec 36V are popular entry points. Match the quad to the child\'s weight — most kids models support 55–75 kg.',
+    },
+  ],
+
+  'adult-electric-quads': [
+    {
+      question: 'How powerful are adult electric quad bikes?',
+      answer: 'Adult electric ATVs range from 3 kW farm utility models to 60+ kW performance machines like the Segway Villain SX10. Battery capacity determines range — expect 40–80 km per charge for recreational riding. High-torque electric motors deliver instant acceleration without gear shifting.',
+    },
+  ],
+
+  'electric-water-sports': [
+    {
+      question: 'Do I need a licence for an electric surfboard or eFoil?',
+      answer: 'Electric surfboards and eFoils are generally unregulated in Australian waters, but local waterway rules may apply. Electric jet skis require a personal watercraft licence in all states. Always check your state maritime authority for powered watercraft rules before riding.',
+    },
+    {
+      question: 'How long does an electric surfboard battery last?',
+      answer: 'Most electric surfboards and eFoils deliver 60–90 minutes of ride time per charge. Riding style affects duration — cruising at low speed extends it, while full-throttle carving shortens it. Batteries charge in 1.5–3 hours. Carry a spare battery for extended sessions.',
+    },
+  ],
+
+  'electric-surfboards': [
+    {
+      question: 'What is the difference between an eFoil and an electric surfboard?',
+      answer: 'An eFoil (electric hydrofoil) lifts the board above the water on a wing, creating a silent, smooth ride over flat water. A traditional electric surfboard rides on the surface like a powered shortboard. eFoils require more practice but are quieter and more efficient.',
+    },
+  ],
+
+  'electric-jetskis': [
+    {
+      question: 'How fast do electric jet skis go?',
+      answer: 'Electric jet skis reach 50–100+ km/h depending on the model. The Taiga Orca Carbon tops out at around 100 km/h. Battery range is typically 1.5–2.5 hours of mixed riding. They are significantly quieter than petrol jet skis and produce zero emissions on the water.',
     },
   ],
 };

@@ -6,6 +6,7 @@ import { KIDS_ITEMS } from './data/kids';
 import { MOBILITY_ITEMS } from './data/mobility';
 import { ACCESSORY_ITEMS } from './data/accessories';
 import { EXPANSION_ITEMS } from './data/expansion';
+import { PRODUCT_GAP_ITEMS } from './data/productGaps';
 
 export const EBIKE_PRODUCTS = [
   ...EBIKE_ITEMS,
@@ -16,4 +17,5 @@ export const EBIKE_PRODUCTS = [
   ...MOBILITY_ITEMS,
   ...ACCESSORY_ITEMS,
   ...EXPANSION_ITEMS,
+  ...PRODUCT_GAP_ITEMS,
 ];

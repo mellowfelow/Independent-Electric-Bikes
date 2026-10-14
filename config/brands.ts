@@ -274,6 +274,7 @@ const CORE_BRANDS: BrandDef[] = [
     category: 'Electric Bikes',
     tagline: 'California Urban Motor-Madness & Scramblers',
     description: 'Super73 Z-Series and S-Series feature iconic moto-inspired benches and fat tyres.',
+    aliases: ['super73', 'super 73'],
   },
 
   // E-Scooters & E-Skateboards

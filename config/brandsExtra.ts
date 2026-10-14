@@ -106,4 +106,22 @@ export const EXTRA_BRANDS: BrandDef[] = [
   mk('blackburn', 'Blackburn', 'Accessories & Components', 'racks'),
   mk('entity', 'Entity', 'Accessories & Components', 'inner tubes'),
   mk('freedom-to-ride', 'Freedom to Ride', 'Accessories & Components', 'inner tubes', ['Freedom to Ride']),
+  mk('voilamart', 'Voilamart', 'Accessories & Components', 'hub motor conversion kits'),
+  mk('ebikeling', 'EBIKELING', 'Accessories & Components', 'hub motor conversion kits'),
+  // Electric mopeds
+  mk('super-soco', 'Super SOCO', 'Electric Bikes', 'electric mopeds', ['Super SOCO']),
+  mk('jorvik', 'Jorvik', 'Electric Bikes', 'electric tricycles'),
+  // Quads
+  mk('cfmoto', 'CFMoto', 'Kids & E-Dirt Bikes', 'electric quad bikes'),
+  mk('venom', 'Venom', 'Kids & E-Dirt Bikes', 'kids electric quad bikes'),
+  // Water sports
+  mk('lift-foils', 'Lift Foils', 'Electric Bikes', 'electric hydrofoils', ['Lift']),
+  mk('fliteboard', 'Fliteboard', 'Electric Bikes', 'electric hydrofoils'),
+  mk('radinn', 'Radinn', 'Electric Bikes', 'electric jetboards'),
+  mk('awake', 'Awake', 'Electric Bikes', 'electric surfboards'),
+  mk('yujet', 'YuJet', 'Electric Bikes', 'electric bodyboards'),
+  mk('taiga', 'Taiga', 'Electric Bikes', 'electric jet skis'),
+  mk('narke', 'Narke', 'Electric Bikes', 'electric jet skis'),
+  mk('sea-doo', 'Sea-Doo', 'Electric Bikes', 'electric jet skis', ['Sea-Doo']),
+  mk('yamaha', 'Yamaha', 'Electric Bikes', 'electric personal watercraft'),
 ];
