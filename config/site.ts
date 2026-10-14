@@ -137,15 +137,16 @@ export interface MainCategory {
   path: string; // e.g. /shop/electric-bikes
   description: string;
   image: string;
+  seoTitle?: string;
   subcategories: SubCategory[];
 }
 
 export const MASTER_TAXONOMY: MainCategory[] = [
   {
     slug: 'electric-bikes',
-    name: 'E-Bikes',
+    name: 'Electric Bikes',
     path: '/shop/electric-bikes',
-    description: 'Urban commuters, heavy-duty cargo, full-suspension eMTBs, foldable e-bikes & fat tyre cruisers.',
+    description: 'Electric bikes for every ride — urban commuters, heavy-duty cargo, full-suspension eMTBs, foldable e-bikes and fat tyre cruisers.',
     image: '/images/categories/electric-bikes.webp',
     subcategories: [
       {
@@ -206,9 +207,9 @@ export const MASTER_TAXONOMY: MainCategory[] = [
   },
   {
     slug: 'electric-scooters',
-    name: 'E-Scooters',
+    name: 'Electric Scooters',
     path: '/shop/electric-scooters',
-    description: 'Lightweight commuter e-scooters and high-performance dual-motor long-range e-scooters.',
+    description: 'Electric scooter range — lightweight commuters and high-performance dual-motor long-range models.',
     image: '/images/categories/electric-scooters.webp',
     subcategories: [
       {
@@ -229,7 +230,7 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     slug: 'electric-skateboards',
     name: 'Electric Skateboards',
     path: '/shop/electric-skateboards',
-    description: 'Street longboards, all-terrain pneumatic boards, and portable shortboards.',
+    description: 'Electric skateboard range — street longboards, all-terrain pneumatic boards and portable shortboards.',
     image: '/images/categories/electric-skateboards.webp',
     subcategories: [
       {
@@ -262,7 +263,8 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     slug: 'self-balancing-ev',
     name: 'Self-Balancing EV',
     path: '/shop/self-balancing-ev',
-    description: 'Gyroscopic electric unicycles (EUCs) and recreational hoverboards.',
+    description: 'Hoverboards and electric unicycles (EUCs) — gyroscopic self-balancing personal EVs.',
+    seoTitle: 'Hoverboards & Self-Balancing EV',
     image: '/images/categories/self-balancing-ev.webp',
     subcategories: [
       {
@@ -289,7 +291,8 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     slug: 'kids-off-road-ev',
     name: 'Kids & Off-Road EV',
     path: '/shop/kids-off-road-ev',
-    description: 'Electric balance bikes for toddlers, youth pit dirt bikes, and electric go-karts.',
+    description: 'Kids electric bike range — balance bikes for toddlers, youth electric dirt bikes and electric go-karts.',
+    seoTitle: 'Kids Electric Bikes & Off-Road EV',
     image: '/images/categories/kids-off-road-ev.webp',
     subcategories: [
       {
@@ -316,7 +319,8 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     slug: 'mobility-scooters',
     name: 'Mobility & Assisted Living',
     path: '/shop/mobility-scooters',
-    description: 'Travel folding mobility scooters and heavy-duty 4-wheel all-terrain mobility scooters.',
+    description: 'Mobility scooters — travel folding models and heavy-duty 4-wheel all-terrain mobility scooters.',
+    seoTitle: 'Mobility Scooters Australia',
     image: '/images/categories/mobility-scooters.webp',
     subcategories: [
       {
@@ -337,7 +341,8 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     slug: 'batteries-parts-kits',
     name: 'Batteries, Parts & Kits',
     path: '/shop/batteries-parts-kits',
-    description: 'Replacement batteries and chargers, tyres, brake parts and mid-drive conversion kits.',
+    description: 'Electric bike parts, batteries, chargers, tyres, brake components and mid-drive conversion kits.',
+    seoTitle: 'Electric Bike Parts, Batteries & Kits',
     image: '/images/categories/batteries-parts-kits.webp',
     subcategories: [
       {
@@ -400,7 +405,8 @@ export const MASTER_TAXONOMY: MainCategory[] = [
     slug: 'safety-security-carry',
     name: 'Safety, Locks & Carry',
     path: '/shop/safety-security-carry',
-    description: 'Helmets, lights, locks, racks, panniers, child seats and phone mounts.',
+    description: 'Bike locks, helmets, lights, racks, panniers, child seats and phone mounts for e-bike riders.',
+    seoTitle: 'Bike Locks & E-Bike Safety Gear',
     image: '/images/categories/safety-security-carry.webp',
     subcategories: [
       {

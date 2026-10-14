@@ -138,7 +138,8 @@ export function categoryMetaDescription(node: CategoryNode): string {
 }
 
 export function categoryTitle(node: CategoryNode): string {
-  // A bare "<name> Australia" can repeat across levels (e.g. "E-Bikes"), so only leaf/sub names get the market suffix.
+  if (!node.sub && !node.leaf && node.main.seoTitle) return fitTitle(node.main.seoTitle);
+  // A bare "<name> Australia" can repeat across levels (e.g. "Electric Bikes"), so only leaf/sub names get the market suffix.
   const base = `${node.name} Australia`;
   for (const suffix of [SITE.name, SITE_SHORT]) {
     const t = `${base} | ${suffix}`;
