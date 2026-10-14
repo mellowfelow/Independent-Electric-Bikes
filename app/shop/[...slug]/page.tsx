@@ -13,6 +13,8 @@ import { CompatibilityPanel } from '@/components/CompatibilityPanel';
 import { relatedProducts } from '@/lib/compat';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { CategoryLinks } from '@/components/CategoryLinks';
+import { FaqAccordion } from '@/components/FaqAccordion';
+import { CATEGORY_FAQS } from '@/config/data/categoryFaqs';
 import { isVehicle } from '@/lib/shopFilters';
 import { ShieldCheck, Truck, Bike, Check, Sparkles } from 'lucide-react';
 
@@ -301,8 +303,22 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
     ...(categoryNode.sub ? [{ name: categoryNode.name, href: `/shop/${slugSegments.join('/')}/` }] : []),
   ];
 
+  const faqSlug = categoryNode.leaf?.slug || categoryNode.sub?.slug || mainCategory.slug;
+  const faqs = CATEGORY_FAQS[faqSlug];
+
   return (
     <>
+      {faqs && faqs.length >= 2 && (
+        <JsonLd data={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: { '@type': 'Answer', text: item.answer },
+          })),
+        }} />
+      )}
       <div className="bg-slate-950 text-white min-h-screen pb-20">
         <div className="bg-slate-900 border-b border-slate-800 py-12 px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-2">
@@ -322,6 +338,16 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <ShopClientView initialCategory={targetSubcategorySlug || targetCategorySlug} />
         </div>
+
+        {faqs && faqs.length > 0 && (
+          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+            <div className="text-center mb-8">
+              <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">FAQ</span>
+              <h2 className="text-2xl sm:text-3xl font-black text-white mt-2">{categoryNode.name} — Frequently Asked Questions</h2>
+            </div>
+            <FaqAccordion items={faqs} />
+          </div>
+        )}
       </div>
     </>
   );
