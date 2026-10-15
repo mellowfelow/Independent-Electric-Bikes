@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Tag } from 'lucide-react';
-import { SHOP } from '@/config/site';
+import { SHOP } from '@/config/core';
 import { money } from '@/lib/order';
 import type { AccessoryDiscount } from '@/lib/cartDiscount';
 

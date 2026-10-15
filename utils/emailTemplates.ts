@@ -163,6 +163,11 @@ export function paymentDetailsEmail(opts: {
 
   const bodyHtml = `
     <p style="font-size:15px; margin-top:0;">Dear <strong>${escapeHtml(opts.customerName)}</strong>,</p>
+    <div style="background-color:#fef2f2; border:2px solid #dc2626; border-radius:10px; padding:16px 18px; margin:16px 0;">
+      <div style="font-size:15px; font-weight:800; color:#b91c1c; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Action required after you pay</div>
+      <div style="font-size:14px; font-weight:700; color:#7f1d1d; line-height:1.5;">As soon as your payment is complete, send us a <u>screenshot of your payment receipt</u> quoting <strong>Order #${escapeHtml(opts.orderId)}</strong> (reply to this email or use the buttons below). We cannot confirm your order or arrange dispatch until we receive it.</div>
+    </div>
+
     <p>${escapeHtml(opts.openingText)}</p>
 
     <div style="background-color:#ffffff; border:2px solid ${REPLY.brand.primary}; border-radius:10px; padding:18px; margin:20px 0;">

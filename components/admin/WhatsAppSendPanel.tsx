@@ -42,7 +42,9 @@ ${pastedDetails}
 
 ${closingText}
 
-Please use your Order Number (#${orderRef}) as your payment description/reference. Once sent, reply to this message or email us with your payment receipt screenshot.`;
+Please use your Order Number (#${orderRef}) as your payment description/reference.
+
+*IMPORTANT: the moment you complete your payment, you MUST send us a screenshot of your payment receipt (reply to this message or email it), quoting #${orderRef}. We cannot confirm your order or arrange dispatch until we receive it.*`;
 
   const waUrl = waLinkTo(customerPhone, rawBody);
   const copyText = waMessageText(rawBody);

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PRODUCTS, SITE } from '@/config/site';
+import { productSummary } from '@/lib/productCopy';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -17,7 +18,6 @@ export async function GET(req: NextRequest) {
     filtered = filtered.filter(
       (p) =>
         p.name.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q) ||
         p.shortDescription.toLowerCase().includes(q)
     );
   }
@@ -31,6 +31,7 @@ export async function GET(req: NextRequest) {
 
   const results = filtered.map((p) => ({
     ...p,
+    description: productSummary(p),
     currency: SITE.currency,
     url: `https://${SITE.domain}/shop/${p.category}/${p.slug}/`,
   }));

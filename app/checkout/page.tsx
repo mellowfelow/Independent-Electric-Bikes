@@ -20,10 +20,10 @@ import {
   Clock,
   Sparkles,
 } from 'lucide-react';
-import { SITE, SHOP, CONTACT, REPLY } from '@/config/site';
+import { SITE, SHOP, CONTACT, REPLY } from '@/config/core';
 import { money } from '@/lib/order';
 import { waOrderLink } from '@/lib/whatsapp';
-import { randomRef } from '@/lib/security';
+import { randomRef } from '@/lib/orderRef';
 import { accessoryDiscount } from '@/lib/cartDiscount';
 import { AccessoryOfferBanner } from '@/components/AccessoryOfferBanner';
 

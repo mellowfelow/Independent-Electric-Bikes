@@ -101,13 +101,13 @@ export function Footer() {
           <ul className="space-y-2.5">
             {CATEGORIES.map((c) => (
               <li key={c.slug}>
-                <Link href={`/shop/${c.slug}/`} className="hover:text-emerald-400 transition-colors">
+                <Link prefetch={false} href={`/shop/${c.slug}/`} className="hover:text-emerald-400 transition-colors">
                   {c.name}
                 </Link>
               </li>
             ))}
             <li>
-              <Link href="/compare/" className="hover:text-emerald-400 transition-colors font-semibold text-emerald-400">
+              <Link prefetch={false} href="/compare/" className="hover:text-emerald-400 transition-colors font-semibold text-emerald-400">
                 Compare Spec Matrix &rarr;
               </Link>
             </li>
@@ -121,27 +121,27 @@ export function Footer() {
           </h2>
           <ul className="space-y-2.5">
             <li>
-              <Link href="/about/" className="hover:text-emerald-400 transition-colors">
+              <Link prefetch={false} href="/about/" className="hover:text-emerald-400 transition-colors">
                 About VYRON Industries
               </Link>
             </li>
             <li>
-              <Link href="/brands/" className="hover:text-emerald-400 transition-colors">
+              <Link prefetch={false} href="/brands/" className="hover:text-emerald-400 transition-colors">
                 Bafang & Samsung Tech
               </Link>
             </li>
             <li>
-              <Link href="/faq/" className="hover:text-emerald-400 transition-colors">
+              <Link prefetch={false} href="/faq/" className="hover:text-emerald-400 transition-colors">
                 E-Bike FAQ & Warranty
               </Link>
             </li>
             <li>
-              <Link href="/blog/" className="hover:text-emerald-400 transition-colors">
+              <Link prefetch={false} href="/blog/" className="hover:text-emerald-400 transition-colors">
                 Australian E-Bike Guides
               </Link>
             </li>
             <li>
-              <Link href="/contact/" className="hover:text-emerald-400 transition-colors">
+              <Link prefetch={false} href="/contact/" className="hover:text-emerald-400 transition-colors">
                 Contact & Showroom
               </Link>
             </li>
@@ -152,7 +152,7 @@ export function Footer() {
               ['/terms/', 'Terms of Sale'],
             ].map(([href, label]) => (
               <li key={href}>
-                <Link href={href} className="hover:text-emerald-400 transition-colors">
+                <Link prefetch={false} href={href} className="hover:text-emerald-400 transition-colors">
                   {label}
                 </Link>
               </li>

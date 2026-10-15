@@ -26,10 +26,10 @@ export function CategoryLinks({ categorySlug, subSlug }: { categorySlug: string;
           <h2 className="mb-2 text-xs font-extrabold uppercase tracking-wider text-emerald-400">{sub ? `More ${main.name} types` : `Browse ${main.name} by type`}</h2>
           <ul className="flex flex-wrap gap-2">
             {types.map((t) => (
-              <li key={t.slug}><Link href={`${t.path}/`} className={chip}>{t.name}</Link></li>
+              <li key={t.slug}><Link prefetch={false} href={`${t.path}/`} className={chip}>{t.name}</Link></li>
             ))}
             {siblings.map((s) => (
-              <li key={s.slug}><Link href={`${s.path}/`} className={chip}>{s.name}</Link></li>
+              <li key={s.slug}><Link prefetch={false} href={`${s.path}/`} className={chip}>{s.name}</Link></li>
             ))}
           </ul>
         </div>
@@ -39,7 +39,7 @@ export function CategoryLinks({ categorySlug, subSlug }: { categorySlug: string;
           <h2 className="mb-2 text-xs font-extrabold uppercase tracking-wider text-emerald-400">Popular brands here</h2>
           <ul className="flex flex-wrap gap-2">
             {brands.map((b) => (
-              <li key={b.slug}><Link href={`/brands/${b.slug}/`} className={chip}>{b.name} ({b.count})</Link></li>
+              <li key={b.slug}><Link prefetch={false} href={`/brands/${b.slug}/`} className={chip}>{b.name} ({b.count})</Link></li>
             ))}
           </ul>
         </div>
@@ -51,7 +51,7 @@ export function CategoryLinks({ categorySlug, subSlug }: { categorySlug: string;
             <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
               {parts.map(({ part, fits }) => (
                 <li key={part.slug}>
-                  <Link href={`/shop/${part.category}/${part.slug}/`} className="block h-full rounded-xl border border-slate-700 bg-slate-900 p-3 hover:border-emerald-500">
+                  <Link prefetch={false} href={`/shop/${part.category}/${part.slug}/`} className="block h-full rounded-xl border border-slate-700 bg-slate-900 p-3 hover:border-emerald-500">
                     <span className="block text-xs font-bold text-white">{part.name}</span>
                     <span className="mt-1 flex items-center justify-between text-[11px] text-slate-400">
                       <span>Fits {fits} model{fits === 1 ? '' : 's'} here</span>
@@ -64,12 +64,12 @@ export function CategoryLinks({ categorySlug, subSlug }: { categorySlug: string;
           ) : (
             <p className="text-xs text-slate-400">
               We do not list a battery or charger for these models yet.{' '}
-              <Link href="/contact/" className="font-bold text-emerald-400 underline">Ask us for your model</Link> and we will confirm what is available.
+              <Link prefetch={false} href="/contact/" className="font-bold text-emerald-400 underline">Ask us for your model</Link> and we will confirm what is available.
             </p>
           )}
           {parts.length > 0 && (
             <p className="mt-2 text-xs text-slate-400">
-              Not seeing the battery or charger for your exact model? <Link href="/contact/" className="font-bold text-emerald-400 underline">Ask us</Link> and we will confirm what is available.
+              Not seeing the battery or charger for your exact model? <Link prefetch={false} href="/contact/" className="font-bold text-emerald-400 underline">Ask us</Link> and we will confirm what is available.
             </p>
           )}
         </div>
@@ -78,7 +78,7 @@ export function CategoryLinks({ categorySlug, subSlug }: { categorySlug: string;
         <h2 className="mb-2 text-xs font-extrabold uppercase tracking-wider text-emerald-400">{isPartCat ? 'Shop vehicles' : 'More batteries, parts and accessories'}</h2>
         <ul className="flex flex-wrap gap-2">
           {cross.map((m) => (
-            <li key={m.slug}><Link href={`/shop/${m.slug}/`} className={chip}>{m.name}</Link></li>
+            <li key={m.slug}><Link prefetch={false} href={`/shop/${m.slug}/`} className={chip}>{m.name}</Link></li>
           ))}
         </ul>
       </div>

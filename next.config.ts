@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   poweredByHeader: false,
+  experimental: { inlineCss: true },
   typescript: {
     ignoreBuildErrors: false,
   },
@@ -40,8 +41,12 @@ const nextConfig: NextConfig = {
     return [
       // Product photos have content-hashed names (scripts/images.mjs), so they can be cached for a year and never revalidated.
       { source: '/images/products/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
-      // Hero, category and brand images keep stable names: cache for a day, then refresh in the background for a week.
-      { source: '/images/:path((?!products/).*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }] },
+      // Hero and category renditions are content-hashed (scripts/site-images.mjs), as are blog photos.
+      { source: '/images/home/:file(.*\\.[0-9a-f]{8}(?:-m)?\\.(?:webp|avif))', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
+      { source: '/images/categories/:file(.*-(?:480|960)\\.webp)', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
+      { source: '/images/blog/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
+      // Other images keep stable names: cache for a day, then refresh in the background for a week.
+      { source: '/images/:path((?!products/|blog/|home/|categories/).*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }] },
       {
         source: '/:path*',
         headers: [

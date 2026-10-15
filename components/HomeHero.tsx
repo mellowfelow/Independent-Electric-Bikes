@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { HERO_IMAGES } from '@/config/data/siteImages';
 
 const SLIDES = [
   { n: 1, alt: 'Two commuters riding electric bikes past a brick wall in the city', label: 'Urban commuters', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
@@ -58,9 +59,11 @@ export function HomeHero() {
     <div className="absolute inset-0" role="region" aria-roledescription="carousel" aria-label="Featured product ranges">
       {SLIDES.map((s, i) => (i === index || reached.includes(i) ? (
         <picture key={s.n}>
-          <source media="(max-width: 767px)" srcSet={`/images/home/hero-${s.n}-m.webp`} />
+          <source media="(max-width: 767px)" type="image/avif" srcSet={HERO_IMAGES[s.n - 1].mAvif} />
+          <source media="(max-width: 767px)" srcSet={HERO_IMAGES[s.n - 1].m} />
+          <source type="image/avif" srcSet={HERO_IMAGES[s.n - 1].dAvif} />
           <img
-            src={`/images/home/hero-${s.n}.webp`}
+            src={HERO_IMAGES[s.n - 1].d}
             alt={s.alt}
             width={2000}
             height={1125}

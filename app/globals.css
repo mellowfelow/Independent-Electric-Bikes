@@ -67,3 +67,9 @@ html, body {
   }
 }
 
+
+/* Skip layout and paint for sections that are off screen until they scroll near the viewport. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { SITE } from '@/config/site';
 import { search } from '@/lib/search';
 import { brandNameOf, productCategoryLabel } from '@/lib/catalog';
+import { toCard } from '@/lib/cardProduct';
 
 const PLACEHOLDER = '.svg';
 
@@ -12,6 +13,22 @@ export async function GET(req: NextRequest) {
   const origin = `https://${SITE.domain}`;
 
   const result = search(q);
+
+  // The /search/ page asks for every result as ready-to-render cards, so the browser never loads the catalogue.
+  if (searchParams.get('view') === 'page') {
+    return NextResponse.json(
+      {
+        query: result.query,
+        relaxed: result.relaxed,
+        price: result.price,
+        products: result.products.map(({ product }) => toCard(product)),
+        posts: result.posts.map(({ post }) => ({ slug: post.slug, title: post.title, category: post.category, excerpt: post.excerpt })),
+        categories: result.categories,
+        brands: result.brands,
+      },
+      { headers: { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=300' } }
+    );
+  }
 
   return NextResponse.json(
     {

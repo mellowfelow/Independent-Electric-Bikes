@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PRODUCTS, SITE } from '@/config/site';
+import { productSummary } from '@/lib/productCopy';
 
 export async function GET(req: NextRequest, props: { params: Promise<{ slug: string }> }) {
   const params = await props.params;
@@ -12,6 +13,7 @@ export async function GET(req: NextRequest, props: { params: Promise<{ slug: str
   return NextResponse.json(
     {
       ...product,
+      description: productSummary(product),
       currency: SITE.currency,
       url: `https://${SITE.domain}/shop/${product.category}/${product.slug}/`,
     },

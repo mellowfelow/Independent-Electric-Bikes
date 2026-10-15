@@ -1,4 +1,4 @@
-import { SITE, REPLY, CONTACT } from '@/config/site';
+import { SITE, REPLY, CONTACT } from '@/config/core';
 
 export interface PaymentDetailField {
   label: string;
@@ -87,9 +87,9 @@ export function paymentMethodParts(methodId: string, amount: number, ref: string
 
 export function paymentTermsLines(ref: string): string[] {
   return [
-    `This order is confirmed once payment is received — it is not yet final.`,
+    `IMPORTANT: the moment you complete your payment you MUST send us a screenshot of your payment receipt, quoting ${ref}. Send it to ${CONTACT.email} or on WhatsApp to ${CONTACT.phoneDisplay}. We cannot confirm your order or arrange dispatch until we receive it.`,
+    `This order is confirmed only once payment is received and matched to your receipt screenshot — it is not yet final.`,
     `Use your order reference number — ${ref} — as the description/reference for your payment.`,
-    `Once you have paid, please send a screenshot of your payment receipt to ${CONTACT.email} or on WhatsApp to ${CONTACT.phoneDisplay}, quoting ${ref}. We match it to your order and then arrange dispatch.`,
     `${REPLY.dispatchLine}`,
     `All electric bike purchases are backed by VYRON Industries 2-Year Frame and 12-Month Electrical Warranty.`,
   ];
@@ -97,5 +97,11 @@ export function paymentTermsLines(ref: string): string[] {
 
 export function paymentTermsHtml(ref: string): string {
   const lines = paymentTermsLines(ref);
-  return lines.map((l) => `<li style="margin-bottom:6px;">${l}</li>`).join('');
+  return lines
+    .map((l) =>
+      l.startsWith('IMPORTANT:')
+        ? `<li style="margin-bottom:10px; color:#b91c1c; font-weight:800; font-size:14px;">${l}</li>`
+        : `<li style="margin-bottom:6px;">${l}</li>`
+    )
+    .join('');
 }

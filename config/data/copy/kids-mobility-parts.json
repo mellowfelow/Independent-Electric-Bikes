@@ -1,0 +1,512 @@
+{
+  "batteries-parts-kits/brakes-rotors-pads": {
+    "type": "disc brake rotor or pad set",
+    "typePlural": "disc brake rotors and pad sets",
+    "intro": [
+      "A disc brake rotor is the metal disc bolted to the wheel hub, and the pads are the friction blocks that squeeze it to slow the bike.",
+      "When the lever is pulled, the caliper pushes the pads against the rotor, turning movement into heat and giving controlled stopping power in wet and dry conditions.",
+      "Pads are made from resin, sintered metal or a blend of both, and each compound trades quiet running, initial bite, heat tolerance and wear life differently.",
+      "Rotors come in different diameters and mounting patterns, either a splined fitting or a bolt-on pattern, and the choice must match the hub already fitted to the wheel.",
+      "Because electric bikes are often heavier than conventional bicycles, braking parts sold for them are frequently built to cope with heavier duty and higher speeds.",
+      "These parts are consumables, meaning they wear down with normal use and are replaced periodically so the braking system keeps working as the maker intended."
+    ],
+    "suits": [
+      "Riders whose pads have worn down close to the backing plate, or whose braking has become noisy, weak or uneven, are the usual candidates for replacement parts.",
+      "Commuters who brake often in stop-start traffic wear pads faster than weekend riders, so they tend to benefit from keeping a spare set on hand.",
+      "Anyone riding steep terrain or carrying cargo asks more of the brakes and may want a larger diameter rotor, if the frame and fork allow it.",
+      "A bent or warped rotor from a fall, a slipped tool or careless transport is another common reason to fit a fresh disc.",
+      "Home mechanics comfortable with basic tools can swap pads themselves, while rotor replacement and any hydraulic bleeding work may be better left to a workshop.",
+      "Riders moving from a basic brake setup to a stronger one should confirm that the caliper, lever and hub can accept the change before ordering."
+    ],
+    "check": [
+      "Confirm the make and model of the caliper first, since pad shapes differ between brake designs and a pad that looks similar can still fail to seat properly.",
+      "Note how the rotor attaches to the hub and note the diameter marked on the existing disc before ordering a replacement of the same style.",
+      "Find out whether the pad compound suits wet weather, long descents or quiet commuting, and whether it is organic, metallic or a blend of materials.",
+      "Make sure the fork and frame mounts support any change in rotor size, as a larger disc may need an adaptor and a different caliper position.",
+      "Inspect the old rotor for a minimum thickness mark and for blue heat discolouration, because a worn or overheated disc should not be reused.",
+      "If the bike has motor cut-off sensors in its brake levers, confirm that replacement parts and lever setup remain compatible with that wiring."
+    ],
+    "care": [
+      "Keep oil, chain lube and bike wash products away from pads and rotors, because contamination reduces grip and can ruin organic pads permanently.",
+      "Bed in new pads by following the maker's instructions so that friction material transfers evenly onto the rotor and braking feels consistent.",
+      "Inspect pad thickness regularly and replace both pads in a caliper together, since uneven wear can cause pulling to one side and constant rubbing.",
+      "Clean rotors with isopropyl alcohol or a dedicated disc cleaner and a fresh cloth, and avoid touching the braking surface so skin oils do not transfer."
+    ]
+  },
+  "batteries-parts-kits/ebike-batteries": {
+    "type": "electric bike battery",
+    "typePlural": "electric bike batteries",
+    "intro": [
+      "An electric bike battery is a rechargeable pack of lithium-ion cells with a management circuit, storing the energy that the motor draws on during assisted riding.",
+      "Packs are described by voltage, which sets electrical compatibility, and by capacity in watt-hours, which indicates how much energy is stored and broadly how far a charge can last.",
+      "Some batteries mount on a rack, others slide into the down tube or clip onto a frame cradle, and each mounting style depends on the bike's design.",
+      "An internal battery management system watches cell balance, temperature and current, and cuts power if the pack is over-stressed, overheated or discharged too far.",
+      "Communication between the pack, display and motor often runs over a data connection, which is why batteries are usually tied to one particular drive system.",
+      "Cells age with time and charge cycles, so capacity gradually declines, and a replacement pack is a normal part of long-term electric bike ownership."
+    ],
+    "suits": [
+      "Owners whose original pack now delivers noticeably shorter trips than it once did are the most common buyers of a replacement.",
+      "Riders who want longer outings may add a second compatible pack, or move to a larger one, provided the bike and drive system support it.",
+      "Commuters who cannot charge at work can benefit from a spare pack that swaps in quickly, keeping the bike useful across a long day.",
+      "Touring and adventure riders who cover remote routes tend to plan around battery capacity first, then choose luggage and gearing around it.",
+      "People who keep a bike for many years will eventually need a new pack, even if the frame, motor and components remain in good shape.",
+      "Small businesses running delivery or rental bikes can benefit from standardising on one pack type so that spares are interchangeable between machines."
+    ],
+    "check": [
+      "Match the battery to the drive system and model year, since packs from different generations or makers often use incompatible connectors and communication protocols.",
+      "Confirm the mounting style and key lock type, because a pack designed for a down tube cradle will not fit a rack mount.",
+      "Compare nominal voltage and watt-hour capacity against the original, and ask the retailer whether a higher capacity version is supported by the bike's controller.",
+      "Ask about the age of the stock and how it has been stored, as lithium cells lose condition when left discharged on a shelf for long periods.",
+      "Check the physical dimensions and weight against the space in the frame, and confirm that the charging port layout suits the charger you already own.",
+      "Ask what return and compatibility support is offered, particularly for electronically linked batteries that cannot be tested on the bike until they arrive."
+    ],
+    "care": [
+      "Charge with the charger designed for that pack, avoid leaving it plugged in unattended, and follow the maker's instructions for temperature and charge limits.",
+      "Store the pack indoors, away from heat and freezing conditions, and leave it part charged rather than empty or full if the bike will sit for weeks.",
+      "Inspect the case, contacts and seals for cracks, moisture or swelling, and stop using any pack that looks damaged or smells unusual.",
+      "At end of life, take the battery to a recognised recycling drop-off rather than a household bin, since lithium cells can start fires in waste systems."
+    ]
+  },
+  "batteries-parts-kits/ebike-chargers": {
+    "type": "electric bike charger",
+    "typePlural": "electric bike chargers",
+    "intro": [
+      "An electric bike charger is an external power supply that converts mains electricity into the controlled direct current needed to refill a particular lithium-ion battery pack.",
+      "It is matched to the pack by output voltage and by connector, and it follows a charging profile designed around that battery's chemistry.",
+      "Charging current, measured in amps, determines how quickly a pack refills, with higher current models finishing sooner but placing more demand on the battery and supply.",
+      "Most units have indicator lights that show charging progress and completion, and some add temperature monitoring or fault signals to protect the battery.",
+      "Depending on the drive system, a charger may plug into the battery directly, into a port on the frame, or into a docking cradle.",
+      "Because the output has to suit the pack, a charger is part of the battery system rather than a generic accessory like a phone charger."
+    ],
+    "suits": [
+      "Owners who have lost, damaged or worn out the original charger and need a like-for-like replacement can usually solve the problem with a matching unit.",
+      "Riders who commute to an office may want a second charger kept at work, so the lead never has to be carried back and forth.",
+      "Homes with a workshop or garage often keep a spare so the bike can recharge where it is stored, rather than being wheeled indoors.",
+      "Those who regularly ride long distances may prefer a faster compatible model, so a flat pack is ready again within an afternoon.",
+      "Travellers and tourers sometimes carry a compact unit for charging at cafes and accommodation along the way, subject to the host's permission.",
+      "Shared households and small fleets benefit from a labelled charger for each battery type, which reduces the risk of connecting the wrong one."
+    ],
+    "check": [
+      "Match the output voltage and connector shape to the battery, and read the label on the original charger before ordering anything that looks similar.",
+      "Confirm the charger belongs to the same drive system and generation as the pack, since similar-looking plugs can carry different voltage or signal arrangements.",
+      "Confirm with the battery maker that a faster charger is approved, because pushing extra current into a pack not rated for it can shorten its life.",
+      "Check that the mains plug and cord suit Australian outlets, and that the unit carries the compliance markings expected for electrical goods sold here.",
+      "Consider size and weight if the charger will travel in a pannier, and whether the casing is ventilated or sealed against dust and moisture.",
+      "Ask how the unit behaves when a pack is cold, hot or already full, since a well designed charger slows or stops in those situations."
+    ],
+    "care": [
+      "Use the charger on a hard, dry, non-flammable surface with air around it, and never cover it while it is running.",
+      "Avoid charging unattended or overnight in sleeping areas, and unplug the unit once the indicator shows that the battery is full.",
+      "Wind the cord loosely rather than tightly around the body, and replace any unit with a frayed lead, cracked case or burning smell.",
+      "Dispose of a failed charger through electronic waste recycling, which keeps metals and plastics out of landfill and is accepted at many council facilities."
+    ]
+  },
+  "batteries-parts-kits/hub-motor-conversion-kits": {
+    "type": "hub motor conversion kit",
+    "typePlural": "hub motor conversion kits",
+    "intro": [
+      "A hub motor conversion kit replaces a wheel on an ordinary bicycle with one containing an electric motor, turning the bike into an electric-assist machine.",
+      "The kit typically bundles the motor wheel, a controller, a throttle or pedal sensor, a display, brake cut-off levers and cabling, though contents vary between sellers.",
+      "The motor sits inside the hub, so power goes straight to the wheel rather than through the chain, which keeps the existing drivetrain simple.",
+      "Front hub installations are common because they leave the gearing untouched, while rear installations can offer better traction but need a compatible dropout and cassette arrangement.",
+      "The controller regulates power sent to the motor and ties together the sensors, throttle and display, so correct wiring matters as much as the motor itself.",
+      "These kits are a do-it-yourself route to electrification and sit outside the factory-built electric bike category, so suitability rests largely with the owner."
+    ],
+    "suits": [
+      "Cyclists who already own a sturdy, well-fitting bicycle and want electric assist without buying a new bike may find a kit appealing.",
+      "Hobbyists who enjoy mechanical projects and can follow wiring diagrams are well placed to install and tune a conversion kit.",
+      "Riders who want to electrify something unusual, such as a cargo, fat tyre or vintage frame, can add assist without starting over.",
+      "Those with a flat or gently hilly commute may find a hub setup straightforward, though very steep climbs put heavy demands on a hub motor.",
+      "People planning to ride only on private land should still check the rules, because higher power setups may not be allowed on public roads.",
+      "Anyone wanting a ready-to-ride bike with factory support and compliance paperwork may be better served by a complete electric bike instead."
+    ],
+    "check": [
+      "Measure the fork or rear dropout width and check the frame material, because the axle must seat securely and a weak or thin fork can fail.",
+      "Confirm the wheel size, tyre fit, brake type and rear gearing that the kit supports, as hub kits are sold for specific rim and spacing arrangements.",
+      "Ask whether the motor includes a torque arm, which stops the axle spinning in the dropout under load, and fit one where recommended.",
+      "Look into how the battery mounts and connects, and whether one is included, since a pack often needs a separate rack, bottle bracket or frame bag.",
+      "Rules for powered bicycles vary by state, so ask the state road authority about power and speed limits before riding a converted bike on public roads.",
+      "Read the manual for wiring colours, controller settings and sensor options, and ask the seller what technical support is available during installation."
+    ],
+    "care": [
+      "Check the axle nuts and torque arm periodically, because vibration can loosen them, and a loose axle can damage the frame or wheel.",
+      "Keep connectors clean, dry and fully seated, and protect cable runs with ties and sleeves so they do not rub on moving parts.",
+      "Wash the bike gently without pointing a pressure hose at the hub, controller or display, since water entering these parts can cause faults.",
+      "Charge the battery with its correct charger, never leave it unattended while charging, and recycle old batteries and electronics through a proper collection scheme."
+    ]
+  },
+  "batteries-parts-kits/kids-dirt-bike-batteries": {
+    "type": "kids electric dirt bike battery",
+    "typePlural": "kids electric dirt bike batteries",
+    "intro": [
+      "A kids electric dirt bike battery is the rechargeable power source for a small off-road bike, balance bike or ride-on, and it is built around that vehicle's design.",
+      "Some are sealed lead acid units, which are heavy but simple, while others are lithium packs that are lighter and hold their charge better.",
+      "The pack's voltage and connector must match the vehicle's controller, and a mismatch can damage the controller, the motor or the battery itself.",
+      "Because these vehicles are used in dust, mud and knocks, packs are normally housed in a protective case or compartment made for rough use.",
+      "Capacity affects how long a young rider can play between charges, but it also changes the weight that a small frame has to carry.",
+      "Replacements are intended to restore the original behaviour of the vehicle, not to change how quickly it accelerates or how hard it pulls."
+    ],
+    "suits": [
+      "Parents whose child's bike now runs for only a short time before going flat are often looking at a worn battery rather than a motor fault.",
+      "Families with more than one child sharing a bike may want a spare pack so one rider can play while the other pack charges.",
+      "Owners of older ride-ons that have sat in a shed for a season may find the pack has deteriorated and needs replacing.",
+      "Riders who use their vehicles at tracks or on rural properties benefit from a second pack so outings are not cut short.",
+      "Anyone buying a secondhand kids bike may discover the battery is tired, so allowing for a replacement avoids a disappointing first ride.",
+      "Beginners tackling a first repair can usually swap a pack with a few basic tools by following the maker's guide."
+    ],
+    "check": [
+      "Read the voltage and capacity printed on the existing battery and confirm the replacement matches the vehicle's specification, rather than relying on how similar the case looks.",
+      "Check the chemistry, since lead acid and lithium packs charge differently and a charger made for one type should not be used on the other.",
+      "Confirm the connector style and polarity, because reversed or poorly fitted leads can cause sparks, melted plugs or damaged electronics.",
+      "Find out whether the pack is sold singly or in a set, and whether every unit in a set needs to be replaced together.",
+      "Measure the battery bay and check the mounting points, as a pack that is slightly too large will not allow the housing to close safely.",
+      "Ask the retailer to confirm the model and year of the vehicle that the battery suits, because makers sometimes revise packs between versions."
+    ],
+    "care": [
+      "Charge only with the charger supplied for that chemistry and size, supervise the process, and unplug it as soon as the cycle finishes.",
+      "Store the vehicle and pack in a cool, dry place out of direct sun, and top up a lead acid battery regularly during long breaks.",
+      "Keep terminals clean and covered, and check the case for cracks or swelling after crashes, which can damage cells without obvious outward signs.",
+      "Return worn lead acid or lithium batteries to a battery recycler or retailer collection point, rather than leaving them in sheds or household bins."
+    ]
+  },
+  "batteries-parts-kits/mid-drive-conversion-kits": {
+    "type": "mid-drive conversion kit",
+    "typePlural": "mid-drive conversion kits",
+    "intro": [
+      "A mid-drive conversion kit adds an electric motor at the bottom bracket, driving the crank so that assistance passes through the bike's own chain and gears.",
+      "Because the motor works through the existing gears, it can climb steeply by using low gears, while keeping the added weight centred and low in the frame.",
+      "Kits generally include the motor, a controller, a display, a throttle or sensor, a chainring, cabling and fitting hardware, though contents differ between sellers.",
+      "The motor body clamps into the bottom bracket shell, so the shell width and thread type decide whether a particular kit can be fitted.",
+      "Power is delivered to the chain, which raises demands on the drivetrain, so chains, cassettes and chainrings can wear faster than they would on an unassisted bike.",
+      "Mid-drive kits are an owner-installed upgrade rather than a factory-built electric bike, so suitability and safe assembly are the owner's responsibility."
+    ],
+    "suits": [
+      "Riders with hilly routes often favour mid-drive setups, since gear changes let the motor work efficiently on long climbs.",
+      "Mountain bikers and trail riders who want to keep the wheels light and responsive can add assist without a heavy hub motor.",
+      "Cyclists who want to keep a favoured wheelset, suspension fork or disc brakes unchanged can add power without replacing those parts.",
+      "Tinkerers who are comfortable removing cranks and bottom brackets will find fitting more manageable than a first-time home mechanic would.",
+      "Anyone planning heavy loads, such as cargo or tandem use, should check that the frame and drivetrain can handle the extra stress.",
+      "People who ride mostly on flat ground and want the simplest possible upgrade might consider a hub conversion kit as an alternative."
+    ],
+    "check": [
+      "Measure the bottom bracket shell width and confirm the thread type, as kits are made for specific shell sizes and an adaptor may be needed.",
+      "Check that the frame has room around the bottom bracket for the motor body, particularly on full suspension bikes with tight clearance.",
+      "Ask which chainring, crank arm and chain types are supported, and whether the kit requires a particular number of rear gears.",
+      "Confirm the battery connection and whether the kit includes a battery, because the controller voltage must match the pack supplied.",
+      "Regulations for powered bicycles differ between states, so contact the state road authority about allowable power and whether a modified bike needs registration.",
+      "Read the installation guide and ask whether special tools, such as a crank puller or bottom bracket tool, are needed or supplied."
+    ],
+    "care": [
+      "Check the motor mounting bolts and chainring bolts after the first few rides and then at regular intervals, since vibration can loosen them.",
+      "Replace the chain on schedule, because a stretched chain accelerates wear on the sprockets and the motor's drive gear.",
+      "Shift gears gently and ease off the pedals during changes so the drivetrain is not forced to shift under full motor load.",
+      "Keep water away from the motor casing and connectors when washing, and send old batteries to a proper recycling point."
+    ]
+  },
+  "batteries-parts-kits/scooter-batteries": {
+    "type": "scooter, skateboard or mobility battery",
+    "typePlural": "scooter, skateboard and mobility batteries",
+    "intro": [
+      "Replacement batteries for scooters, electric skateboards, hoverboards and mobility scooters are matched to the device and cover several chemistries and constructions.",
+      "Lithium-ion packs found in kick scooters, skateboards and hoverboards are built from groups of cells wired in series and parallel to reach the required voltage and capacity.",
+      "Mobility scooters often use sealed lead acid batteries in the deep-cycle style, which are heavy, rugged and designed for steady discharge rather than quick bursts.",
+      "Each battery has its own connector, shape and protection circuit, so a pack made for one device generally cannot be fitted to another.",
+      "A battery management system in lithium packs guards against overcharge, over-discharge, overheating and short circuits, and is a key part of safe operation.",
+      "Capacity affects how far the device travels between charges, while the pack's ability to deliver current affects how smoothly it accelerates and climbs."
+    ],
+    "suits": [
+      "Owners of a scooter or board that now fades quickly, cuts out on hills or refuses to hold a charge may need a new pack.",
+      "People who rely on a mobility scooter for shopping or appointments should replace tired batteries before a failure leaves them stranded.",
+      "Commuters on electric scooters who ride daily wear packs faster, and a replacement can extend the working life of the whole device.",
+      "Hoverboard and skateboard owners who store their gear for long periods often find the cells deeply discharged and unrecoverable.",
+      "Hobbyists comfortable opening a deck or compartment can handle a swap, while others may prefer a workshop for sealed or complex scooters.",
+      "Buyers of used devices can allow for a replacement pack, since age and unknown charging history are hard to judge by eye."
+    ],
+    "check": [
+      "Identify the exact device model, as packs for scooters, skateboards and mobility scooters differ in voltage, shape and connectors even within one category.",
+      "Compare the voltage, capacity and connector on the old battery against the listing, and ask the seller to confirm fit for that model.",
+      "For lead acid mobility batteries, check whether the unit is sealed, which terminal type it uses and whether a pair or set must be replaced together.",
+      "Ask about the protection circuit in lithium packs, including cut-off behaviour, and how the seller handles lithium shipping and handling requirements.",
+      "Verify the physical size, because deck compartments and battery trays are tight and an oversized pack may not close safely.",
+      "If the device is a mobility aid, talk to the supplier or a health professional about any changes that might affect how it performs for the user."
+    ],
+    "care": [
+      "Use only the charger designed for the specific pack and chemistry, and never charge near flammable materials or leave it running unattended.",
+      "Avoid leaving lithium packs fully flat or at maximum charge for months, and store them in a cool, dry spot away from direct sun.",
+      "Keep lead acid batteries topped up with regular charging during storage, as they sulphate and lose capacity when left discharged.",
+      "Dispose of old batteries through a battery recycling program or retailer drop-off, and tape exposed terminals first if the collection point asks."
+    ]
+  },
+  "batteries-parts-kits/scooter-skate-chargers": {
+    "type": "scooter, skateboard or kids vehicle charger",
+    "typePlural": "scooter, skateboard and kids vehicle chargers",
+    "intro": [
+      "A scooter, skateboard or kids vehicle charger is a mains-powered adapter that refills the battery in a small electric ride, using the voltage and connector designed for it.",
+      "The output voltage is set to match the pack, and the plug is shaped to discourage connection to unsuitable batteries, although some shapes look alike.",
+      "Charging speed depends on current, so a higher-rated unit can fill a battery sooner, provided the battery and its protection circuit allow it.",
+      "Some chargers are single-voltage and sold for one device, while multi-voltage models use settings or adjustable outputs to serve several vehicles.",
+      "Indicator lights usually show red or green status, but the colours and their meanings differ, so the instructions for the specific charger apply.",
+      "Lead acid kids ride-ons and lithium scooters need different charging profiles, which is why chargers should not be swapped between them."
+    ],
+    "suits": [
+      "Owners who have misplaced the original lead, or whose cable has frayed or cracked, will need a correctly matched replacement before riding again.",
+      "Families with a school-and-park routine may want a second charger so there is always one at home and one in the car.",
+      "Riders with more than one electric vehicle, such as a scooter and a skateboard, can benefit from clearly labelled, separate chargers.",
+      "Parents managing a child's ride-on can keep a dedicated charger in a safe spot where it is only used under supervision.",
+      "Those wanting a quicker turnaround between rides may look for a faster model that the maker allows for their battery.",
+      "Anyone with an older scooter whose charger has failed may find a suitable replacement brings the vehicle back into service without replacing the whole machine."
+    ],
+    "check": [
+      "Read the label on the original charger for output voltage, current and plug polarity, then compare each detail with the replacement.",
+      "Check the physical connector, because barrel sizes, pin counts and shapes vary, and a loose or forced fit can overheat.",
+      "Work out whether a multi-voltage charger is set manually, and make sure the correct setting is selected before it touches the battery.",
+      "Confirm the charger is suited to the battery chemistry, lithium or sealed lead acid, since charging profiles differ and mismatches can damage packs.",
+      "Look for evidence that the unit meets electrical safety requirements for Australia, including a suitable plug and compliance markings.",
+      "Consider cable length, size and whether the casing is robust enough for a garage or a shared family space."
+    ],
+    "care": [
+      "Charge in a ventilated spot on a hard surface, away from curtains, bedding and bags, and unplug once the indicator shows completion.",
+      "Never charge a battery that is hot, swollen, wet or damaged, and let a warm pack cool down before connecting the charger.",
+      "Coil the lead loosely, keep the connector dry and free of grit, and avoid yanking the cord to disconnect it.",
+      "Recycle failed chargers as electronic waste instead of putting them in the kerbside bin, and keep the instructions for future reference."
+    ]
+  },
+  "batteries-parts-kits/scooter-skate-parts": {
+    "type": "scooter, skateboard or kids vehicle spare part",
+    "typePlural": "scooter, skateboard and kids vehicle spare parts",
+    "intro": [
+      "Spare parts for electric scooters, skateboards and kids ride-ons cover the items that wear, loosen or break during regular use, from tyres and tubes to belts and throttles.",
+      "Each part is designed around a particular model or family, so measurements, mounting holes and connectors rarely transfer from one vehicle to another.",
+      "Wear items such as tubes, belts, brake pads and bushings are expected to be replaced over time, while structural parts only need attention after damage.",
+      "Electrical parts such as throttles, switches and cables connect to a controller, and a wrong fit can stop the vehicle or damage the electronics.",
+      "Small vehicles live hard lives with kerbs, vibration and dust, which is why spare parts are a normal part of owning one.",
+      "Original and aftermarket versions of the same part may look identical but can differ in material, finish and manufacturing tolerance."
+    ],
+    "suits": [
+      "Owners dealing with a flat, a worn belt, a sticky throttle or a loose wheel can often restore the vehicle by fitting the right part.",
+      "Riders who use their scooters daily on rough pavement will go through tyres and bushings faster than occasional riders.",
+      "Parents of children who ride hard can keep common wear items on hand so a small fault does not ruin a weekend.",
+      "DIY-minded owners with basic tools can handle many replacements, while steering, brake and wiring work may suit a qualified repairer.",
+      "Skaters who swap trucks, belts or wheels to adjust ride feel should confirm that the new parts suit their deck and motor layout.",
+      "Anyone buying a second-hand vehicle may want to inspect, and where necessary replace, worn parts before riding it regularly."
+    ],
+    "check": [
+      "Confirm the vehicle model and year, since small design changes between versions can alter shaft sizes, wheel diameters and connector layouts.",
+      "Compare dimensions on the old part with the listing, including length, diameter, bolt spacing, thread and valve style where relevant.",
+      "Learn if the part is sold individually, in pairs or as a set, and whether one side must be replaced together with its partner.",
+      "For brake and steering components, consider whether professional fitting is wise, since a loose part can cause a loss of control.",
+      "Read how the part is described, such as original or compatible, and ask about material and finish if it is a load-bearing item.",
+      "Keep the old part until the new one is fitted and tested, so that shape, markings and connector fit can be compared."
+    ],
+    "care": [
+      "Inspect fasteners, tyres and brakes before each ride, and re-tighten bolts to the maker's recommended settings, using thread locker where instructed.",
+      "Keep belts, bearings and moving joints clean and free of grit, and replace parts once they show cracks, fraying or play.",
+      "Store the vehicle off damp ground so that metal parts, connectors and tubes do not corrode or perish.",
+      "Take worn rubber, metal and electronic parts to appropriate recycling streams rather than the general bin when they are removed."
+    ]
+  },
+  "batteries-parts-kits/tyres-tubes": {
+    "type": "electric bike tyre or inner tube",
+    "typePlural": "electric bike tyres and inner tubes",
+    "intro": [
+      "A bicycle tyre is the rubber contact patch between bike and road, while the inner tube is the air-holding bladder that sits inside it.",
+      "Tyres are described by diameter, width and bead type, and these figures are printed on the sidewall so they can be matched when replacing.",
+      "Tread pattern, rubber compound and puncture-protection layers vary, giving a choice between low rolling resistance, extra grip or tougher resistance to flats.",
+      "Tubes come with different valve styles, either a slim valve or a wider car-style valve, and the valve must suit the hole drilled in the rim.",
+      "Electric bikes place higher loads on tyres through added weight, torque and speed, so many tyres are built or labelled with this use in mind.",
+      "Tyres and tubes are wear items, with rubber hardening, cracking and thinning over time even when the bike is rarely ridden."
+    ],
+    "suits": [
+      "Commuters who ride in all conditions often favour tyres with puncture-resistant layers and reflective sidewalls to reduce roadside repairs.",
+      "Touring riders carrying luggage need tyres with the strength and volume to cope with a heavier load over long distances.",
+      "Riders who prefer rougher paths or gravel may want wider tyres with more tread for grip and comfort.",
+      "Owners facing frequent flats might consider tougher tyres, thicker tubes or sealant-friendly alternatives where the rim supports them.",
+      "Anyone whose tyres show cracks, bald centres, bulges or exposed casing should replace them before the next ride.",
+      "Owners of smaller-wheel and folding bikes need to check carefully, as their tyre sizes are less common and not interchangeable with standard wheels."
+    ],
+    "check": [
+      "Read the size markings on the sidewall of the current tyre, including wheel diameter and width, before choosing a replacement.",
+      "Confirm the rim width recommended for the tyre, since a tyre that is too wide or too narrow for the rim sits poorly and handles badly.",
+      "Choose a tube with the right valve type and length for the rim, and match the tube's stated size range to the tyre.",
+      "Verify that the tyre is rated for electric bike use, as the stated load and speed ratings may matter on a heavier bike.",
+      "Check that mudguards, frame and fork have enough clearance for a wider tyre, including space for mud and slight wheel flex.",
+      "Consider the tread style and compound for the surfaces ridden most often, balancing grip, rolling effort, noise and durability."
+    ],
+    "care": [
+      "Check pressure regularly with a gauge and keep it within the range printed on the sidewall, because low pressure causes pinch flats and uneven wear.",
+      "Inspect tyres for glass, thorns and cuts after rides, and remove embedded debris before it works its way through to the tube.",
+      "Fit tubes carefully, use tyre levers gently, and make sure the tube is not pinched under the bead before inflating.",
+      "Keep spare tubes in a cool, dark place away from oil and solvents, and dispose of worn tyres through tyre recycling services."
+    ]
+  },
+  "kids-off-road-ev/electric-balance-bikes": {
+    "type": "electric balance bike",
+    "typePlural": "electric balance bikes",
+    "intro": [
+      "An electric balance bike is a small, pedal-free bike for children, with a low frame and a motor that helps the rider move along.",
+      "Riders sit on the saddle with their feet on the ground at first, learning to balance and steer before they begin to use power.",
+      "A twist throttle or speed setting lets a parent limit how much help the motor gives as the child gains confidence.",
+      "Many include a rear brake and sometimes a front one, with lever reach sized for small hands and limited grip strength.",
+      "Frames are made light and low so that a child can lift the bike and put both feet down quickly when needed.",
+      "The design echoes small motorbikes, helping young riders build the balance, steering and throttle control that carry over to larger machines later."
+    ],
+    "suits": [
+      "Children who have outgrown a pedal-free push balance bike and want more adventure often take well to a powered version.",
+      "Families who enjoy outings to tracks, rural properties or open private land may find an electric balance bike suits those settings.",
+      "Young riders with a keen interest in motorbikes can learn throttle control and body position in a gentle, supervised setting.",
+      "Parents who want to introduce off-road riding gradually can use speed limiting features to progress at the child's own pace.",
+      "Children who are steady on a regular bicycle and comfortable with a throttle may adapt faster than complete beginners.",
+      "Every rider should wear a properly fitted helmet and sturdy shoes, with gloves and knee and elbow guards recommended for supervised practice."
+    ],
+    "check": [
+      "Compare the seat height and inseam range with the child's measurements, so their feet can reach the ground flat with a slight bend in the knee.",
+      "Read the maker's suggested age and weight guidance, and keep in mind that children develop at different rates.",
+      "Ask whether the speed can be limited or locked, and how simple it is for a parent to adjust.",
+      "Check the brake setup, the lever reach and how quickly the motor cuts out when the throttle is released.",
+      "Consider the bike's weight, since a child should be able to stand it up or lift it after a fall.",
+      "Rules about where powered kids vehicles can be ridden differ between states and councils, so check with the local authority before heading out."
+    ],
+    "care": [
+      "Always supervise charging, use the supplied charger, and unplug once the battery is full instead of leaving it connected overnight.",
+      "Inspect brakes, tyres, bolts and the throttle before each ride, and wipe the bike down gently without soaking the motor or electrics.",
+      "Store the bike indoors or under cover, away from heat and damp, and keep the battery partly charged during long breaks.",
+      "Replace worn tyres, cables and pads promptly, and recycle batteries through an appropriate collection point when they reach the end of their life."
+    ]
+  },
+  "kids-off-road-ev/electric-go-karts": {
+    "type": "electric go-kart or drift trike",
+    "typePlural": "electric go-karts and drift trikes",
+    "intro": [
+      "An electric go-kart is a low, small-wheeled ride-on with a seat, a steering wheel or handlebars and a pedal or throttle, powered by a battery and motor.",
+      "Drift trikes use slippery rear wheels or a low-grip rear axle, allowing the rider to slide through corners rather than grip them.",
+      "Most have a simple frame with a bucket seat, and some include a harness, a brake pedal or a hand-brake system.",
+      "Electric drive means quiet running with no fuel or exhaust, so these machines suit backyards and closed tracks more readily than petrol karts.",
+      "Because the rider sits low and close to the ground, the vehicle feels fast and exciting even at modest speeds.",
+      "Models are sized for children, teens or adults, and the right choice depends on the rider's weight, leg length and experience."
+    ],
+    "suits": [
+      "Families with a large private backyard, farm or paddock can use a kart for supervised play on flat ground.",
+      "Children and teens who enjoy racing games and want a physical alternative may take to a kart quickly.",
+      "Party and holiday outings at private tracks or dedicated venues can include karts, subject to the venue's rules and equipment.",
+      "Drift trikes appeal to riders who enjoy sliding and spinning, but they need a smooth, enclosed surface and careful supervised learning.",
+      "Adult enthusiasts who want a quiet, low-maintenance machine for private use may enjoy the simpler mechanics of electric drive.",
+      "Anyone planning road or public footpath use should be aware that karts are generally not designed or permitted for those places."
+    ],
+    "check": [
+      "Compare the maker's rider weight and age guidance with the intended driver, and confirm the seat, pedals and steering reach suit their height.",
+      "Ask about braking arrangements, such as foot pedal, hand lever or motor slowing, and how well they perform on loose or wet surfaces.",
+      "Check whether the speed can be limited or a parent-controlled mode is provided, which matters most for younger or less experienced drivers.",
+      "Look for a harness, roll protection or guards where applicable, and consider how stable the kart feels in turns.",
+      "Think about storage and transport space, because karts are bulky and may not fit in a small car or shed.",
+      "Rules on where powered ride-ons may operate differ between states, councils and venues, so confirm with local authorities before use."
+    ],
+    "care": [
+      "Drivers should wear a helmet, closed shoes and gloves, and add elbow and knee guards when practising drifts or learning on uneven ground.",
+      "Charge under supervision with the supplied charger, avoid charging in enclosed rooms, and unplug as soon as the battery is full.",
+      "Check wheels, steering linkage, fasteners and brakes before each outing, and tighten or replace anything that is loose or worn.",
+      "Keep the kart dry and out of direct sun when stored, and clean dirt from moving parts and tyres after each session."
+    ]
+  },
+  "kids-off-road-ev/youth-electric-dirt-bikes": {
+    "type": "youth electric dirt bike",
+    "typePlural": "youth electric dirt bikes",
+    "intro": [
+      "A youth electric dirt bike is a smaller off-road motorcycle for young riders, driven by a battery and electric motor instead of a petrol engine.",
+      "Throttle response is smooth, most models have no clutch or gearbox, and operation is quiet, which suits learners.",
+      "Frames, wheels and suspension are scaled to smaller riders, and many designs include travel in the forks and rear shock for rough ground.",
+      "Power delivery and top speed are often adjustable through riding modes or a controller setting, so parents can match performance to experience.",
+      "Pit bikes belong to a similar size class and are used for off-road play on private land and at tracks.",
+      "Because these machines are designed for off-road use, they generally are not intended for public roads or footpaths."
+    ],
+    "suits": [
+      "Young riders ready to progress beyond a balance bike or small ride-on, and who show good control, are typical users.",
+      "Families with access to private property, motocross tracks or designated riding areas, and the landowner's permission, can ride sensibly there.",
+      "Parents who dislike the fuel, noise and servicing demands of petrol engines may find electric drive more appealing for family riding.",
+      "Learners benefit from adjustable power modes that let supervisors keep performance modest early on and unlock more later.",
+      "Teenagers who are small for their age may fit a larger youth model, though fit and skill matter more than age alone.",
+      "Riders interested in racing or club events should ask the relevant organisation about eligibility rules for electric bikes."
+    ],
+    "check": [
+      "Check the seat height and wheel size against the child's inseam and confidence, so they can reach the ground and handle the bike.",
+      "Ask whether speed and power can be limited, how modes are selected, and whether a parent can lock the setting.",
+      "Inspect the suspension, brakes and tyres, and compare them with the type of terrain the bike will mostly be used on.",
+      "Examine the battery arrangement, such as whether it is removable and how long a typical session might run between charges.",
+      "Confirm what parts and servicing support are available locally, since off-road bikes take plenty of knocks and eventually need spares.",
+      "Rules for off-road vehicles, including registration, helmets and age limits, vary by state, so check with the state road authority and the land manager."
+    ],
+    "care": [
+      "Dress riders in a well-fitted off-road helmet, goggles, gloves, boots and body armour, and keep an adult close by while they ride.",
+      "Charge with the supplied charger in a ventilated area, never leave it unattended, and allow a hot battery to cool before charging.",
+      "Wash off mud and dust gently, avoiding high pressure water at the motor, controller and connectors, and lubricate the chain as recommended.",
+      "Check bolts, spokes, brakes and tyre pressure before each ride, and retire worn batteries through a proper recycling collection point."
+    ]
+  },
+  "mobility-scooters/heavy-duty-mobility-scooters": {
+    "type": "heavy-duty mobility scooter",
+    "typePlural": "heavy-duty mobility scooters",
+    "intro": [
+      "A heavy-duty mobility scooter is a battery-powered seated vehicle built with a stronger frame, larger wheels and sturdier suspension to cope with rougher ground and higher loads.",
+      "Most are controlled with a tiller at the front, with a throttle lever, a speed dial and brakes that apply when the lever is released.",
+      "Larger tyres and greater ground clearance help it roll over kerbs, grass, gravel and uneven paths that smaller scooters struggle with.",
+      "Seats are usually wider and more supportive, often with adjustable arms, swivel action and height or angle settings.",
+      "Three-wheel versions turn more tightly, while four-wheel versions are typically more stable, and the choice affects manoeuvrability and comfort.",
+      "These machines are bigger and heavier than travel models, so they are usually moved with a ramp, hoist or suitable vehicle rather than carried."
+    ],
+    "suits": [
+      "People living in rural or semi-rural areas with gravel driveways, farm tracks or uneven paths may need a tougher scooter.",
+      "Users who need extra seat width or load capacity, in line with the maker's stated limits, may look in this category.",
+      "Those who spend longer periods outdoors, such as visiting parks, markets or neighbours, can benefit from the added stability and comfort.",
+      "Households with a garage, a ramp or a suitable vehicle will find storage and transport more practical than those in a small flat.",
+      "Someone planning mainly indoor use or trips on public transport may find a smaller travel model easier to handle.",
+      "An occupational therapist or other health professional can help match seat size, controls and stability to the individual's needs."
+    ],
+    "check": [
+      "Compare the maker's stated user weight limit and seat dimensions with the rider, and discuss any uncertainty with a health professional.",
+      "Ask about turning circle, ground clearance and stability on slopes, and try the scooter on terrain similar to where it will be used.",
+      "Think about how and where it will be stored and charged, since the scooter and its battery pack are heavy and bulky.",
+      "Confirm how the scooter is delivered and assembled, whether it splits into parts for transport, and how heavy the heaviest piece is.",
+      "Rules for footpaths, shopping centres, roads and public transport vary by state and operator, so check with the relevant authorities and operators.",
+      "Ask about local servicing, spare parts and battery replacement, as a mobility scooter is often relied on for daily independence."
+    ],
+    "care": [
+      "Charge the batteries after use with the supplied charger in a dry spot, and avoid leaving the scooter flat for long periods.",
+      "Check tyres, brakes, lights and the tiller before each outing, and arrange regular servicing with a qualified mobility technician.",
+      "Wipe down the scooter after wet or muddy outings, keep water away from the controller, and cover it if it is stored outdoors.",
+      "Replace worn batteries through a recycler, and keep a record of service dates and any faults for the technician."
+    ]
+  },
+  "mobility-scooters/travel-mobility-scooters": {
+    "type": "travel or folding mobility scooter",
+    "typePlural": "travel and folding mobility scooters",
+    "intro": [
+      "A travel mobility scooter is a compact seated scooter designed to be lighter and easier to transport than larger models.",
+      "Many fold or break down into a few sections, so they can be lifted into a car boot with care.",
+      "Small wheels and a tight turning circle make them handy in shops, lifts, cafes and around the home.",
+      "Controls are usually a tiller with a thumb or lever throttle, and the brakes engage automatically when the control is released.",
+      "To save weight, batteries are often smaller and body parts lighter, which usually means shorter trips and gentler terrain than heavier scooters.",
+      "Seats can be removable or foldable, and comfort features such as arm rests and seat height differ between designs."
+    ],
+    "suits": [
+      "People who want to keep shopping, visiting friends or taking holidays, and need an aid that fits in a car boot, may find this type useful.",
+      "Those who use a scooter mostly indoors or on smooth paths, such as in shopping centres, may value the manoeuvrability.",
+      "Travellers who go on cruises, coach tours or flights should ask the operator about rules for batteries and mobility devices.",
+      "Anyone with limited storage in a unit or retirement village can find a folding model easier to keep.",
+      "Users who face rough footpaths, steep hills or long daily journeys may need a sturdier option instead of a lightweight one.",
+      "A conversation with an occupational therapist or health professional can help decide whether a scooter is suitable and which features matter most."
+    ],
+    "check": [
+      "Weigh the heaviest section and consider whether the person lifting it can manage it safely, as fold-up designs differ widely.",
+      "Check the stated user weight limit and seat dimensions, and test sitting comfort for the length of time you expect to ride.",
+      "Ask how long it takes to fold and unfold, whether tools are needed, and whether the battery can be removed.",
+      "Think about the places it will be used, since small wheels cope less well with kerbs, gravel and grass.",
+      "Public transport, airlines and venues have their own rules on mobility scooters and batteries that vary, so ask the operator before travelling.",
+      "Confirm what servicing, spare batteries and repairs are available locally, and what happens if it fails away from home."
+    ],
+    "care": [
+      "Charge the battery after outings with the supplied charger in a dry place, and avoid leaving it flat for long periods.",
+      "Fold and unfold gently, checking latches, locking pins and cables for wear, and never carry the scooter by loose parts.",
+      "Wipe the scooter clean and dry, keeping the controls and charging port free from water, crumbs and dust.",
+      "Have it checked by a qualified technician at regular intervals, and recycle worn batteries through an approved collection point."
+    ]
+  }
+}

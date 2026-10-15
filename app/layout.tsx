@@ -6,7 +6,7 @@ import { AnnouncementBar } from '@/components/AnnouncementBar';
 import { ChatHub } from '@/components/ChatHub';
 import { RecentPurchasePopup } from '@/components/RecentPurchasePopup';
 import { AccessoryOfferPopup } from '@/components/AccessoryOfferPopup';
-import { SITE } from '@/config/site';
+import { SITE, PRODUCTS } from '@/config/site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${SITE.domain}`),
@@ -43,6 +43,10 @@ export const metadata: Metadata = {
   },
 };
 
+// A short, server-chosen list for the purchase toast so the catalogue is not bundled into every page.
+const featured = PRODUCTS.filter((p) => p.featured || p.badge !== 'none');
+const popupProducts = (featured.length >= 8 ? featured : PRODUCTS).slice(0, 15).map((p) => ({ slug: p.slug, name: p.name, price: p.price, category: p.category, image: p.images[0] }));
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang={SITE.locale}>
@@ -63,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <ChatHub />
-        <RecentPurchasePopup />
+        <RecentPurchasePopup products={popupProducts} />
         <AccessoryOfferPopup />
       </body>
     </html>

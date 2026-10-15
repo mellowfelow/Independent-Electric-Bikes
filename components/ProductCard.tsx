@@ -1,19 +1,18 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { brandNameOf, productCategoryLabel } from '@/lib/catalog';
 import { CARD_SIZES, productSrcSet } from '@/lib/productImage';
 import Link from 'next/link';
 import { Plus, Minus, ShoppingBag, Check, Zap } from 'lucide-react';
-import { Product, SITE } from '@/config/site';
+import { SITE } from '@/config/core';
+import type { CardProduct } from '@/lib/cardProduct';
 import { money } from '@/lib/order';
-import { fitSummary } from '@/lib/compat';
 import { addToCart } from '@/lib/cartClient';
 
 interface ProductCardProps {
   /** Load this card's photo immediately (use for the first row of a grid). */
   priority?: boolean;
-  product: Product;
+  product: CardProduct;
   className?: string;
 }
 
@@ -21,7 +20,7 @@ export function ProductCard({ product, className = '', priority = false }: Produ
   const [quantity, setQuantity] = useState(1);
   const [cartQty, setCartQty] = useState(0);
   const [added, setAdded] = useState(false);
-  const fit = fitSummary(product);
+  const fit = product.fit;
 
   // Sync with cart state in localStorage
   useEffect(() => {
@@ -93,12 +92,12 @@ export function ProductCard({ product, className = '', priority = false }: Produ
           </span>
         )}
 
-        <Link href={productUrl} className="block h-full w-full">
+        <Link href={productUrl} prefetch={false} className="block h-full w-full">
           {/* Photos are pre-framed to 4:3 on white by scripts/images.mjs, so every card lines up. */}
           <img
-            src={product.images[0]}
+            src={product.image}
             alt={product.name}
-            srcSet={productSrcSet(product.images[0])}
+            srcSet={productSrcSet(product.image)}
             sizes={CARD_SIZES}
             width={1200}
             height={900}
@@ -115,12 +114,12 @@ export function ProductCard({ product, className = '', priority = false }: Produ
       <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
         <div>
           <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate">
-            {brandNameOf(product)}
+            {product.brand}
           </div>
           <h2 className="text-xs font-extrabold text-white mt-0.5 group-hover:text-emerald-400 transition-colors line-clamp-1">
-            <Link href={productUrl}>{product.name}</Link>
+            <Link href={productUrl} prefetch={false}>{product.name}</Link>
           </h2>
-          <p className="text-[11px] text-slate-400 mt-1 line-clamp-1 leading-relaxed">{productCategoryLabel(product)}</p>
+          <p className="text-[11px] text-slate-400 mt-1 line-clamp-1 leading-relaxed">{product.label}</p>
           {fit && <p className="text-[11px] font-bold text-emerald-400 mt-1 line-clamp-1">{fit}</p>}
         </div>
 
@@ -139,6 +138,7 @@ export function ProductCard({ product, className = '', priority = false }: Produ
 
           <Link
             href={productUrl}
+            prefetch={false}
             className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-[10px] rounded-lg transition-all"
           >
             Details<span className="sr-only"> for {product.name}</span> &rarr;

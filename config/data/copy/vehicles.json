@@ -1,0 +1,478 @@
+{
+  "electric-quad-bikes/adult-electric-quads": {
+    "type": "adult electric quad bike",
+    "typePlural": "adult electric quad bikes",
+    "intro": [
+      "An adult electric quad bike is a four-wheeled off-road vehicle driven by a battery and electric motor instead of a petrol engine, with handlebar steering and a straddle seat.",
+      "Power travels from the motor to the wheels through a chain, shaft or direct drive, and the rider controls speed with a thumb or twist throttle on the handlebars.",
+      "Because electric motors deliver torque immediately, these machines pull away smoothly and quietly, which changes how they feel on loose ground compared with a combustion quad.",
+      "Suspension, tyre tread and a sturdy frame are what separate a genuine off-road quad from a lightweight toy, since they must cope with bumps, ruts and uneven terrain.",
+      "A battery pack stores the energy, a controller manages how much current reaches the motor, and a charger refills the pack from a standard power outlet.",
+      "Adult-sized models are built around a larger frame and higher load capacity than youth machines, so seat height, footrests and brakes are scaled for a full-grown rider."
+    ],
+    "suits": [
+      "Farm owners, rural property managers and landholders may use an electric quad for checking fences, moving between paddocks and light chores where engine noise is unwelcome.",
+      "Recreational off-road riding on private bush blocks or trails, with the owner's permission, appeals to people who appreciate the low noise and the lack of fuel handling.",
+      "Quiet operation makes this type attractive near livestock, neighbours or wildlife, because a motor hum disturbs far less than a revving petrol engine.",
+      "Anyone expecting to ride on public roads or in public parks should first check with their state road authority, as quads are generally restricted to private land and rules vary.",
+      "Short, repeated outings suit the type well, since an electric quad can be topped up between jobs, whereas a long remote expedition needs careful planning around charge.",
+      "Those who value low running costs and minimal engine servicing, such as oil changes and spark plugs, may find an electric drivetrain a sensible fit."
+    ],
+    "check": [
+      "Whether the quad is intended for road use anywhere is worth asking, and confirm with your state road authority that your planned riding location is lawful before committing.",
+      "Check the stated rider weight limit and seat dimensions against the person who will actually ride, including any gear or cargo that adds to the load.",
+      "Look closely at the drive layout, because a rear-drive machine and an all-wheel-drive machine handle mud, slopes and sand quite differently from one another.",
+      "The braking system deserves attention, including whether it is mechanical or hydraulic disc and how easily the pads can be inspected and replaced.",
+      "Enquire about battery type, whether it is removable, how long a full recharge takes, and what the supplier says about replacement packs and local spare parts.",
+      "Confirm what support exists for servicing and warranty claims in Australia, as heavy off-road machines are difficult to post and need a workshop that can handle them."
+    ],
+    "care": [
+      "Recharge the battery after each ride when practical and avoid leaving it fully drained for long periods, since deep discharge can shorten the life of lithium packs.",
+      "Wash off mud and grit after dirty rides, but keep high-pressure water away from the motor, controller and charging port, which are not built to be sprayed.",
+      "Tyre pressure, suspension bolts, brake pads and steering components deserve regular checks, because off-road riding loosens fasteners and wears moving parts faster than light use.",
+      "Store the quad indoors or under cover in a cool, dry place, and avoid charging or storing the battery in extreme heat or direct sun."
+    ]
+  },
+  "electric-quad-bikes/kids-electric-quads": {
+    "type": "kids electric quad bike",
+    "typePlural": "kids electric quad bikes",
+    "intro": [
+      "A kids electric quad bike is a small four-wheeled ride-on vehicle powered by a rechargeable battery and motor, sized and tuned for young riders rather than adults.",
+      "Many use a thumb throttle or foot pedal, and the motor sends drive to the rear wheels through a simple arrangement that needs little mechanical know-how.",
+      "The frame, seat and tyres are scaled down so that a child can reach the handlebars and footrests while keeping weight low and the machine stable.",
+      "Some designs include a speed limiter, a removable key or a parental override so an adult can restrict how fast a new rider is able to go.",
+      "Instead of fuel and a loud engine, the machine runs from a sealed battery and charger, which keeps the noise down and removes petrol from the equation.",
+      "Models differ widely in size, from small starter machines for little children through to larger youth quads that approach an adult machine in capability."
+    ],
+    "suits": [
+      "Families with a backyard, acreage or a rural block often use children's quads as a first step into riding on safe, supervised, private ground.",
+      "Children who are learning throttle control, steering and braking can build confidence on a low-powered machine before progressing to anything faster or heavier.",
+      "A younger child needs a gentler, slower model, while an older or taller youngster may outgrow a small machine quickly and suit a larger youth size.",
+      "Constant adult supervision matters, and helmets, gloves, boots and eye protection are normally recommended for any young rider on a quad.",
+      "Anyone planning to ride in a park, on a street or on public trails should check with their state road authority first, since kids' quads are generally limited to private property.",
+      "Because electric machines are quiet and have no fuel to spill, they can suit short, repeated play sessions near the house better than a noisy petrol alternative."
+    ],
+    "check": [
+      "Match the manufacturer's stated age range, rider weight limit and size to the actual child, and remember that a growing child will move into or out of a machine over time.",
+      "Ask whether the speed can be limited, whether a parental control or tether is included, and how easily an adult can adjust those settings.",
+      "Examine the braking arrangement, including whether it is a foot or hand brake, and whether it is easy for small hands and feet to operate.",
+      "Work out how long the battery takes to recharge, how long a typical session lasts, and whether the battery can be replaced if it wears out.",
+      "Consider the tyres, suspension and ground clearance in relation to the terrain at home, because a small toy-grade quad may struggle on long grass, gravel or slopes.",
+      "Establish what local support is available for spare parts, chargers and repairs, and read the safety guidance and assembly instructions supplied with the vehicle."
+    ],
+    "care": [
+      "Charge the battery under adult supervision using only the supplied charger, and unplug it once finished rather than leaving it connected for days at a time.",
+      "Inspect the tyres, brakes, steering and fasteners before each ride, since small vehicles used by enthusiastic children take plenty of knocks.",
+      "Keeping the quad dry and out of heavy rain helps, and mud and grass should be wiped away instead of hosed around the motor and electrical components.",
+      "A cool, dry storage spot suits the vehicle, and the battery benefits from an occasional top-up if the machine will sit unused through a long stretch of the year."
+    ]
+  },
+  "electric-scooters/commuter-electric-scooters": {
+    "type": "commuter e-scooter",
+    "typePlural": "commuter e-scooters",
+    "intro": [
+      "A commuter e-scooter is a stand-up kick scooter with an electric hub motor and rechargeable battery, designed to carry one rider across town without any pushing.",
+      "The rider stands on a deck between two wheels and uses a thumb or twist throttle on the handlebar to accelerate, with a brake lever to slow down.",
+      "Many commuter designs fold at the stem so the scooter can be carried onto a train, stowed under a desk or kept in a hallway or car boot.",
+      "Tyre type, braking system and basic lights are the features that distinguish a practical commuter from a toy-style scooter that was never meant for daily travel.",
+      "The focus is moderate, repeatable daily use rather than outright performance, so weight, folding convenience and ride comfort tend to matter more than top-end power.",
+      "A handlebar display usually shows speed, battery level and riding mode, while a charger plugged into a normal outlet restores the battery between trips."
+    ],
+    "suits": [
+      "Short urban trips, such as the journey to a station, office or local shops, are what a commuter e-scooter is designed to cover.",
+      "People who combine scooter and public transport can fold the scooter and carry it aboard, which helps cover the first and last stretch of a journey.",
+      "Riders living in apartments or sharing office space often value a model light enough to lift and compact enough to store indoors.",
+      "Because rules for e-scooters on footpaths, bike paths and roads differ between states and councils, riders should check with their state road authority before riding in public.",
+      "Flat or gently rolling routes with reasonable surfaces suit this type, whereas very steep hills, rough tracks and long distances may push a lighter scooter beyond its comfort zone.",
+      "Students, office workers and anyone replacing short car trips may find the type convenient, provided the local rules allow it and the route feels safe."
+    ],
+    "check": [
+      "Ask where the scooter can legally be ridden in your state, and whether conditions such as helmet use, age limits or required equipment apply.",
+      "Compare the claimed range against your daily distance with allowance for hills, rider weight and wind, because real-world distance is usually lower than a laboratory figure.",
+      "Weigh the scooter's carrying weight and folded size against how you will store and lift it, especially if stairs or public transport are involved.",
+      "Study the tyre type, suspension, deck size and brake design, since these determine comfort on rough pavement and stopping confidence in the wet.",
+      "Make sure there are built-in lights, a reflector and a bell, and ask how any water-resistance rating applies to rain rather than submersion.",
+      "Verify that spare tyres, tubes, brake pads and battery servicing are available locally, and ask how the supplier handles warranty and repairs."
+    ],
+    "care": [
+      "Recharging with the supplied charger is sensible, and the battery should not be run completely flat on a regular basis or left plugged in once full.",
+      "Air-filled tyres need frequent pressure checks, as correct pressure improves range, grip and ride comfort while reducing the risk of punctures.",
+      "After wet rides, wipe the scooter down, dry the folding mechanism and keep water away from the charging port and deck connections.",
+      "Indoor storage away from heat and frost suits the scooter, and the battery is better kept at a moderate charge level if it will sit unused for weeks."
+    ]
+  },
+  "electric-scooters/long-range-electric-scooters": {
+    "type": "long-range performance e-scooter",
+    "typePlural": "long-range performance e-scooters",
+    "intro": [
+      "A long-range performance e-scooter is a stand-up electric scooter built around a larger battery, stronger motors and sturdier components than a basic commuter model.",
+      "Extra battery capacity extends the distance between charges, while one or more powerful motors help the scooter hold speed on hills and accelerate harder.",
+      "To cope with the greater power, these scooters tend to use wider decks, stronger stems, bigger wheels and more capable suspension and brakes.",
+      "Dual braking, locking folding mechanisms and detailed displays are common additions, reflecting the fact that more speed and weight call for greater control.",
+      "The added capability makes them heavier and bulkier than lightweight scooters, so portability is a trade-off that the design deliberately accepts.",
+      "Charging takes longer because the battery is larger, and some models accept faster chargers or dual charging ports to shorten the wait."
+    ],
+    "suits": [
+      "Riders with a longer commute, or a hilly route that would tire a lighter scooter, are the main audience for this heavier type.",
+      "Enthusiasts who enjoy weekend rides, rougher surfaces or brisk acceleration may value the stronger motors and suspension that performance scooters add.",
+      "Heavier riders, or those carrying a backpack or cargo every day, often benefit from the extra torque and stronger frame.",
+      "Because they can travel faster and weigh more, they demand more skill, protective gear and caution than gentler commuter scooters.",
+      "Public road and path rules for powerful scooters vary between states and often include power or speed limits, so riders must check with their state road authority, and some machines suit private land only.",
+      "Anyone who needs to carry the scooter up stairs or onto public transport every day may find the weight a poor match for this type."
+    ],
+    "check": [
+      "Confirm that the scooter's power and speed are legal for the places you plan to ride, since stronger models can exceed limits that apply to public use.",
+      "Request an honest idea of real-world range with your weight and terrain, and treat claimed figures as optimistic maximums rather than everyday results.",
+      "Brake setup deserves close scrutiny, including whether front and rear brakes are separate and whether they are hydraulic or mechanical, as stopping power must match performance.",
+      "Measure the weight and folded size honestly against your storage space, car boot and lifting ability before choosing a heavy long-range machine.",
+      "Suspension, tyre size and tyre type decide whether the scooter feels stable and comfortable at speed on imperfect surfaces, so examine them closely.",
+      "Learn about battery protection, charging time, water resistance and the supplier's local repair and spare parts support before relying on the scooter daily."
+    ],
+    "care": [
+      "Keep the larger battery within a comfortable charge band for daily use and recharge it in a ventilated place away from flammable items.",
+      "Brake pads, discs, cables and tyre wear deserve frequent inspection, because heavier and faster scooters stress these parts more than light commuters do.",
+      "Stem clamps, folding latches and axle bolts should be checked periodically and re-tightened if they loosen from vibration.",
+      "A dry, temperate storage spot is ideal, and the battery should not be left in a hot vehicle or exposed to prolonged direct sun."
+    ]
+  },
+  "electric-skateboards/all-terrain-electric-skateboards": {
+    "type": "all-terrain electric skateboard",
+    "typePlural": "all-terrain electric skateboards",
+    "intro": [
+      "An all-terrain electric skateboard is a motorised board fitted with large pneumatic tyres and a robust deck so it can roll over grass, gravel and rough paths.",
+      "Instead of hard urethane street wheels, it uses air-filled tyres that absorb bumps, with motors driving the wheels through belts, gears or hubs.",
+      "Standing on the deck, the rider controls acceleration and braking with a handheld wireless remote and leans slightly to steer, as on any skateboard.",
+      "Wider trucks, a taller ride height and extra clearance protect the motors and battery enclosure from stones, roots and uneven ground.",
+      "Soft ground and tyre rolling resistance demand more torque than smooth pavement, so motors and batteries tend to be larger than those on street boards.",
+      "A larger battery pack and heavier build are the usual trade-offs, making these boards harder to carry than slim urban models."
+    ],
+    "suits": [
+      "Riders who want to leave the pavement and explore dirt tracks, parklands or quiet paths where permitted can use the grip and cushioning of pneumatic tyres.",
+      "Adventure-style cruising on mixed surfaces, rather than commuting on smooth footpaths, is the natural territory of this type for anyone who likes variety underfoot.",
+      "Those with some board-sport experience will find it easier, since steering, balance and braking skills carry across from skateboarding, snowboarding or surfing.",
+      "Anyone expecting to ride on public footpaths or roads should check with their state road authority first, as rules for motorised boards vary and some are private-land only.",
+      "Beginners can learn on one, but a gentle ride mode, open space and full protective gear are sensible while getting used to the power.",
+      "Because the boards are heavy and bulky, they suit people who can drive to a riding spot rather than carry the board long distances."
+    ],
+    "check": [
+      "Ask about tyre size and type, as larger air-filled tyres roll better over rough ground but add weight and affect how the board steers.",
+      "Investigate the drive system, including whether the motors are belt, gear or hub driven, and what that implies for noise, upkeep and sealed protection.",
+      "Seek a water-resistance claim covering the battery enclosure, electronics and remote, and ask what the supplier means by it in practical terms.",
+      "Remote quality and connection reliability matter greatly, so find out what happens if the signal drops, since loss of control on rough ground can be hazardous.",
+      "Discover how the board brakes, whether regenerative braking is supported, and how braking feels as the battery runs low.",
+      "Compare weight, deck flex and ride height with your experience, and ask whether replacement tyres, belts and motor parts are stocked locally."
+    ],
+    "care": [
+      "Clean mud, sand and grit from the trucks, motor mounts and bearings after each rough ride to limit wear on drive components.",
+      "Tyre pressure should be checked before riding, as air-filled tyres lose pressure over time and the correct level affects grip, range and ride quality.",
+      "Belts or gears, wheel nuts and truck bolts need regular inspection, with loose parts tightened and worn drive components replaced before they fail.",
+      "A dry, ventilated spot suits charging, and the board should be stored indoors, avoiding heat, cold and long periods fully discharged."
+    ]
+  },
+  "electric-skateboards/mini-electric-skateboards": {
+    "type": "mini electric skateboard",
+    "typePlural": "mini electric skateboards",
+    "intro": [
+      "A mini electric skateboard is a short, compact motorised board that trades deck length for portability, usually with small urethane wheels and a hub or belt drive.",
+      "Its shorter wheelbase and lighter deck make it quick to turn and easy to pick up, in contrast to the longer, steadier decks of cruising boards.",
+      "Control comes from a handheld wireless remote that sets acceleration and braking, while the rider steers by shifting weight over the trucks.",
+      "To keep weight and size down, the battery pack is generally smaller, which shapes both how far the board goes and how quickly it recharges.",
+      "Many mini boards are designed to slip into a bag, rest beneath a desk or tuck into a car boot between rides.",
+      "The compact layout puts the rider closer to the ground and makes the board more nimble, but it also gives less stability at higher speeds."
+    ],
+    "suits": [
+      "Commuters who need to cover a short stretch and then carry the board onto a train or into an office may value its compact form.",
+      "A playful, agile board for tight turns on smooth paved areas, where permitted, can appeal to those who find a short deck easier to manoeuvre.",
+      "Lighter or newer riders sometimes like the approachable size of a mini board, though a gentle ride mode and protective gear remain sensible.",
+      "Taller or heavier riders, or anyone wanting relaxed stability on long straight runs, may feel more comfortable on a longer deck than a mini.",
+      "Rules about riding motorised boards on footpaths, bike paths and roads vary by state and council, so riders should check with their state road authority before using public paths.",
+      "Short urban hops, campus travel and casual weekend cruising suit the type better than long-distance trips or rough, broken surfaces."
+    ],
+    "check": [
+      "Deck length and width should be compared with your shoe size and stance, because a small deck can feel cramped for larger feet.",
+      "Wheel size and hardness are worth questioning, since small hard wheels transmit vibration and struggle with cracks, grit and uneven pavement.",
+      "Test how heavy the board feels to carry, and ask whether the battery is fixed or removable and suitable for taking onto transport.",
+      "Seek out the realistic range for your weight and route, remembering that a smaller battery usually gives a shorter distance per charge.",
+      "Review the remote design, its battery type and its range, and ask what failsafe applies if the connection is interrupted.",
+      "Establish whether spare wheels, bearings, belts and remotes can be bought locally, and how the supplier handles warranty and repairs."
+    ],
+    "care": [
+      "Use the supplied charger, avoid leaving the board plugged in for days, and keep the remote charged or its battery fresh.",
+      "Small urethane wheels should be rotated and replaced as they wear or flat-spot, and bearings and trucks need an occasional check for play.",
+      "Wet roads and puddles are worth avoiding, and the board should be wiped dry and left to air out before it is put away.",
+      "Moderate indoor temperatures are kind to the battery, and if the board will go unused for a long stretch it should be left partly charged rather than empty."
+    ]
+  },
+  "electric-skateboards/onewheel-style-boards": {
+    "type": "single-wheel self-balancing board",
+    "typePlural": "single-wheel self-balancing boards",
+    "intro": [
+      "A single-wheel self-balancing board is a rideable platform built around one large central wheel with a motor, which keeps the board upright using sensors and software.",
+      "Standing sideways on footpads with feet either side of the wheel, the rider steers by leaning toe-side or heel-side instead of turning handlebars.",
+      "Gyroscopes and accelerometers feed a controller that adjusts motor torque many times each second, so the board stays level and responds to weight shifts.",
+      "A wide, often pneumatic tyre provides grip and cushioning, which is why these boards tend to feel closer to surfing or snowboarding than to skateboarding.",
+      "There is no remote, brake lever or steering column, so speed is managed entirely through body position and the board's own built-in limits.",
+      "Power and range come from a battery in the frame, and a charger plugs into a standard outlet to refill it between rides."
+    ],
+    "suits": [
+      "Riders drawn to a carving, surf-like feeling on trails, parks or quiet paths, where legal, may enjoy the flow these boards provide.",
+      "People with experience in snowboarding, skateboarding, surfing or similar balance sports often learn faster, though everyone faces a real learning curve at the start.",
+      "A rider who dislikes the idea of a handheld remote may like the intuitive, lean-based control, provided they accept the demands of balancing.",
+      "Because the board can stop driving or shut off if its limits are reached, riders must understand its safety behaviour and ride well within it.",
+      "Rules for riding these boards on public land vary by state and council, and some are intended for private property only, so check with your state road authority.",
+      "Carrying is awkward because of the weight and shape, so this type suits people who can drive to a riding location rather than walk with it."
+    ],
+    "check": [
+      "Ask how the board warns the rider as limits approach and what safety features exist, since a sudden cut-out can throw a rider forward.",
+      "Review the recommended rider weight range and the ability to adjust ride modes, as new riders benefit from gentler settings.",
+      "Plan for protective gear, especially a helmet, wrist guards and knee and elbow pads, because falls are a normal part of learning.",
+      "Learn how repairs, tyre replacement and battery service are handled locally in Australia, since these boards rely on specialised parts that general workshops rarely stock.",
+      "Decide whether the model is intended for pavement, trails or both, and how the tyre and footpads suit your preferred terrain.",
+      "Question the supplier about water resistance in real terms, including whether riding through puddles, wet grass or sand is recommended."
+    ],
+    "care": [
+      "Keeping tyre pressure within the recommended range matters, since it affects handling, grip and the stress placed on the motor and the board.",
+      "Footpads, rails and the wheel area benefit from a clean after riding, removing dirt that can work its way toward the motor housing.",
+      "Charging with the matching charger in a dry, ventilated place is wise, and the battery should not be left completely empty for long periods.",
+      "The board is better stored indoors out of sun and cold, resting on a flat surface or against a wall so the wheel carries no unnecessary strain."
+    ]
+  },
+  "electric-skateboards/street-electric-skateboards": {
+    "type": "street electric longboard",
+    "typePlural": "street electric longboards",
+    "intro": [
+      "A street electric longboard is a long deck with urethane wheels and a motor-driven drive system, built for smooth pavement rather than rough ground.",
+      "The longer wheelbase gives stability at cruising speed, while soft urethane wheels roll quietly and absorb some of the vibration from road texture.",
+      "A handheld wireless remote controls acceleration and braking, and many boards use regenerative braking to slow down while returning a little energy to the battery.",
+      "Motors are usually mounted near the rear wheels and drive them through belts, gears or hubs, which differ in noise, maintenance and feel.",
+      "The deck may be made of wood, bamboo, composite or carbon fibre, with flex that affects how comfortable and responsive the ride feels.",
+      "A battery housed beneath the deck powers the whole system, and a charger refills it from a household outlet."
+    ],
+    "suits": [
+      "Relaxed cruising on smooth footpaths, shared paths or empty streets, where permitted, is the use this type is made for, and it rewards steady, predictable riding.",
+      "Commuters with a straight, well-surfaced route may enjoy a longboard because its stable, long deck is forgiving over longer distances.",
+      "Anyone who already skates or longboards will find the stance and carving familiar, with motor assist adding speed without extra effort.",
+      "Newcomers can learn on one if they start with a gentle ride mode, an open space and the full set of protective gear.",
+      "Because rules on motorised boards differ by state and council, and some are limited to private land, riders should check with their state road authority before using public paths.",
+      "Rough bitumen, gravel, grass and kerbs are poorly suited to small hard wheels, so the type is a weaker choice if the route is uneven."
+    ],
+    "check": [
+      "Match deck length, flex and construction to your weight and riding style, since a stiffer deck feels more stable and a flexible one feels springier.",
+      "Probe the drive system, whether belt, gear or hub, and what it means for noise, ongoing maintenance and the ability to roll freely when the power is off.",
+      "The remote is the main way of controlling the board, so assess its grip, response, display and connection reliability before deciding.",
+      "Wheel size and hardness should suit the surfaces you ride, as larger softer wheels cope better with cracks and rough patches.",
+      "Press the supplier on realistic range for your weight and hills, and on how braking performs when the battery is low or very cold.",
+      "Settle questions about weight, carrying options, spare parts availability and local support before settling on a particular board."
+    ],
+    "care": [
+      "Charge after rides rather than letting the battery sit empty, and use the supplied charger in a dry, well-ventilated space.",
+      "Wheels, bearings, belts and truck bolts call for regular inspection, with worn urethane replaced before it affects grip or leaves flat spots.",
+      "Exposure to damp conditions harms electronics and bearings, so a board that has been out in drizzle should be wiped dry before storage.",
+      "Indoors and away from direct heat is the right place for the board, and the deck should not be left propped on one edge for weeks, which can warp it."
+    ]
+  },
+  "electric-water-sports/electric-jetboards": {
+    "type": "electric jetboard",
+    "typePlural": "electric jetboards",
+    "intro": [
+      "Propelled by a battery-powered jet pump that pushes water out behind it, an electric jetboard is a rider-controlled watercraft that carries the rider across the surface.",
+      "Holding a wireless hand controller that sets the thrust, the rider stands on the board and steers by shifting weight and leaning.",
+      "A sealed battery pack and jet unit sit beneath or within the hull, with the system designed to operate while exposed to water.",
+      "Some jetboards allow the rider to start while lying down or seated and then stand up, which helps with getting up on the water.",
+      "Many designs include a safety lanyard or wrist leash that cuts power if the rider falls, which stops the board travelling away.",
+      "Unlike a petrol-powered craft, an electric jetboard is quiet and emits no exhaust, though the battery limits how long a session can last."
+    ],
+    "suits": [
+      "Existing experience with board sports on water, such as surfing, wakeboarding or wakesurfing, tends to help, because many of the balance and steering skills transfer to this type.",
+      "Calm lakes, sheltered bays and permitted inland waterways suit a jetboard better than rough open water, where waves and chop make balance harder.",
+      "People who want an engaging watercraft experience without engine noise or fuel handling may consider it for recreational sessions.",
+      "Falls are expected and the board is powerful, so riders should be confident swimmers and wear a suitable flotation device and helmet.",
+      "Boating licence and registration rules vary by state and waterway, and some areas restrict personal watercraft, so check with the relevant state marine authority before riding.",
+      "Sessions are limited by battery capacity, so the type suits shorter bursts of riding rather than all-day outings without recharging or a spare pack."
+    ],
+    "check": [
+      "Put the licensing, registration and operating rules question to the supplier and your state marine authority for the waters where you plan to ride.",
+      "Find out how the controller communicates with the board and what happens, in practical terms, if the connection is lost.",
+      "Confirm the rider weight range, the throttle modes available and whether beginner limits can be set for early sessions.",
+      "Session length, charging time and the availability of a spare battery all need clarifying, since time on the water depends on capacity.",
+      "Consider how the board will be transported, stored and cleaned, and whether a tow vehicle, trailer or roof racks are needed.",
+      "Establish who handles servicing, jet unit care and spare parts locally, as marine components and sealed electronics require specialist attention rather than general workshop skills."
+    ],
+    "care": [
+      "Rinse the board with fresh water after every session, particularly after salt or brackish water, and dry it before storing.",
+      "The jet intake and impeller should be checked for weeds, sand or debris, and cleaned carefully with the power off and the battery isolated.",
+      "Charging belongs in a dry, ventilated space following the manufacturer's instructions, and the battery should cool after a ride before it is recharged.",
+      "Shade and protection from direct sun help during storage, with the battery kept at a moderate charge during long breaks and seals and connectors inspected regularly."
+    ]
+  },
+  "electric-water-sports/electric-jetskis": {
+    "type": "electric personal watercraft",
+    "typePlural": "electric personal watercraft",
+    "intro": [
+      "An electric personal watercraft is a compact, rider-operated boat that is propelled by a water jet and powered by a battery and electric motor rather than a petrol engine.",
+      "Seated or kneeling astride a saddle, the rider steers by directing the jet nozzle with handlebars and uses a throttle to control thrust.",
+      "Because there is no combustion engine, the machine runs quietly with no exhaust fumes at the water's surface and no fuel to carry or spill.",
+      "A large sealed battery pack, power electronics and motor are packaged inside a buoyant hull designed to stay safe in wet conditions.",
+      "Some designs include a lanyard that cuts power if the rider falls off, and a display showing speed, charge level and remaining time.",
+      "Hull shape, battery capacity and motor output differ greatly between machines, affecting stability, speed, handling and how long a ride can last."
+    ],
+    "suits": [
+      "Fast, active recreation on the water without engine noise or fuel is the main attraction, and it may appeal to anyone drawn to that combination.",
+      "Lakes, bays and open waterways where personal watercraft are permitted suit it, although conditions, rules and distance from shore all need consideration.",
+      "Owners of waterfront properties or boat ramps may value the simple storage and low-maintenance powertrain compared with petrol equivalents.",
+      "Long open-water trips call for planning around battery capacity, because running flat far from shore is a serious problem on the water.",
+      "Boating licence, registration and age rules for personal watercraft vary by state and waterway, so check with the relevant marine authority before buying or riding.",
+      "Anyone new to personal watercraft should treat training, a flotation vest and sensible water conditions as essential rather than optional."
+    ],
+    "check": [
+      "Ask whether a boating licence or registration is needed for your intended waterway and what safety equipment must be carried on board.",
+      "Hull size, seating capacity and load rating need matching to the number of riders and the type of water you expect to use.",
+      "Learn how much riding time a charge provides at different speeds, and how long recharging takes, including the type of power supply required.",
+      "Consider how the machine is transported, whether it needs a trailer and how much garage or yard space it occupies.",
+      "Enquire about the battery's protection, its sealing, and the safety measures in place for operating in and around water.",
+      "Confirm who can service the machine locally, how marine electrics are supported and what warranty and spare parts arrangements apply."
+    ],
+    "care": [
+      "Flush the unit with fresh water after each use, especially in salt water, and dry the hull before covering or storing it.",
+      "Charging should follow the maker's instructions with the correct supply and dry connectors, and a hot battery should be left to cool after a hard ride first.",
+      "The jet intake, steering nozzle and hull deserve inspection for damage or fouling, and any marine specialist work should go to a competent technician.",
+      "Storage under cover on a trailer or cradle keeps the craft out of sun and frost, and the manufacturer's advice on battery storage between seasons should be followed."
+    ]
+  },
+  "electric-water-sports/electric-surfboards": {
+    "type": "electric surfboard",
+    "typePlural": "electric surfboards",
+    "intro": [
+      "Shaped much like a conventional surfboard, an electric surfboard carries a battery-powered motor and a propeller or jet unit that lets a rider glide across water without waves.",
+      "Some versions add a hydrofoil, a wing mounted on a mast beneath the board, which lifts the hull out of the water as speed builds.",
+      "Lifting clear of the surface reduces drag and smooths out chop, so a foil board can feel quiet and floating, though it is harder to balance.",
+      "A handheld wireless controller adjusts thrust, and the rider steers by leaning and shifting weight, much as in surfing or wakeboarding.",
+      "The battery is sealed and fitted into the board or a pod, and the rider usually relies on a leash or safety mechanism to stop the motor after a fall.",
+      "Board volume, length and wing design affect how stable the craft is, which is why beginners and experienced riders suit different setups."
+    ],
+    "suits": [
+      "Surfers, paddleboarders and wake-sport riders who want to ride without waiting for waves may find this type appealing.",
+      "Calm, sheltered water such as lakes, lagoons and protected bays is usually the most forgiving place to learn.",
+      "Foil boards suit riders who accept a steep learning curve, because the foil is unstable at first and falls near the wing are possible.",
+      "Quiet, flowing movement on the water, without noise or exhaust, may attract those who like the sensation of riding clear of the surface.",
+      "Boating licence and registration requirements vary by state and waterway, and some locations restrict powered boards, so riders should check with the marine authority first.",
+      "Sessions depend on battery capacity, so the type fits shorter outings, and anyone planning to go far from shore must allow for a flat battery."
+    ],
+    "check": [
+      "Establish whether the board is intended for beginners or experienced riders, and what stability, volume and rider weight limits the maker states.",
+      "For foil versions, find out about lessons, protective gear and wing guards, since the foil's edges and mast can cause injury in a fall.",
+      "Examine how the safety cut-off works, such as a leash, a wrist sensor or a controller link, and what happens when it is triggered.",
+      "Weigh the stated session time and charge time against how you want to use the board, and ask whether spare batteries are available.",
+      "Work out how the board and its mast or wing are transported and stored, since they can be bulky and delicate.",
+      "Ask about servicing, spare parts and propeller or wing replacement locally, as damage from contact with the bottom or debris is a real risk."
+    ],
+    "care": [
+      "Rinse the board, mast and wing with fresh water after every outing, and let everything dry fully before putting it away.",
+      "The propeller or jet intake, mast connections and wing need checking for damage, weed or fouling at regular intervals.",
+      "After a hard session, let the pack cool, then recharge it in a dry, ventilated place using the supplied equipment.",
+      "A shaded, protected storage spot with the wing and mast covered works well, and the battery should sit at a moderate charge for long breaks."
+    ]
+  },
+  "self-balancing-ev/electric-unicycles": {
+    "type": "electric unicycle",
+    "typePlural": "electric unicycles",
+    "intro": [
+      "An electric unicycle is a single-wheel personal vehicle with footplates on each side of the wheel, balanced continuously by a motor, gyroscope and controller.",
+      "There is no handlebar or brake lever, so the rider accelerates by leaning forward, slows by leaning back and steers by tilting the wheel.",
+      "The motor sits inside the wheel hub and corrects the wheel's balance many times every second to keep the rider upright.",
+      "Sensors detect rider lean, and the controller increases or reduces torque accordingly, while tilt-back or alarm features warn when the wheel nears its limits.",
+      "Wheel diameter, tyre width, battery size and suspension vary widely, which changes the unicycle's comfort, portability and behaviour over rough surfaces.",
+      "Many models include a pull-out trolley handle and small transport wheels, so the unit can be wheeled along like a suitcase when it is not being ridden."
+    ],
+    "suits": [
+      "Riders prepared to practise are rewarded, because learning to balance takes time, and falls and sore ankles are common during the early stage.",
+      "Experienced balance-sport riders, such as skateboarders, snowboarders and cyclists, usually adapt faster, though everyone needs patience and a safe practice space.",
+      "People wanting a compact personal vehicle that can fit under a desk or in a car boot may value the small footprint.",
+      "Because these wheels have no handlebar and can be fast, protective gear including a helmet, wrist guards and knee and elbow protection is strongly advisable.",
+      "Where an electric unicycle may legally be ridden varies by state, and many are limited to private land, so check with your state road authority.",
+      "Long-distance travel calls for the larger, heavier models, since battery capacity and wheel size affect both range and weight, so a rider should weigh that trade-off."
+    ],
+    "check": [
+      "Learn about the wheel's power limits and the warnings it gives when pushed, as a sudden cut-out can be dangerous to the rider.",
+      "Measure your build against the rider weight limit, pedal height and pedal size, because comfort and control depend on the fit.",
+      "Tyre width and wheel size should suit the surface you ride, as larger wheels roll over obstacles more easily but are heavier.",
+      "Gauge how heavy the unit is and how well it carries, because a long-range wheel can be awkward to lift.",
+      "Verify that replacement pads, tyres, pedals, chargers and technical support are available locally, as these wheels need specialised service.",
+      "Lights, horn and reflective features are worth examining, and the supplier should be able to say what protective gear and training suit new riders."
+    ],
+    "care": [
+      "Use the charger supplied or recommended for the wheel, charge in a ventilated space and avoid leaving it fully drained for long stretches.",
+      "Tyre pressure, pedals and the shell deserve regular checks for loose parts or damage, as vibration and falls can loosen components.",
+      "The wheel should stay dry, with dirt and water wiped away after use and extra care taken around the charge port and any access panels.",
+      "A spot indoors at moderate temperatures suits storage, with the battery kept at a partial charge if the wheel will not be ridden for some time."
+    ]
+  },
+  "self-balancing-ev/hoverboard-kart-attachments": {
+    "type": "hoverboard go-kart attachment",
+    "typePlural": "hoverboard go-kart attachments",
+    "intro": [
+      "A hoverboard go-kart attachment is a frame with a seat and steering that clamps onto a self-balancing hoverboard, turning it into a small ride-on kart.",
+      "The hoverboard supplies the motors, battery and balancing electronics, while the attachment provides a seat, a steering bar and a place to rest the feet.",
+      "Steering usually works by the rider pushing the handlebar or moving a linkage that tilts the hoverboard's footpads, so the motors turn the kart.",
+      "Because it is an add-on rather than a vehicle in its own right, its performance depends entirely on the hoverboard it is paired with.",
+      "The attachment is built from a rigid frame with a seat, a steering mechanism and fittings designed to match the hoverboard's width and footpads.",
+      "Many attachments can be removed, allowing the hoverboard to return to ordinary standing use when the seat is not required."
+    ],
+    "suits": [
+      "Children and teenagers who enjoy hoverboards and want a seated, easier-to-control way of riding may find an attachment appealing for supervised play.",
+      "Families with a flat private yard, driveway or enclosed area can use it for relaxed recreational laps away from traffic.",
+      "Owners of a compatible hoverboard may prefer an attachment over buying a separate kart, as it reuses their existing motors and battery.",
+      "Seated riding is less demanding than balancing on a hoverboard, which can help riders who find standing on the board difficult.",
+      "Rules about where powered devices may be used vary by state, and a kart attachment is generally intended for private land rather than public paths, so check with your state road authority.",
+      "A home-assembled combined setup of this kind suits casual low-speed fun in a safe, clear space more than regular transport or anything involving traffic."
+    ],
+    "check": [
+      "Check that the attachment is stated to fit the exact size and model of hoverboard you own, including the wheel size and footpad layout.",
+      "Look at the maximum rider weight for both the attachment and the hoverboard, as the combined load must stay within each manufacturer's limits.",
+      "Ask how the steering linkage works and whether it responds smoothly, because stiff or loose steering will affect control and safety.",
+      "Read about how the attachment is secured and whether the fixings stay tight under vibration, since a loose seat can be hazardous.",
+      "Make sure the hoverboard itself comes from a supplier that can explain its battery and electrical safety testing, because the attachment relies entirely on it.",
+      "Allow for supervision, protective gear and a flat, clear area for a young rider, since slowing and stopping depend on how the hoverboard itself responds."
+    ],
+    "care": [
+      "Inspect clamps, bolts and the frame before each ride, tightening anything loose and looking for cracks, bends or wear on the mounting points.",
+      "Charge the hoverboard following its own instructions, in a dry, ventilated place, and unplug it when the battery is full.",
+      "Dirt and grass should be wiped off after use, and the whole unit should stay dry and out of puddles or wet ground.",
+      "Removing the attachment for storage is practical where possible, and both parts belong indoors away from heat, damp and direct sun."
+    ]
+  },
+  "self-balancing-ev/hoverboards": {
+    "type": "self-balancing hoverboard",
+    "typePlural": "self-balancing hoverboards",
+    "intro": [
+      "A hoverboard is a two-wheeled self-balancing board with a footpad over each wheel, where the rider stands and leans to move without handlebars.",
+      "Each wheel has its own motor and sensor, and the controller compares the tilt of the two footpads to decide how to move and turn.",
+      "Leaning forward drives the board ahead, leaning back slows or reverses it, and twisting one foot against the other turns it.",
+      "Models range from small indoor-oriented boards with compact wheels to larger off-road versions with wide pneumatic tyres and more ground clearance.",
+      "A rechargeable battery sits inside the frame and charges through a small port, and indicator lights usually show the charge level.",
+      "Balance and control come from software rather than rider skill alone, though an inexperienced rider still needs practice before moving confidently."
+    ],
+    "suits": [
+      "Children, teenagers and adults who want a fun, easy-to-learn way to glide around smooth private spaces often take to hoverboards quickly.",
+      "Larger tyred off-road designs suit lawns, gravel driveways and light paths on private property better than small-wheeled indoor boards.",
+      "Compactness is a real strength, as the board is small enough to stash in a cupboard or car boot between uses.",
+      "Since the rider stands without any support, falls are common for beginners, so a helmet, wrist guards and padding are strongly sensible.",
+      "Where hoverboards may be ridden in public varies by state and council, and they are commonly restricted to private land, so check with your state road authority.",
+      "Shoppers choosing a gift should consider the rider's age, weight and maturity, since the stated limits and supervision needs differ between boards."
+    ],
+    "check": [
+      "Query whether the board's battery and charger come with recognised electrical safety testing for Australia, because battery safety is a genuine concern with poorly made units.",
+      "Check the maximum rider weight and the minimum age or size recommended, and compare the wheel size with the surface you intend to ride on.",
+      "Look at the footpad grip, the fit of your foot and any included protective accessories, as secure footing is key to control.",
+      "Find out whether the board has speed limiting, a beginner mode, lights and a warning alert for steep tilt.",
+      "Enquire how the board copes with slopes, kerbs and wet ground, and read the water-resistance wording carefully before riding outdoors.",
+      "Spare parts, charger replacements and repair support should be available locally, and the supplier should explain returns and warranty in plain terms."
+    ],
+    "care": [
+      "Use only the charger supplied with the board, charge in a clear, ventilated area under supervision and unplug it once the battery is full.",
+      "Charging overnight on soft furnishings is unwise, and the board should be moved away from anything flammable while it is plugged in.",
+      "Wipe the wheels and footpads after use, keep the board away from water and check that the shell and wheel covers remain secure.",
+      "Store the board indoors in moderate temperatures, away from damp and direct sun, and avoid leaving the battery completely flat for long periods."
+    ]
+  }
+}

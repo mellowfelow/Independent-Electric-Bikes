@@ -5,7 +5,7 @@ import { thumbSrc } from '@/lib/productImage';
 const PLACEHOLDER = '/images/product-placeholder.svg';
 import { useRouter } from 'next/navigation';
 import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Truck, AlertTriangle } from 'lucide-react';
-import { SITE, SHOP } from '@/config/site';
+import { SITE, SHOP } from '@/config/core';
 import { money } from '@/lib/order';
 import { accessoryDiscount } from '@/lib/cartDiscount';
 import { AccessoryOfferBanner } from './AccessoryOfferBanner';

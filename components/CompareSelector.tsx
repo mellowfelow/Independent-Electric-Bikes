@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Plus, X } from 'lucide-react';
 import { COMPARE_ROWS, type ComparableProduct } from '@/lib/compare';
-import { SHOP } from '@/config/site';
+import { SHOP } from '@/config/core';
 import { money } from '@/lib/order';
 import { productSrcSet, thumbSrc } from '@/lib/productImage';
 

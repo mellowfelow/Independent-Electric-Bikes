@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { ShoppingBag, ArrowRight, Check } from 'lucide-react';
-import { Product, SITE } from '@/config/site';
+import type { Product } from '@/config/site';
+import { SITE } from '@/config/core';
 import { money } from '@/lib/order';
 import { waOrderLink } from '@/lib/whatsapp';
 import { addToCart } from '@/lib/cartClient';
@@ -12,7 +13,7 @@ export function ProductClientActions({ product }: { product: Product }) {
 
   const handleAddToCart = () => {
     try {
-      addToCart(product, 1);
+      addToCart({ slug: product.slug, name: product.name, price: product.price, category: product.category, image: product.images[0] }, 1);
       setAdded(true);
       setTimeout(() => setAdded(false), 2500);
     } catch (e) {

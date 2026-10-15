@@ -1,5 +1,5 @@
 import { redis } from './redis';
-import { REPLY } from '@/config/site';
+import { REPLY } from '@/config/core';
 
 export interface OrderItem {
   slug: string;

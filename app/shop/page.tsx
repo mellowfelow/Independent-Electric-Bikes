@@ -3,6 +3,7 @@ import { withSocial } from '@/lib/seo';
 import { SITE } from '@/config/site';
 import { SITE_SHORT } from '@/lib/catalog';
 import { ShopClientView } from '@/components/ShopClientView';
+import { shopScope } from '@/lib/cardProduct';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = withSocial({
@@ -36,7 +37,7 @@ export default function ShopIndexPage() {
         </div>
 
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <ShopClientView />
+          <ShopClientView scope={shopScope()} />
         </div>
       </div>
     </>

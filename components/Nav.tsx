@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Bike, ShoppingBag, Search, Menu, X, ChevronDown, ChevronRight, Zap } from 'lucide-react';
-import { SITE, MASTER_TAXONOMY } from '@/config/site';
+import { SITE } from '@/config/core';
+import { MASTER_TAXONOMY } from '@/config/taxonomy';
 import { CartDrawer } from './CartDrawer';
 import { SearchBox } from './SearchBox';
 import { migrateCartCategories } from '@/lib/cartClient';

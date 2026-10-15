@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAdminPasscode } from './AdminPasscodeContext';
 import { LayoutDashboard, ShoppingCart, MessageSquare, LogOut, Bike } from 'lucide-react';
-import { SITE } from '@/config/site';
+import { SITE } from '@/config/core';
 
 export function AdminNav() {
   const pathname = usePathname();

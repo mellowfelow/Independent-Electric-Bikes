@@ -15,7 +15,7 @@ export function RelatedGuides({ category, sub, seed, heading = 'Buying guides & 
       <ul className="grid gap-2 md:grid-cols-3">
         {guides.map((g) => (
           <li key={g.slug}>
-            <Link href={`/blog/${g.slug}/`} className="block h-full rounded-xl border border-slate-800 bg-slate-900 p-4 text-sm font-bold text-white hover:border-emerald-500 hover:text-emerald-400">
+            <Link prefetch={false} href={`/blog/${g.slug}/`} className="block h-full rounded-xl border border-slate-800 bg-slate-900 p-4 text-sm font-bold text-white hover:border-emerald-500 hover:text-emerald-400">
               {g.title}
               <span className="mt-1 block text-[11px] font-semibold text-emerald-400">Read the guide &rarr;</span>
             </Link>

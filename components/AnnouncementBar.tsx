@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Zap, ShieldCheck, Truck, Percent } from 'lucide-react';
-import { SITE, SHOP } from '@/config/site';
+import { SITE, SHOP } from '@/config/core';
 
 const ANNOUNCEMENTS = [
   {

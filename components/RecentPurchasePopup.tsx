@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { X, CheckCircle, ShoppingBag, ArrowRight } from 'lucide-react';
-import { PRODUCTS, SITE } from '@/config/site';
+import { SITE } from '@/config/core';
 import { thumbSrc } from '@/lib/productImage';
 
 interface PurchaseNotification {
@@ -78,28 +78,31 @@ const PAYMENT_TAGS = [
   'Verified Purchase',
 ];
 
-export function RecentPurchasePopup() {
+export interface PopupProduct {
+  slug: string;
+  name: string;
+  price: number;
+  category: string;
+  image: string;
+}
+
+/** `products` is a short list chosen on the server, so the whole catalogue is not shipped to every page. */
+export function RecentPurchasePopup({ products }: { products: PopupProduct[] }) {
   const [purchaseList, setPurchaseList] = useState<PurchaseNotification[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
-    // Select 10 featured or high-value items from PRODUCTS
-    const availableProducts = PRODUCTS.length > 0 ? PRODUCTS : [];
-    if (availableProducts.length === 0) return;
+    if (products.length === 0) return;
 
-    // Pick a varied selection of products
-    const featuredList = availableProducts.filter((p) => p.featured || p.badge !== 'none');
-    const pool = featuredList.length >= 8 ? featuredList : availableProducts;
-
-    const list: PurchaseNotification[] = pool.slice(0, 15).map((prod, idx) => {
+    const list: PurchaseNotification[] = products.map((prod, idx) => {
       const name = SAMPLE_NAMES[idx % SAMPLE_NAMES.length];
       const loc = SAMPLE_LOCATIONS[idx % SAMPLE_LOCATIONS.length];
       const timeAgo = TIMESTAMPS[idx % TIMESTAMPS.length];
       const tag = PAYMENT_TAGS[idx % PAYMENT_TAGS.length];
       
-      const img = prod.images && prod.images.length > 0 ? prod.images[0] : '/images/product-placeholder.svg';
+      const img = prod.image || '/images/product-placeholder.svg';
       const imageSrc = img.startsWith('/') ? img : (img.startsWith('http') ? img : `/images/${img}`);
 
       return {
@@ -120,7 +123,7 @@ export function RecentPurchasePopup() {
       setPurchaseList(list);
     }, 0);
     return () => clearTimeout(timer);
-  }, []);
+  }, [products]);
 
   useEffect(() => {
     if (purchaseList.length === 0 || isDismissed) return;
@@ -140,10 +143,10 @@ export function RecentPurchasePopup() {
     let nextTimer: NodeJS.Timeout;
 
     if (isVisible) {
-      // Keep popup visible for 5.5 seconds
+      // Keep popup visible for 10.5 seconds
       hideTimer = setTimeout(() => {
         setIsVisible(false);
-      }, 5500);
+      }, 10500);
     } else {
       // Pause for 38.5 seconds between pop-ups, then show the next purchase in the loop
       nextTimer = setTimeout(() => {

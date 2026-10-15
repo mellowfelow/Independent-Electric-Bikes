@@ -1,4 +1,4 @@
-import { SHOP } from '@/config/site';
+import { SHOP } from '@/config/core';
 
 /** Top-level shop categories that are e-vehicles. */
 export const VEHICLE_CATEGORIES: ReadonlySet<string> = new Set([

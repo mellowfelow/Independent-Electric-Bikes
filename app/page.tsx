@@ -5,15 +5,20 @@ import { SITE, PRODUCTS, CATEGORIES, BRAND, FAQ, POSTS, CONTACT } from '@/config
 import { money } from '@/lib/order';
 import { JsonLd } from '@/components/JsonLd';
 import { FaqAccordion } from '@/components/FaqAccordion';
-import { TrustpilotReviews } from '@/components/TrustpilotReviews';
+import dynamic from 'next/dynamic';
+
+// Rendered on the server as before, but loaded as its own chunk so it does not add to the first-load JavaScript.
+const TrustpilotReviews = dynamic(() => import('@/components/TrustpilotReviews').then((m) => m.TrustpilotReviews));
 import { ProductCard } from '@/components/ProductCard';
 import { HomeHero } from '@/components/HomeHero';
 import { topBrands } from '@/lib/catalog';
+import { toCard } from '@/lib/cardProduct';
+import { HERO_IMAGES, CATEGORY_IMAGES } from '@/config/data/siteImages';
 
 export default function HomePage() {
   // The first hero slide is the largest paint: hint it early, with the right file for each screen size.
-  preload('/images/home/hero-1-m.webp', { as: 'image', fetchPriority: 'high', media: '(max-width: 767px)' });
-  preload('/images/home/hero-1.webp', { as: 'image', fetchPriority: 'high', media: '(min-width: 768px)' });
+  preload(HERO_IMAGES[0].mAvif, { type: 'image/avif', as: 'image', fetchPriority: 'high', media: '(max-width: 767px)' });
+  preload(HERO_IMAGES[0].dAvif, { type: 'image/avif', as: 'image', fetchPriority: 'high', media: '(min-width: 768px)' });
 
   const hasPhoto = (p: (typeof PRODUCTS)[number]) => !p.images[0].endsWith('.svg');
   const featuredProducts = [...PRODUCTS.filter((p) => p.featured)].sort((a, b) => Number(hasPhoto(b)) - Number(hasPhoto(a))).slice(0, 8);
@@ -133,7 +138,7 @@ export default function HomePage() {
 
               {/* CTAs */}
               <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Link
+                <Link prefetch={false}
                   href="/shop/"
                   className="px-7 py-4 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-extrabold text-sm transition-all shadow-xl shadow-emerald-950/50 hover:scale-105 flex items-center gap-2"
                 >
@@ -141,7 +146,7 @@ export default function HomePage() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
-                <Link
+                <Link prefetch={false}
                   href="/compare/"
                   className="px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-bold text-sm transition-all border border-slate-800 hover:border-slate-700 flex items-center gap-2"
                 >
@@ -218,27 +223,29 @@ export default function HomePage() {
       </section>
 
       {/* 3. CATEGORIES GRID */}
-      <section className="py-16 bg-slate-950 border-b border-slate-900">
+      <section className="cv-auto py-16 bg-slate-950 border-b border-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Purpose-Built Mobility</span>
               <h2 className="text-2xl sm:text-4xl font-extrabold text-white mt-1">Shop by E-Bike Category</h2>
             </div>
-            <Link href="/shop/" className="text-xs font-extrabold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+            <Link prefetch={false} href="/shop/" className="text-xs font-extrabold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
               View All Electric Bikes &rarr;
             </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {CATEGORIES.map((cat) => (
-              <Link
+              <Link prefetch={false}
                 key={cat.slug}
                 href={`/shop/${cat.slug}/`}
                 className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 aspect-[4/3] flex flex-col justify-end p-5 transition-all hover:border-emerald-500/60 hover:shadow-xl hover:shadow-emerald-950/40"
               >
                 <img
-                  src={cat.image}
+                  src={CATEGORY_IMAGES[cat.image]?.src ?? cat.image}
+                  srcSet={CATEGORY_IMAGES[cat.image]?.srcSet}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   alt={cat.name}
                   width={1200}
                   height={900}
@@ -263,7 +270,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. FEATURED E-BIKES SHOWCASE (4/4 GRID) */}
-      <section className="py-20 bg-slate-900 border-b border-slate-800">
+      <section className="cv-auto py-20 bg-slate-900 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Flagship Models</span>
@@ -275,7 +282,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (
-              <ProductCard key={product.slug} product={product} />
+              <ProductCard key={product.slug} product={toCard(product)} />
             ))}
           </div>
         </div>
@@ -289,14 +296,14 @@ export default function HomePage() {
               <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Brands</span>
               <h2 id="home-brands-heading" className="text-2xl sm:text-3xl font-black text-white mt-1">Shop by Brand</h2>
             </div>
-            <Link href="/brands/" className="text-xs font-bold text-emerald-400 hover:text-emerald-300 whitespace-nowrap">
+            <Link prefetch={false} href="/brands/" className="text-xs font-bold text-emerald-400 hover:text-emerald-300 whitespace-nowrap">
               All brands &rarr;
             </Link>
           </div>
           <ul className="flex flex-wrap gap-2">
             {topBrands(18).map((b) => (
               <li key={b.slug}>
-                <Link href={`/brands/${b.slug}/`} className="inline-block rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-bold text-slate-200 hover:border-emerald-500 hover:text-emerald-400">
+                <Link prefetch={false} href={`/brands/${b.slug}/`} className="inline-block rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-bold text-slate-200 hover:border-emerald-500 hover:text-emerald-400">
                   {b.name} <span className="text-slate-400">({b.count})</span>
                 </Link>
               </li>
@@ -309,14 +316,14 @@ export default function HomePage() {
       <TrustpilotReviews />
 
       {/* 5. HOMEPAGE BLOG GRID SECTION (DECO SHARPNESS) */}
-      <section className="py-20 bg-slate-950 border-b border-slate-900 text-white">
+      <section className="cv-auto py-20 bg-slate-950 border-b border-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Expert Knowledge & Guides</span>
               <h2 className="text-3xl sm:text-4xl font-black text-white mt-1">Latest Australian E-Bike Articles</h2>
             </div>
-            <Link
+            <Link prefetch={false}
               href="/blog/"
               className="text-xs font-extrabold text-emerald-400 hover:text-emerald-300 flex items-center gap-1"
             >
@@ -332,10 +339,12 @@ export default function HomePage() {
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <img
-                    src={post.image}
+                    src={post.image.replace(/\.webp$/, '-800.webp')}
+                    srcSet={`${post.image.replace(/\.webp$/, '-800.webp')} 800w, ${post.image} 1600w`}
+                    sizes="(min-width: 768px) 33vw, 100vw"
                     alt={post.title}
-                    width={2000}
-                    height={1125}
+                    width={1600}
+                    height={900}
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -357,7 +366,7 @@ export default function HomePage() {
                     </div>
 
                     <h3 className="text-base font-extrabold text-white group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
-                      <Link href={`/blog/${post.slug}/`}>{post.title}</Link>
+                      <Link prefetch={false} href={`/blog/${post.slug}/`}>{post.title}</Link>
                     </h3>
 
                     <p className="text-xs text-slate-300 line-clamp-3 leading-relaxed font-normal">
@@ -365,7 +374,7 @@ export default function HomePage() {
                     </p>
                   </div>
 
-                  <Link
+                  <Link prefetch={false}
                     href={`/blog/${post.slug}/`}
                     className="text-xs font-bold text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1 pt-2"
                   >
@@ -380,7 +389,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. ABOUT VYRON INDUSTRIES (AI VISIBILITY AUTHORITY SECTION) */}
-      <section className="py-20 bg-slate-900 border-b border-slate-800 text-slate-200">
+      <section className="cv-auto py-20 bg-slate-900 border-b border-slate-800 text-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-5">
@@ -411,7 +420,7 @@ export default function HomePage() {
               </div>
 
               <div className="pt-4 flex items-center gap-4">
-                <Link
+                <Link prefetch={false}
                   href="/about/"
                   className="px-6 py-3 bg-slate-950 hover:bg-slate-800 text-white font-bold text-xs rounded-xl border border-slate-800 transition-colors"
                 >
@@ -444,7 +453,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. COLLAPSIBLE FAQ SECTION */}
-      <section className="py-20 bg-slate-950 text-white">
+      <section className="cv-auto py-20 bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Help & Support</span>
@@ -455,7 +464,7 @@ export default function HomePage() {
           <FaqAccordion items={FAQ} />
 
           <div className="mt-10 text-center">
-            <Link href="/faq/" className="text-xs font-extrabold text-emerald-400 hover:text-emerald-300">
+            <Link prefetch={false} href="/faq/" className="text-xs font-extrabold text-emerald-400 hover:text-emerald-300">
               View All E-Bike Warranty & Care FAQs &rarr;
             </Link>
           </div>

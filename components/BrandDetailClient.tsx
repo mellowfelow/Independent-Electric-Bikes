@@ -2,8 +2,9 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { Product, SITE, SHOP } from '@/config/site';
-import { BrandDef, ACTIVE_BRANDS } from '@/config/brands';
+import { SITE, SHOP } from '@/config/core';
+import type { BrandDef } from '@/config/brands';
+import type { CardProduct } from '@/lib/cardProduct';
 import { ProductCard } from '@/components/ProductCard';
 import { money } from '@/lib/order';
 import { addToCart } from '@/lib/cartClient';
@@ -24,10 +25,16 @@ import {
 
 interface BrandDetailClientProps {
   brand: BrandDef;
-  products: Product[];
+  products: CardProduct[];
+  /** Other brands in the same category, chosen on the server. */
+  relatedBrands: BrandDef[];
+  /** Replaces the brand description when it is the shared template. */
+  intro?: string;
+  /** Paragraphs built from the brand's own products. */
+  about?: string[];
 }
 
-export function BrandDetailClient({ brand, products }: BrandDetailClientProps) {
+export function BrandDetailClient({ brand, products, relatedBrands, intro, about }: BrandDetailClientProps) {
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'name'>('featured');
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>('All');
   const [quantities, setQuantities] = useState<{ [slug: string]: number }>({});
@@ -61,13 +68,6 @@ export function BrandDetailClient({ brand, products }: BrandDetailClientProps) {
     return list;
   }, [products, selectedSubcategory, sortBy]);
 
-  // Related brands in same category
-  const relatedBrands = useMemo(() => {
-    return ACTIVE_BRANDS.filter(
-      (b) => b.category === brand.category && b.slug !== brand.slug
-    ).slice(0, 4);
-  }, [brand]);
-
   // Quantity stepper handlers
   const handleQtyChange = (slug: string, delta: number) => {
     setQuantities((prev) => {
@@ -78,10 +78,10 @@ export function BrandDetailClient({ brand, products }: BrandDetailClientProps) {
   };
 
   // Add to Cart handler
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = (product: CardProduct) => {
     try {
       const qty = quantities[product.slug] || 1;
-      addToCart(product, qty);
+      addToCart({ slug: product.slug, name: product.name, price: product.price, category: product.category, image: product.image }, qty);
 
       setAddedSlugs((prev) => ({ ...prev, [product.slug]: true }));
       setTimeout(() => {
@@ -133,7 +133,7 @@ export function BrandDetailClient({ brand, products }: BrandDetailClientProps) {
               </p>
 
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl font-normal">
-                {brand.description}
+                {intro ?? brand.description}
               </p>
             </div>
 
@@ -234,6 +234,17 @@ export function BrandDetailClient({ brand, products }: BrandDetailClientProps) {
               <ProductCard key={product.slug} product={product} />
             ))}
           </div>
+        )}
+
+        {about && about.length > 0 && (
+          <section aria-labelledby="brand-about" className="mt-16 rounded-2xl border border-slate-800 bg-slate-900 p-6 sm:p-8">
+            <h2 id="brand-about" className="mb-4 text-xl font-extrabold text-white">About {brand.name} at INDEPENDENT ELECTRIC BIKES</h2>
+            <div className="max-w-3xl space-y-4 text-sm leading-relaxed text-slate-300">
+              {about.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          </section>
         )}
 
         {/* Related Category Brands Section */}

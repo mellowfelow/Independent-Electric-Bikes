@@ -4,14 +4,26 @@ import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore
 import Link from 'next/link';
 import { Search, BookOpen, Bike, X, Tag, Store } from 'lucide-react';
 import { ProductCard } from '@/components/ProductCard';
-import { MASTER_TAXONOMY } from '@/config/site';
-import { search } from '@/lib/search';
+import { MASTER_TAXONOMY } from '@/config/taxonomy';
+import type { CardProduct } from '@/lib/cardProduct';
 
 const URL_EVENT = 'ieb-search-url';
 const PAGE_SIZE = 24;
 const POPULAR = ['step-through e-bike', 'cargo bike', 'folding e-bike', 'e-scooter', 'electric skateboard', 'mobility scooter', 'hoverboard', 'Sea-Doo', 'kids electric', 'e-bike under $2000', 'Trek', 'helmet'];
 
 type Sort = 'relevance' | 'price-asc' | 'price-desc';
+
+interface PageResults {
+  query: string;
+  relaxed: boolean;
+  price: { min?: number; max?: number };
+  products: CardProduct[];
+  posts: { slug: string; title: string; category: string; excerpt: string }[];
+  categories: { name: string; href: string; parent?: string }[];
+  brands: { name: string; slug: string; count: number }[];
+}
+
+const EMPTY: PageResults = { query: '', relaxed: false, price: {}, products: [], posts: [], categories: [], brands: [] };
 
 // The URL query (?q=) is the single source of truth, so results survive reloads and can be shared.
 const subscribe = (cb: () => void) => {
@@ -48,9 +60,31 @@ export default function SearchPage() {
     if (!q) inputRef.current?.focus();
   }, [q]);
 
-  const results = useMemo(() => search(q), [q]);
+  // Results come from /api/search so the product catalogue and the search engine stay out of this page's JavaScript.
+  const term = q.trim().slice(0, 100);
+  const [data, setData] = useState<PageResults | null>(null);
+  useEffect(() => {
+    if (!term) return;
+    const ctrl = new AbortController();
+    const timer = setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/search/?view=page&q=${encodeURIComponent(term)}`, { signal: ctrl.signal });
+        setData((await res.json()) as PageResults);
+      } catch {
+        /* aborted or offline: keep what is shown */
+      }
+    }, 120);
+    return () => {
+      clearTimeout(timer);
+      ctrl.abort();
+    };
+  }, [term]);
+
+  // Loading is derived: the answer on screen is for a different query than the one typed.
+  const searching = term.length > 0 && data?.query !== term;
+  const results = term && data ? data : EMPTY;
   const products = useMemo(() => {
-    const list = results.products.map((h) => h.product);
+    const list = results.products;
     if (sort === 'price-asc') return [...list].sort((a, b) => a.price - b.price);
     if (sort === 'price-desc') return [...list].sort((a, b) => b.price - a.price);
     return list;
@@ -141,6 +175,8 @@ export default function SearchPage() {
                     )}{' '}
                     for &ldquo;{q}&rdquo;
                   </>
+                ) : searching ? (
+                  <>Searching for &ldquo;{q}&rdquo;&hellip;</>
                 ) : (
                   <>
                     No results for &ldquo;{q}&rdquo;
@@ -206,7 +242,7 @@ export default function SearchPage() {
                   Guides
                 </h2>
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-                  {results.posts.map(({ post }) => (
+                  {results.posts.map((post) => (
                     <Link key={post.slug} href={`/blog/${post.slug}/`} className="group rounded-2xl border border-slate-800 bg-slate-900 p-5 hover:border-emerald-500/60">
                       <div className="text-[10px] font-bold uppercase text-emerald-400">{post.category}</div>
                       <h3 className="mt-1 text-base font-extrabold text-white group-hover:text-emerald-400">{post.title}</h3>
@@ -218,7 +254,7 @@ export default function SearchPage() {
               </section>
             )}
 
-            {!hasAny && (
+            {!hasAny && !searching && (
               <div className="mx-auto max-w-2xl rounded-2xl border border-slate-800 bg-slate-900 p-8 text-center">
                 <p className="text-base font-bold text-white">We couldn&rsquo;t find anything for &ldquo;{q}&rdquo;</p>
                 <p className="mt-2 text-xs text-slate-400">Check the spelling, try fewer words, or search by brand, type or budget.</p>

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
-import { PRODUCTS, MASTER_TAXONOMY } from '@/config/site';
+import type { CardProduct, ShopScope } from '@/lib/cardProduct';
 import { FilterPanel } from '@/components/FacetedFilterSidebar';
 import { ProductCard } from '@/components/ProductCard';
 import {
@@ -26,6 +26,8 @@ import { ChevronLeft, ChevronRight, SlidersHorizontal, X } from 'lucide-react';
 interface ShopClientViewProps {
   /** Slug of a main category, subcategory or leaf. Omit on the main shop page. */
   initialCategory?: string;
+  /** The products in scope and the category counts, prepared on the server. */
+  scope: ShopScope;
 }
 
 const ITEMS_PER_PAGE = 16;
@@ -46,7 +48,7 @@ const subscribe = (cb: () => void) => {
 const getSearch = () => window.location.search;
 const getServerSearch = () => '';
 
-export function ShopClientView({ initialCategory }: ShopClientViewProps) {
+export function ShopClientView({ initialCategory, scope: shopScope }: ShopClientViewProps) {
   const search = useSyncExternalStore(subscribe, getSearch, getServerSearch);
   const state = useMemo(() => parseFilters(search), [search]);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -58,10 +60,7 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
     window.dispatchEvent(new Event(URL_EVENT));
   }, []);
 
-  const scope = useMemo(
-    () => PRODUCTS.filter((p) => !initialCategory || p.category === initialCategory || p.subcategory === initialCategory || p.subSubcategory === initialCategory),
-    [initialCategory]
-  );
+  const scope: CardProduct[] = shopScope.products;
 
   const filtered = useMemo(() => applyFilters(scope, state), [scope, state]);
   const options = useMemo(() => buildFacetOptions(scope, state), [scope, state]);
@@ -171,10 +170,10 @@ export function ShopClientView({ initialCategory }: ShopClientViewProps) {
             )
           ) : (
             <>
-              <span className={quickPill(true)}>All Products ({PRODUCTS.length})</span>
-              {MASTER_TAXONOMY.map((m) => (
+              <span className={quickPill(true)}>All Products ({shopScope.total})</span>
+              {shopScope.categoryCounts.map((m) => (
                 <Link key={m.slug} href={`/shop/${m.slug}/`} className={quickPill(false)}>
-                  {m.name} ({PRODUCTS.filter((p) => p.category === m.slug).length})
+                  {m.name} ({m.count})
                 </Link>
               ))}
             </>

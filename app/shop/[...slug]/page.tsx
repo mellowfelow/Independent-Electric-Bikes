@@ -4,9 +4,10 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import { PRODUCTS, MASTER_TAXONOMY, SITE, SHOP } from '@/config/site';
 import { money } from '@/lib/order';
 import { productSrcSet } from '@/lib/productImage';
-import { brandOf, brandNameOf, productTrail, categoryMetaDescription, categoryTitle, productDescription, productMetaDescription, productTitle, resolveCategory } from '@/lib/catalog';
+import { brandOf, brandNameOf, productTrail, categoryMetaDescription, categoryTitle, productMetaDescription, productTitle, resolveCategory } from '@/lib/catalog';
 import { JsonLd } from '@/components/JsonLd';
 import { ShopClientView } from '@/components/ShopClientView';
+import { toCard, shopScope } from '@/lib/cardProduct';
 import { ProductClientActions } from '@/components/ProductClientActions';
 import { ProductCard } from '@/components/ProductCard';
 import { CompatibilityPanel } from '@/components/CompatibilityPanel';
@@ -15,6 +16,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { CategoryLinks } from '@/components/CategoryLinks';
 import { RelatedGuides } from '@/components/RelatedGuides';
 import { withSocial } from '@/lib/seo';
+import { productCopy } from '@/lib/productCopy';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { CATEGORY_FAQS } from '@/config/data/categoryFaqs';
 import { isVehicle } from '@/lib/shopFilters';
@@ -82,12 +84,13 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
   if (product) {
     // One URL per product: /shop/<category>/<slug>/. Deeper paths redirect to it instead of serving a duplicate page.
     if (slugSegments.length !== 2 || slugSegments[0] !== product.category) permanentRedirect(`/shop/${product.category}/${product.slug}/`);
+    const copy = productCopy(product);
     const productSchema = {
       '@context': 'https://schema.org',
       '@type': 'Product',
       name: product.name,
       ...(product.images[0].endsWith('.svg') ? {} : { image: product.images.map((src) => `https://${SITE.domain}${src}`) }),
-      description: productDescription(product),
+      description: copy.summary,
       sku: product.slug,
       url: `https://${SITE.domain}/shop/${product.category}/${product.slug}/`,
       brand: { '@type': 'Brand', name: brandNameOf(product) },
@@ -144,14 +147,14 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed border-y border-slate-800 py-4">
-                  {productDescription(product)}
+                  {copy.summary}
                 </p>
 
                 <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs font-bold">
                   {trail.slice(2, -1).map((t) => (
-                    <li key={t.href}><Link href={t.href} className="inline-block py-2 text-emerald-400 hover:text-emerald-300">More in {t.name} &rarr;</Link></li>
+                    <li key={t.href}><Link prefetch={false} href={t.href} className="inline-block py-2 text-emerald-400 hover:text-emerald-300">More in {t.name} &rarr;</Link></li>
                   ))}
-                  {brand && <li><Link href={`/brands/${brand.slug}/`} className="inline-block py-2 text-emerald-400 hover:text-emerald-300">More from {brand.name} &rarr;</Link></li>}
+                  {brand && <li><Link prefetch={false} href={`/brands/${brand.slug}/`} className="inline-block py-2 text-emerald-400 hover:text-emerald-300">More from {brand.name} &rarr;</Link></li>}
                 </ul>
 
                 {/* Filter Pills */}
@@ -190,7 +193,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
                     <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                     <span>
                       Save 10% when paying via Cryptocurrency (BTC/USDT){' '}
-                      <Link href="/blog/cryptocurrency-ebike-buying-discount-guide/" className="font-bold text-emerald-400 underline hover:text-emerald-300">How it works</Link>
+                      <Link prefetch={false} href="/blog/cryptocurrency-ebike-buying-discount-guide/" className="font-bold text-emerald-400 underline hover:text-emerald-300">How it works</Link>
                     </span>
                   </div>
                 </div>
@@ -198,6 +201,46 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
             </div>
 
             <CompatibilityPanel product={product} isPart={!isVehicle(product)} />
+
+            <section aria-labelledby="about-heading" className="mt-12 rounded-2xl border border-slate-800 bg-slate-900 p-6 sm:p-8">
+              <h2 id="about-heading" className="mb-4 text-xl font-extrabold text-white">About the {product.name}</h2>
+              <div className="grid gap-8 lg:grid-cols-3">
+                <div className="space-y-4 text-sm leading-relaxed text-slate-300 lg:col-span-2">
+                  {copy.paragraphs.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
+                <aside className="space-y-5">
+                  {copy.highlights.length > 0 && (
+                    <div>
+                      <h3 className="mb-2 text-xs font-extrabold uppercase tracking-wider text-emerald-400">Stated in the model name</h3>
+                      <dl className="space-y-1.5 text-xs">
+                        {copy.highlights.map((h) => (
+                          <div key={h.label} className="flex justify-between gap-3 rounded-lg border border-slate-800 bg-slate-950 px-3 py-2">
+                            <dt className="text-slate-400">{h.label}</dt>
+                            <dd className="text-right font-bold text-white">{h.value}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </div>
+                  )}
+                  {copy.alternatives.length > 0 && (
+                    <div>
+                      <h3 className="mb-2 text-xs font-extrabold uppercase tracking-wider text-emerald-400">Similar options</h3>
+                      <ul className="space-y-1.5 text-xs">
+                        {copy.alternatives.map((a) => (
+                          <li key={a.slug}>
+                            <Link prefetch={false} href={`/shop/${a.category}/${a.slug}/`} className="block rounded-lg border border-slate-800 bg-slate-950 px-3 py-2 font-semibold text-slate-200 hover:border-emerald-500 hover:text-emerald-400">
+                              {a.name} <span className="text-slate-400">· {money(a.price)}</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </aside>
+              </div>
+            </section>
 
             {isVehicle(product) && (
             <div className="mt-16 bg-slate-900 border border-slate-800 rounded-2xl p-8">
@@ -248,8 +291,8 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
                 </>
               ) : (
                 <p className="text-sm leading-relaxed text-slate-300">
-                  We are verifying the full specification for this model with the manufacturer. Contact us for the manufacturer spec sheet and to confirm Australian road-legal status before you order.
-                  <Link href="/contact/" className="ml-1 font-bold text-emerald-400 underline hover:text-emerald-300">
+                  {copy.specNotice}
+                  <Link prefetch={false} href="/contact/" className="ml-1 font-bold text-emerald-400 underline hover:text-emerald-300">
                     Ask about this model
                   </Link>
                 </p>
@@ -267,7 +310,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
                   </span>
                   <h2 className="text-xl sm:text-2xl font-black text-white mt-1">{isVehicle(product) ? 'Compatible Parts & Related Models' : 'Compatible Models & Related Parts'}</h2>
                 </div>
-                <Link href="/shop/" className="text-xs font-bold text-emerald-400 hover:text-emerald-300">
+                <Link prefetch={false} href="/shop/" className="text-xs font-bold text-emerald-400 hover:text-emerald-300">
                   Explore Full Catalog ({PRODUCTS.length}) &rarr;
                 </Link>
               </div>
@@ -275,7 +318,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {relatedProducts(product, !isVehicle(product))
                   .map((relProduct) => (
-                    <ProductCard key={relProduct.slug} product={relProduct} />
+                    <ProductCard key={relProduct.slug} product={toCard(relProduct)} />
                   ))}
               </div>
             </div>
@@ -336,7 +379,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
         <CategoryLinks categorySlug={mainCategory.slug} subSlug={categoryNode.sub?.slug} />
 
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <ShopClientView initialCategory={targetSubcategorySlug || targetCategorySlug} />
+          <ShopClientView initialCategory={targetSubcategorySlug || targetCategorySlug} scope={shopScope(targetSubcategorySlug || targetCategorySlug)} />
         </div>
 
         <RelatedGuides category={mainCategory.slug} sub={categoryNode.sub?.slug} seed={targetSubcategorySlug || targetCategorySlug} />

@@ -6,6 +6,8 @@ import { fitTitle, fitDesc } from '@/lib/catalog';
 import { JsonLd } from '@/components/JsonLd';
 import { BrandDetailClient } from '@/components/BrandDetailClient';
 import { RelatedGuides } from '@/components/RelatedGuides';
+import { toCards } from '@/lib/cardProduct';
+import { brandCopy, isTemplateBrand } from '@/lib/brandCopy';
 import { withSocial } from '@/lib/seo';
 
 interface PageProps {
@@ -73,6 +75,8 @@ export default async function BrandDetailPage({ params }: PageProps) {
     })),
   };
 
+  const copy = brandCopy(brand, products);
+
   // The category holding most of this brand products decides which guides are suggested.
   const catCounts = new Map<string, number>();
   for (const p of products) catCounts.set(p.category, (catCounts.get(p.category) ?? 0) + 1);
@@ -82,7 +86,13 @@ export default async function BrandDetailPage({ params }: PageProps) {
     <>
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={itemListSchema} />
-      <BrandDetailClient brand={brand} products={products} />
+      <BrandDetailClient
+        brand={brand}
+        products={toCards(products)}
+        relatedBrands={ACTIVE_BRANDS.filter((b) => b.category === brand.category && b.slug !== brand.slug).slice(0, 4)}
+        intro={isTemplateBrand(brand) ? copy.intro : undefined}
+        about={copy.about}
+      />
       {mainCat && <RelatedGuides category={mainCat} seed={brand.slug} heading={`Guides for ${brand.name} buyers`} />}
     </>
   );

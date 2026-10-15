@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Tag, X } from 'lucide-react';
-import { SHOP } from '@/config/site';
+import { SHOP } from '@/config/core';
 
 /** Shown the first time an e-vehicle is added to the cart in a visit: advertises the accessory discount. */
 export function AccessoryOfferPopup() {

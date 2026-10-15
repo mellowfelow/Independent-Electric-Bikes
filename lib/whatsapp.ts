@@ -1,4 +1,4 @@
-import { SITE, CONTACT } from '@/config/site';
+import { SITE, CONTACT } from '@/config/core';
 
 export const WA_HEADER = `*${SITE.name}*`;
 

@@ -22,7 +22,7 @@ export function Breadcrumbs({ items }: { items: TrailItem[] }) {
               {i === items.length - 1 ? (
                 <span aria-current="page" className="max-w-[60vw] truncate font-bold text-slate-200">{it.name}</span>
               ) : (
-                <Link href={it.href} className="hover:text-emerald-400">{it.name}</Link>
+                <Link prefetch={false} href={it.href} className="hover:text-emerald-400">{it.name}</Link>
               )}
             </li>
           ))}

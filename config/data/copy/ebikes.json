@@ -1,0 +1,410 @@
+{
+  "electric-bikes/belt-drive-commuters": {
+    "type": "belt-drive commuter e-bike",
+    "typePlural": "belt-drive commuter e-bikes",
+    "intro": [
+      "A belt-drive commuter e-bike replaces the usual metal chain with a toothed, reinforced rubber belt that carries pedal power and motor assistance to the rear wheel.",
+      "Because a belt needs no oil, it stays much cleaner than a chain, which helps keep trouser legs and the surrounding frame free of grease marks.",
+      "Most belt set-ups are paired with an internally geared hub or a continuously variable hub, since a belt cannot be shifted across sprockets the way a chain derailleur can.",
+      "The frame needs a special opening or split in the rear triangle so the closed loop of the belt can be fitted, which sets these bikes apart from chain-driven designs.",
+      "Sealed gearing and a quiet belt make for a calm, low-fuss ride that suits people who want dependable transport rather than a machine to tinker with.",
+      "The trade-off is that belts and matching sprockets are specialised parts, so replacements are less common than chains and usually come through a bike shop rather than a general store."
+    ],
+    "suits": [
+      "Daily commuters who ride in work clothes and want to arrive without chain oil on their trousers or skirts will find the clean drivetrain a practical benefit.",
+      "Riders who park outdoors through wet seasons often value a drivetrain that resists rust and does not call for regular lubricating after every downpour.",
+      "Anyone who would rather spend weekends riding than degreasing a drivetrain may appreciate how little routine attention a belt typically asks for.",
+      "Stop-start city routes with plenty of traffic lights pair well with hub gearing, because gears can be changed while the bike is stationary at the lights.",
+      "Households sharing one bike between people of different experience levels can benefit from the simple, predictable shifting that hub systems offer to riders who dislike derailleurs.",
+      "A belt-drive bike is a less natural match for riders planning very steep, rough or fast terrain, where the wider gear spread of a derailleur set-up is often preferred."
+    ],
+    "check": [
+      "Ask whether the frame was designed specifically for a belt, since the rear triangle must open or split to allow the loop to be fitted.",
+      "Confirm which hub gearing is fitted, how it shifts, and how the shifting feels while pedalling under motor assistance on a short test ride.",
+      "Work out how readily replacement belts and sprockets can be sourced locally, and whether the workshop you plan to use is willing to fit them.",
+      "Enquire about belt tension, because the correct setting matters for long belt life and quiet running, and some frames use sliding dropouts to adjust it.",
+      "Check how the motor, whether in the wheel or at the cranks, works with the belt, since strong torque can place extra load on belt and hub combinations.",
+      "Look into how the rear wheel comes out for puncture repairs, because belt frames sometimes need extra steps compared with a conventional chain bike."
+    ],
+    "care": [
+      "Keep the belt clean by rinsing off grit with water and a soft brush, and avoid applying chain lubricant, which can attract dirt and may harm the belt material.",
+      "Check belt tension from time to time using the method the maker recommends, since a belt that is too loose can skip and one that is too tight wears parts.",
+      "Charge the battery indoors at a moderate temperature, and avoid leaving it fully drained for long periods whenever the bike is put away.",
+      "Have a bike shop inspect the belt, sprockets and hub gearing at regular service intervals, and replace the belt if the teeth look worn or cracked."
+    ]
+  },
+  "electric-bikes/cargo-family-ebikes": {
+    "type": "cargo e-bike",
+    "typePlural": "cargo e-bikes",
+    "intro": [
+      "A cargo e-bike is built around a longer or reinforced frame, a strong rear rack or front box, and a motor that helps move loads which would be punishing on an ordinary bicycle.",
+      "Longtail designs stretch the rear section to carry passengers or panniers behind the rider, while front-loading designs place a box or platform ahead of the handlebars.",
+      "The electric motor takes the strain out of starting from a stop and climbing, which are the moments when a loaded bike is hardest to move.",
+      "Wheels, brakes and frames are usually specified for a heavier combined weight than a standard commuter, with sturdier spokes, larger brake discs and a robust stand.",
+      "Child seats, passenger rails, footboards, canopies and bags are common add-ons, and the frame often has dedicated mounting points so these attach securely.",
+      "Because of their length and weight, these bikes handle differently from ordinary bicycles, and a short test ride is the quickest way to learn how they steer and brake."
+    ],
+    "suits": [
+      "Parents who do school and daycare runs by bike often choose this type, since it carries children and bags without the need for a trailer.",
+      "Households trying to replace a second car for short local trips, such as shopping, sport drop-offs and library visits, can find a cargo bike very useful.",
+      "Tradespeople, market stallholders and small business owners making short deliveries in dense areas may value the way it carries tools or stock past slow traffic.",
+      "Hilly suburbs make assisted carrying far more realistic, because motor help keeps a loaded bike moving on slopes that would defeat most unassisted riders.",
+      "Riders who need to haul a large dog, a musical instrument or bulky camping gear for weekend trips will appreciate the generous platform space.",
+      "People living in small flats with narrow stairs or no secure ground-level storage should think carefully, because the length and weight make these bikes awkward to lift or squeeze indoors."
+    ],
+    "check": [
+      "Measure the garage, shed or hallway where the bike will live, as length, handlebar width and turning space all matter far more than they do for a standard bicycle.",
+      "Ask what combined load of rider, passengers and cargo the frame, wheels and rack are rated for, and make sure your typical load sits comfortably inside it.",
+      "If carrying children, confirm which seats, harnesses, rails and footrests are compatible, and what age and size limits apply to the child-carrying equipment.",
+      "Look closely at the brake type, since hydraulic disc brakes with good heat handling are valuable when stopping a heavy loaded bike on downhill streets.",
+      "Consider the stand, because a stable and easy-to-use stand lets you load children and shopping without worrying that the bike will tip over.",
+      "Ask whether the bike can be serviced locally, as longer chains, special tyres and unusual wheel sizes may need to be ordered in from a supplier."
+    ],
+    "care": [
+      "Check tyre pressure often, because a loaded cargo bike puts extra stress on tyres, and under-inflation hurts handling, reduces range and increases puncture risk.",
+      "Inspect brake pads and discs more frequently than on a normal bike, since heavy loads wear friction surfaces faster, and replace them before they get thin.",
+      "Recharge the battery after loaded rides rather than leaving it flat, and keep it out of hot cars or direct summer sun while the bike is parked.",
+      "Re-tighten bolts on racks, child seats and accessory mounts regularly, as vibration and heavy loads can slowly loosen fixings over time."
+    ]
+  },
+  "electric-bikes/electric-dirt-motorbikes": {
+    "type": "electric dirt motorbike",
+    "typePlural": "electric dirt motorbikes",
+    "intro": [
+      "An electric dirt motorbike is a lightweight off-road machine that uses a battery and electric motor instead of a petrol engine, and it is driven by a throttle rather than by pedalling.",
+      "Compared with petrol dirt bikes, electric versions deliver their power instantly and quietly, with no clutch or gear changes, so the rider mostly manages throttle and balance.",
+      "Many models resemble a stripped-back trail or motocross bike, with long-travel suspension, knobby tyres, a narrow seat and simple controls designed for rough terrain.",
+      "Some are sold strictly for off-road use while others are offered in forms that can be registered, so the intended use of each model needs to be read carefully before purchase.",
+      "Selectable power modes and removable batteries are often included, which lets a newer rider start gently and unlock more output as experience grows.",
+      "The simple drivetrain has few moving parts compared with a combustion engine, so there is no oil, fuel, spark plug or exhaust to look after."
+    ],
+    "suits": [
+      "Experienced riders who want a quiet trail machine often like electric power because it avoids engine noise that can upset neighbours and restrict where riding is allowed.",
+      "Property owners with private land can use one for paddock exploring and recreational riding without storing fuel or breathing engine fumes.",
+      "Riders stepping up from smaller youth bikes may appreciate smooth, predictable power delivery while they build skills on technical tracks.",
+      "Enthusiasts who enjoy modifying and tuning their machines may be drawn to the active aftermarket scene that surrounds many electric off-road bikes.",
+      "Because output can be strong and the bikes can be quick, they are a poor choice for beginners who lack training, supervision and suitable protective gear.",
+      "Anyone hoping to commute on public roads should look carefully, since many electric dirt bikes are not legal for roads and must stay on private or designated land."
+    ],
+    "check": [
+      "Ask the seller directly whether the model can be registered in your state, and confirm the answer with your state road authority before planning any public riding.",
+      "Find out where you can legally ride locally, as many parks, trails and forests restrict motorised vehicles, and some councils apply their own rules.",
+      "Look into licence, age and insurance requirements for riders, which vary between states and territories and may differ between private land and public land.",
+      "Compare suspension travel, frame size and seat height against the rider, because an overly tall or heavy machine is harder to control on rough ground.",
+      "Ask about battery removal, replacement cost and charger details, since the battery is usually the most expensive wear item over the life of the bike.",
+      "Confirm what protective equipment the rider needs, including an approved helmet, goggles, gloves, boots, body armour and clothing suited to the terrain."
+    ],
+    "care": [
+      "Wash off mud and dust gently, avoiding high-pressure water on the motor, controller, battery connectors and wiring, because moisture ingress can cause costly electrical faults.",
+      "Store the battery in a cool, dry place at a partial charge for longer breaks, rather than leaving it full or completely empty for weeks.",
+      "Check chain tension, sprocket wear, wheel bearings, spokes and brake pads after every few rides, as off-road use is hard on these parts.",
+      "Charge only with the supplied charger following the maker's instructions, and never charge a hot, damaged or swollen battery or leave it charging unattended."
+    ]
+  },
+  "electric-bikes/electric-mopeds": {
+    "type": "electric moped",
+    "typePlural": "electric mopeds",
+    "intro": [
+      "An electric moped is a scooter-style two-wheeler powered by a battery and electric motor, with a step-through body, a twist throttle and no pedals for the rider.",
+      "Unlike an e-bike, it is propelled entirely by the throttle, so in many places it is treated by the law as a motor vehicle rather than as a bicycle.",
+      "Most designs offer a flat floor for the rider's feet, a seat that may carry a passenger, and a battery that can be fixed in place or removable.",
+      "Braking, lighting, indicators, mirrors and a horn are normally built in, because the machine is designed for traffic rather than for shared bike paths.",
+      "Power is delivered smoothly and quietly with no gears or clutch, so the riding experience is close to a traditional automatic scooter without engine noise or fuel.",
+      "Different models are aimed at different jobs, from small city runabouts to quicker machines for busier roads, so capability varies considerably from one moped to the next."
+    ],
+    "suits": [
+      "Urban riders holding the right licence who want a low-running-cost alternative to a car for short trips and errands may find a moped suitable.",
+      "People living where parking is scarce or expensive often like how compact and easy to park a moped is compared with a car.",
+      "Those facing a long commute who prefer not to pedal, such as in hot weather or smart work clothes, may appreciate throttle-only operation.",
+      "Delivery riders and gig workers making many short stops might value the absence of clutch and gear changes, along with low energy costs.",
+      "Someone seeking the exercise or pedal-assist feel of a bicycle should look at e-bikes instead, because a moped involves no pedalling effort at all.",
+      "Riders who regularly need highway conditions or very long distances should assess capability carefully, since many electric mopeds are intended for city and suburban roads."
+    ],
+    "check": [
+      "Ask which licence class is needed to ride the model in your state, as rules vary and the power category of the motor may decide the answer.",
+      "Confirm registration, compliance plates, insurance and helmet obligations with your state road authority before buying, since these affect running costs and where you may ride.",
+      "Find out whether the battery can be taken out and charged indoors, which matters if you live in a unit or townhouse without a garage power point.",
+      "Study the brake type, tyre size and suspension quality, as these shape stability, stopping distance and comfort over typical urban road surfaces.",
+      "Enquire about storage space, passenger seating and whether a second helmet or rear rack can be fitted if you plan to carry people or luggage.",
+      "Look at local availability of servicing, spare parts and battery replacement, because a moped that cannot be serviced nearby may sit off the road for long stretches."
+    ],
+    "care": [
+      "Charge with the supplied charger in a dry, ventilated spot, and avoid leaving the battery plugged in for days after it has reached full.",
+      "Keep tyres at the pressure shown on the sticker or in the manual, since correct pressure supports handling, braking and efficient use of the battery.",
+      "Book regular services to inspect brakes, steering bearings, lights, suspension and wiring, just as you would for any registered road vehicle.",
+      "Store the machine under cover where possible, and keep the battery away from extreme heat or frost, which can reduce its life and performance."
+    ]
+  },
+  "electric-bikes/electric-mountain-bikes": {
+    "type": "electric mountain bike",
+    "typePlural": "electric mountain bikes",
+    "intro": [
+      "An electric mountain bike combines a rugged off-road frame, suspension and knobby tyres with a motor that adds assistance while the rider pedals up trails.",
+      "Most use a mid-mounted motor at the cranks, which keeps weight low and central and makes the bike feel closer to an ordinary mountain bike on technical ground.",
+      "Some designs use a full-suspension frame to keep both wheels in contact with rough terrain, while hardtail versions use only a front fork and are simpler.",
+      "The battery is normally built into the frame and the motor responds to pedal effort, so the harder you push the more help you receive within the chosen mode.",
+      "Geometry, tyres, brakes and wheels are generally built to handle the extra mass of the motor and battery as well as the stresses of steep descending.",
+      "Assistance fades out once the bike reaches the cut-off speed, so on fast descents it behaves much like a conventional mountain bike with a little added weight."
+    ],
+    "suits": [
+      "Riders who love the descents but find long climbs tiring can lean on motor assistance to get uphill and save their energy for the enjoyable parts.",
+      "Trail riders wanting to cover more ground in a morning, or keep up with fitter friends, may benefit from the extra reach that assistance provides.",
+      "Returning riders who have lost fitness, or those managing joints or heart conditions with medical advice, may find assisted riding makes trails accessible again.",
+      "Steady assistance can give traction and momentum on loose or rooty climbs where an unassisted bike would stall, which appeals to riders developing technical skills.",
+      "Casual riders who stick to sealed paths and light gravel would probably be better served by a hybrid or commuter, as a mountain bike offers more than they need.",
+      "Anyone planning to carry the bike on a car rack should consider its weight, because lifting a heavy e-mountain bike onto a roof or tow bar rack takes real effort."
+    ],
+    "check": [
+      "Look up the local trail rules first, because some parks, reserves and trail networks restrict e-bikes or limit them to certain tracks, and policies differ between land managers.",
+      "Decide between full-suspension and hardtail by thinking about the terrain you ride, your servicing budget, and how much comfort and control you want on descents.",
+      "Ask about frame size and standover height, and try the bike if possible, since fit has a big effect on confidence on steep or technical ground.",
+      "Examine brake size and quality, as the extra weight and speed on descents call for powerful hydraulic disc brakes that resist fade.",
+      "Learn how the battery is removed, how it is shielded from rocks, and whether a spare or range-extender can be added for long days out.",
+      "Enquire what service support exists for the motor system nearby, as motor diagnostics and software updates normally need a trained workshop."
+    ],
+    "care": [
+      "Wash the bike with a low-pressure hose and soft brush, and keep direct water jets away from the motor, bearings, display and battery contacts.",
+      "Service the suspension and drivetrain at the intervals the maker suggests, because e-mountain bikes wear chains, cassettes and pivots faster than lighter unassisted bikes.",
+      "Remove the battery before cleaning or transporting where the design allows, and keep its contacts dry and free of mud to avoid connection faults.",
+      "Store the battery at partial charge in a cool indoor place during quiet seasons, topping it up occasionally rather than leaving it empty for months."
+    ]
+  },
+  "electric-bikes/electric-tricycles": {
+    "type": "electric tricycle",
+    "typePlural": "electric tricycles",
+    "intro": [
+      "An electric tricycle has three wheels and an electric motor, so it stays upright by itself without the rider needing to balance at low speed or when stopped.",
+      "Most designs have two wheels at the rear with a basket or tray between them, and a single front wheel steered by conventional handlebars.",
+      "The motor can assist pedalling or, in some designs, run from a throttle, which helps with starting off and climbing while pulling extra weight.",
+      "A low step-through frame, a wide comfortable seat and an upright riding position are typical, built for stability and easy mounting rather than for speed.",
+      "The wide wheel track makes the trike very steady at rest, but it also leans less in corners, so turning is slower than on a two-wheeler.",
+      "Brakes, gearing and the cargo area are generally chosen for comfortable utility use such as shopping, short social rides and gentle exercise."
+    ],
+    "suits": [
+      "Riders with balance concerns, mild mobility limitations or a nervous approach to two wheels may feel more secure on three wheels with a stable stance.",
+      "Older adults wanting to stay active, run local errands and visit friends can value the easy mounting and the ability to stop without putting a foot down.",
+      "Shoppers and gardeners who regularly carry groceries, plants or tools appreciate the large basket, which holds loads lower and steadier than a rack on a two-wheeler.",
+      "Retirement communities, flat suburbs and seaside promenades are common settings, as smooth surfaces and relaxed speeds suit the handling character of a trike.",
+      "People who want agile riding on winding roads or steep hills may find a trike frustrating because it turns slowly and is heavier to push.",
+      "Those with limited storage should note that a trike is wide and heavy and usually cannot be stood on its end or carried up stairs."
+    ],
+    "check": [
+      "Measure doorways, gates and the storage space, because a three-wheel frame is considerably wider than a bicycle and may not fit through narrow openings.",
+      "Try mounting and dismounting, ideally with the person who will ride it, to confirm the step height and seat position feel comfortable and safe.",
+      "Ask about cargo capacity and the rider weight rating, and confirm that the basket or tray is designed for the loads you plan to carry.",
+      "Establish whether the drive is pedal-assist, throttle or both, as this changes how the trike feels and how much effort hills will demand.",
+      "Check how the parking brake works, since a secure park brake is important for loading and for keeping the trike still on a slope.",
+      "Contact your state road authority about the rules for electrically assisted tricycles, including where they may be ridden, because requirements vary across Australia."
+    ],
+    "care": [
+      "Keep all three tyres inflated to the recommended pressure, as low pressure makes steering heavier and increases the effort asked of the motor.",
+      "Inspect the rear axle and wheel bearings now and then, and keep them clean and lightly lubricated, since the rear pair carries much of the load.",
+      "Top up the battery regularly even when the trike is used only occasionally, and avoid leaving it in a hot shed or in direct sunlight.",
+      "Stability can make a trike feel trouble-free, so schedule brake and gear checks anyway to keep it dependable for everyday errands."
+    ]
+  },
+  "electric-bikes/fat-tyre-lifestyle-ebikes": {
+    "type": "fat tyre lifestyle e-bike",
+    "typePlural": "fat tyre lifestyle e-bikes",
+    "intro": [
+      "A fat tyre lifestyle e-bike rides on oversized, wide tyres fitted to sturdy wheels, usually combined with a relaxed upright position and a bold, casual style.",
+      "The wide tyres run at lower pressure than standard bicycle tyres, which spreads the contact patch and cushions bumps on sand, gravel, grass and rough paths.",
+      "Many are styled like retro motorbikes or beach cruisers, with banana seats, wide handlebars and chunky frames, while others borrow the look of a trail bike.",
+      "The motor is often a rear hub design controlled by a pedal sensor or throttle, which delivers easy cruising with simple controls.",
+      "Frames are built wide and strong to carry the large wheels, so these bikes feel stable and planted though noticeably heavier than slimmer commuters.",
+      "The category covers a wide spread of designs, from relaxed boardwalk cruisers to rugged all-rounders, so features and intended use differ from model to model."
+    ],
+    "suits": [
+      "Beachside and coastal riders can use wide tyres on firm sand and rough tracks where thin commuter tyres would sink or slip.",
+      "Riders who want a fun, eye-catching bike for weekend outings, cafe stops and exploring the neighbourhood often find the relaxed style appealing.",
+      "Those wanting a cushioned ride over potholed streets, broken footpaths and gravel shortcuts can appreciate the extra tyre volume.",
+      "People who like to ride in casual clothes and sit upright, instead of leaning over drop bars, may enjoy the easy cruising posture.",
+      "Anyone who must carry the bike up stairs, onto a small car rack or onto public transport should be cautious, since fat tyre bikes are heavy and bulky.",
+      "Riders who cover long daily commutes at an efficient pace may find the rolling resistance of wide tyres hard on the battery, and a slimmer commuter more economical."
+    ],
+    "check": [
+      "Confirm the power and speed settings suit the rules for e-bikes in your state, as some imported models are tuned beyond what is allowed on public paths.",
+      "Weigh up whether you can lift, wheel and store the bike comfortably, because a heavy machine is harder to manoeuvre at low speed.",
+      "Ask about brake type and size, since hydraulic discs give more control for a heavy bike on wide tyres than basic mechanical ones.",
+      "Look at whether mudguards, lights, racks and a kickstand are fitted or can be added, as many style-led models leave out everyday accessories.",
+      "Find out how replacement tyres and tubes are sourced, since fat tyre sizes are less common and may take longer to order than regular sizes.",
+      "Test ride for seat comfort and handlebar reach, and check that the frame size or adjustment suits your height, because wide frames change how a bike fits."
+    ],
+    "care": [
+      "Check tyre pressure often and keep it within the maker's guidance, because incorrect pressure can damage rims, hurt handling and shorten battery range.",
+      "Rinse sand and salt from the frame, chain and motor area after beach rides, then dry the bike and lightly lubricate the chain to prevent corrosion.",
+      "Inspect hub motor connections, wiring and spokes periodically, since a heavy bike on rough terrain can loosen fittings and put stress on wheels.",
+      "Keep the battery indoors at a moderate temperature and charge it regularly so it holds its capacity through quiet periods."
+    ]
+  },
+  "electric-bikes/foldable-electric-bikes": {
+    "type": "foldable e-bike",
+    "typePlural": "foldable e-bikes",
+    "intro": [
+      "A foldable electric bike has a hinged frame and usually a folding handlebar stem and pedals, so it collapses into a compact package for carrying and storage.",
+      "Small wheels keep the folded bundle compact and help the bike accelerate briskly from a standstill, though they also change how it feels over bumps.",
+      "An electric motor assists the rider, which offsets the extra effort that small wheels and compact gearing can demand at speed or uphill.",
+      "Folding mechanisms differ between designs, from simple single-hinge frames to multi-fold systems, and they vary in how quickly the bike packs and how small it gets.",
+      "Because the frame, hinge and stem must be strong yet compact, folding e-bikes can weigh more than their packed size suggests.",
+      "The folding feature trades a little ride refinement for convenience, so handling is typically quicker and twitchier than that of a full-size bicycle."
+    ],
+    "suits": [
+      "Commuters who combine riding with trains, trams or buses can fold the bike and take it aboard, subject to the policy of each operator.",
+      "Apartment dwellers with limited storage can keep a folded bike in a hallway, wardrobe or beside a desk instead of in a shared bike room.",
+      "Caravanners, boaters and holiday travellers who want a way to explore without a full-size bike will find a folder easier to carry in a boot or locker.",
+      "Office workers whose building does not allow bikes to be left outside can fold the bike and keep it close, safe from opportunistic theft.",
+      "Anyone after a smooth, fast long-distance experience might prefer a full-size frame, since small wheels and a hinge feel less settled at higher speeds.",
+      "Those who must regularly lift the bike up stairs should assess the weight carefully, because the motor and battery make folding e-bikes harder to carry than they look."
+    ],
+    "check": [
+      "Practise the folding and unfolding sequence in person, and confirm that you can do it smoothly and safely, including latching and locking the hinge.",
+      "Compare the folded dimensions with the boot, locker, desk space or carriage you plan to use, and think about carrying weight as well as size.",
+      "Ask about the hinge locking mechanism and the maximum rider weight, since a worn or poorly latched hinge is a genuine safety risk.",
+      "Look at how the battery is mounted and whether it can be removed to reduce weight when carrying the bike or to charge it indoors.",
+      "Enquire about the availability of tyres, tubes and spare parts, because small wheel formats can be less common than standard sizes.",
+      "Read the carriage policies of any transport operators you plan to use, since many restrict e-bikes or batteries, and rules differ between providers and states."
+    ],
+    "care": [
+      "Inspect the hinge, latch and stem clamp regularly, keep them clean, and tighten or service them to the maker's guidance, since they carry the rider's weight.",
+      "Wipe the bike down before storing it folded, and avoid folding it wet or muddy, which can lead to corrosion and gritty hinges.",
+      "Keep tyres pumped to the recommended pressure, because small wheels are more sensitive to low pressure and feel potholes more sharply.",
+      "Recharge on a regular cycle and keep it away from heat when the bike is stored in a car boot or caravan."
+    ]
+  },
+  "electric-bikes/lightweight-urban-ebikes": {
+    "type": "lightweight urban e-bike",
+    "typePlural": "lightweight urban e-bikes",
+    "intro": [
+      "A lightweight urban e-bike pairs a slimmer motor and compact battery with a trimmed-down frame, so the overall machine feels much closer to an ordinary bicycle.",
+      "The motor typically provides gentle, natural assistance that blends with the rider's own pedalling, rather than the strong push delivered by heavier-duty systems.",
+      "Frames use thin-walled tubing and carefully chosen components to cut weight, and the battery is often hidden inside the downtube for a clean, conventional look.",
+      "Because the bike is light, it is easier to lift, push and park, and it remains pleasant to ride with the motor switched off or the battery flat.",
+      "The design priority is a natural riding feel, so handling, acceleration and braking seem familiar to anyone who has ridden a regular road or hybrid bike.",
+      "The compromise for lower weight is usually a smaller battery and less overall assistance, which means range and hill-climbing ability are more modest than on heavier designs."
+    ],
+    "suits": [
+      "Cyclists who want help on hills and headwinds but still prefer the feel of cycling over being carried along by a big motor may enjoy this style.",
+      "Commuters who must carry the bike up a flight of stairs or lift it onto a rack will benefit from the reduced weight.",
+      "Fit riders coming from road or hybrid bikes often appreciate that the bike stays enjoyable to ride unassisted whenever they want the exercise.",
+      "Short to medium city trips with moderate hills and plenty of stops are a natural match for a bike carrying a modest battery.",
+      "Riders who haul heavy loads, tow trailers or travel long distances between charging opportunities may find the smaller battery and gentle motor limiting.",
+      "Buyers wanting an e-bike that blends in as a normal bicycle, without a bulky battery or chunky motor, often like the discreet styling."
+    ],
+    "check": [
+      "Ask how the maker describes lightweight, and compare the published weights in the specifications rather than relying on marketing words, as claims vary between models.",
+      "Consider your usual trip length, hills and charging access, then ask how much range you can realistically expect with a smaller battery.",
+      "Find out whether the battery is removable, and whether a range extender can be added for occasional longer rides.",
+      "Check the rider and load weight rating along with rack, mudguard and light mounting options, because lighter frames may carry less than sturdier ones.",
+      "Pay attention to motor feel on a test ride, since some systems offer a smoother, quieter push than others and personal preference counts.",
+      "Enquire about servicing support, as compact motors and integrated batteries usually need specialist diagnostic tools and software at the workshop."
+    ],
+    "care": [
+      "Avoid draining the battery completely on regular rides, because a smaller battery cycles more often and benefits from being topped up before it runs very low.",
+      "Keep tyres firmly inflated within the recommended range, which keeps the bike feeling light and helps a modest motor go further.",
+      "Treat slim components gently by not over-tightening bolts and by leaning the bike where thin tubes or carbon parts will not be dented or scratched.",
+      "Clean and lubricate the drivetrain regularly, and have a bike shop check brakes, wheels and motor software at routine service intervals."
+    ]
+  },
+  "electric-bikes/step-over-commuters": {
+    "type": "step-over commuter e-bike",
+    "typePlural": "step-over commuter e-bikes",
+    "intro": [
+      "A step-over commuter e-bike has a traditional frame with a top tube running between the saddle and handlebars, so the rider swings a leg over the seat to mount.",
+      "This diamond-style layout is the classic bicycle shape, and the straight top tube gives the frame extra stiffness for a given weight compared with open designs.",
+      "A stiffer frame tends to feel more precise when pedalling hard or climbing, and it makes the motor's assistance feel direct and well controlled.",
+      "The upright or slightly forward riding position suits commuting, with mounting points for mudguards, racks and lights commonly built into the frame.",
+      "Motor and battery are generally mounted on or inside the frame, and the triangle of the diamond layout gives designers room to hide the battery in the downtube.",
+      "Frames come in several heights, and the clearance over the top tube is what determines how easy it is to get on and off."
+    ],
+    "suits": [
+      "Riders who are comfortable swinging a leg over a saddle, and who are used to ordinary bicycles, will find the step-over frame familiar.",
+      "Taller riders, and those who enjoy a sportier ride, often prefer the extra stiffness and handling confidence of a frame with a top tube.",
+      "Commuters who ride briskly on longer routes, tackle hills or carry a loaded rack may appreciate the sturdy structure of the diamond layout.",
+      "Anyone planning to hang the bike on a vehicle bar rack will find the straight top tube easier to clamp than a low frame.",
+      "People with limited hip mobility, or those wearing long skirts and coats, may find stepping over the top tube awkward and could prefer a lower frame.",
+      "Riders who stop and start often on busy roads and need to put a foot down quickly should check that the standover height suits them."
+    ],
+    "check": [
+      "Test the standover height by straddling the bike flat-footed, and make sure there is comfortable clearance when you stand over the top tube.",
+      "Compare frame size with your height and inside leg, since a poor fit makes riding uncomfortable and can affect safety in traffic.",
+      "Ask whether racks, mudguards and lights are fitted or have mounting points, as a commuter needs them for rain, luggage and visibility after dark.",
+      "Think about hub versus mid-mounted motors, and judge how each feels on your regular route, particularly if you face steep hills.",
+      "Notice how the battery is secured and removed, and whether it can be locked in place, which matters if the bike is parked outdoors.",
+      "Look at brake and tyre specifications for wet-weather performance, and confirm that service support is available near where you live or work."
+    ],
+    "care": [
+      "Check chain wear and lubrication regularly, since commuting in all weather lets grit and moisture build up and speeds wear on the drivetrain.",
+      "Wipe down the frame and drivetrain after wet rides, and avoid spraying water directly at the motor, display or battery contacts.",
+      "Keep the battery charged on a routine, ideally storing it between partial and full charge, and bring it indoors if the weather turns very hot or cold.",
+      "Inspect brake pads, tyres and lights often, replacing them before they become worn, because commuting involves frequent stops in traffic."
+    ]
+  },
+  "electric-bikes/step-through-commuters": {
+    "type": "step-through commuter e-bike",
+    "typePlural": "step-through commuter e-bikes",
+    "intro": [
+      "A step-through commuter e-bike has a low or absent top tube, so the rider can walk through the frame instead of lifting a leg over the saddle.",
+      "The lowered frame is the defining feature, and it allows easy mounting and dismounting even with a heavy bag, a loaded basket or everyday clothing.",
+      "Because the frame lacks a straight top tube, designers add thicker or reinforced tubes lower down to keep it strong enough for the motor and rider.",
+      "Riding position is usually upright and relaxed, with a comfortable saddle and swept handlebars that put less weight on the wrists.",
+      "Many are fitted with mudguards, chain guards, racks or kickstands, which lets the rider wear regular clothes and carry shopping without buying extras.",
+      "Motor and battery often sit low in the frame or at the rear, and the lowered centre of gravity can make the bike feel steady at slow speeds."
+    ],
+    "suits": [
+      "Riders who want to mount quickly at traffic lights, or who find lifting a leg over a saddle uncomfortable, can benefit from this frame design.",
+      "People wearing skirts, dresses, suits or work trousers will find it easier to get on and off without disturbing their clothes.",
+      "Older riders, and anyone with a stiff hip, knee or back, often find a low entry gives them more confidence and independence.",
+      "Shoppers and parents making frequent short stops can step off easily while managing bags, a child on the back or a loaded basket.",
+      "Riders after a very sporty, rigid frame for fast climbing may notice that a step-through design flexes more than a diamond frame would.",
+      "Those with a bike rack on their car should check compatibility, because the missing top tube makes some carriers unsuitable without an adaptor bar."
+    ],
+    "check": [
+      "Look at the height of the lowest part of the frame at the entry point, since a lower opening is easier to use but may be less rigid.",
+      "Confirm the maximum rider and luggage weight, because the open frame design can carry lower load ratings than straight-tube alternatives.",
+      "Ask about wheel size, saddle height range and handlebar adjustment, so that a shorter or taller rider can sit comfortably with feet reaching the ground.",
+      "Hunt for built-in lights, mudguards, a rear rack and a stand, which are valuable extras for everyday transport and may save on accessory costs.",
+      "Test ride the bike while stopping and starting with a bag attached, to confirm the low frame feels stable and the motor starts smoothly.",
+      "If you intend to use a vehicle rack, ask the retailer whether the bike can be carried and which adaptors or carrier types are suitable."
+    ],
+    "care": [
+      "Inspect the frame around the low entry section and the weld areas periodically for cracks or damage, especially after a fall.",
+      "Keep the chain guard, mudguards and kickstand tight and free from grit, because loose parts can catch on everyday clothing.",
+      "Recharge the battery after use, avoid leaving it in direct sun, and wipe its contacts occasionally with a dry cloth.",
+      "Fit a good lock and store the bike undercover whenever possible, since commuter bikes are frequent targets for theft."
+    ]
+  },
+  "electric-bikes/urban-commuter-ebikes": {
+    "type": "urban commuter e-bike",
+    "typePlural": "urban commuter e-bikes",
+    "intro": [
+      "An urban commuter e-bike is an electrically assisted bicycle designed for daily travel on sealed roads, bike paths and city streets rather than for rough trails.",
+      "Pedal-assist gives a boost proportional to the rider's effort, which takes the hard work out of hills, headwinds and starts at traffic lights.",
+      "Typical features include mudguards, a rear rack, built-in lights, upright handlebars and puncture-resistant tyres, so the bike is ready for everyday use.",
+      "Motors may be built into the rear hub, front hub or crank, and each arrangement changes how natural, quiet and strong the assistance feels.",
+      "The battery sits on or inside the frame and is charged from a household outlet, so the energy cost of each trip is low.",
+      "Frame styles range from step-over to step-through, and gearing, brakes and tyres vary, which makes this a broad family of bikes rather than a single design."
+    ],
+    "suits": [
+      "Commuters with a regular trip of moderate length can use an e-bike to arrive without being overheated or exhausted, even in work clothes.",
+      "Households wanting to cut car use for school runs, errands and station trips can often replace many short drives with a few minutes in the saddle.",
+      "Riders in hilly areas, or those facing strong coastal winds, can maintain a steady pace without arriving worn out.",
+      "Newcomers returning to cycling after a long gap may find that motor help makes the first months more enjoyable and less discouraging.",
+      "Buyers after a sporty, high-speed or off-road machine should consider other categories, because commuter bikes focus on comfort and practicality over performance.",
+      "Those with very limited storage, or who need to carry the bike up stairs, should consider the weight and size of a full-size frame."
+    ],
+    "check": [
+      "Decide on your route and daily distance, then compare battery capacity and typical real-world range with it, allowing a margin for hills, wind and cold weather.",
+      "Confirm that the bike is built to meet Australian expectations for pedal-assist e-bikes, and ask your state road authority about requirements where you ride.",
+      "Compare the motor position, as hub motors tend to feel simple and affordable while crank motors usually feel more natural and handle climbs well.",
+      "Check for mudguards, lights, a rack, a kickstand and a quality lock, because adding these later increases the overall cost of getting started.",
+      "Ask about battery replacement cost, charging time and whether the battery can be removed and charged indoors away from the bike.",
+      "Find out where the bike can be serviced, what after-sales support is on offer and whether spare parts are readily available."
+    ],
+    "care": [
+      "Replenish the battery regularly with the supplied charger, avoid running it empty, and store it at partial charge if the bike will sit unused for weeks.",
+      "Keep tyres at the recommended pressure and check brake pads often, since commuter bikes accumulate many short stops that wear brakes quickly.",
+      "Clean and lubricate the chain on a routine, wipe grit off after wet rides, and avoid using a pressure washer near the motor or battery.",
+      "Lock the bike through the frame to a solid fixed object, and take the battery indoors if it can be removed, to reduce theft and weather exposure."
+    ]
+  }
+}

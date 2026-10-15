@@ -1,5 +1,4 @@
-import { SITE } from '@/config/site';
-import type { Product } from '@/config/site';
+import { SITE } from '@/config/core';
 import { isVehicle } from '@/lib/cartDiscount';
 
 const OFFER_SEEN_KEY = 'ieb-accessory-offer-seen';
@@ -8,7 +7,15 @@ const OFFER_SEEN_KEY = 'ieb-accessory-offer-seen';
  * Adds a product to the browser cart. When it is the first e-vehicle added in this visit, the accessory offer
  * popup is shown instead of the cart drawer; otherwise the cart drawer opens as usual.
  */
-export function addToCart(product: Product, quantity = 1): void {
+export interface CartProduct {
+  slug: string;
+  name: string;
+  price: number;
+  category: string;
+  image?: string;
+}
+
+export function addToCart(product: CartProduct, quantity = 1): void {
   const stored = localStorage.getItem(SITE.cartKey);
   const items: { slug: string; name: string; price: number; quantity: number; image?: string; category?: string }[] = stored ? JSON.parse(stored) : [];
 
@@ -17,7 +24,7 @@ export function addToCart(product: Product, quantity = 1): void {
     existing.quantity += quantity;
     existing.category = product.category;
   } else {
-    items.push({ slug: product.slug, name: product.name, price: product.price, quantity, image: product.images[0], category: product.category });
+    items.push({ slug: product.slug, name: product.name, price: product.price, quantity, image: product.image, category: product.category });
   }
 
   localStorage.setItem(SITE.cartKey, JSON.stringify(items));

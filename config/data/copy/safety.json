@@ -1,0 +1,342 @@
+{
+  "safety-security-carry/chain-locks": {
+    "type": "chain lock",
+    "typePlural": "chain locks",
+    "intro": [
+      "A chain lock is a run of hardened steel links, normally wrapped in a soft fabric sleeve, that closes with a lock barrel to hold a bike to a fixed object.",
+      "Because the links articulate freely, a chain can be threaded around awkward frames, wheels and street furniture that a rigid shackle would never reach.",
+      "Each link is a closed loop of case-hardened or alloy steel, and the lock's resistance depends mainly on link thickness, steel quality and how well the barrel is built.",
+      "The fabric cover is more than decoration, since it stops the metal scratching paint and carbon, and it keeps rain and grit away from the surface of the links.",
+      "Locking is usually done with a key, although some designs use a combination mechanism, and the barrel or its cover is often shaped to shield the keyway from grit.",
+      "Weight is the trade-off for flexibility, because a chain of useful strength is noticeably heavier than a cable and can be heavier than a comparable U-shaped shackle."
+    ],
+    "suits": [
+      "Riders who park at street racks, signposts or fences with odd shapes tend to value a chain, because it wraps around objects that a fixed shackle cannot encircle.",
+      "An e-bike owner who leaves a heavy machine outside for long periods may prefer a thicker chain, carried in a bag or looped around the frame.",
+      "Commuters who lock up at the same spot each day sometimes keep a heavy chain at the destination and ride without carrying its weight.",
+      "Lighter, shorter chains that can be worn across the body or around the waist suit short stops where the rider wants security without filling a bag.",
+      "Cargo and family bikes, scooters and other awkward vehicles are often easier to secure with a chain because the length lets the rider pass through frame and wheel together.",
+      "Anyone who regularly leaves a bike in a higher-risk area for hours at a time may choose a chain for its thickness over the convenience of a lighter lock."
+    ],
+    "check": [
+      "Check the link thickness and the steel type the maker describes, and compare the figure with the value of the vehicle you intend to secure.",
+      "Measure the length against how you actually park, since a short chain may not pass through both the frame and a wheel before reaching the fixed anchor.",
+      "Find out whether the lock carries an independent security rating, and treat any rating as a comparison tool between locks rather than a promise about what a thief can do.",
+      "Weigh the chain before deciding, because a heavy model that stays at home is no use and a lighter one that gets carried every trip may suit better.",
+      "Look at how the lock is carried, whether that is a shoulder strap, waist wrap, frame mount or bag, and whether the cover will rub on your clothing.",
+      "Confirm how many keys are supplied and whether the maker offers a key-replacement or registration service, as losing the only key can leave the bike stuck."
+    ],
+    "care": [
+      "Wipe the cover with a damp cloth when it collects mud or road film, and let the chain dry fully before packing it away so moisture does not sit inside the sleeve.",
+      "Put a small amount of suitable lubricant into the keyway now and then, working the key a few times, because grit and damp are the usual causes of a stiff barrel.",
+      "Keep the chain off the ground while locked where you can, and avoid dragging it across rough surfaces that might wear through the fabric and expose the steel.",
+      "Store spare keys and any code card somewhere separate from the bike, and replace a worn cover or a barrel that has begun to stick before it fails in use."
+    ]
+  },
+  "safety-security-carry/child-seats": {
+    "type": "child seat",
+    "typePlural": "child seats",
+    "intro": [
+      "A child seat is a purpose-made seat that attaches to a bike so a small child can ride seated behind or in front of the adult rider.",
+      "Rear-mounted seats are the common arrangement, fixed to a rack, the frame or a dedicated mounting plate, while front seats sit ahead of the rider on the frame.",
+      "Most designs combine a moulded shell, padded lining, a harness to hold the child in place and footrests with straps that position small feet away from the wheel.",
+      "Mounting systems differ, with some seats bolting to a frame bracket, some clamping to a seat tube and others sliding onto a rack that is designed to carry them.",
+      "Many seats recline slightly, and a few adjust for the child's height, so the same seat can stay in use as a child grows within its stated limits.",
+      "Because the bike carries extra weight high and to the rear or front, handling changes, which is why a child seat must be matched to a compatible bike."
+    ],
+    "suits": [
+      "Parents who want to take a toddler on school runs, park trips or errands often use a child seat to keep the family riding together instead of driving.",
+      "A seat suits a child who is old enough to sit upright, hold their head up and wear a correctly fitting helmet, as set out by the maker and local rules.",
+      "An electric-assist bike can make carrying a child less tiring on hills, as long as the frame, rack and brakes are suitable for the added load.",
+      "Families who share one bike between adults may like a seat with a quick-release bracket, so it can be taken off when the bike is used alone.",
+      "Short, regular trips on quiet paths and low-traffic streets suit a child seat better than long rides at speed where the passenger may tire or get cold.",
+      "Anyone whose child is outside the weight and age limits for a seat, or whose bike cannot take one, may want to look at alternatives such as a trailer or a cargo bike."
+    ],
+    "check": [
+      "Fitting and weight limits must follow the maker's instructions and local rules, so confirm the maximum child weight and any age guidance before choosing a seat.",
+      "Confirm that your bike is compatible, including frame material and shape, available mounting points, and any limit on rack or seat-post loads stated by the bike maker.",
+      "Ask how the seat is mounted, whether it uses a frame bracket or a rack adapter, and whether that system can be left on the bike or removed easily.",
+      "Inspect the harness, footrests, straps and padding, and check that the child can sit comfortably with the harness adjusted correctly and the feet held securely in place.",
+      "Read the local rules about carrying children on bikes, including any age rules and helmet requirements, which vary between states and should be confirmed with the relevant road authority.",
+      "Think about the rider's own comfort, including pedal clearance, heel strike on a rear seat, handling when loaded and whether the bike has a sturdy stand for loading."
+    ],
+    "care": [
+      "Before each ride, check that the bracket bolts, harness buckles and straps are tight and undamaged, and that the seat has not shifted on its mounting.",
+      "Clean the shell and padding with mild soapy water and a soft cloth, and let everything dry in the shade so straps and foam are not damaged by heat.",
+      "Re-check the harness adjustment as the child grows or changes clothing, and replace any strap, buckle or foam that is frayed, cracked, faded or stiff.",
+      "Retire a seat that has been in a fall or a crash, and follow the maker's guidance on lifespan, because hidden damage can weaken plastic and fixings."
+    ]
+  },
+  "safety-security-carry/folding-locks": {
+    "type": "folding lock",
+    "typePlural": "folding locks",
+    "intro": [
+      "A folding lock is built from several flat steel plates joined by rivets, which fold down into a compact bundle and open out into a rigid bar when in use.",
+      "When folded, the plates sit close together and are often carried in a holster that clips to the frame, a bottle-cage mount or a belt.",
+      "Unfolded, the lock reaches further than most U-shaped shackles, and its rigid plates give a different feel from a loose cable, which can be bent and coiled freely.",
+      "Each joint is a pivot point, so the quality of the rivets, the thickness of the plates and the tolerance of the joints matter as much as the lock body.",
+      "Plates are often coated or sleeved so that the folded lock does not scratch the frame, and some designs add a small cover over the keyhole.",
+      "The trade-off is weight, since a folding lock with a useful amount of steel is usually heavier than a light cable, even though it packs smaller than a rigid shackle."
+    ],
+    "suits": [
+      "Commuters who ride to work and need something they can mount to the frame and forget until they lock up often settle on a folding design.",
+      "Riders who dislike a bulky U-shaped shackle poking into their back or knocking the frame often find the narrow folded profile more comfortable to carry.",
+      "People locking up at wide bike racks, fences or posts benefit from the extra reach, because the open lock can span a larger gap than a compact shackle.",
+      "An e-bike rider who carries the lock on the frame every day usually wants low rattle and a secure holster, so that the folded bundle stays quiet over rough surfaces.",
+      "Cyclists with several short stops in a day, such as cafe visits and errands, tend to like how quickly a folding lock unfolds and tucks away again.",
+      "A rider with a small frame or few mounting points may prefer a folding lock, since it packs into less space than a chain and can ride in a bag."
+    ],
+    "check": [
+      "Look closely at how the maker describes the plates and rivets, because the joints are the part of a folding lock that differs most from other lock types.",
+      "Check the open length and the shape of the opened lock, then picture it around your frame, a wheel and the kind of rack or post you normally use.",
+      "Ask which mount or holster is included and whether it suits your frame tubes, since a poor mount can rattle, sag or even drop the lock mid-ride.",
+      "Compare any independent security rating as a guide only, remembering that ratings measure resistance to specific tools and do not mean a lock cannot be defeated.",
+      "Consider the weight you are willing to carry daily, because a folding lock sits on the frame all the time and added weight is felt on every ride.",
+      "Confirm the lock mechanism, key count and any replacement-key service, and check that the folded bundle does not touch brake cables or a battery housing on an e-bike."
+    ],
+    "care": [
+      "Fold and unfold the lock gently, avoiding forced twists, because bending the plates sideways can strain the rivets and make the joints loose over time.",
+      "Rinse off road salt and mud with clean water, dry the joints thoroughly and apply a light lubricant to the pivots and keyway so they continue to move freely.",
+      "Check the holster clip and frame bracket every so often for cracks or play, since vibration from rough roads can loosen fixings and shift the lock.",
+      "Retire a lock whose plates are bent, whose rivets show wear or whose cover has split, and keep a spare key stored away from the bike."
+    ]
+  },
+  "safety-security-carry/helmets": {
+    "type": "helmet",
+    "typePlural": "helmets",
+    "intro": [
+      "A bike helmet is a head covering with a shell and an energy-absorbing liner, worn with a retention strap so it stays positioned on the head while riding.",
+      "The outer shell is typically a thin moulded plastic skin, while the liner beneath it is usually foam designed to crush and spread an impact over a larger area.",
+      "Styles vary from vented road and commuter shapes to urban lids with extra rear coverage and fuller-face designs, and some include a peak, a visor or integrated lighting.",
+      "Some helmets add a rotational-impact system, a slip layer or a reinforced layer in the liner, intended to manage forces differently from a plain foam shell.",
+      "A retention system, usually a dial or ratchet at the rear plus an adjustable chin strap, lets the wearer tighten the helmet snugly to the head shape.",
+      "A helmet only manages impacts up to a limit, so it is not a substitute for careful riding, sensible speed and good route choices."
+    ],
+    "suits": [
+      "Everyday commuters and recreational riders on paths and roads generally want a lightweight, well-ventilated helmet that is comfortable enough to wear for the full trip.",
+      "Riders of faster e-bikes may look for a helmet with extra rear and temple coverage, and should check the maker states it as suitable for that kind of riding.",
+      "Riders on rough trails, downhill tracks or technical paths often choose a helmet with a visor and deeper coverage, since low branches and sun glare are common there.",
+      "City riders who travel in low light may choose a helmet with built-in lighting, reflective details or bright colours, as a complement to proper bike lights.",
+      "Children and teens need a helmet sized for a smaller head, not an adult model adjusted to its limit, so size ranges should be read carefully.",
+      "Anyone riding on a mix of surfaces, from shared paths to roads, benefits from a helmet that suits the most demanding conditions they actually ride in."
+    ],
+    "check": [
+      "A helmet must meet the standard required where it is used, so look for the standard marking on the helmet and confirm it applies to cycling where you ride.",
+      "Fit matters as much as features, so measure the head circumference the way the maker describes and try the helmet on, checking that it sits level and snug.",
+      "The helmet should not rock forward or backward, the chin strap should sit comfortably under the jaw, and the pads should feel even with no pressure points.",
+      "Compare ventilation, weight, visor, rear coverage and strap quality against how and where you ride, since a helmet that is uncomfortable tends to be left at home.",
+      "If the helmet has integrated lights, ask how it charges, how long it runs and whether it is meant to supplement, rather than replace, the lights required on the bike.",
+      "Note the manufacture date and the maker's guidance on replacement, and avoid a helmet that has been dropped hard, since unseen damage to the liner is possible."
+    ],
+    "care": [
+      "Clean the shell and pads with mild soap and lukewarm water, avoiding solvents and strong cleaners that can weaken the plastic and the foam liner.",
+      "Store the helmet in a cool, dry spot away from direct sun and hot car interiors, because heat can degrade the materials over time.",
+      "Re-adjust the retention dial and straps whenever the fit feels loose, and inspect the shell, straps and buckle regularly for cracks, fraying or wear.",
+      "Replace a helmet after any significant impact and when the maker recommends, even if no damage is visible, and follow the maker's charging advice for built-in lights."
+    ]
+  },
+  "safety-security-carry/jackets-hi-vis": {
+    "type": "riding jacket",
+    "typePlural": "riding jackets",
+    "intro": [
+      "A riding jacket is an outer layer cut for cycling or e-bike use, with a longer back, articulated sleeves and fabric chosen to handle wind, rain or abrasion.",
+      "High-visibility versions use fluorescent fabric in colours such as yellow or orange, which stand out in daylight, together with reflective panels that return light in the dark.",
+      "Reflective tape or piping placed around the torso, sleeves and back helps other road users pick out the shape of a moving rider when headlights fall on it.",
+      "Waterproof and windproof jackets rely on a coated or laminated fabric and sealed seams, with vents, pit zips or mesh linings to let warm air and moisture escape.",
+      "Motorcycle-style riding jackets add abrasion-resistant outer fabric and pockets for removable armour, a feature some e-bike and e-scooter riders look for on faster machines.",
+      "Details such as an adjustable hem, high collar, cuffs that seal around gloves and secure pockets let a jacket stay in place on the move."
+    ],
+    "suits": [
+      "Commuters who ride at dawn, dusk or after dark often wear a high-visibility jacket so they are easier to notice alongside their bike lights.",
+      "Riders who go out in cold, wet or windy weather need a layer that blocks rain and wind while still letting sweat vapour escape during effort.",
+      "Delivery riders, shift workers and others who spend long hours on busy roads may choose a bright, reflective jacket for the extra visibility it adds in traffic.",
+      "E-bike and e-scooter riders who travel at higher speeds may prefer a more robust, abrasion-resistant jacket with armour pockets over a light packable shell.",
+      "Occasional riders who keep a jacket in a bag for sudden showers often value a shell that folds small and weighs little.",
+      "Group rides and organised events frequently call for bright clothing, so a hi-vis layer over everyday clothes is a simple way to stand out."
+    ],
+    "check": [
+      "Lighting requirements vary by state, and a hi-vis jacket does not replace them, so riders should check their state road authority for what applies.",
+      "Check the fit over the layers you will really wear, and make sure the sleeves reach the gloves with your arms forward on the handlebars.",
+      "Read the waterproofing description, seam sealing and breathability, and remember that some coatings can wet out or feel clammy on long, active rides.",
+      "For hi-vis wear, check where the reflective material sits and whether it remains visible when the arms move, a bag is carried or a layer is added.",
+      "If the jacket includes armour pockets, ask which armour is supplied or sold separately and whether it carries a recognised standard marking appropriate to the intended use.",
+      "Consider ventilation, pocket layout, hood design and packed size, since a jacket that suits neither the weather nor the trip soon stops being worn."
+    ],
+    "care": [
+      "Wash according to the care label, usually in cool water with a mild detergent, and avoid fabric softener, which can clog waterproof membranes and dull reflective material.",
+      "Dry the jacket away from direct heat, since high temperatures can damage tape, coatings and seams, and hang it loosely rather than leaving it damp in a bag.",
+      "Reflective and fluorescent fabric loses effect as it becomes dirty, scuffed or faded, so clean it regularly and replace the garment when the panels look worn.",
+      "Re-proof a waterproof shell with a suitable wash-in or spray treatment when water stops beading on the surface, and check zips and seams for damage."
+    ]
+  },
+  "safety-security-carry/lights-visibility": {
+    "type": "bike light",
+    "typePlural": "bike lights",
+    "intro": [
+      "A bike light is a battery-powered lamp, usually LED, that mounts to the bike or rider so the user can see the path ahead and be seen by others.",
+      "Front lights are generally white and shaped to illuminate the ground or highlight the rider, while rear lights are red and intended to be noticed from behind.",
+      "Output is described in lumens, but beam pattern, optics and mounting angle shape how useful that light really is, so the figure alone does not tell the whole story.",
+      "Modes typically include steady, pulsing and flashing settings, and some add sensors that change brightness when the bike brakes or begins to move.",
+      "Power comes from a rechargeable battery charged by USB cable or from replaceable cells, and mounts range from rubber straps to clamps, seat-post brackets and helmet fittings.",
+      "Beyond lamps, visibility gear includes reflectors, reflective bands and clip-on markers that bounce light back toward a source rather than producing their own."
+    ],
+    "suits": [
+      "Riders who travel before sunrise, after sunset or through tunnels and shaded paths need lights that let them see surface hazards as well as be seen.",
+      "City riders on well-lit streets often use compact lights that mainly make them noticeable, while riders on dark paths want a stronger beam that actually lights the road.",
+      "Daily e-bike and e-scooter commuters tend to prefer rechargeable lights with long run times, since swapping cells every few days becomes tiresome.",
+      "Riders who regularly lock a bike outside may want lights that detach quickly, so they can be carried with the rider instead of staying on the bike.",
+      "Group riders, children riding behind adults and anyone on a shared road can add clip-on markers or reflective bands as an extra layer of visibility.",
+      "Wet-weather and trail riders benefit from a light with a sealed body and a mount that stays put over bumps and spray."
+    ],
+    "check": [
+      "Lighting requirements vary by state, so check your state road authority for what must be fitted and displayed when riding at night.",
+      "Compare the stated run times at each brightness setting rather than the headline figure, because the highest output usually drains the battery much faster.",
+      "Study the beam shape and whether it is cut to avoid dazzling oncoming riders and drivers, and check the angle can be adjusted once mounted.",
+      "Make sure the mount suits your handlebar, seat post or helmet diameter, and whether it can be moved between bikes or removed quickly without tools.",
+      "Ask about the charging method, the port cover and the weather resistance the maker describes, since moisture can reach the electronics through an unprotected charging port.",
+      "Think about a spare light or a second rear light, and check whether your state allows flashing modes or expects a steady beam."
+    ],
+    "care": [
+      "Charge lights fully before long rides and recharge them promptly after use, since leaving a lithium cell flat for months can shorten its life.",
+      "Wipe the lens and body clean with a damp cloth, because dirt and road film dull the output and hide the reflective surfaces on markers.",
+      "Check the mount and strap before each ride, re-aim the beam if the light has slipped, and replace perished rubber bands that no longer grip.",
+      "Close the port cover firmly after charging, dry the light before storing it, and replace any unit with a cracked case or a battery that swells."
+    ]
+  },
+  "safety-security-carry/panniers-bags": {
+    "type": "pannier",
+    "typePlural": "panniers",
+    "intro": [
+      "A pannier is a bag that hangs from a rear or front rack, carried in a pair or singly, to move cargo from the rider's back to the bike.",
+      "Fixing hooks or a clip system at the top grip the rack rails, while a lower hook or strap stops the bag swinging or lifting off the rack.",
+      "Waterproof panniers use coated fabric with welded seams and a roll-top closure, which is folded several times and clipped shut to keep rain and spray out.",
+      "Other bags use a zipped main compartment, outer pockets and a lid, which are easier to open at a glance but depend more on a rain cover in heavy weather.",
+      "Capacity is measured in litres for each bag, and many panniers include reflective patches, a carry handle or a shoulder strap so they can double as a bag off the bike.",
+      "A single pannier, a dry bag strapped to a rack and a trunk bag are related ways to carry load, differing mainly in capacity, fixings and how easily they detach."
+    ],
+    "suits": [
+      "Commuters carrying a laptop, lunch, work clothes and a lock find that panniers keep weight low and off the shoulders, which makes a long ride more comfortable.",
+      "Touring riders and those out for several days can load a full set, spreading the weight across the bike for a steadier ride than a backpack allows.",
+      "Shoppers and errand runners value a bag that clips on at the rack and off again in seconds, with a handle for carrying it into the shop.",
+      "Riders in rainy climates or on wet trails suit a roll-top, waterproof design, which helps protect clothes and electronics when a downpour arrives without warning.",
+      "E-bike riders with a sturdy rack and a motor to help with the load can carry heavier pannier loads, within the carrying limits set by the bike and rack maker.",
+      "Riders who want a lean sporty look often pick a small trunk bag or seat pack instead of a full-sized pannier."
+    ],
+    "check": [
+      "Confirm that the rack is compatible with the bag's hook system, including the rail diameter and spacing, before ordering, since a poor match lets the bag rattle or slip.",
+      "Compare the stated capacity in litres with what you actually carry, and consider whether one bag or a pair is needed to keep the load balanced.",
+      "Establish whether the bag is waterproof or only water-resistant, and look at the seams, the closure and the fabric, which determine how well rain is kept out.",
+      "Allow for heel clearance, because a bag that sits too far forward can catch your feet when pedalling, particularly on a bike with a short rear end.",
+      "Consider the weight of the empty bag, the strength of the mounting plastic and metal parts, and how easy the fixings are to adjust with gloves on.",
+      "Look for reflective panels and a secure way to stop the bag bouncing off, and remember that stated rack load limits apply to the whole load, not each bag."
+    ],
+    "care": [
+      "Rinse the bag with fresh water and a soft brush when it is muddy, avoiding harsh detergents that could damage waterproof coatings and welded seams.",
+      "Dry panniers fully, open and out of direct sun, before storing them, because trapped moisture can encourage mildew and unpleasant odours.",
+      "Inspect the hooks, straps and rack fixings occasionally for wear or loosening, and tighten or replace them if the bag starts to shift while riding.",
+      "Pack heavier items low and close to the rack, keep sharp edges away from the lining, and fold roll-top closures neatly so the seal stays effective."
+    ]
+  },
+  "safety-security-carry/phone-mounts": {
+    "type": "phone mount",
+    "typePlural": "phone mounts",
+    "intro": [
+      "A phone mount is a bracket that holds a smartphone on the handlebar or stem so the screen can be glanced at for navigation, ride tracking or e-bike apps.",
+      "Clamp-style mounts wrap around the bar or stem with a screw or lever, while some attach through a stem cap or an extension that places the phone ahead of the bars.",
+      "The phone itself is held by a case with a locking interface, by adjustable spring-loaded arms, or by a clamp that grips the edges of whatever device is fitted.",
+      "Case-based systems twist or click the phone into place and are quick to remove, but they require the compatible case or adapter to stay on the phone.",
+      "Grip-style holders accept many phone sizes with one cradle, which suits shared use, though they can feel bulkier and may cover part of the screen edges.",
+      "Some mounts add a weather cover, a sunshade or a charging pad, but many are simply holders with no electronics."
+    ],
+    "suits": [
+      "Delivery riders and couriers who check an app between stops value a phone mount that keeps the screen visible and the phone secure on rough surfaces.",
+      "Commuters following a map route can check the next turn at a glance instead of stopping to pull a phone out of a pocket.",
+      "Touring and leisure riders use a mount for navigation and ride recording, then take the phone off quickly when they reach a stop.",
+      "E-bike and e-scooter riders who monitor battery, assist level or speed through a companion app may want the phone in view on the bars.",
+      "Those who share a bike with a partner or family may prefer an adjustable grip that fits several phone sizes without swapping cases.",
+      "Riders who only use a phone for occasional navigation, or prefer a separate bike computer, may find a mount unnecessary and be happier with a small dedicated unit."
+    ],
+    "check": [
+      "Make sure the mount fits your handlebar or stem diameter and shape, and that it does not collide with a light, a bell, a display or the brake levers.",
+      "Check that the phone model you own is supported, including its size, camera bump and any thick case, since not every holder suits every device.",
+      "Ask how the phone is released and held, and whether it stays in place over potholes and on corrugated surfaces, where vibration can loosen weak grips.",
+      "Vibration, especially from motorised bikes, may affect some phone camera systems, so ask whether the mount offers vibration damping and read the phone maker's guidance.",
+      "Weigh up weather and sun, such as whether a cover is available, how the screen looks in glare and whether the mount allows the phone to be angled.",
+      "Look up local road rules on phone use while riding, which vary by state, and set up navigation before leaving so the phone does not need handling on the move."
+    ],
+    "care": [
+      "Tighten the clamp and any adapter screws evenly, using the tool the maker specifies, and recheck them after the first few rides as vibration can settle the parts.",
+      "Wipe the interface and the back of the case clean from time to time, because grit trapped between the surfaces can wear them and loosen the hold.",
+      "Do not over-tighten on carbon bars or thin-walled stems, and use any supplied shim or pad so the clamp does not crush or mark the surface.",
+      "Remove the phone when parked, keep rubber parts out of long sun exposure, and replace any holder with worn arms, cracked plastic or a weak lock."
+    ]
+  },
+  "safety-security-carry/racks-baskets": {
+    "type": "rack or basket",
+    "typePlural": "racks and baskets",
+    "intro": [
+      "A rack is a metal frame fixed over the rear or front wheel to carry bags and cargo, while a basket is an open container fixed to the handlebar or a rack.",
+      "Racks are commonly made of aluminium or steel tube, with aluminium being lighter and steel often favoured for its strength and ease of repair.",
+      "Mounting is through eyelets on the frame and fork or through a seat-post or axle-clamp system for bikes that lack the threaded mounts.",
+      "A rear rack usually has a flat platform for a trunk bag or a strapped load, rails that hold panniers, and a mount for a rear light.",
+      "Front racks and handlebar baskets carry load ahead of the rider, which keeps it in sight but affects steering more than weight placed behind.",
+      "Baskets are made from wire, wicker, plastic or fabric, and some detach with a quick-release bracket so they can be carried like a shopping basket."
+    ],
+    "suits": [
+      "Riders who regularly carry shopping, a work bag or a child's gear gain a stable, load-bearing platform from a rack instead of wearing a heavy backpack.",
+      "Commuters who like to throw a bag into something open and ride off tend to prefer a front basket for its easy access.",
+      "Touring and long-distance riders often fit a sturdy rear rack, and sometimes a front one, to take panniers and spread the load evenly across the bike.",
+      "E-bike riders who carry bulky loads often choose a stronger rack designed for the extra weight, within the load limits set for both the rack and the bike.",
+      "Casual riders after a relaxed look and a simple way to carry a picnic, groceries or a jacket often pick a wicker or wire basket.",
+      "Riders whose bikes lack rack mounts, or who use a full-suspension frame or a carbon seat post, may need a specific clamp-on design rather than a standard rack."
+    ],
+    "check": [
+      "Check that your frame and fork have the eyelets the rack needs, and that the rack matches your wheel size, tyre width and disc brake or mudguard setup.",
+      "Read the stated load limit for the rack and, for a handlebar basket, for the bars as well, and compare it with the heaviest load you expect.",
+      "Ask whether the rack suits panniers, a trunk bag or another carrying system, because rail shape and platform size differ between designs.",
+      "Think about the effect on handling, since a loaded front basket changes steering feel and a loaded rear rack can raise the bike's centre of gravity.",
+      "Consider the material and finish, whether it is aluminium, steel or wicker, and how well it resists rust, along with the weight it adds to the bike.",
+      "Look for a rear light mount, a built-in reflector and a way to secure the load, such as elastic cords or a spring clip, for riding at night."
+    ],
+    "care": [
+      "Re-tighten the mounting bolts after the first rides and then periodically, using thread-locking compound if the maker advises, because vibration can loosen a rack over time.",
+      "Wipe the metal clean after wet rides and touch up chips in the paint or powder coat early, so rust does not take hold.",
+      "Keep wicker or fabric baskets dry, brush off dirt with a soft brush and treat wicker with a suitable protective finish if the maker recommends.",
+      "Spread loads evenly, keep within the stated limits and stop using a rack that is cracked, bent or has a failed weld until it is replaced."
+    ]
+  },
+  "safety-security-carry/u-d-locks": {
+    "type": "U-lock",
+    "typePlural": "U-locks",
+    "intro": [
+      "A U-lock, also called a D-lock, is a rigid hardened-steel shackle shaped like the letter U that slots into a crossbar containing the locking mechanism.",
+      "The shackle is a solid bar or a hollow section, and a thicker bar generally takes more effort to cut or break than a thinner one of similar steel.",
+      "Closing the shackle into the crossbar engages a bolt at one or both ends, and a double-locking design holds the bar at both points rather than one.",
+      "The rigid shape leaves a limited internal gap, so the lock is most useful when it fits snugly around the frame and a solid fixed object.",
+      "Sizes range from compact mini models that pass around a frame and a rear wheel to longer shackles that reach a wider rack or a thicker post.",
+      "A rubber or vinyl coating normally covers the shackle and crossbar to protect paintwork, and some models include a bracket so the lock can ride on the frame."
+    ],
+    "suits": [
+      "Riders who lock up in city centres, train stations or campus racks often reach for a U-lock, since a rigid shackle is quick to fit around a frame and a post.",
+      "Daily commuters like how quickly it clicks shut, which keeps short stops efficient, and the whole lock can be carried in a bag or on a frame mount.",
+      "Owners of heavier e-bikes who park outdoors often choose a larger, thicker shackle, accepting extra weight in return for a more robust bar.",
+      "A compact mini model suits someone with a small bike or scooter who locks only the frame to a solid post and wants a light, easy-to-carry lock.",
+      "People who prefer a simple, sturdy lock without moving joints or fabric sleeves tend to like the straightforward design of a solid shackle.",
+      "A U-lock is less suited to riders who regularly lock to wide or irregular objects, since the fixed shape limits how much it can wrap around."
+    ],
+    "check": [
+      "Check the shackle diameter and the type of steel the maker states, remembering that a thicker bar usually means more weight as well as more resistance.",
+      "Measure the inside gap, then test it against your frame, the rear wheel and the posts or racks you use most before settling on a size.",
+      "Learn whether the crossbar locks at one end or both, as a double-locking design holds the shackle in two places and is sometimes preferred for that reason.",
+      "Read any independent security rating as a way to compare models, not as a promise, since a determined thief with the right tools can defeat any lock.",
+      "Consider how the lock will travel, including whether a frame bracket is included and whether it suits your frame tubing and keeps the lock from rattling.",
+      "Find out the number of keys supplied and whether the maker provides replacements, and look for a protected crossbar cover that keeps grit out of the keyhole."
+    ],
+    "care": [
+      "Lubricate the keyway and the crossbar bolt openings with a suitable lock lubricant a couple of times a year, then work the key to spread it.",
+      "Wipe the shackle and coating clean after wet rides, and check the coating for splits that could let water reach the steel and encourage rust.",
+      "Avoid letting the lock fall onto hard ground, since repeated knocks can chip the coating and loosen the mount that holds it to the frame.",
+      "Keep spare keys separate from the bike, and stop using a lock that sticks, binds or has a visibly bent shackle until it has been replaced."
+    ]
+  }
+}

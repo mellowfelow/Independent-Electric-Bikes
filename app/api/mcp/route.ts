@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PRODUCTS, CATEGORIES, SHOP, SITE, CONTACT } from '@/config/site';
+import { productSummary } from '@/lib/productCopy';
 
 export async function OPTIONS() {
   return new NextResponse(null, {
@@ -134,7 +135,7 @@ export async function POST(req: NextRequest) {
       if (args.query) {
         const q = String(args.query).toLowerCase();
         filtered = filtered.filter(
-          (p) => p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q)
+          (p) => p.name.toLowerCase().includes(q) || p.shortDescription.toLowerCase().includes(q)
         );
       }
       if (args.category) {
@@ -192,6 +193,7 @@ export async function POST(req: NextRequest) {
                 text: JSON.stringify(
                   {
                     ...product,
+                    description: productSummary(product),
                     currency: SITE.currency,
                     url: `https://${SITE.domain}/shop/${product.category}/${product.slug}/`,
                   },

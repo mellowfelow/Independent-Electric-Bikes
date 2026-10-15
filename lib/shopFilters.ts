@@ -1,5 +1,5 @@
-import { MASTER_TAXONOMY, type Product } from '@/config/site';
-import { brandNameOf } from '@/lib/catalog';
+import { MASTER_TAXONOMY } from '@/config/taxonomy';
+import type { CardProduct } from '@/lib/cardProduct';
 
 export type SortKey = 'featured' | 'price-asc' | 'price-desc' | 'name' | 'newest';
 
@@ -56,24 +56,24 @@ for (const m of MASTER_TAXONOMY) {
 }
 
 // Some products store a leaf type (e.g. "step-over-commuters") in `subcategory`; normalise to a real subcategory + type.
-function subOf(p: Product): string | undefined {
+function subOf(p: CardProduct): string | undefined {
   if (p.subcategory && subName.has(p.subcategory)) return p.subcategory;
   return leafToSub.get(p.subcategory ?? '') ?? leafToSub.get(p.subSubcategory ?? '');
 }
-function typeOf(p: Product): string | undefined {
+function typeOf(p: CardProduct): string | undefined {
   if (p.subSubcategory && typeName.has(p.subSubcategory)) return p.subSubcategory;
   return p.subcategory && typeName.has(p.subcategory) ? p.subcategory : undefined;
 }
 
 /** Value(s) a product has for a facet. */
-export function facetValue(p: Product, key: FacetKey): string | undefined {
+export function facetValue(p: CardProduct, key: FacetKey): string | undefined {
   switch (key) {
     case 'sub':
       return subOf(p);
     case 'type':
       return typeOf(p);
     case 'brand':
-      return brandNameOf(p);
+      return p.brand;
     case 'motor':
       return p.filters?.motorType;
     case 'sensor':
@@ -96,9 +96,9 @@ export function facetLabel(key: FacetKey, value: string): string {
 }
 
 const NON_VEHICLE = new Set(['batteries-parts-kits', 'safety-security-carry']);
-export const isVehicle = (p: Product) => !NON_VEHICLE.has(p.category);
+export const isVehicle = (p: { category: string }) => !NON_VEHICLE.has(p.category);
 
-function matchesFacets(p: Product, state: FilterState, skip?: FacetKey): boolean {
+function matchesFacets(p: CardProduct, state: FilterState, skip?: FacetKey): boolean {
   for (const f of FACETS) {
     if (f.key === skip) continue;
     const wanted = state.facets[f.key];
@@ -109,15 +109,15 @@ function matchesFacets(p: Product, state: FilterState, skip?: FacetKey): boolean
   return true;
 }
 
-function matchesPrice(p: Product, state: FilterState): boolean {
+function matchesPrice(p: CardProduct, state: FilterState): boolean {
   if (state.minPrice !== undefined && p.price < state.minPrice) return false;
   if (state.maxPrice !== undefined && p.price > state.maxPrice) return false;
   return true;
 }
 
-function matchesQuery(p: Product, q: string): boolean {
+function matchesQuery(p: CardProduct, q: string): boolean {
   if (!q) return true;
-  const hay = `${p.name} ${brandNameOf(p)} ${p.shortDescription ?? ''}`.toLowerCase();
+  const hay = `${p.name} ${p.brand} ${p.shortDescription ?? ''}`.toLowerCase();
   return q
     .toLowerCase()
     .split(/\s+/)
@@ -125,12 +125,12 @@ function matchesQuery(p: Product, q: string): boolean {
     .every((t) => hay.includes(t));
 }
 
-export function applyFilters(scope: Product[], state: FilterState): Product[] {
+export function applyFilters(scope: CardProduct[], state: FilterState): CardProduct[] {
   const list = scope.filter((p) => matchesQuery(p, state.q) && matchesPrice(p, state) && matchesFacets(p, state));
   return sortProducts(list, state.sort);
 }
 
-export function sortProducts(list: Product[], sort: SortKey): Product[] {
+export function sortProducts(list: CardProduct[], sort: SortKey): CardProduct[] {
   const out = [...list];
   switch (sort) {
     case 'price-asc':
@@ -156,7 +156,7 @@ export interface FacetOption {
  * Disjunctive facet counts: each facet is counted against every OTHER active filter, so selecting one brand
  * still shows how many results the other brands would give. Options with zero results stay visible only if selected.
  */
-export function buildFacetOptions(scope: Product[], state: FilterState): Record<FacetKey, FacetOption[]> {
+export function buildFacetOptions(scope: CardProduct[], state: FilterState): Record<FacetKey, FacetOption[]> {
   const out = {} as Record<FacetKey, FacetOption[]>;
   for (const f of FACETS) {
     const counts = new Map<string, number>();
@@ -173,7 +173,7 @@ export function buildFacetOptions(scope: Product[], state: FilterState): Record<
   return out;
 }
 
-export function priceBounds(scope: Product[]): { min: number; max: number } {
+export function priceBounds(scope: CardProduct[]): { min: number; max: number } {
   if (scope.length === 0) return { min: 0, max: 0 };
   let min = Infinity;
   let max = 0;

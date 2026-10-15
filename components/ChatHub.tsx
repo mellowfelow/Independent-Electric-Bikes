@@ -3,7 +3,7 @@
 import { EmailText } from '@/components/EmailText';
 import { useState } from 'react';
 import { MessageSquare, Phone, Mail, X, Send, Bike } from 'lucide-react';
-import { SITE, CONTACT, CHAT } from '@/config/site';
+import { SITE, CONTACT, CHAT } from '@/config/core';
 
 export function ChatHub() {
   const [isOpen, setIsOpen] = useState(false);

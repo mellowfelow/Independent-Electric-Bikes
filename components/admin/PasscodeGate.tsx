@@ -3,7 +3,7 @@
 import { useState, ReactNode, FormEvent, useEffect, useCallback } from 'react';
 import { useAdminPasscode } from './AdminPasscodeContext';
 import { Lock, Bike, ArrowRight, ShieldAlert } from 'lucide-react';
-import { SITE } from '@/config/site';
+import { SITE } from '@/config/core';
 
 export function PasscodeGate({ children }: { children: ReactNode }) {
   const { passcode, setPasscode } = useAdminPasscode();

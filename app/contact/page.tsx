@@ -4,7 +4,7 @@ import { EmailText } from '@/components/EmailText';
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { SITE, CONTACT } from '@/config/site';
+import { SITE, CONTACT } from '@/config/core';
 import { MapPin, Phone, Mail, Clock, Send, ShieldCheck, Bike } from 'lucide-react';
 
 export default function ContactPage() {
