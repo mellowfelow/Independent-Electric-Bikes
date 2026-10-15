@@ -1,0 +1,53 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "INDEPENDENT ELECTRIC BIKES",
+    "url": "https://independentelectricbikes.com.au",
+    "description": "Independent Australian retailer of electric bikes, scooters, skateboards, unicycles, mobility scooters and personal EVs, with parts and accessories. Brunswick, Victoria."
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:independentelectricbikes.com.au:mcp:store",
+      "displayName": "Store MCP server",
+      "type": "application/json",
+      "url": "https://independentelectricbikes.com.au/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "Find an electric bike under $2000 in Australia",
+        "Which e-scooters does Independent Electric Bikes sell?",
+        "Compare commuter e-bike models by motor and range",
+        "Create an order draft for a folding e-bike"
+      ]
+    },
+    {
+      "identifier": "urn:air:independentelectricbikes.com.au:skills:index",
+      "displayName": "Agent skills index",
+      "type": "application/json",
+      "url": "https://independentelectricbikes.com.au/.well-known/agent-skills/index.json",
+      "representativeQueries": [
+        "What can an agent do on this e-bike store?",
+        "How do I search the product catalogue?",
+        "How do I contact the Brunswick showroom?"
+      ]
+    },
+    {
+      "identifier": "urn:air:independentelectricbikes.com.au:api:catalog",
+      "displayName": "API catalog",
+      "type": "application/linkset+json",
+      "url": "https://independentelectricbikes.com.au/.well-known/api-catalog",
+      "representativeQueries": [
+        "List the public endpoints of this store",
+        "Where is the product catalogue API?"
+      ]
+    },
+    {
+      "identifier": "urn:air:independentelectricbikes.com.au:docs:llms",
+      "displayName": "Site overview for language models",
+      "type": "text/plain",
+      "url": "https://independentelectricbikes.com.au/llms.txt",
+      "representativeQueries": [
+        "Summarise what Independent Electric Bikes sells",
+        "What are the minimum order and shipping terms?"
+      ]
+    }
+  ]
+}

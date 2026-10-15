@@ -1,50 +1,47 @@
 {
-  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
-  "name": "INDEPENDENT ELECTRIC BIKES",
-  "url": "https://independentelectricbikes.com.au",
-  "description": "Independent Australian retailer of electric bikes, scooters, skateboards, unicycles, mobility scooters and personal EVs, with parts and accessories. Brunswick, Victoria.",
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
   "skills": [
     {
       "name": "search-products",
-      "type": "commerce",
+      "type": "skill-md",
       "description": "Search e-bikes, scooters, skateboards, unicycles, mobility scooters, parts and accessories by keyword, category, or price",
-      "url": "https://independentelectricbikes.com.au/api/mcp/",
-      "sha256": "87ece9551ab7af5ba8e45bbb1d4f1b2fb3d705b2a7cab837723105dff74daaf1"
+      "url": "/.well-known/agent-skills/search-products/SKILL.md",
+      "digest": "sha256:9966ca497b10cdc7cfe88f88fef8ed9ce8b6e536d74e54f55e0cd41ff09ce076"
     },
     {
       "name": "browse-catalog",
-      "type": "navigation",
+      "type": "skill-md",
       "description": "Browse the full catalog by category",
-      "url": "https://independentelectricbikes.com.au/shop/",
-      "sha256": "3e10e90bf722769306e6b8fcd37d9d0beae228dd1b39fd0859abb3884779b71f"
+      "url": "/.well-known/agent-skills/browse-catalog/SKILL.md",
+      "digest": "sha256:d1b929a6f9e5e10d366a829d4d53753a94c69a23e2c238bf07079beefed47c3f"
     },
     {
       "name": "compare-ebikes",
-      "type": "utility",
+      "type": "skill-md",
       "description": "Compare motor, battery, range and weight across e-bike models with manufacturer-verified specifications",
-      "url": "https://independentelectricbikes.com.au/compare/",
-      "sha256": "9a833ff924fc7cd158d36768288418a797d81e194d379f611a7cfed858791c20"
+      "url": "/.well-known/agent-skills/compare-ebikes/SKILL.md",
+      "digest": "sha256:fafd77eef907edee0a10e7aad159791cdc2171b6bfc23364daee85082cb3466f"
     },
     {
       "name": "order-draft",
-      "type": "commerce",
+      "type": "skill-md",
       "description": "Create a prefilled order draft for human customer completion via Email or WhatsApp",
-      "url": "https://independentelectricbikes.com.au/api/mcp/",
-      "sha256": "9828fa8a94c6fd1dc58f69575aa771742b3c7c6dd8f85ba751113a75b90992fd"
+      "url": "/.well-known/agent-skills/order-draft/SKILL.md",
+      "digest": "sha256:d989b3f25585f3e0b519b5ca52dca48696b5c63b00493ff56675c42375c8d169"
     },
     {
       "name": "ebike-guides",
-      "type": "content",
+      "type": "skill-md",
       "description": "Read Australian buying guides and rules for e-bikes, scooters, skateboards, unicycles, mobility scooters, kids EVs, quads and electric water sports",
-      "url": "https://independentelectricbikes.com.au/blog/",
-      "sha256": "4be8f3209afb3beb06c60a600b76deb62935e9e9f1fb438f46a081c08c97e41e"
+      "url": "/.well-known/agent-skills/ebike-guides/SKILL.md",
+      "digest": "sha256:b0a6f9a29d1d515cd4c372b639f896fa656412835f216c5340069f2332432f4e"
     },
     {
       "name": "contact-support",
-      "type": "support",
+      "type": "skill-md",
       "description": "Contact Brunswick showroom sales and warranty support team",
-      "url": "https://independentelectricbikes.com.au/contact/",
-      "sha256": "36d7400bed6a160c56dbb2f256eb7696e0b9fd9fa76ab11cf23f4610f1980a24"
+      "url": "/.well-known/agent-skills/contact-support/SKILL.md",
+      "digest": "sha256:1348f6c9e177a18690bdcbba5c17fc5ab2e930ce67bc042d6b383d6022d65ed3"
     }
   ]
 }

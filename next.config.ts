@@ -24,6 +24,21 @@ const nextConfig: NextConfig = {
   async redirects() {
     return ACCESSORY_REDIRECTS.map((r) => ({ ...r, permanent: true }));
   },
+  // Markdown for Agents: pages requested with "Accept: text/markdown" are served as markdown by app/api/markdown/route.ts.
+  async rewrites() {
+    return {
+      beforeFiles: [
+        { source: '/', has: [{ type: 'header', key: 'accept', value: '(.*)text/markdown(.*)' }], destination: '/api/markdown/' },
+        {
+          source: '/:path((?!api/|_next/|\\.well-known/|images/|js/)[^.]*)',
+          has: [{ type: 'header', key: 'accept', value: '(.*)text/markdown(.*)' }],
+          destination: '/api/markdown/:path',
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
+  },
   async headers() {
     // Next injects small inline bootstrap scripts, so script-src needs 'unsafe-inline' (no nonce pipeline on static pages).
     const csp = [

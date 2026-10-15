@@ -1,7 +1,9 @@
 {
   "resource": "https://independentelectricbikes.com.au",
   "resource_name": "INDEPENDENT ELECTRIC BIKES Public Catalog",
-  "authorization_servers": [],
+  "authorization_servers": [
+    "https://independentelectricbikes.com.au"
+  ],
   "scopes_supported": [],
   "bearer_methods_supported": [],
   "resource_documentation": "https://independentelectricbikes.com.au/auth.md",

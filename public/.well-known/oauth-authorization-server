@@ -18,9 +18,15 @@
     "https://independentelectricbikes.com.au/.well-known/mcp/server-card.json"
   ],
   "agent_auth": {
-    "register_uri": null,
-    "identity_types_supported": ["none"],
-    "credential_types_supported": ["none"],
-    "notes": "No registration required. All content is publicly accessible to autonomous agents."
+    "register_uri": "https://independentelectricbikes.com.au/auth.md",
+    "identity_types_supported": [
+      "none"
+    ],
+    "credential_types_supported": [
+      "none"
+    ],
+    "notes": "No registration required. All content is publicly accessible to autonomous agents.",
+    "claim_uri": "https://independentelectricbikes.com.au/contact/",
+    "revocation_uri": "https://independentelectricbikes.com.au/contact/"
   }
 }

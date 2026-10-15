@@ -1,11 +1,64 @@
 {
-  "ucp": "1.0",
+  "ucp": {
+    "version": "1.0",
+    "spec": "https://ucp.dev/specification/overview/",
+    "schema": "https://ucp.dev/schema/v1.json",
+    "services": {
+      "product-catalog": {
+        "type": "catalog",
+        "url": "https://independentelectricbikes.com.au/shop/",
+        "description": "Full product catalog"
+      },
+      "mcp-server": {
+        "type": "mcp",
+        "url": "https://independentelectricbikes.com.au/api/mcp/",
+        "description": "Streamable HTTP MCP Server"
+      },
+      "order": {
+        "type": "commerce",
+        "url": "https://wa.me/61480811308?text=Hi%20INDEPENDENT%20ELECTRIC%20BIKES%2C%20",
+        "description": "Place orders via WhatsApp or Email"
+      },
+      "compare": {
+        "type": "utility",
+        "url": "https://independentelectricbikes.com.au/compare/",
+        "description": "E-bike motor, battery, and range comparison tool"
+      }
+    },
+    "capabilities": [
+      "browse",
+      "search",
+      "inquiry",
+      "compare",
+      "mcp"
+    ]
+  },
   "protocol_version": "1.0",
-  "spec": "https://ucp.dev/specification/overview/",
-  "schema": "https://ucp.dev/schema/v1.json",
   "site": "https://independentelectricbikes.com.au",
   "name": "INDEPENDENT ELECTRIC BIKES",
   "description": "Independent Australian retailer of electric bikes, scooters, skateboards, unicycles, mobility scooters and personal EVs, with parts and accessories. Brunswick, Victoria.",
+  "endpoints": {
+    "mcp": "https://independentelectricbikes.com.au/api/mcp/",
+    "catalog": "https://independentelectricbikes.com.au/shop/",
+    "contact": "https://independentelectricbikes.com.au/contact/",
+    "agent_skills": "https://independentelectricbikes.com.au/.well-known/agent-skills/index.json",
+    "mcp_server_card": "https://independentelectricbikes.com.au/.well-known/mcp/server-card.json",
+    "api_catalog": "https://independentelectricbikes.com.au/.well-known/api-catalog",
+    "llms_txt": "https://independentelectricbikes.com.au/llms.txt"
+  },
+  "currency": "AUD",
+  "minimum_order_aud": "350",
+  "payment_methods": [
+    "bank-transfer",
+    "payid",
+    "crypto-BTC",
+    "crypto-USDT"
+  ],
+  "legal": {
+    "age_restriction": "none",
+    "product_type": "Electric Bikes, Scooters, Skateboards, Personal EVs, Parts & Accessories",
+    "compliance": "Compliance and road rules vary by vehicle type and Australian state. See each product page and the FAQ."
+  },
   "services": [
     {
       "id": "product-catalog",
@@ -32,22 +85,11 @@
       "description": "E-bike motor, battery, and range comparison tool"
     }
   ],
-  "capabilities": ["browse", "search", "inquiry", "compare", "mcp"],
-  "endpoints": {
-    "mcp": "https://independentelectricbikes.com.au/api/mcp/",
-    "catalog": "https://independentelectricbikes.com.au/shop/",
-    "contact": "https://independentelectricbikes.com.au/contact/",
-    "agent_skills": "https://independentelectricbikes.com.au/.well-known/agent-skills/index.json",
-    "mcp_server_card": "https://independentelectricbikes.com.au/.well-known/mcp/server-card.json",
-    "api_catalog": "https://independentelectricbikes.com.au/.well-known/api-catalog",
-    "llms_txt": "https://independentelectricbikes.com.au/llms.txt"
-  },
-  "currency": "AUD",
-  "minimum_order_aud": "350",
-  "payment_methods": ["bank-transfer", "payid", "crypto-BTC", "crypto-USDT"],
-  "legal": {
-    "age_restriction": "none",
-    "product_type": "Electric Bikes, Scooters, Skateboards, Personal EVs, Parts & Accessories",
-    "compliance": "Compliance and road rules vary by vehicle type and Australian state. See each product page and the FAQ."
-  }
+  "capabilities": [
+    "browse",
+    "search",
+    "inquiry",
+    "compare",
+    "mcp"
+  ]
 }
