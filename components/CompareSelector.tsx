@@ -6,6 +6,24 @@ import { ArrowRight, Plus, X } from 'lucide-react';
 import { COMPARE_ROWS, type ComparableProduct } from '@/lib/compare';
 import { SHOP } from '@/config/site';
 import { money } from '@/lib/order';
+import { productSrcSet, thumbSrc } from '@/lib/productImage';
+
+const PLACEHOLDER = '/images/product-placeholder.svg';
+
+function CompareImage({ p }: { p: ComparableProduct }) {
+  const src = p.image || PLACEHOLDER;
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={thumbSrc(src)}
+      srcSet={productSrcSet(src)}
+      sizes="(min-width: 768px) 260px, 50vw"
+      alt={p.name}
+      loading="lazy"
+      className="h-full w-full object-contain"
+    />
+  );
+}
 
 const MAX_COLUMNS = 3;
 
@@ -73,6 +91,9 @@ export function CompareSelector({ products }: { products: ComparableProduct[] })
               </th>
               {chosen.map((p) => (
                 <th key={p.slug} scope="col" className="min-w-[200px] p-4 align-top">
+                  <Link href={`/shop/${p.category}/${p.slug}/`} tabIndex={-1} aria-hidden="true" className="mb-3 block aspect-[4/3] overflow-hidden rounded-xl bg-white">
+                    <CompareImage p={p} />
+                  </Link>
                   <Link href={`/shop/${p.category}/${p.slug}/`} className="font-extrabold text-white hover:text-emerald-400">
                     {p.name}
                   </Link>
