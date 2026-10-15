@@ -89,4 +89,85 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Contact us', href: '/contact/' },
     ],
   },
+  'folding-ebikes-commuter-guide-train-apartment': {
+    body: true,
+    shop: [
+      { label: 'Folding e-bikes', href: '/shop/electric-bikes/foldable-electric-bikes/' },
+      { label: 'Compact folders', href: '/shop/electric-bikes/compact-folding-bikes/' },
+      { label: 'Fat tyre folders', href: '/shop/electric-bikes/fat-tyre-folding-bikes/' },
+    ],
+  },
+  'fat-tyre-ebikes-beach-sand-trail-riding-australia': {
+    body: true,
+    shop: [
+      { label: 'Fat tyre e-bikes', href: '/shop/electric-bikes/fat-tyre-lifestyle-ebikes/' },
+      { label: 'All-terrain fat tyre', href: '/shop/electric-bikes/fat-tyre-all-terrain-ebikes/' },
+      { label: 'Classic cruisers', href: '/shop/electric-bikes/classic-cruiser-ebikes/' },
+    ],
+  },
+  'electric-mountain-bikes-full-suspension-vs-hardtail': {
+    body: true,
+    shop: [
+      { label: 'Electric mountain bikes', href: '/shop/electric-bikes/electric-mountain-bikes/' },
+      { label: 'Full-suspension eMTB', href: '/shop/electric-bikes/full-suspension-emtb/' },
+      { label: 'Hardtail eMTB', href: '/shop/electric-bikes/hardtail-emtb/' },
+    ],
+  },
+  'ebike-conversion-kits-diy-guide-australia': {
+    body: true,
+    shop: [
+      { label: 'Mid-drive conversion kits', href: '/shop/batteries-parts-kits/mid-drive-conversion-kits/' },
+      { label: 'Hub motor kits', href: '/shop/batteries-parts-kits/hub-motor-kits/' },
+      { label: 'E-bike batteries', href: '/shop/batteries-parts-kits/ebike-batteries/' },
+    ],
+  },
+  'electric-skateboard-laws-safety-gear-australia': {
+    body: true,
+    shop: [
+      { label: 'Electric skateboards', href: '/shop/electric-skateboards/' },
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+      { label: 'Safety gear', href: '/shop/safety-security-carry/' },
+    ],
+  },
+  'best-ebike-accessories-lights-helmets-locks': {
+    body: true,
+    shop: [
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+      { label: 'Locks', href: '/shop/safety-security-carry/u-d-locks/' },
+      { label: 'Lights & visibility', href: '/shop/safety-security-carry/lights-visibility/' },
+      { label: 'Racks & baskets', href: '/shop/safety-security-carry/racks-baskets/' },
+    ],
+  },
+  'electric-scooter-vs-ebike-commuting-comparison': {
+    body: true,
+    shop: [
+      { label: 'Electric scooters', href: '/shop/electric-scooters/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'Compare', href: '/compare/' },
+    ],
+  },
+  'ebike-for-seniors-mobility-step-through-guide': {
+    body: true,
+    shop: [
+      { label: 'Step-through commuters', href: '/shop/electric-bikes/step-through-commuters/' },
+      { label: 'Urban & commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'Mobility scooters', href: '/shop/mobility-scooters/' },
+    ],
+  },
+  'rainy-weather-ebike-riding-tips-melbourne': {
+    body: true,
+    shop: [
+      { label: 'Mudguards & fenders', href: '/shop/safety-security-carry/' },
+      { label: 'Lights & visibility', href: '/shop/safety-security-carry/lights-visibility/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+    ],
+  },
+  'electric-bike-financing-payment-plans-australia': {
+    body: true,
+    shop: [
+      { label: 'Shop all e-bikes', href: '/shop/electric-bikes/' },
+      { label: 'Shop all products', href: '/shop/' },
+      { label: 'Contact us', href: '/contact/' },
+    ],
+  },
 };
