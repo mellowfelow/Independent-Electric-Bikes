@@ -572,4 +572,84 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
     ],
   },
+  'ebike-troubleshooting-common-problems-fixes': {
+    body: true,
+    shop: [
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'Chargers', href: '/shop/batteries-parts-kits/chargers/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'gravel-ebikes-australia-adventure-touring': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Mountain e-bikes', href: '/shop/electric-bikes/electric-mountain-bikes/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
+  'carrying-kids-ebike-child-seats-trailers': {
+    body: true,
+    shop: [
+      { label: 'Cargo e-bikes', href: '/shop/electric-bikes/cargo-electric-bikes/' },
+      { label: 'Step-through e-bikes', href: '/shop/electric-bikes/step-through-electric-bikes/' },
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+    ],
+  },
+  'ebike-maintenance-schedule-checklist': {
+    body: true,
+    shop: [
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'Tyres & tubes', href: '/shop/batteries-parts-kits/tyres-tubes/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'best-ebikes-for-women-comfort-fit-guide': {
+    body: true,
+    shop: [
+      { label: 'Step-through e-bikes', href: '/shop/electric-bikes/step-through-electric-bikes/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/commuter-electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-conversion-kit-diy-guide-australia': {
+    body: true,
+    shop: [
+      { label: 'Conversion kits', href: '/shop/batteries-parts-kits/mid-drive-conversion-kits/' },
+      { label: 'Batteries', href: '/shop/batteries-parts-kits/ebike-batteries/' },
+      { label: 'Parts & kits', href: '/shop/batteries-parts-kits/' },
+    ],
+  },
+  'ebike-winter-cold-weather-riding-tips': {
+    body: true,
+    shop: [
+      { label: 'Lights & reflectors', href: '/shop/accessories/lights-reflectors/' },
+      { label: 'Safety gear', href: '/shop/safety-security-carry/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
+  'ebike-touring-long-distance-planning-guide': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+    ],
+  },
+  'ebike-weight-how-heavy-is-too-heavy': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Folding e-bikes', href: '/shop/electric-bikes/folding-electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-throttle-vs-pedal-assist-differences': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Conversion kits', href: '/shop/batteries-parts-kits/mid-drive-conversion-kits/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
 };
