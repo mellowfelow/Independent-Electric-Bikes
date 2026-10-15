@@ -5,7 +5,9 @@
   "jwks_uri": null,
   "grant_types_supported": [],
   "response_types_supported": [],
-  "scopes_supported": [],
+  "scopes_supported": [
+    "catalog:read"
+  ],
   "note": "INDEPENDENT ELECTRIC BIKES has no protected private APIs. All e-commerce content is publicly accessible.",
   "public_resources": [
     "https://independentelectricbikes.com.au/shop/",

@@ -4,8 +4,12 @@
   "authorization_servers": [
     "https://independentelectricbikes.com.au"
   ],
-  "scopes_supported": [],
-  "bearer_methods_supported": [],
+  "scopes_supported": [
+    "catalog:read"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ],
   "resource_documentation": "https://independentelectricbikes.com.au/auth.md",
   "resource_policy_uri": "https://independentelectricbikes.com.au/terms/",
   "tls_client_certificate_bound_access_tokens": false,
