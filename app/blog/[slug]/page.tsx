@@ -9,6 +9,21 @@ import { GUIDE_LINKS } from '@/config/blogLinks';
 import { getBlogContent } from '@/lib/blog';
 import { BLOG_IMAGES } from '@/config/data/blogImages';
 
+const topicOf = (slug: string) => GUIDE_LINKS[slug]?.shop.map((l) => l.href.match(/^\/shop\/([a-z-]+)\//)?.[1]).find(Boolean) ?? (slug.includes('ebike') ? 'electric-bikes' : undefined);
+
+const CTAS: Record<string, { title: string; text: string; label: string }> = {
+  'electric-bikes': { title: 'Ready to Find Your E-Bike?', text: 'Browse commuter, cargo, folding and mountain e-bikes from Brunswick, Victoria, with express freight across Australia.', label: 'Shop E-Bikes' },
+  'electric-scooters': { title: 'Ready to Pick Your E-Scooter?', text: 'Compare commuter and long-range electric scooters, with accessories and spares, dispatched from Brunswick, Victoria.', label: 'Shop E-Scooters' },
+  'electric-skateboards': { title: 'Ready to Roll?', text: 'Explore street and all-terrain electric skateboards and longboards, plus spare belts, wheels and chargers.', label: 'Shop Electric Skateboards' },
+  'self-balancing-ev': { title: 'Ready to Balance?', text: 'See electric unicycles and hoverboards for beginners and experienced riders.', label: 'Shop Self-Balancing EVs' },
+  'kids-off-road-ev': { title: 'Ready for the Kids?', text: 'Browse electric balance bikes, dirt bikes, go-karts and trikes for young riders.', label: 'Shop Kids & Off-Road EVs' },
+  'mobility-scooters': { title: 'Need Help Choosing a Mobility Scooter?', text: 'Browse travel, folding and all-terrain mobility scooters, or contact us and we will help you find the right fit.', label: 'Shop Mobility Scooters' },
+  'batteries-parts-kits': { title: 'Need Parts or Upgrades?', text: 'Find batteries, chargers, conversion kits, tyres and brakes for e-bikes, scooters and more.', label: 'Shop Batteries, Parts & Kits' },
+  'safety-security-carry': { title: 'Ride Safer, Carry More', text: 'Helmets, lights, locks, racks and bags for e-bike and scooter riders.', label: 'Shop Safety, Locks & Carry' },
+  'electric-quad-bikes': { title: 'Ready for the Property?', text: 'Browse kids and adult electric quad bikes and ATVs for recreation and farm work.', label: 'Shop Electric Quads' },
+  'electric-water-sports': { title: 'Ready for the Water?', text: 'Explore electric jet skis, eFoils and electric surfboards, or contact us for availability and delivery.', label: 'Shop Electric Water Sports' },
+};
+
 export async function generateStaticParams() {
   return POSTS.map((post) => ({ slug: post.slug }));
 }
@@ -55,7 +70,12 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
     { name: 'Blog', href: '/blog/' },
     { name: post.title, href: `/blog/${post.slug}/` },
   ];
-  const moreGuides = POSTS.filter((x) => x.slug !== post.slug).slice(0, 3);
+  const topic = topicOf(post.slug);
+  const others = POSTS.filter((x) => x.slug !== post.slug);
+  const sameTopic = others.filter((x) => topic && topicOf(x.slug) === topic);
+  const moreGuides = [...sameTopic, ...others.filter((x) => !sameTopic.includes(x))].slice(0, 3);
+  const cta = (topic && CTAS[topic]) || { title: 'Looking for Something Specific?', text: 'Browse the full range of electric bikes, scooters, skateboards and more, dispatched from Brunswick, Victoria.', label: 'Shop the Full Range' };
+  const ctaHref = topic && CTAS[topic] ? `/shop/${topic}/` : '/shop/';
   const html = getBlogContent(post.slug);
 
   return (
@@ -107,12 +127,12 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
             )}
 
             <div className="bg-emerald-950/40 border border-emerald-500/30 p-6 rounded-2xl mt-8">
-              <h3 className="text-lg font-bold text-white mb-2">Ready to Upgrade Your Daily Commute?</h3>
+              <h3 className="text-lg font-bold text-white mb-2">{cta.title}</h3>
               <p className="text-xs sm:text-sm text-slate-300 mb-4">
-                Explore our full electric commuter and cargo bike range, dispatched from Brunswick, Victoria with express freight across Australia.
+                {cta.text}
               </p>
-              <Link href="/shop/" className="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl inline-block">
-                View E-Bike Catalog &rarr;
+              <Link href={ctaHref} className="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl inline-block">
+                {cta.label} &rarr;
               </Link>
             </div>
           </article>
