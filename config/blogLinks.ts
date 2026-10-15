@@ -250,4 +250,85 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Compare e-bikes', href: '/compare/' },
     ],
   },
+  'plan-your-first-ebike-commute-route-checklist': {
+    body: true,
+    shop: [
+      { label: 'Urban & commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'E-bike accessories', href: '/shop/safety-security-carry/' },
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+    ],
+  },
+  'moped-style-ebikes-retro-super73-cafe-racer': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Fat tyre e-bikes', href: '/shop/electric-bikes/fat-tyre-ebikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-display-apps-connectivity-features-guide': {
+    body: true,
+    shop: [
+      { label: 'E-bike accessories', href: '/shop/safety-security-carry/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-suspension-setup-front-fork-seatpost': {
+    body: true,
+    shop: [
+      { label: 'Mountain e-bikes', href: '/shop/electric-bikes/electric-mountain-bikes/' },
+      { label: 'Full suspension e-bikes', href: '/shop/electric-bikes/full-suspension-ebikes/' },
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+    ],
+  },
+  'panniers-vs-backpack-ebike-commuter-carrying': {
+    body: true,
+    shop: [
+      { label: 'Safety, security & carry', href: '/shop/safety-security-carry/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'Cargo e-bikes', href: '/shop/electric-bikes/cargo-family-ebikes/' },
+    ],
+  },
+  'night-riding-ebike-lights-reflectors-safety': {
+    body: true,
+    shop: [
+      { label: 'Lights & reflectors', href: '/shop/safety-security-carry/' },
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+    ],
+  },
+  'ebike-for-food-delivery-riders-uber-doordash': {
+    body: true,
+    shop: [
+      { label: 'Urban & commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'Step-through e-bikes', href: '/shop/electric-bikes/step-through-commuters/' },
+      { label: 'E-bike accessories', href: '/shop/safety-security-carry/' },
+      { label: 'Batteries & chargers', href: '/shop/batteries-parts-kits/' },
+    ],
+  },
+  'electric-quad-bikes-atv-farm-recreation-guide': {
+    body: true,
+    shop: [
+      { label: 'Electric quad bikes', href: '/shop/electric-quad-bikes/' },
+      { label: 'Kids & off-road EVs', href: '/shop/kids-off-road-ev/' },
+      { label: 'Safety gear', href: '/shop/safety-security-carry/helmets/' },
+    ],
+  },
+  'step-through-vs-step-over-frame-guide': {
+    body: true,
+    shop: [
+      { label: 'Step-through e-bikes', href: '/shop/electric-bikes/step-through-commuters/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-warranty-consumer-rights-australia': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'FAQ', href: '/faq/' },
+    ],
+  },
 };
