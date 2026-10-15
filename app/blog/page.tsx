@@ -1,14 +1,14 @@
 import { fitTitle, fitDesc } from '@/lib/catalog';
+import { withSocial } from '@/lib/seo';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { POSTS, SITE } from '@/config/site';
 import { JsonLd } from '@/components/JsonLd';
 
-export const metadata: Metadata = {
-  title: fitTitle('Australian E-Bike Guides & Commuter Advice'),
-  description: fitDesc('Expert articles on choosing the best electric commuter bike in Australia, Victorian e-bike laws, and dual-battery cargo bike advice.'),
-  alternates: { canonical: `https://${SITE.domain}/blog/` },
-};
+export const metadata: Metadata = withSocial({
+  title: fitTitle('Electric Bike, Scooter & EV Buying Guides'),
+  description: fitDesc('Buying guides and Australian rules for e-bikes, e-scooters, electric skateboards, EUCs, mobility scooters, kids EVs, quads and electric watercraft.'),
+}, '/blog/');
 
 export default function BlogIndexPage() {
   const breadcrumbSchema = {

@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     canonical: `https://${SITE.domain}/`,
   },
   other: {
-    'og:updated_time': new Date().toISOString(),
     ...(SITE.gscVerification ? { 'google-site-verification': SITE.gscVerification } : {}),
+    ...(SITE.bingVerification ? { 'msvalidate.01': SITE.bingVerification } : {}),
   },
 };
 

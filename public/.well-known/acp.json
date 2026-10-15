@@ -1,7 +1,7 @@
 {
   "protocol": { "name": "acp", "version": "0.1.0" },
   "name": "INDEPENDENT ELECTRIC BIKES",
-  "description": "Australia's Premier Independent Electric Commuter & Cargo Bike Specialist",
+  "description": "Independent Australian retailer of electric bikes, scooters, skateboards, unicycles, mobility scooters and personal EVs, with parts and accessories. Brunswick, Victoria.",
   "api_base_url": "https://independentelectricbikes.com.au",
   "homepage": "https://independentelectricbikes.com.au",
   "transports": ["https"],
@@ -21,7 +21,7 @@
     "age_restriction": "none",
     "region": "Australia",
     "ships_to": "Australia-wide (Victoria metro & regional express freight)",
-    "productType": "Electric Bikes & Commuter Mobility",
-    "compliance": "EN15194 250W-500W 25km/h Pedal-Assist Compliant"
+    "productType": "Electric Bikes, Scooters, Skateboards, Personal EVs, Parts & Accessories",
+    "compliance": "Compliance and road rules vary by vehicle type and Australian state. See each product page and the FAQ."
   }
 }

@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
+import { withSocial } from '@/lib/seo';
 import { SITE } from '@/config/site';
 import { SITE_SHORT } from '@/lib/catalog';
 import { ShopClientView } from '@/components/ShopClientView';
 import { JsonLd } from '@/components/JsonLd';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: `Electric Bikes for Sale Australia | ${SITE_SHORT}`,
   description: `Electric bikes for sale — shop e-bikes, e-scooters, skateboards and personal EVs at direct prices. Express Australian freight from Brunswick, VIC.`,
-  alternates: { canonical: `https://${SITE.domain}/shop/` },
-};
+}, '/shop/');
 
 export default function ShopIndexPage() {
   const breadcrumbSchema = {

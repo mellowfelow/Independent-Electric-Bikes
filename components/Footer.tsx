@@ -95,9 +95,9 @@ export function Footer() {
 
         {/* E-Bike Categories */}
         <div>
-          <h3 className="font-bold text-white text-xs uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
+          <h2 className="font-bold text-white text-xs uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
             E-Bike Range
-          </h3>
+          </h2>
           <ul className="space-y-2.5">
             {CATEGORIES.map((c) => (
               <li key={c.slug}>
@@ -116,9 +116,9 @@ export function Footer() {
 
         {/* Company & Info */}
         <div>
-          <h3 className="font-bold text-white text-xs uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
+          <h2 className="font-bold text-white text-xs uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
             Company & Support
-          </h3>
+          </h2>
           <ul className="space-y-2.5">
             <li>
               <Link href="/about/" className="hover:text-emerald-400 transition-colors">

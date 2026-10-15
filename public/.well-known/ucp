@@ -5,13 +5,13 @@
   "schema": "https://ucp.dev/schema/v1.json",
   "site": "https://independentelectricbikes.com.au",
   "name": "INDEPENDENT ELECTRIC BIKES",
-  "description": "Australia's Premier Independent Electric Commuter & Cargo Bike Specialist",
+  "description": "Independent Australian retailer of electric bikes, scooters, skateboards, unicycles, mobility scooters and personal EVs, with parts and accessories. Brunswick, Victoria.",
   "services": [
     {
       "id": "product-catalog",
       "type": "catalog",
       "url": "https://independentelectricbikes.com.au/shop/",
-      "description": "Full electric bike product catalog"
+      "description": "Full product catalog"
     },
     {
       "id": "mcp-server",
@@ -23,13 +23,13 @@
       "id": "order",
       "type": "commerce",
       "url": "https://wa.me/61480811308?text=Hi%20INDEPENDENT%20ELECTRIC%20BIKES%2C%20",
-      "description": "Place electric bike orders via WhatsApp or Email"
+      "description": "Place orders via WhatsApp or Email"
     },
     {
       "id": "compare",
       "type": "utility",
       "url": "https://independentelectricbikes.com.au/compare/",
-      "description": "Electric bike motor, battery, and range comparison tool"
+      "description": "E-bike motor, battery, and range comparison tool"
     }
   ],
   "capabilities": ["browse", "search", "inquiry", "compare", "mcp"],
@@ -47,7 +47,7 @@
   "payment_methods": ["bank-transfer", "payid", "crypto-BTC", "crypto-USDT"],
   "legal": {
     "age_restriction": "none",
-    "product_type": "Electric Bikes & Commuter Mobility",
-    "compliance": "EN15194 250W-500W 25km/h Pedal-Assist Compliant"
+    "product_type": "Electric Bikes, Scooters, Skateboards, Personal EVs, Parts & Accessories",
+    "compliance": "Compliance and road rules vary by vehicle type and Australian state. See each product page and the FAQ."
   }
 }

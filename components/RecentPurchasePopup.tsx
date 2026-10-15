@@ -218,15 +218,15 @@ export function RecentPurchasePopup() {
               <span className="truncate">{current.customerName} in {current.location}</span>
             </div>
 
-            <h4 className="text-xs font-bold text-white truncate group-hover:text-emerald-300 transition-colors">
+            <p className="text-xs font-bold text-white truncate group-hover:text-emerald-300 transition-colors">
               {current.productName}
-            </h4>
+            </p>
 
             <div className="flex items-center gap-2 mt-1 text-[10px] text-slate-300">
               <span className="font-extrabold text-emerald-400">
                 ${current.price.toLocaleString('en-AU')} AUD
               </span>
-              <span className="text-slate-500">•</span>
+              <span className="text-slate-400">•</span>
               <span className="text-slate-400">{current.timeAgo}</span>
             </div>
 

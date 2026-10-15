@@ -39,7 +39,7 @@
       },
       {
         name: "order_via_whatsapp",
-        description: "Initiate an e-bike order on WhatsApp. Minimum order $350 AUD. Human customer completes.",
+        description: "Initiate an order on WhatsApp. Minimum order $350 AUD. Human customer completes.",
         inputSchema: {
           type: "object",
           properties: {

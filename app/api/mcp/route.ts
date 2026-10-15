@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
           tools: [
             {
               name: 'search_products',
-              description: 'Search electric bikes by keyword query, category slug, or max_price in AUD',
+              description: 'Search products (e-bikes, scooters, skateboards, unicycles, mobility scooters, parts and accessories) by keyword query, category slug, or max_price in AUD',
               inputSchema: {
                 type: 'object',
                 properties: {
@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
             },
             {
               name: 'get_product',
-              description: 'Get full technical specifications, motor/battery details, and pricing for a single electric bike by slug',
+              description: 'Get details and pricing for a single product by slug. Specifications are included only where verified against the manufacturer',
               inputSchema: {
                 type: 'object',
                 required: ['slug'],
@@ -91,7 +91,7 @@ export async function POST(req: NextRequest) {
             },
             {
               name: 'list_categories',
-              description: 'List all electric bike categories (Commuter, Cargo, Folding, Fat Tire Cruisers) with product counts',
+              description: 'List all shop categories (e-bikes, scooters, skateboards, self-balancing EVs, kids and off-road EVs, mobility scooters, batteries and parts, safety and carry, quads, water sports) with product counts',
               inputSchema: {
                 type: 'object',
                 properties: {},
@@ -107,7 +107,7 @@ export async function POST(req: NextRequest) {
             },
             {
               name: 'create_order_draft',
-              description: 'Create a prefilled e-bike order draft with WhatsApp and Checkout URL. Human customer completes the transaction.',
+              description: 'Create a prefilled order draft with WhatsApp and Checkout URL. Human customer completes the transaction.',
               inputSchema: {
                 type: 'object',
                 properties: {

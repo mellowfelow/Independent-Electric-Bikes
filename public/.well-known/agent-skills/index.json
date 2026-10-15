@@ -2,42 +2,42 @@
   "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
   "name": "INDEPENDENT ELECTRIC BIKES",
   "url": "https://independentelectricbikes.com.au",
-  "description": "Australia's Premier Independent Electric Commuter & Cargo Bike Specialist",
+  "description": "Independent Australian retailer of electric bikes, scooters, skateboards, unicycles, mobility scooters and personal EVs, with parts and accessories. Brunswick, Victoria.",
   "skills": [
     {
       "name": "search-products",
       "type": "commerce",
-      "description": "Search electric commuter, cargo, folding, and fat tire e-bikes by keyword, category, or price",
+      "description": "Search e-bikes, scooters, skateboards, unicycles, mobility scooters, parts and accessories by keyword, category, or price",
       "url": "https://independentelectricbikes.com.au/api/mcp/",
-      "sha256": "20d173e341c3b6d698860cf1229f58b45e3313f69404cfe750931245162ebdc4"
+      "sha256": "87ece9551ab7af5ba8e45bbb1d4f1b2fb3d705b2a7cab837723105dff74daaf1"
     },
     {
       "name": "browse-catalog",
       "type": "navigation",
-      "description": "Browse full electric bike catalog by category",
+      "description": "Browse the full catalog by category",
       "url": "https://independentelectricbikes.com.au/shop/",
-      "sha256": "1899be2cb7ded6130e9c29a34b0d234ee9d2549ba9e2f4afbeb44010b1b28f0f"
+      "sha256": "3e10e90bf722769306e6b8fcd37d9d0beae228dd1b39fd0859abb3884779b71f"
     },
     {
       "name": "compare-ebikes",
       "type": "utility",
-      "description": "Compare motor wattage, battery capacity, range, and weights across e-bike models",
+      "description": "Compare motor, battery, range and weight across e-bike models with manufacturer-verified specifications",
       "url": "https://independentelectricbikes.com.au/compare/",
-      "sha256": "dac436e16c7b40292d4bf5f49b6abdc5ebd16e1438c22e78c768a23ab65f3433"
+      "sha256": "9a833ff924fc7cd158d36768288418a797d81e194d379f611a7cfed858791c20"
     },
     {
       "name": "order-draft",
       "type": "commerce",
-      "description": "Create a prefilled e-bike order draft for human customer completion via Email or WhatsApp",
+      "description": "Create a prefilled order draft for human customer completion via Email or WhatsApp",
       "url": "https://independentelectricbikes.com.au/api/mcp/",
-      "sha256": "73f83042b52f7bd575e40744c13a21de9b6a2aa40cac72d6e3e0800ed07b613e"
+      "sha256": "9828fa8a94c6fd1dc58f69575aa771742b3c7c6dd8f85ba751113a75b90992fd"
     },
     {
       "name": "ebike-guides",
       "type": "content",
-      "description": "Read Australian electric bike buying guides, battery care advice, and Victorian road rules",
+      "description": "Read Australian buying guides and rules for e-bikes, scooters, skateboards, unicycles, mobility scooters, kids EVs, quads and electric water sports",
       "url": "https://independentelectricbikes.com.au/blog/",
-      "sha256": "5736807f8a14a736d1d1c94349af5c00f4b35b4656f29df5be8ba39cee42f7e3"
+      "sha256": "4be8f3209afb3beb06c60a600b76deb62935e9e9f1fb438f46a081c08c97e41e"
     },
     {
       "name": "contact-support",

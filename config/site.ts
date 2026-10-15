@@ -12,6 +12,7 @@ export const SITE = {
   target: 'vercel',
   primaryColor: '#16a34a',
   headerDark: '#0f172a',
+  bingVerification: process.env.BING_VERIFICATION || '', // Bing Webmaster Tools msvalidate.01 token; omitted while empty
   gscVerification: process.env.GSC_VERIFICATION || '', // Google Search Console token; set GSC_VERIFICATION in Vercel (meta tag is omitted while empty)
   indexNowKey: 'ieb2026indexnowkey998877',
   cartKey: 'ieb-cart-v1',

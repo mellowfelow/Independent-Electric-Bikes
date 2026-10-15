@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
+import { withSocial } from '@/lib/seo';
 import Link from 'next/link';
 import { CONTACT, SHOP, SITE } from '@/config/site';
 import { fitDesc, fitTitle } from '@/lib/catalog';
 import { EmailText } from '@/components/EmailText';
 import { LegalPage, P, UL } from '@/components/LegalPage';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: fitTitle('Terms of Sale'),
   description: fitDesc('The terms that apply when you buy from Independent Electric Bikes: pricing in AUD including GST, ordering, payment, delivery, warranty, safe use and your consumer rights.'),
-  alternates: { canonical: `https://${SITE.domain}/terms/` },
-};
+}, '/terms/');
 
 export default function TermsPage() {
   return (

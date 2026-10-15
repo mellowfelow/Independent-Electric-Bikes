@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { GUIDE_LINKS } from '@/config/blogLinks';
 import { getBlogContent } from '@/lib/blog';
 import { BLOG_IMAGES } from '@/config/data/blogImages';
+import { withSocial } from '@/lib/seo';
 
 const topicOf = (slug: string) => GUIDE_LINKS[slug]?.shop.map((l) => l.href.match(/^\/shop\/([a-z-]+)\//)?.[1]).find(Boolean) ?? (slug.includes('ebike') ? 'electric-bikes' : undefined);
 
@@ -34,12 +35,15 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   if (!post) return {};
   const hasBody = GUIDE_LINKS[post.slug]?.body ?? false;
 
-  return {
-    ...(hasBody ? {} : { robots: { index: false, follow: true } }),
-    title: fitTitle(post.title),
-    description: fitDesc(post.excerpt, ' Read the full guide from Independent Electric Bikes.'),
-    alternates: { canonical: `https://${SITE.domain}/blog/${post.slug}/` },
-  };
+  return withSocial(
+    {
+      ...(hasBody ? {} : { robots: { index: false, follow: true } }),
+      title: fitTitle(post.title),
+      description: fitDesc(post.excerpt, ' Read the full guide from Independent Electric Bikes.'),
+    },
+    `/blog/${post.slug}/`,
+    { image: post.image, type: 'article' }
+  );
 }
 
 export default async function BlogPostPage(props: { params: Promise<{ slug: string }> }) {
@@ -53,6 +57,8 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
+    dateModified: post.date,
+    image: [`https://${SITE.domain}${post.image}`],
     author: {
       '@type': 'Organization',
       name: SITE.name,
@@ -60,6 +66,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
     publisher: {
       '@type': 'Organization',
       name: SITE.name,
+      url: `https://${SITE.domain}/`,
     },
     mainEntityOfPage: `https://${SITE.domain}/blog/${post.slug}/`,
   };
@@ -99,10 +106,20 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
 
           <figure className="mb-8">
             <div className="rounded-2xl overflow-hidden aspect-[16/9] border border-slate-800">
-              <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+              <img
+                src={post.image}
+                srcSet={`${post.image.replace(/\.webp$/, '-800.webp')} 800w, ${post.image} 1600w`}
+                sizes="(min-width: 896px) 896px, 100vw"
+                alt={post.title}
+                width={1600}
+                height={900}
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
             </div>
             {BLOG_IMAGES[post.slug] && (
-              <figcaption className="mt-2 text-[11px] text-slate-500">
+              <figcaption className="mt-2 text-[11px] text-slate-400">
                 Photo:{' '}
                 <a href={BLOG_IMAGES[post.slug].sourceUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-300">
                   {BLOG_IMAGES[post.slug].credit}

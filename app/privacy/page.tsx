@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
+import { withSocial } from '@/lib/seo';
 import Link from 'next/link';
 import { CONTACT, SITE } from '@/config/site';
 import { fitDesc, fitTitle } from '@/lib/catalog';
 import { EmailText } from '@/components/EmailText';
 import { LegalPage, P, UL } from '@/components/LegalPage';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: fitTitle('Privacy Policy'),
   description: fitDesc('What personal information Independent Electric Bikes collects when you order or contact us, how it is used and stored, and how to access or correct it.'),
-  alternates: { canonical: `https://${SITE.domain}/privacy/` },
-};
+}, '/privacy/');
 
 export default function PrivacyPage() {
   return (

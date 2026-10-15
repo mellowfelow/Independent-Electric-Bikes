@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
+import { withSocial } from '@/lib/seo';
 import Link from 'next/link';
 import { CONTACT, SITE } from '@/config/site';
 import { fitDesc, fitTitle } from '@/lib/catalog';
 import { EmailText } from '@/components/EmailText';
 import { LegalPage, P, UL } from '@/components/LegalPage';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: fitTitle('Returns, Refunds & Warranty'),
   description: fitDesc('Your Australian Consumer Law rights, our 2-year frame and 12-month electrical and motor warranty, and how to make a return, refund or warranty claim.'),
-  alternates: { canonical: `https://${SITE.domain}/returns/` },
-};
+}, '/returns/');
 
 export default function ReturnsPage() {
   return (

@@ -37,7 +37,7 @@ export function LegalPage({ title, intro, path, sections }: LegalPageProps) {
             <p className="text-xs font-bold uppercase tracking-widest text-emerald-400">{SITE.entityName}</p>
             <h1 className="text-3xl font-black text-white sm:text-4xl">{title}</h1>
             <p className="text-sm text-slate-300">{intro}</p>
-            <p className="text-[11px] text-slate-500">Last updated {LEGAL_UPDATED}</p>
+            <p className="text-[11px] text-slate-400">Last updated {LEGAL_UPDATED}</p>
           </div>
         </header>
 

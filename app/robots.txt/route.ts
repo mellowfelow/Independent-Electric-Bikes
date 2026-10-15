@@ -4,7 +4,7 @@ const AI_BOTS = [
   'GPTBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-Web', 'PerplexityBot', 'Applebot',
   'Amazonbot', 'Bytespider', 'CCBot', 'Google-Extended', 'Meta-ExternalAgent', 'cohere-ai',
 ];
-const DISALLOW = ['/thank-you-contact/', '/thank-you-order/', '/thank-you-wholesale/', '/admin/', '/order/payment-details/', '/order/confirm-payment/'];
+const DISALLOW = ['/thank-you-contact/', '/thank-you-order/', '/thank-you-wholesale/', '/admin/', '/checkout/', '/order/payment-details/', '/order/confirm-payment/', '/api/admin/'];
 
 export const dynamic = 'force-static';
 

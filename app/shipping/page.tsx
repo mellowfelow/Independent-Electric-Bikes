@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { withSocial } from '@/lib/seo';
 import Link from 'next/link';
 import { CONTACT, SHOP, SITE } from '@/config/site';
 import { fitDesc, fitTitle } from '@/lib/catalog';
@@ -7,11 +8,10 @@ import { LegalPage, P, UL } from '@/components/LegalPage';
 
 const free = `$${SHOP.freeShippingThreshold.toLocaleString('en-AU')}`;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: fitTitle('Electric Bike Delivery Australia'),
   description: fitDesc(`Electric bike delivery Australia-wide. Free express freight on orders over ${free}, flat $${SHOP.shippingFee} otherwise. Tracked courier from our Brunswick, VIC warehouse.`),
-  alternates: { canonical: `https://${SITE.domain}/shipping/` },
-};
+}, '/shipping/');
 
 export default function ShippingPage() {
   return (

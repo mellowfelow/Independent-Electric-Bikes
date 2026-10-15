@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { SITE, MASTER_TAXONOMY, PRODUCTS, POSTS } from '@/config/site';
 import { GUIDE_LINKS } from '@/config/blogLinks';
 import { ACTIVE_BRANDS } from '@/config/brands';
+import { BLOG_IMAGES } from '@/config/data/blogImages';
 
 const base = `https://${SITE.domain}`;
 
@@ -29,11 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const path = `/shop/${p.category}/${p.slug}/`;
     if (seen.has(path)) continue;
     seen.add(path);
-    add(path, 0.6, 'weekly', undefined, p.images?.[0]?.startsWith('http') ? [p.images[0]] : undefined);
+    const img = p.images?.[0];
+    add(path, 0.6, 'weekly', undefined, img && !img.endsWith('.svg') ? [img.startsWith('http') ? img : `${base}${img}`] : undefined);
   }
 
   for (const b of ACTIVE_BRANDS) add(`/brands/${b.slug}/`, 0.6, 'weekly');
-  for (const post of POSTS.filter((x) => GUIDE_LINKS[x.slug]?.body)) add(`/blog/${post.slug}/`, 0.6, 'monthly', new Date(post.date));
+  for (const post of POSTS.filter((x) => GUIDE_LINKS[x.slug]?.body)) add(`/blog/${post.slug}/`, 0.6, 'monthly', new Date(post.date), BLOG_IMAGES[post.slug] ? [`${base}${BLOG_IMAGES[post.slug].src}`] : undefined);
 
   return entries;
 }

@@ -105,7 +105,7 @@ export default function AddOrderPage() {
                 {options.map((p) => <option key={p.slug} value={p.slug}>{p.name} (${p.price})</option>)}
               </select>
               <input aria-label="Quantity" type="number" min={1} max={20} className={`${field} w-20`} value={l.quantity} onChange={(e) => setLine(i, { quantity: Math.max(1, Number(e.target.value) || 1) })} />
-              {lines.length > 1 && <button type="button" aria-label="Remove item" onClick={() => setLines((x) => x.filter((_, j) => j !== i))} className="rounded-xl border border-slate-800 bg-slate-950 p-2 text-slate-500 hover:text-red-400"><Trash2 className="h-4 w-4" /></button>}
+              {lines.length > 1 && <button type="button" aria-label="Remove item" onClick={() => setLines((x) => x.filter((_, j) => j !== i))} className="rounded-xl border border-slate-800 bg-slate-950 p-2 text-slate-400 hover:text-red-400"><Trash2 className="h-4 w-4" /></button>}
             </div>
           ))}
           <button type="button" onClick={() => setLines((x) => [...x, { slug: '', quantity: 1 }])} className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><Plus className="h-3.5 w-3.5" aria-hidden="true" /> Add another item</button>

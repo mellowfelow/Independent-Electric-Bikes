@@ -213,7 +213,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                       type="button"
                       aria-label="Remove item"
                       onClick={() => removeItem(item.slug)}
-                      className="p-2 text-slate-500 hover:text-red-400 transition-colors"
+                      className="p-2 text-slate-400 hover:text-red-400 transition-colors"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -250,7 +250,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   <span>Freight</span>
                   <span>{isFreeShipping ? <span className="text-emerald-400 font-bold">FREE</span> : money(SHOP.shippingFee)}</span>
                 </div>
-                <div className="flex justify-between text-slate-500 text-[11px] pt-1">
+                <div className="flex justify-between text-slate-400 text-[11px] pt-1">
                   <span>GST Status</span>
                   <span>10% GST Included</span>
                 </div>
@@ -280,7 +280,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500 pt-1">
+              <div className="flex items-center justify-center gap-2 text-[11px] text-slate-400 pt-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                 <span>100% Secure Checkout · Direct Bank Transfer, PayID & Crypto</span>
               </div>

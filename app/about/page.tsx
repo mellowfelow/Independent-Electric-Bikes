@@ -1,15 +1,15 @@
 import { Metadata } from 'next';
+import { withSocial } from '@/lib/seo';
 import Link from 'next/link';
 import { SITE, BRAND, CONTACT } from '@/config/site';
 import { fitTitle, fitDesc } from '@/lib/catalog';
 import { Bike, ShieldCheck, Award, MapPin, CheckCircle2, Phone, Mail } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: fitTitle('About Us — E-Bike Melbourne, Brunswick VIC'),
   description: fitDesc('Independent Electric Bikes: Melbourne e-bike specialist operated by VYRON Industries Pty Ltd (ABN 23 618 699 479), established 2017 in Brunswick, Victoria.'),
-  alternates: { canonical: `https://${SITE.domain}/about/` },
-};
+}, '/about/');
 
 export default function AboutPage() {
   const aboutSchema = {

@@ -6,6 +6,7 @@ import { fitTitle, fitDesc } from '@/lib/catalog';
 import { JsonLd } from '@/components/JsonLd';
 import { BrandDetailClient } from '@/components/BrandDetailClient';
 import { RelatedGuides } from '@/components/RelatedGuides';
+import { withSocial } from '@/lib/seo';
 
 interface PageProps {
   params: Promise<{ brandSlug: string }>;
@@ -30,21 +31,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const products = getProductsByBrand(brandSlug);
 
-  return {
-    title: fitTitle(`${brand.name} ${brand.category} Australia`),
-    description: fitDesc(`Shop ${brand.name} ${brand.category.toLowerCase()} in Australia: ${products.length} ${products.length === 1 ? 'model' : 'models'} with express freight, a 2-year frame warranty and a 10% cryptocurrency discount.`),
-    alternates: {
-      canonical: `https://${SITE.domain}/brands/${brandSlug}/`,
+  return withSocial(
+    {
+      title: fitTitle(`${brand.name} ${brand.category} Australia`),
+      description: fitDesc(`Shop ${brand.name} ${brand.category.toLowerCase()} in Australia: ${products.length} ${products.length === 1 ? 'model' : 'models'} with express freight, a 2-year frame warranty and a 10% cryptocurrency discount.`),
     },
-    openGraph: {
-      type: 'website',
-      siteName: SITE.name,
-      title: `${brand.name} ${brand.category} Australia`,
-      description: fitDesc(brand.description),
-      url: `https://${SITE.domain}/brands/${brandSlug}/`,
-      images: [{ url: `https://${SITE.domain}/og.png` }],
-    },
-  };
+    `/brands/${brandSlug}/`
+  );
 }
 
 export default async function BrandDetailPage({ params }: PageProps) {

@@ -161,7 +161,7 @@ export default function SearchPage() {
                   {results.brands.map((b) => (
                     <Link key={b.slug} href={`/brands/${b.slug}/`} className="inline-flex min-h-[36px] items-center gap-1.5 rounded-full border border-slate-700 bg-slate-900 px-3.5 text-xs font-semibold text-slate-200 hover:border-emerald-500">
                       <Store className="h-3.5 w-3.5 text-emerald-400" aria-hidden="true" />
-                      {b.name} <span className="text-slate-500">({b.count})</span>
+                      {b.name} <span className="text-slate-400">({b.count})</span>
                     </Link>
                   ))}
                 </div>

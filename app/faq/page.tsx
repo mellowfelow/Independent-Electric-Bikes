@@ -1,13 +1,13 @@
 import { fitTitle, fitDesc } from '@/lib/catalog';
+import { withSocial } from '@/lib/seo';
 import { Metadata } from 'next';
 import { FAQ, SITE } from '@/config/site';
 import { JsonLd } from '@/components/JsonLd';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: fitTitle('E-Bike FAQ — Are E-Bikes Legal in QLD & AU?'),
   description: fitDesc('Are e-bikes illegal in QLD? Answers on Australian e-bike laws by state, battery range, licences, express freight, PayID payments and warranty claims.'),
-  alternates: { canonical: `https://${SITE.domain}/faq/` },
-};
+}, '/faq/');
 
 export default function FAQPage() {
   const faqSchema = {

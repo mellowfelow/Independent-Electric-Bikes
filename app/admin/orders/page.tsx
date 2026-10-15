@@ -76,7 +76,7 @@ export default function AdminOrdersListPage() {
         </div>
         <label className="relative block sm:w-72">
           <span className="sr-only">Search orders</span>
-          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" aria-hidden="true" />
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" aria-hidden="true" />
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search name, email or order #" className="w-full rounded-xl border border-slate-700 bg-slate-900 py-2 pl-9 pr-3 text-xs text-white placeholder-slate-500 focus:border-emerald-500 focus:outline-none" />
         </label>
       </div>

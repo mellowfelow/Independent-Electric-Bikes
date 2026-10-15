@@ -36,9 +36,9 @@ export function EnquiryCard({ enquiry: e, onDelete }: { enquiry: EnquiryRecord; 
         <div className="space-y-1 text-xs">
           <div className="text-sm font-bold text-white">{e.name}</div>
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-slate-300">
-            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3 text-slate-500" aria-hidden="true" />{e.email}</span>
-            {e.phone && <span className="flex items-center gap-1.5"><Phone className="h-3 w-3 text-slate-500" aria-hidden="true" />{e.phone}</span>}
-            {e.companyName && <span className="flex items-center gap-1.5"><Building2 className="h-3 w-3 text-slate-500" aria-hidden="true" />{e.companyName}</span>}
+            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3 text-slate-400" aria-hidden="true" />{e.email}</span>
+            {e.phone && <span className="flex items-center gap-1.5"><Phone className="h-3 w-3 text-slate-400" aria-hidden="true" />{e.phone}</span>}
+            {e.companyName && <span className="flex items-center gap-1.5"><Building2 className="h-3 w-3 text-slate-400" aria-hidden="true" />{e.companyName}</span>}
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export function EnquiryCard({ enquiry: e, onDelete }: { enquiry: EnquiryRecord; 
             <Eye className="h-3.5 w-3.5" aria-hidden="true" /> Open
           </Link>
           {onDelete && (
-            <button type="button" onClick={() => onDelete(e.id)} aria-label={`Delete enquiry ${e.id}`} className="ml-auto rounded-xl border border-slate-800 bg-slate-950 p-2 text-slate-500 hover:text-red-400">
+            <button type="button" onClick={() => onDelete(e.id)} aria-label={`Delete enquiry ${e.id}`} className="ml-auto rounded-xl border border-slate-800 bg-slate-950 p-2 text-slate-400 hover:text-red-400">
               <Trash2 className="h-4 w-4" />
             </button>
           )}

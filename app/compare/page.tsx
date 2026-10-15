@@ -1,4 +1,5 @@
 import { fitTitle, fitDesc } from '@/lib/catalog';
+import { withSocial } from '@/lib/seo';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { PRODUCTS, SITE } from '@/config/site';
@@ -6,11 +7,10 @@ import { JsonLd } from '@/components/JsonLd';
 import { CompareSelector } from '@/components/CompareSelector';
 import { toComparable, type ComparableProduct } from '@/lib/compare';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocial({
   title: fitTitle('Best Electric Bike Australia — Compare Specs'),
   description: fitDesc('Find the best electric bike in Australia. Side-by-side comparison of verified e-bike specs: motor, battery, range, weight, load limit and price.'),
-  alternates: { canonical: `https://${SITE.domain}/compare/` },
-};
+}, '/compare/');
 
 export default function ComparePage() {
   const comparable = PRODUCTS.map(toComparable).filter((p): p is ComparableProduct => p !== null);

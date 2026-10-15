@@ -23,7 +23,7 @@ function Group({ title, children, defaultOpen = true }: { title: string; childre
     <details open={defaultOpen} className="group border-t border-slate-800/80 first:border-t-0">
       <summary className="flex cursor-pointer list-none items-center justify-between py-3.5 text-[11px] font-extrabold uppercase tracking-wider text-slate-200 [&::-webkit-details-marker]:hidden">
         {title}
-        <ChevronDown className="h-4 w-4 text-slate-500 transition-transform group-open:rotate-180" aria-hidden="true" />
+        <ChevronDown className="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" aria-hidden="true" />
       </summary>
       <div className="pb-4">{children}</div>
     </details>
@@ -53,7 +53,7 @@ function CheckList({
     <div className="space-y-1">
       {searchable && (
         <div className="relative mb-2">
-          <Search className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-slate-500" aria-hidden="true" />
+          <Search className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-slate-400" aria-hidden="true" />
           <input
             type="search"
             value={find}
@@ -82,11 +82,11 @@ function CheckList({
               className="h-4 w-4 shrink-0 rounded border-slate-600 bg-slate-950 accent-emerald-500"
             />
             <span className="flex-1 leading-snug">{o.label}</span>
-            <span className="text-[11px] tabular-nums text-slate-500">{o.count}</span>
+            <span className="text-[11px] tabular-nums text-slate-400">{o.count}</span>
           </label>
         );
       })}
-      {filtered.length === 0 && <p className="px-2 py-1 text-xs text-slate-500">No matches</p>}
+      {filtered.length === 0 && <p className="px-2 py-1 text-xs text-slate-400">No matches</p>}
       {hidden > 0 && (
         <button type="button" onClick={() => setExpanded(true)} className="px-2 py-1.5 text-xs font-bold text-emerald-400 hover:underline">
           Show all {filtered.length}
@@ -135,7 +135,7 @@ function PriceFilter({ state, bounds, onPrice }: { state: FilterState; bounds: {
         <label className="flex-1">
           <span className="sr-only">Minimum price</span>
           <div className="relative">
-            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-xs text-slate-500">$</span>
+            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-xs text-slate-400">$</span>
             <input
               type="number"
               inputMode="numeric"
@@ -153,7 +153,7 @@ function PriceFilter({ state, bounds, onPrice }: { state: FilterState; bounds: {
         <label className="flex-1">
           <span className="sr-only">Maximum price</span>
           <div className="relative">
-            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-xs text-slate-500">$</span>
+            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-xs text-slate-400">$</span>
             <input
               type="number"
               inputMode="numeric"
@@ -207,7 +207,7 @@ export function FilterPanel({ state, options, bounds, showVehicleFacets, onToggl
   return (
     <div className="text-xs">
       <div className="relative pb-4">
-        <Search className="pointer-events-none absolute left-3 top-[1.15rem] h-4 w-4 -translate-y-1/2 text-slate-500" aria-hidden="true" />
+        <Search className="pointer-events-none absolute left-3 top-[1.15rem] h-4 w-4 -translate-y-1/2 text-slate-400" aria-hidden="true" />
         <input
           type="search"
           value={q}

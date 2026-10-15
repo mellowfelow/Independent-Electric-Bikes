@@ -209,7 +209,7 @@ export default function BrandsPage() {
                   {/* Bottom Footer CTA */}
                   <div className="pt-4 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-emerald-400 group-hover:text-emerald-300">
                     <span>View {brand.name} Range</span>
-                    <span className="text-[10px] text-slate-500 font-medium">10% Crypto Discount</span>
+                    <span className="text-[10px] text-slate-400 font-medium">10% Crypto Discount</span>
                   </div>
                 </Link>
               ))}

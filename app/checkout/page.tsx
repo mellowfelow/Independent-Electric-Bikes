@@ -386,7 +386,7 @@ export default function CheckoutPage() {
 
                     <div>
                       <label className="block text-xs font-bold text-slate-200 mb-1.5">
-                        Delivery Notes / Special Instructions <span className="text-slate-500">(Optional)</span>
+                        Delivery Notes / Special Instructions <span className="text-slate-400">(Optional)</span>
                       </label>
                       <input
                         type="text"
@@ -542,7 +542,7 @@ export default function CheckoutPage() {
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
-                <p className="pt-1 text-center text-[11px] leading-relaxed text-slate-500">
+                <p className="pt-1 text-center text-[11px] leading-relaxed text-slate-400">
                   By placing an order you agree to our <Link href="/terms/" className="text-slate-300 underline hover:text-emerald-400">Terms of Sale</Link>. See{' '}
                   <Link href="/shipping/" className="text-slate-300 underline hover:text-emerald-400">shipping</Link>, <Link href="/returns/" className="text-slate-300 underline hover:text-emerald-400">returns &amp; warranty</Link> and{' '}
                   <Link href="/privacy/" className="text-slate-300 underline hover:text-emerald-400">privacy</Link>.
@@ -604,7 +604,7 @@ export default function CheckoutPage() {
                         type="button"
                         aria-label="Remove item"
                         onClick={() => removeItem(item.slug)}
-                        className="p-1.5 text-slate-500 hover:text-red-400 transition-colors"
+                        className="p-1.5 text-slate-400 hover:text-red-400 transition-colors"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>

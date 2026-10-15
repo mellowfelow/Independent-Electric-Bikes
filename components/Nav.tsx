@@ -90,7 +90,7 @@ export function Nav() {
                   <div className="absolute top-full left-[-100px] w-[880px] bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 grid grid-cols-12 gap-6 animate-in fade-in slide-in-from-top-2 z-50">
                     {/* Left Column: Top Level Collections (7 Main Categories) */}
                     <div className="col-span-4 border-r border-slate-800/80 pr-4 space-y-1">
-                      <div className="text-[10px] font-black uppercase tracking-widest text-slate-500 px-3 py-1">
+                      <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 px-3 py-1">
                         Master Store Collections
                       </div>
                       {MASTER_TAXONOMY.map((cat) => {
@@ -107,7 +107,7 @@ export function Nav() {
                             }`}
                           >
                             <span>{cat.name}</span>
-                            <ChevronRight className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-slate-500'}`} />
+                            <ChevronRight className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-slate-400'}`} />
                           </Link>
                         );
                       })}

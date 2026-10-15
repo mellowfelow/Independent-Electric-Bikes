@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { preload } from 'react-dom';
 import { Bike, ShieldCheck, Zap, Truck, ArrowRight, CheckCircle2, ChevronRight, Award, Calendar, Clock, BookOpen } from 'lucide-react';
-import { SITE, PRODUCTS, CATEGORIES, BRAND, FAQ, POSTS } from '@/config/site';
+import { SITE, PRODUCTS, CATEGORIES, BRAND, FAQ, POSTS, CONTACT } from '@/config/site';
 import { money } from '@/lib/order';
 import { JsonLd } from '@/components/JsonLd';
 import { FaqAccordion } from '@/components/FaqAccordion';
@@ -43,12 +43,21 @@ export default function HomePage() {
     areaServed: ['Victoria', 'Australia'],
     numberOfItems: PRODUCTS.length,
     knowsAbout: [
-      'Electric Commuter Bikes',
-      'Cargo Electric Bikes',
-      'Folding E-Bikes',
-      'Bafang Hub Motors',
-      'Samsung E-Bike Batteries',
+      'Electric Bikes',
+      'Electric Scooters',
+      'Electric Skateboards',
+      'Electric Unicycles and Hoverboards',
+      'Mobility Scooters',
+      'E-Bike Batteries, Chargers and Parts',
     ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      telephone: CONTACT.phone,
+      email: CONTACT.email,
+      areaServed: 'AU',
+      availableLanguage: 'English',
+    },
     priceRange: '$$',
     brand: {
       '@type': 'Brand',
@@ -288,7 +297,7 @@ export default function HomePage() {
             {topBrands(18).map((b) => (
               <li key={b.slug}>
                 <Link href={`/brands/${b.slug}/`} className="inline-block rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-bold text-slate-200 hover:border-emerald-500 hover:text-emerald-400">
-                  {b.name} <span className="text-slate-500">({b.count})</span>
+                  {b.name} <span className="text-slate-400">({b.count})</span>
                 </Link>
               </li>
             ))}

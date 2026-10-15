@@ -198,49 +198,49 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
 
             <div className="space-y-3 text-slate-300">
               <div className="flex items-start gap-2.5">
-                <User className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                <User className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-slate-500">Name</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-400">Name</div>
                   <div className="font-bold text-white text-sm">{order.customerName}</div>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <Mail className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-slate-500">Email</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-400">Email</div>
                   <a href={`mailto:${order.email}`} className="text-emerald-400 font-medium hover:underline">{order.email}</a>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <Phone className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                <Phone className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-slate-500">Phone</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-400">Phone</div>
                   <a href={`tel:${order.phone}`} className="text-white hover:underline">{order.phone || 'N/A'}</a>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-slate-500">Address</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-400">Address</div>
                   <div className="text-white">{order.address}</div>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <CreditCard className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                <CreditCard className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-slate-500">Method Rail</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-400">Method Rail</div>
                   <div className="text-white font-bold">{order.paymentMethod} ({order.channel})</div>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <Calendar className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                <Calendar className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-slate-500">Date Placed</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-400">Date Placed</div>
                   <div className="text-slate-400">{new Date(order.createdAt).toLocaleString()}</div>
                 </div>
               </div>

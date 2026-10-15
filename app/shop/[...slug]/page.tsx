@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { PRODUCTS, MASTER_TAXONOMY, SITE, SHOP } from '@/config/site';
 import { money } from '@/lib/order';
 import { productSrcSet } from '@/lib/productImage';
@@ -14,6 +14,7 @@ import { relatedProducts } from '@/lib/compat';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { CategoryLinks } from '@/components/CategoryLinks';
 import { RelatedGuides } from '@/components/RelatedGuides';
+import { withSocial } from '@/lib/seo';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { CATEGORY_FAQS } from '@/config/data/categoryFaqs';
 import { isVehicle } from '@/lib/shopFilters';
@@ -38,9 +39,6 @@ export async function generateStaticParams() {
   // 2. Product paths (accessible via /shop/category/product-slug or /shop/product-slug)
   for (const p of PRODUCTS) {
     paths.push({ slug: [p.category, p.slug] });
-    if (p.subcategory) {
-      paths.push({ slug: [p.category, p.subcategory, p.slug] });
-    }
   }
 
   return paths;
@@ -54,26 +52,21 @@ export async function generateMetadata(props: { params: Promise<{ slug: string[]
   // Check if product
   const product = PRODUCTS.find((p) => p.slug === lastSegment);
   if (product) {
-    return {
-      title: productTitle(product),
-      description: productMetaDescription(product),
-      alternates: { canonical: `https://${SITE.domain}/shop/${product.category}/${product.slug}/` },
-      openGraph: {
-        title: `${product.name} — ${SITE.name}`,
-        description: productMetaDescription(product),
-        images: [{ url: product.images[0].endsWith('.svg') ? '/og.png' : product.images[0] }],
-      },
-    };
+    return withSocial(
+      { title: productTitle(product), description: productMetaDescription(product) },
+      `/shop/${product.category}/${product.slug}/`,
+      { image: product.images[0].endsWith('.svg') ? '/og.png' : product.images[0] }
+    );
   }
 
   // Category / subcategory / leaf
   const node = resolveCategory(slugSegments);
   if (node) {
-    return {
-      title: categoryTitle(node),
-      description: categoryMetaDescription(node),
-      alternates: { canonical: `https://${SITE.domain}/shop/${slugSegments.join('/')}/` },
-    };
+    return withSocial(
+      { title: categoryTitle(node), description: categoryMetaDescription(node) },
+      `/shop/${slugSegments.join('/')}/`,
+      { image: `/images/categories/${slugSegments[0]}.webp` }
+    );
   }
 
   return {};
@@ -87,6 +80,8 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
   // 1. IS PRODUCT?
   const product = PRODUCTS.find((p) => p.slug === lastSegment);
   if (product) {
+    // One URL per product: /shop/<category>/<slug>/. Deeper paths redirect to it instead of serving a duplicate page.
+    if (slugSegments.length !== 2 || slugSegments[0] !== product.category) permanentRedirect(`/shop/${product.category}/${product.slug}/`);
     const productSchema = {
       '@context': 'https://schema.org',
       '@type': 'Product',

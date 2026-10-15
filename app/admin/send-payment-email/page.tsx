@@ -167,7 +167,7 @@ function SendPaymentEmailContent() {
             </div>
 
             <div className="space-y-2">
-              <div className="text-[10px] font-bold text-slate-500 uppercase">Parsed Copy Fields ({parsedFields.length}):</div>
+              <div className="text-[10px] font-bold text-slate-400 uppercase">Parsed Copy Fields ({parsedFields.length}):</div>
               {parsedFields.map((f, idx) => (
                 <div key={idx} className="bg-slate-900 p-2.5 rounded border border-slate-800 text-xs">
                   <div className="text-[10px] text-slate-400 font-bold uppercase">{f.label}</div>

@@ -46,10 +46,10 @@ export function OrderCard({ order: o, onDelete }: { order: OrderRecord; onDelete
         <div className="space-y-1 text-xs">
           <div className="text-sm font-bold text-white">{o.customerName}</div>
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-slate-300">
-            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3 text-slate-500" aria-hidden="true" />{o.email}</span>
-            {o.phone && <span className="flex items-center gap-1.5"><Phone className="h-3 w-3 text-slate-500" aria-hidden="true" />{o.phone}</span>}
+            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3 text-slate-400" aria-hidden="true" />{o.email}</span>
+            {o.phone && <span className="flex items-center gap-1.5"><Phone className="h-3 w-3 text-slate-400" aria-hidden="true" />{o.phone}</span>}
           </div>
-          {o.address && <div className="flex items-start gap-1.5 text-slate-400"><MapPin className="mt-0.5 h-3 w-3 shrink-0 text-slate-500" aria-hidden="true" /><span>{o.address}</span></div>}
+          {o.address && <div className="flex items-start gap-1.5 text-slate-400"><MapPin className="mt-0.5 h-3 w-3 shrink-0 text-slate-400" aria-hidden="true" /><span>{o.address}</span></div>}
         </div>
 
         <ul className="space-y-1 rounded-xl border border-slate-800 bg-slate-950 p-3 text-xs text-slate-300">
@@ -59,7 +59,7 @@ export function OrderCard({ order: o, onDelete }: { order: OrderRecord; onDelete
               <span className="shrink-0 font-bold text-slate-200">{money(i.price * i.quantity)}</span>
             </li>
           ))}
-          {o.items.length > 3 && <li className="text-slate-500">+ {o.items.length - 3} more</li>}
+          {o.items.length > 3 && <li className="text-slate-400">+ {o.items.length - 3} more</li>}
         </ul>
 
         <div className="flex flex-wrap items-center gap-2">
@@ -72,7 +72,7 @@ export function OrderCard({ order: o, onDelete }: { order: OrderRecord; onDelete
             <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
           </Link>
           {onDelete && (
-            <button type="button" onClick={() => onDelete(o.id)} aria-label={`Delete order ${o.id}`} className="ml-auto rounded-xl border border-slate-800 bg-slate-950 p-2 text-slate-500 hover:text-red-400">
+            <button type="button" onClick={() => onDelete(o.id)} aria-label={`Delete order ${o.id}`} className="ml-auto rounded-xl border border-slate-800 bg-slate-950 p-2 text-slate-400 hover:text-red-400">
               <Trash2 className="h-4 w-4" />
             </button>
           )}

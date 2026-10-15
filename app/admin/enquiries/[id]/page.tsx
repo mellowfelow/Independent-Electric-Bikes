@@ -140,26 +140,26 @@ export default function EnquiryDetailPage({ params }: { params: Promise<{ id: st
 
             <div className="space-y-3 text-slate-300">
               <div className="flex items-start gap-2.5">
-                <User className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                <User className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-slate-500">Name</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-400">Name</div>
                   <div className="font-bold text-white text-sm">{enquiry.name}</div>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <Mail className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-slate-500">Email</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-400">Email</div>
                   <a href={`mailto:${enquiry.email}`} className="text-emerald-400 font-medium hover:underline">{enquiry.email}</a>
                 </div>
               </div>
 
               {enquiry.phone && (
                 <div className="flex items-start gap-2.5">
-                  <Phone className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                  <Phone className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <div className="text-[10px] uppercase font-bold text-slate-500">Phone</div>
+                    <div className="text-[10px] uppercase font-bold text-slate-400">Phone</div>
                     <a href={`tel:${enquiry.phone}`} className="text-white hover:underline">{enquiry.phone}</a>
                   </div>
                 </div>
@@ -167,18 +167,18 @@ export default function EnquiryDetailPage({ params }: { params: Promise<{ id: st
 
               {enquiry.companyName && (
                 <div className="flex items-start gap-2.5">
-                  <Building2 className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                  <Building2 className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <div className="text-[10px] uppercase font-bold text-slate-500">Company / Business</div>
+                    <div className="text-[10px] uppercase font-bold text-slate-400">Company / Business</div>
                     <div className="text-white font-bold">{enquiry.companyName}</div>
                   </div>
                 </div>
               )}
 
               <div className="flex items-start gap-2.5">
-                <Calendar className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+                <Calendar className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-[10px] uppercase font-bold text-slate-500">Date Received</div>
+                  <div className="text-[10px] uppercase font-bold text-slate-400">Date Received</div>
                   <div className="text-slate-400">{new Date(enquiry.createdAt).toLocaleString()}</div>
                 </div>
               </div>
