@@ -29,6 +29,7 @@
     ],
     "notes": "No registration required. All content is publicly accessible to autonomous agents.",
     "claim_uri": "https://independentelectricbikes.com.au/contact/",
-    "revocation_uri": "https://independentelectricbikes.com.au/contact/"
+    "revocation_uri": "https://independentelectricbikes.com.au/contact/",
+    "skill": "https://independentelectricbikes.com.au/auth.md"
   }
 }
