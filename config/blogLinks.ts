@@ -411,4 +411,84 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric bikes', href: '/shop/electric-bikes/' },
     ],
   },
+  'ebike-vs-public-transport-cost-time-comparison': {
+    body: true,
+    shop: [
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'Folding e-bikes', href: '/shop/electric-bikes/folding-ebikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-battery-replacement-choosing-right-one': {
+    body: true,
+    shop: [
+      { label: 'Batteries & chargers', href: '/shop/batteries-parts-kits/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Contact us', href: '/contact/' },
+    ],
+  },
+  'ebike-helmet-guide-australia-laws-types': {
+    body: true,
+    shop: [
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+      { label: 'Safety & security', href: '/shop/safety-security-carry/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'buying-second-hand-ebike-what-to-check': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-commuting-hot-weather-summer-tips': {
+    body: true,
+    shop: [
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'Safety & accessories', href: '/shop/safety-security-carry/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'ebike-road-rules-every-australian-state': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Electric scooters', href: '/shop/electric-scooters/' },
+      { label: 'FAQ', href: '/faq/' },
+    ],
+  },
+  'ebike-accessories-phone-mounts-mirrors-bells': {
+    body: true,
+    shop: [
+      { label: 'E-bike accessories', href: '/shop/safety-security-carry/' },
+      { label: 'Locks & security', href: '/shop/safety-security-carry/locks-security/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'ebike-range-how-far-can-you-go-explained': {
+    body: true,
+    shop: [
+      { label: 'Batteries & chargers', href: '/shop/batteries-parts-kits/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-camping-bikepacking-gear-guide': {
+    body: true,
+    shop: [
+      { label: 'Mountain e-bikes', href: '/shop/electric-bikes/electric-mountain-bikes/' },
+      { label: 'E-bike accessories', href: '/shop/safety-security-carry/' },
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+    ],
+  },
+  'ebike-motor-types-hub-mid-drive-friction': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Conversion kits', href: '/shop/batteries-parts-kits/mid-drive-conversion-kits/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
 };
