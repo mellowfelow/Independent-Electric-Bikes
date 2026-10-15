@@ -1,11 +1,14 @@
 import { PRODUCTS, SHOP } from '@/config/site';
 import type { OrderItem } from './orderStore';
+import { accessoryDiscount } from './cartDiscount';
 
 const BY_SLUG = new Map(PRODUCTS.map((p) => [p.slug, p]));
 
 export interface PricedOrder {
   items: OrderItem[];
   subtotal: number;
+  /** Dollars off parts and accessories because the order includes an e-vehicle. */
+  accessoryDiscount: number;
   shipping: number;
   total: number;
 }
@@ -29,8 +32,10 @@ export function priceOrder(rawItems: unknown, paymentMethod: string): { order?: 
   const subtotal = items.reduce((a, i) => a + i.price * i.quantity, 0);
   if (subtotal < SHOP.minOrder) return { error: `Minimum order is $${SHOP.minOrder}.` };
 
-  const discount = paymentMethod === 'crypto' ? subtotal * (SHOP.cryptoDiscount / 100) : 0;
+  const accessory = accessoryDiscount(items.map((i) => ({ category: BY_SLUG.get(i.slug)!.category, price: i.price, quantity: i.quantity }))).amount;
+  // The crypto discount applies to what is left after the accessory discount, so the two never double-count.
+  const discount = paymentMethod === 'crypto' ? (subtotal - accessory) * (SHOP.cryptoDiscount / 100) : 0;
   const shipping = subtotal >= SHOP.freeShippingThreshold ? 0 : SHOP.shippingFee;
-  const total = Math.round((subtotal - discount + shipping) * 100) / 100;
-  return { order: { items, subtotal, shipping, total } };
+  const total = Math.round((subtotal - accessory - discount + shipping) * 100) / 100;
+  return { order: { items, subtotal, accessoryDiscount: accessory, shipping, total } };
 }

@@ -24,6 +24,8 @@ import { SITE, SHOP, CONTACT, REPLY } from '@/config/site';
 import { money } from '@/lib/order';
 import { waOrderLink } from '@/lib/whatsapp';
 import { randomRef } from '@/lib/security';
+import { accessoryDiscount } from '@/lib/cartDiscount';
+import { AccessoryOfferBanner } from '@/components/AccessoryOfferBanner';
 
 export interface CartItem {
   slug: string;
@@ -31,6 +33,7 @@ export interface CartItem {
   price: number;
   quantity: number;
   image?: string;
+  category?: string;
 }
 
 export default function CheckoutPage() {
@@ -99,9 +102,11 @@ export default function CheckoutPage() {
   const isMinOrderMet = subtotal >= SHOP.minOrder;
   const isFreeShipping = subtotal >= SHOP.freeShippingThreshold;
   const shippingCost = isFreeShipping ? 0 : SHOP.shippingFee;
+  const discount = accessoryDiscount(items);
   const isCrypto = paymentMethod === 'crypto';
-  const cryptoDiscount = isCrypto ? subtotal * 0.1 : 0;
-  const finalTotal = (isCrypto ? subtotal * 0.9 : subtotal) + shippingCost;
+  // The crypto discount applies after the accessory discount (same order as the server).
+  const cryptoDiscount = isCrypto ? (subtotal - discount.amount) * (SHOP.cryptoDiscount / 100) : 0;
+  const finalTotal = subtotal - discount.amount - cryptoDiscount + shippingCost;
   const gstInclusiveAmount = finalTotal / 11; // 10% GST included in AUD
 
   const handleCheckoutSubmit = async (e: FormEvent, channel: 'email' | 'whatsapp') => {
@@ -607,6 +612,10 @@ export default function CheckoutPage() {
                   ))}
                 </div>
 
+                <div className="mb-4">
+                  <AccessoryOfferBanner discount={discount} />
+                </div>
+
                 {/* Price Calculations Breakdown */}
                 <div className="space-y-2.5 text-xs border-t border-slate-800 pt-4">
                   <div className="flex justify-between text-slate-400">
@@ -627,6 +636,13 @@ export default function CheckoutPage() {
                       )}
                     </span>
                   </div>
+
+                  {discount.amount > 0 && (
+                    <div className="flex justify-between text-emerald-400 font-bold bg-emerald-950/40 p-2 rounded-lg border border-emerald-800/50">
+                      <span>{SHOP.accessoryDiscount}% Parts &amp; Accessories Discount</span>
+                      <span>-{money(discount.amount)}</span>
+                    </div>
+                  )}
 
                   {isCrypto && (
                     <div className="flex justify-between text-emerald-400 font-bold bg-emerald-950/40 p-2 rounded-lg border border-emerald-800/50">

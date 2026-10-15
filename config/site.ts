@@ -34,6 +34,8 @@ export const SHOP = {
   freeShippingThreshold: 1500,
   shippingFee: 99,
   cryptoDiscount: 10,
+  /** % off parts and accessories when the same order includes an e-vehicle. */
+  accessoryDiscount: 5,
   paymentMethods: ['bank-transfer', 'payid', 'crypto'],
 };
 

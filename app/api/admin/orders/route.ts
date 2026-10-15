@@ -49,6 +49,7 @@ export async function POST(req: NextRequest) {
     channel: CHANNELS.includes(body.channel) ? body.channel : 'email',
     items: priced.order.items,
     totalAmount: priced.order.total,
+    accessoryDiscount: priced.order.accessoryDiscount || undefined,
     status: STATUSES.includes(body.status) ? body.status : 'new',
   });
   if (!saved.persisted) return NextResponse.json({ error: 'Saved to temporary memory only: permanent storage (Redis) is not connected.', order: saved }, { status: 503 });

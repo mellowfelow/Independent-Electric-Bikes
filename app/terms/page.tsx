@@ -37,6 +37,9 @@ export default function TermsPage() {
               <li>
                 The minimum order value is ${SHOP.minOrder} AUD. A {SHOP.cryptoDiscount}% discount applies to the product total when you choose to pay by cryptocurrency; freight is not discounted.
               </li>
+              <li>
+                When your order includes at least one e-vehicle (e-bike, e-scooter, electric skateboard, self-balancing vehicle, kids or off-road EV, mobility scooter, electric quad or electric water sports product), parts and accessories in the same order receive {SHOP.accessoryDiscount}% off. The discount is calculated from the contents of your cart; if the e-vehicle is removed from the order, the accessory discount no longer applies. When paying by cryptocurrency, the cryptocurrency discount is applied to the total after the accessory discount.
+              </li>
             </UL>
           ),
         },

@@ -5,31 +5,14 @@ import { ShoppingBag, ArrowRight, Check } from 'lucide-react';
 import { Product, SITE } from '@/config/site';
 import { money } from '@/lib/order';
 import { waOrderLink } from '@/lib/whatsapp';
+import { addToCart } from '@/lib/cartClient';
 
 export function ProductClientActions({ product }: { product: Product }) {
   const [added, setAdded] = useState(false);
 
   const handleAddToCart = () => {
     try {
-      const stored = localStorage.getItem(SITE.cartKey);
-      let items = stored ? JSON.parse(stored) : [];
-
-      const existingIndex = items.findIndex((i: any) => i.slug === product.slug);
-      if (existingIndex > -1) {
-        items[existingIndex].quantity += 1;
-      } else {
-        items.push({
-          slug: product.slug,
-          name: product.name,
-          price: product.price,
-          quantity: 1,
-          image: product.images[0],
-        });
-      }
-
-      localStorage.setItem(SITE.cartKey, JSON.stringify(items));
-      window.dispatchEvent(new Event('ieb-cart-update'));
-      window.dispatchEvent(new Event('ieb-open-cart'));
+      addToCart(product, 1);
       setAdded(true);
       setTimeout(() => setAdded(false), 2500);
     } catch (e) {

@@ -6,6 +6,7 @@ import { Product, SITE, SHOP } from '@/config/site';
 import { BrandDef, ACTIVE_BRANDS } from '@/config/brands';
 import { ProductCard } from '@/components/ProductCard';
 import { money } from '@/lib/order';
+import { addToCart } from '@/lib/cartClient';
 import {
   Zap,
   ShoppingBag,
@@ -80,25 +81,7 @@ export function BrandDetailClient({ brand, products }: BrandDetailClientProps) {
   const handleAddToCart = (product: Product) => {
     try {
       const qty = quantities[product.slug] || 1;
-      const stored = localStorage.getItem(SITE.cartKey);
-      let items = stored ? JSON.parse(stored) : [];
-
-      const index = items.findIndex((i: { slug: string }) => i.slug === product.slug);
-      if (index > -1) {
-        items[index].quantity += qty;
-      } else {
-        items.push({
-          slug: product.slug,
-          name: product.name,
-          price: product.price,
-          quantity: qty,
-          image: product.images[0],
-        });
-      }
-
-      localStorage.setItem(SITE.cartKey, JSON.stringify(items));
-      window.dispatchEvent(new Event('ieb-cart-update'));
-      window.dispatchEvent(new Event('ieb-open-cart'));
+      addToCart(product, qty);
 
       setAddedSlugs((prev) => ({ ...prev, [product.slug]: true }));
       setTimeout(() => {

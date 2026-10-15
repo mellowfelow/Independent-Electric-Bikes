@@ -19,6 +19,8 @@ export interface OrderRecord {
   channel: 'email' | 'whatsapp' | 'both';
   items: OrderItem[];
   totalAmount: number;
+  /** Dollars taken off parts/accessories (e-vehicle bundle discount); already reflected in totalAmount. */
+  accessoryDiscount?: number;
   status: 'new' | 'payment_details_sent' | 'payment_confirmed' | 'dispatched' | 'cancelled';
   parsedPaymentDetails?: { label: string; value: string }[];
   paymentConfirmedAt?: string;

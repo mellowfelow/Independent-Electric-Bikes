@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight, ShieldCheck, Truck, AlertTriangle } from 'lucide-react';
 import { SITE, SHOP } from '@/config/site';
 import { money } from '@/lib/order';
+import { accessoryDiscount } from '@/lib/cartDiscount';
+import { AccessoryOfferBanner } from './AccessoryOfferBanner';
 
 export interface CartItem {
   slug: string;
@@ -14,6 +16,7 @@ export interface CartItem {
   price: number;
   quantity: number;
   image?: string;
+  category?: string;
 }
 
 interface CartDrawerProps {
@@ -76,7 +79,8 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   const isMinOrderMet = subtotal >= SHOP.minOrder;
   const isFreeShipping = subtotal >= SHOP.freeShippingThreshold;
   const shippingCost = isFreeShipping ? 0 : SHOP.shippingFee;
-  const totalAmount = subtotal + shippingCost;
+  const discount = accessoryDiscount(items);
+  const totalAmount = subtotal - discount.amount + shippingCost;
 
   if (!isOpen) return null;
 
@@ -218,6 +222,8 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               </div>
             )}
 
+            <AccessoryOfferBanner discount={discount} onNavigate={onClose} />
+
             {/* Min Order Warning */}
             {items.length > 0 && !isMinOrderMet && (
               <div className="bg-amber-950/40 border border-amber-800/60 p-3.5 rounded-xl text-xs text-amber-200">
@@ -234,6 +240,12 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   <span>Subtotal</span>
                   <span>{money(subtotal)}</span>
                 </div>
+                {discount.amount > 0 && (
+                  <div className="flex justify-between font-bold text-emerald-400">
+                    <span>{SHOP.accessoryDiscount}% parts &amp; accessories discount</span>
+                    <span>-{money(discount.amount)}</span>
+                  </div>
+                )}
                 <div className="flex justify-between text-slate-400">
                   <span>Freight</span>
                   <span>{isFreeShipping ? <span className="text-emerald-400 font-bold">FREE</span> : money(SHOP.shippingFee)}</span>

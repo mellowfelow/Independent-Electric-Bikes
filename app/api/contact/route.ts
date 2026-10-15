@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
       // Prices and totals always come from the catalogue, never from the browser.
       const priced = priceOrder(body.items, paymentMethod);
       if (!priced.order) return fail(priced.error || 'Invalid order.');
-      const { items, total } = priced.order;
+      const { items, total, accessoryDiscount } = priced.order;
 
       // The ref is minted in the browser so the WhatsApp message and the saved order share one reference.
       let orderRef = body.orderRef;
@@ -56,6 +56,7 @@ export async function POST(req: NextRequest) {
         channel,
         items,
         totalAmount: total,
+        accessoryDiscount: accessoryDiscount || undefined,
         status: 'new',
       });
 
@@ -66,7 +67,7 @@ export async function POST(req: NextRequest) {
         to: adminEmail,
         subject: `New Order Received #${orderRef} from ${name}`,
         text: `New order received on ${SITE.name}!\n\nOrder Ref: ${orderRef}\nCustomer: ${name} (${email}, ${phone})\nAddress: ${address}\nPayment Method: ${paymentMethod}\nChannel: ${channel}\n\nItems:\n${itemsListText}\n\nTotal: $${total} AUD`,
-        html: adminNewOrderEmail({ id: orderRef, customerName: name, email, phone, address, paymentMethod, channel, items, totalAmount: total }),
+        html: adminNewOrderEmail({ id: orderRef, customerName: name, email, phone, address, paymentMethod, channel, items, totalAmount: total, accessoryDiscount }),
         replyTo: email,
       });
 
@@ -75,7 +76,7 @@ export async function POST(req: NextRequest) {
         to: email,
         subject: `Order Confirmation #${orderRef} - ${SITE.name}`,
         text: `Hi ${name}, thank you for your order #${orderRef} on ${SITE.name}! Total: $${total} AUD. We will email you payment details shortly.`,
-        html: orderConfirmationEmail({ id: orderRef, customerName: name, items, totalAmount: total }),
+        html: orderConfirmationEmail({ id: orderRef, customerName: name, items, totalAmount: total, accessoryDiscount }),
       });
 
       if (!adminMail.sent && !customerMail.sent && !stored.persisted) {

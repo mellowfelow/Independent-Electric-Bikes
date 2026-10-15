@@ -8,6 +8,7 @@ import { Plus, Minus, ShoppingBag, Check, Zap } from 'lucide-react';
 import { Product, SITE } from '@/config/site';
 import { money } from '@/lib/order';
 import { fitSummary } from '@/lib/compat';
+import { addToCart } from '@/lib/cartClient';
 
 interface ProductCardProps {
   /** Load this card's photo immediately (use for the first row of a grid). */
@@ -61,25 +62,7 @@ export function ProductCard({ product, className = '', priority = false }: Produ
     e.stopPropagation();
 
     try {
-      const stored = localStorage.getItem(SITE.cartKey);
-      let items = stored ? JSON.parse(stored) : [];
-
-      const existingIndex = items.findIndex((i: any) => i.slug === product.slug);
-      if (existingIndex > -1) {
-        items[existingIndex].quantity += quantity;
-      } else {
-        items.push({
-          slug: product.slug,
-          name: product.name,
-          price: product.price,
-          quantity: quantity,
-          image: product.images[0],
-        });
-      }
-
-      localStorage.setItem(SITE.cartKey, JSON.stringify(items));
-      window.dispatchEvent(new Event('ieb-cart-update'));
-      window.dispatchEvent(new Event('ieb-open-cart'));
+      addToCart(product, quantity);
       setAdded(true);
       setTimeout(() => setAdded(false), 2000);
       setQuantity(1); // Reset stepper back to 1 for next add

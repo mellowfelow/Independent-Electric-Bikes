@@ -6,6 +6,7 @@ import { Bike, ShoppingBag, Search, Menu, X, ChevronDown, ChevronRight, Zap } fr
 import { SITE, MASTER_TAXONOMY } from '@/config/site';
 import { CartDrawer } from './CartDrawer';
 import { SearchBox } from './SearchBox';
+import { migrateCartCategories } from '@/lib/cartClient';
 
 export function Nav() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -32,6 +33,7 @@ export function Nav() {
 
   useEffect(() => {
     const timer = setTimeout(updateCartCount, 0);
+    void migrateCartCategories();
     const handleOpenCart = () => setIsCartOpen(true);
 
     window.addEventListener('ieb-cart-update', updateCartCount);

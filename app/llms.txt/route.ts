@@ -19,6 +19,7 @@ export function GET() {
     `- **Minimum Order:** $${SHOP.minOrder} ${SITE.currency}`,
     `- **Free Express Freight:** Orders over $${SHOP.freeShippingThreshold.toLocaleString('en-AU')} ${SITE.currency}`,
     `- **Payment:** Bank transfer, PayID and cryptocurrency (BTC / USDT). ${SHOP.cryptoDiscount}% discount when paying by cryptocurrency`,
+    `- **Accessory discount:** ${SHOP.accessoryDiscount}% off parts and accessories (Batteries, Parts & Kits; Safety, Locks & Carry) when the same order includes an e-vehicle`,
     `- **Catalogue size:** ${PRODUCTS.length} products`,
     '',
     '## Product Categories',

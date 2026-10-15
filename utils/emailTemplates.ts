@@ -1,4 +1,4 @@
-import { SITE, REPLY, CONTACT } from '@/config/site';
+import { SITE, REPLY, CONTACT, SHOP } from '@/config/site';
 import { money, paymentTermsHtml } from '@/lib/order';
 
 export function escapeHtml(str: string): string {
@@ -95,6 +95,8 @@ export function orderConfirmationEmail(order: {
   customerName: string;
   items: { name: string; quantity: number; price: number }[];
   totalAmount: number;
+  /** E-vehicle bundle discount already included in totalAmount. */
+  accessoryDiscount?: number;
 }): string {
   const itemsHtml = order.items
     .map(
@@ -113,6 +115,10 @@ export function orderConfirmationEmail(order: {
       <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:#64748b; margin-bottom:10px;">Order Summary (#${escapeHtml(order.id)})</div>
       <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
         ${itemsHtml}
+        ${order.accessoryDiscount ? `<tr>
+          <td style="padding:8px 0; color:#15803d; font-weight:600;">${SHOP.accessoryDiscount}% parts &amp; accessories discount (with e-vehicle)</td>
+          <td style="padding:8px 0; color:#15803d; text-align:right; font-weight:700;">-${money(order.accessoryDiscount)}</td>
+        </tr>` : ''}
         <tr>
           <td style="padding-top:12px; font-size:16px; font-weight:800;">Total Amount:</td>
           <td style="padding-top:12px; font-size:18px; font-weight:800; color:${REPLY.brand.primary}; text-align:right;">${money(order.totalAmount)}</td>
@@ -226,6 +232,8 @@ export function adminNewOrderEmail(order: {
   channel: string;
   items: { name: string; quantity: number; price: number }[];
   totalAmount: number;
+  /** E-vehicle bundle discount already included in totalAmount. */
+  accessoryDiscount?: number;
 }): string {
   const itemsHtml = order.items
     .map(
@@ -255,6 +263,10 @@ export function adminNewOrderEmail(order: {
       <div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:#64748b; margin-bottom:10px;">Items Ordered</div>
       <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
         ${itemsHtml}
+        ${order.accessoryDiscount ? `<tr>
+          <td style="padding:8px 0; color:#15803d; font-weight:600;">${SHOP.accessoryDiscount}% parts &amp; accessories discount (with e-vehicle)</td>
+          <td style="padding:8px 0; color:#15803d; text-align:right; font-weight:700;">-${money(order.accessoryDiscount)}</td>
+        </tr>` : ''}
         <tr>
           <td style="padding-top:12px; font-size:16px; font-weight:800;">Total Amount:</td>
           <td style="padding-top:12px; font-size:18px; font-weight:800; color:${REPLY.brand.primary}; text-align:right;">${money(order.totalAmount)}</td>

@@ -5,6 +5,7 @@ import { Footer } from '@/components/Footer';
 import { AnnouncementBar } from '@/components/AnnouncementBar';
 import { ChatHub } from '@/components/ChatHub';
 import { RecentPurchasePopup } from '@/components/RecentPurchasePopup';
+import { AccessoryOfferPopup } from '@/components/AccessoryOfferPopup';
 import { SITE } from '@/config/site';
 
 export const metadata: Metadata = {
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <ChatHub />
         <RecentPurchasePopup />
+        <AccessoryOfferPopup />
       </body>
     </html>
   );
