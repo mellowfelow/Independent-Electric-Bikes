@@ -19,6 +19,8 @@ function CompareImage({ p }: { p: ComparableProduct }) {
       srcSet={productSrcSet(src)}
       sizes="(min-width: 768px) 260px, 50vw"
       alt={p.name}
+      width={400}
+      height={300}
       loading="lazy"
       className="h-full w-full object-contain"
     />

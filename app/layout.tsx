@@ -14,11 +14,12 @@ export const metadata: Metadata = {
   description: `Australia's independent electric bike specialist in Brunswick, VIC. Shop e-bikes, electric scooters, skateboards and EVs with express freight Australia-wide.`,
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
     ],
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    shortcut: '/favicon.ico',
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
   },
   openGraph: {
     type: 'website',
@@ -39,6 +40,7 @@ export const metadata: Metadata = {
   },
   other: {
     ...(SITE.gscVerification ? { 'google-site-verification': SITE.gscVerification } : {}),
+    ...(process.env.BING_VERIFICATION ? { 'msvalidate.01': process.env.BING_VERIFICATION } : {}),
     ...(SITE.bingVerification ? { 'msvalidate.01': SITE.bingVerification } : {}),
   },
 };
@@ -51,9 +53,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang={SITE.locale}>
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
         <script src="/js/webmcp.js" defer />
       </head>
       <body className="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col font-sans">
