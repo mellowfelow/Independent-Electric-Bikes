@@ -491,4 +491,85 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Compare e-bikes', href: '/compare/' },
     ],
   },
+  'ebike-for-university-students-campus-commute': {
+    body: true,
+    shop: [
+      { label: 'Folding e-bikes', href: '/shop/electric-bikes/folding-electric-bikes/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/commuter-electric-bikes/' },
+      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+    ],
+  },
+  'riding-ebike-with-dog-carriers-trailers': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+      { label: 'Cargo e-bikes', href: '/shop/electric-bikes/cargo-electric-bikes/' },
+    ],
+  },
+  'ebike-gear-ratios-shifting-explained': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Parts & kits', href: '/shop/batteries-parts-kits/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-fitness-health-benefits-exercise': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/commuter-electric-bikes/' },
+      { label: 'Step-through e-bikes', href: '/shop/electric-bikes/step-through-electric-bikes/' },
+    ],
+  },
+  'best-ebikes-under-2000-australia-budget': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/commuter-electric-bikes/' },
+      { label: 'Folding e-bikes', href: '/shop/electric-bikes/folding-electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-headlight-beam-patterns-visibility': {
+    body: true,
+    shop: [
+      { label: 'Lights & reflectors', href: '/shop/accessories/lights-reflectors/' },
+      { label: 'Safety gear', href: '/shop/safety-security-carry/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
+  'ebike-tyre-size-width-guide-choosing': {
+    body: true,
+    shop: [
+      { label: 'Tyres & tubes', href: '/shop/batteries-parts-kits/tyres-tubes/' },
+      { label: 'Parts & kits', href: '/shop/batteries-parts-kits/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'ebike-group-rides-community-clubs-australia': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
+  'ebike-subsidies-incentives-rebates-australia': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/commuter-electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'electric-bikes-vs-scooters-for-kids-teens': {
+    body: true,
+    shop: [
+      { label: 'Kids e-bikes', href: '/shop/kids-off-road-ev/' },
+      { label: 'Electric scooters', href: '/shop/electric-scooters/' },
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+    ],
+  },
 };
