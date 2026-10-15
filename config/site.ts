@@ -673,7 +673,7 @@ export const POSTS = [
     category: 'Battery & Tech',
     date: '2026-07-22',
     readTime: '6 min read',
-    image: '/images/blog/ebike-battery-care-and-range-maximization-guide.eba9f532.webp',
+    image: '/images/blog/ebike-battery-care-and-range-maximization-guide.333fe689.webp',
   },
   {
     slug: 'belt-drive-vs-chain-ebikes-pros-cons-australia',
@@ -727,7 +727,7 @@ export const POSTS = [
     category: 'Mountain Biking',
     date: '2026-03-01',
     readTime: '8 min read',
-    image: '/images/blog/electric-mountain-bikes-full-suspension-vs-hardtail.d6b3cfc8.webp',
+    image: '/images/blog/electric-mountain-bikes-full-suspension-vs-hardtail.18fc3e4c.webp',
   },
   {
     slug: 'ebike-conversion-kits-diy-guide-australia',
@@ -808,7 +808,7 @@ export const POSTS = [
     category: 'Maintenance',
     date: '2023-09-08',
     readTime: '11 min read',
-    image: '/images/blog/ebike-maintenance-schedule-checklist.a34ab2c5.webp',
+    image: '/images/blog/ebike-maintenance-schedule-checklist.a3af2849.webp',
   },
   {
     slug: 'ebike-motor-types-hub-mid-drive-friction',
@@ -862,7 +862,7 @@ export const POSTS = [
     category: 'Safety',
     date: '2022-11-18',
     readTime: '13 min read',
-    image: '/images/blog/ebike-battery-fire-safety-lithium-ion.f1346c33.webp',
+    image: '/images/blog/ebike-battery-fire-safety-lithium-ion.8607df75.webp',
   },
 
   // === ELECTRIC SCOOTERS (12 posts — 2 kept + 10 new) ===
@@ -918,7 +918,7 @@ export const POSTS = [
     category: 'E-Scooter Guide',
     date: '2025-10-08',
     readTime: '7 min read',
-    image: '/images/blog/electric-scooter-safety-gear-essentials-australia.51e0b69f.webp',
+    image: '/images/blog/electric-scooter-safety-gear-essentials-australia.29681a4e.webp',
   },
   {
     slug: 'electric-scooter-battery-range-maximizing-tips',
@@ -1019,7 +1019,7 @@ export const POSTS = [
     category: 'E-Skateboard Guide',
     date: '2025-05-02',
     readTime: '7 min read',
-    image: '/images/blog/electric-skateboard-maintenance-belts-wheels-bearings.a3d0f4e4.webp',
+    image: '/images/blog/electric-skateboard-maintenance-belts-wheels-bearings.6585b2ac.webp',
   },
   {
     slug: 'electric-skateboard-braking-techniques-safety',
@@ -1055,7 +1055,7 @@ export const POSTS = [
     category: 'E-Skateboard Guide',
     date: '2024-09-12',
     readTime: '8 min read',
-    image: '/images/blog/electric-skateboard-commuting-pros-cons.292e7593.webp',
+    image: '/images/blog/electric-skateboard-commuting-pros-cons.4427ee7f.webp',
   },
 
   // === SELF-BALANCING / EUC / HOVERBOARDS (8 posts — 1 kept + 7 new) ===
@@ -1066,7 +1066,7 @@ export const POSTS = [
     category: 'EUC Guide',
     date: '2025-08-15',
     readTime: '7 min read',
-    image: '/images/blog/electric-unicycles-euc-beginner-guide-australia.e887680f.webp',
+    image: '/images/blog/electric-unicycles-euc-beginner-guide-australia.777b7d60.webp',
   },
   {
     slug: 'hoverboard-buying-guide-kids-adults-australia',
@@ -1084,7 +1084,7 @@ export const POSTS = [
     category: 'EUC Guide',
     date: '2025-04-08',
     readTime: '8 min read',
-    image: '/images/blog/electric-unicycle-commuting-guide-australia.c0bf53eb.webp',
+    image: '/images/blog/electric-unicycle-commuting-guide-australia.ad7bcc08.webp',
   },
   {
     slug: 'hoverboard-safety-guide-kids-parents',
@@ -1120,7 +1120,7 @@ export const POSTS = [
     category: 'EUC Guide',
     date: '2024-06-12',
     readTime: '8 min read',
-    image: '/images/blog/electric-unicycle-vs-scooter-comparison.2e8d53ea.webp',
+    image: '/images/blog/electric-unicycle-vs-scooter-comparison.e1481659.webp',
   },
   {
     slug: 'hoverboard-laws-australia-where-to-ride',
@@ -1167,7 +1167,7 @@ export const POSTS = [
     category: 'Kids EV Guide',
     date: '2025-09-15',
     readTime: '7 min read',
-    image: '/images/blog/electric-go-kart-kids-guide-australia.56c9f9bf.webp',
+    image: '/images/blog/electric-go-kart-kids-guide-australia.b24a297a.webp',
   },
   {
     slug: 'kids-electric-quad-bike-safety-guide',
@@ -1185,7 +1185,7 @@ export const POSTS = [
     category: 'Kids EV Guide',
     date: '2025-05-28',
     readTime: '8 min read',
-    image: '/images/blog/stacyc-vs-gasgas-kids-balance-bike-comparison.3e70ada8.webp',
+    image: '/images/blog/stacyc-vs-gasgas-kids-balance-bike-comparison.e906db22.webp',
   },
   {
     slug: 'electric-dirt-bike-vs-petrol-kids-comparison',
@@ -1223,7 +1223,7 @@ export const POSTS = [
     category: 'Mobility & Access',
     date: '2025-11-01',
     readTime: '7 min read',
-    image: '/images/blog/electric-trikes-stability-mobility-guide.1b0b101d.webp',
+    image: '/images/blog/electric-trikes-stability-mobility-guide.087d59ff.webp',
   },
   {
     slug: 'mobility-scooter-buying-guide-australia',
@@ -1241,7 +1241,7 @@ export const POSTS = [
     category: 'Mobility Guide',
     date: '2025-07-15',
     readTime: '8 min read',
-    image: '/images/blog/travel-folding-mobility-scooter-guide.f05ea2be.webp',
+    image: '/images/blog/travel-folding-mobility-scooter-guide.dfc50983.webp',
   },
   {
     slug: 'heavy-duty-mobility-scooter-all-terrain-guide',
@@ -1259,7 +1259,7 @@ export const POSTS = [
     category: 'Mobility Guide',
     date: '2025-03-05',
     readTime: '7 min read',
-    image: '/images/blog/mobility-scooter-battery-range-charging-tips.9c4041f3.webp',
+    image: '/images/blog/mobility-scooter-battery-range-charging-tips.5100f460.webp',
   },
   {
     slug: 'mobility-scooter-laws-footpath-rules-australia',
@@ -1342,7 +1342,7 @@ export const POSTS = [
     category: 'Parts & Tech',
     date: '2025-06-02',
     readTime: '7 min read',
-    image: '/images/blog/ebike-battery-capacity-voltage-amp-hours-explained.d11a1031.webp',
+    image: '/images/blog/ebike-battery-capacity-voltage-amp-hours-explained.569edf97.webp',
   },
 
   // === SAFETY, LOCKS & CARRY (8 posts — 2 kept + 7 new, minus 1 duplicate) ===
@@ -1398,7 +1398,7 @@ export const POSTS = [
     category: 'Accessories Guide',
     date: '2025-10-22',
     readTime: '7 min read',
-    image: '/images/blog/bike-rack-basket-cargo-carrying-guide.53bab881.webp',
+    image: '/images/blog/bike-rack-basket-cargo-carrying-guide.bc50ac16.webp',
   },
   {
     slug: 'child-seat-ebike-safety-installation-guide',
@@ -1416,7 +1416,7 @@ export const POSTS = [
     category: 'Safety',
     date: '2025-06-12',
     readTime: '7 min read',
-    image: '/images/blog/bike-light-lumens-guide-front-rear-sets.29e5182b.webp',
+    image: '/images/blog/bike-light-lumens-guide-front-rear-sets.c5852968.webp',
   },
   {
     slug: 'high-vis-jacket-reflective-gear-cycling',
@@ -1434,7 +1434,7 @@ export const POSTS = [
     category: 'Accessories Guide',
     date: '2025-02-08',
     readTime: '6 min read',
-    image: '/images/blog/phone-mount-ebike-quad-lock-guide.e24f5a43.webp',
+    image: '/images/blog/phone-mount-ebike-quad-lock-guide.87bb6fe3.webp',
   },
 
   // === ELECTRIC QUAD BIKES & ATVs (6 posts — 1 kept + 5 new) ===
@@ -1454,7 +1454,7 @@ export const POSTS = [
     category: 'Quad & ATV Guide',
     date: '2026-05-22',
     readTime: '8 min read',
-    image: '/images/blog/kids-electric-quad-bike-buying-guide-australia.bd697651.webp',
+    image: '/images/blog/kids-electric-quad-bike-buying-guide-australia.6a58de80.webp',
   },
   {
     slug: 'adult-electric-atv-recreation-farm-guide',
@@ -1463,7 +1463,7 @@ export const POSTS = [
     category: 'Quad & ATV Guide',
     date: '2026-03-18',
     readTime: '9 min read',
-    image: '/images/blog/adult-electric-atv-recreation-farm-guide.26874075.webp',
+    image: '/images/blog/adult-electric-atv-recreation-farm-guide.7f706ecf.webp',
   },
   {
     slug: 'electric-quad-bike-vs-petrol-atv-comparison',
@@ -1481,7 +1481,7 @@ export const POSTS = [
     category: 'Quad & ATV Guide',
     date: '2025-09-02',
     readTime: '9 min read',
-    image: '/images/blog/farm-utility-electric-quad-guide-australia.a9fef125.webp',
+    image: '/images/blog/farm-utility-electric-quad-guide-australia.a620121d.webp',
   },
   {
     slug: 'electric-quad-bike-safety-helmet-gear-guide',
@@ -1490,7 +1490,7 @@ export const POSTS = [
     category: 'Quad & ATV Guide',
     date: '2025-07-05',
     readTime: '7 min read',
-    image: '/images/blog/electric-quad-bike-safety-helmet-gear-guide.023a4333.webp',
+    image: '/images/blog/electric-quad-bike-safety-helmet-gear-guide.959ddbfc.webp',
   },
 
   // === ELECTRIC WATER SPORTS (7 new) ===
@@ -1501,7 +1501,7 @@ export const POSTS = [
     category: 'Water Sports Guide',
     date: '2026-08-05',
     readTime: '9 min read',
-    image: '/images/blog/electric-jet-ski-buying-guide-australia.46b32f6b.webp',
+    image: '/images/blog/electric-jet-ski-buying-guide-australia.a0080460.webp',
   },
   {
     slug: 'electric-surfboard-efoil-beginner-guide',
@@ -1519,7 +1519,7 @@ export const POSTS = [
     category: 'Water Sports Guide',
     date: '2026-04-22',
     readTime: '7 min read',
-    image: '/images/blog/electric-jetboard-bodyboard-guide.72ccb7ac.webp',
+    image: '/images/blog/electric-jetboard-bodyboard-guide.a6d4d0cc.webp',
   },
   {
     slug: 'sea-doo-rise-electric-jet-ski-review',
@@ -1537,7 +1537,7 @@ export const POSTS = [
     category: 'Water Sports Guide',
     date: '2026-02-10',
     readTime: '8 min read',
-    image: '/images/blog/electric-watercraft-laws-australia-boating.df2ce06b.webp',
+    image: '/images/blog/electric-watercraft-laws-australia-boating.efc25e4f.webp',
   },
   {
     slug: 'efoil-hydrofoil-learning-guide-beginners',
@@ -1555,7 +1555,7 @@ export const POSTS = [
     category: 'Water Sports Guide',
     date: '2025-10-02',
     readTime: '7 min read',
-    image: '/images/blog/electric-water-sports-battery-range-guide.317189e0.webp',
+    image: '/images/blog/electric-water-sports-battery-range-guide.189cd2b8.webp',
   },
 ];
 
