@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "eslint .",
     "clean": "next clean",
-    "agent:hash": "node scripts/gen-skill-hashes.mjs"
+    "agent:hash": "node scripts/gen-skill-hashes.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
