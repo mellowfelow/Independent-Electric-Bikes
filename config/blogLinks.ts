@@ -734,4 +734,85 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Accessories', href: '/shop/accessories/' },
     ],
   },
+  'ebike-suspension-types-front-full-rigid': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-solar-charging-panels-off-grid': {
+    body: true,
+    shop: [
+      { label: 'Batteries & chargers', href: '/shop/batteries-parts-kits/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
+  'folding-ebikes-pros-cons-commuters': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-battery-fire-safety-lithium-ion': {
+    body: true,
+    shop: [
+      { label: 'Batteries & chargers', href: '/shop/batteries-parts-kits/' },
+      { label: 'Safety gear', href: '/shop/safety-security-carry/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'ebike-accessibility-disabilities-adaptive': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Electric tricycles', href: '/shop/electric-bikes/' },
+      { label: 'Mobility scooters', href: '/shop/mobility-scooters/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
+  'ebike-gps-tracking-anti-theft-guide': {
+    body: true,
+    shop: [
+      { label: 'Safety & security', href: '/shop/safety-security-carry/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'ebike-financing-options-australia': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Electric scooters', href: '/shop/electric-scooters/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-sharing-schemes-australia-cities': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Electric scooters', href: '/shop/electric-scooters/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
+  'ebike-trail-etiquette-shared-paths': {
+    body: true,
+    shop: [
+      { label: 'Safety gear', href: '/shop/safety-security-carry/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'ebike-motor-lifespan-durability-replacement': {
+    body: true,
+    shop: [
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
 };
