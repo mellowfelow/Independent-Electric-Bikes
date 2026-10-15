@@ -170,4 +170,84 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Contact us', href: '/contact/' },
     ],
   },
+  'electric-trikes-stability-mobility-guide': {
+    body: true,
+    shop: [
+      { label: 'Electric trikes', href: '/shop/electric-bikes/' },
+      { label: 'Mobility scooters', href: '/shop/mobility-scooters/' },
+      { label: 'Step-through commuters', href: '/shop/electric-bikes/step-through-commuters/' },
+    ],
+  },
+  'ebike-weight-capacity-heavy-rider-guide': {
+    body: true,
+    shop: [
+      { label: 'Fat tyre e-bikes', href: '/shop/electric-bikes/fat-tyre-lifestyle-ebikes/' },
+      { label: 'Cargo e-bikes', href: '/shop/electric-bikes/cargo-family-ebikes/' },
+      { label: 'E-bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'ebike-tyre-pressure-guide-speed-comfort-grip': {
+    body: true,
+    shop: [
+      { label: 'Tyres & tubes', href: '/shop/batteries-parts-kits/tyres-tubes/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+    ],
+  },
+  'ebike-vs-car-annual-cost-comparison-australia': {
+    body: true,
+    shop: [
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'Cargo e-bikes', href: '/shop/electric-bikes/cargo-family-ebikes/' },
+      { label: 'Shop all e-bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'cargo-ebike-child-seats-school-runs-safety': {
+    body: true,
+    shop: [
+      { label: 'Cargo & family e-bikes', href: '/shop/electric-bikes/cargo-family-ebikes/' },
+      { label: 'Child seats', href: '/shop/safety-security-carry/child-seats/' },
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+    ],
+  },
+  'electric-unicycles-euc-beginner-guide-australia': {
+    body: true,
+    shop: [
+      { label: 'Self-balancing EVs', href: '/shop/self-balancing-ev/' },
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+      { label: 'Safety gear', href: '/shop/safety-security-carry/' },
+    ],
+  },
+  'throttle-vs-pedal-assist-ebike-modes-explained': {
+    body: true,
+    shop: [
+      { label: 'E-bikes', href: '/shop/electric-bikes/' },
+      { label: 'Conversion kits', href: '/shop/batteries-parts-kits/mid-drive-conversion-kits/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-touring-australia-routes-gear-planning': {
+    body: true,
+    shop: [
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'E-bike batteries', href: '/shop/batteries-parts-kits/ebike-batteries/' },
+      { label: 'Racks & baskets', href: '/shop/safety-security-carry/racks-baskets/' },
+    ],
+  },
+  'winter-ebike-commuting-cold-weather-gear-tips': {
+    body: true,
+    shop: [
+      { label: 'Lights & visibility', href: '/shop/safety-security-carry/lights-visibility/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'E-bike batteries', href: '/shop/batteries-parts-kits/ebike-batteries/' },
+    ],
+  },
+  'ebike-motor-noise-quiet-riding-guide': {
+    body: true,
+    shop: [
+      { label: 'E-bikes', href: '/shop/electric-bikes/' },
+      { label: 'Conversion kits', href: '/shop/batteries-parts-kits/mid-drive-conversion-kits/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
 };
