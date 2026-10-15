@@ -110,7 +110,13 @@ export function Nav() {
                         );
                       })}
 
-                      <div className="pt-3 border-t border-slate-800/80">
+                      <div className="pt-3 border-t border-slate-800/80 space-y-2">
+                        <Link
+                          href="/brands/"
+                          className="text-xs font-bold text-slate-300 hover:text-emerald-400 px-3 block transition-colors"
+                        >
+                          Browse All Brands &rarr;
+                        </Link>
                         <Link
                           href="/shop/"
                           className="text-xs font-black text-emerald-400 hover:text-emerald-300 px-3 block"
@@ -169,8 +175,8 @@ export function Nav() {
                 )}
               </div>
 
-              <Link href="/brands/" className="hover:text-emerald-400 transition-colors">
-                Brands & Tech
+              <Link href="/blog/" className="hover:text-emerald-400 transition-colors">
+                Blog
               </Link>
               <Link href="/compare/" className="hover:text-emerald-400 transition-colors">
                 Compare Matrix
@@ -269,7 +275,10 @@ export function Nav() {
 
               <div className="pt-2 border-t border-slate-800 space-y-2">
                 <Link href="/brands/" onClick={() => setIsMobileOpen(false)} className="block p-2 rounded-xl hover:bg-slate-900">
-                  Brands & Engineering
+                  Browse All Brands
+                </Link>
+                <Link href="/blog/" onClick={() => setIsMobileOpen(false)} className="block p-2 rounded-xl hover:bg-slate-900">
+                  Blog & Guides
                 </Link>
                 <Link href="/compare/" onClick={() => setIsMobileOpen(false)} className="block p-2 rounded-xl hover:bg-slate-900">
                   Compare Spec Matrix
