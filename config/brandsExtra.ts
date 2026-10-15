@@ -122,6 +122,5 @@ export const EXTRA_BRANDS: BrandDef[] = [
   mk('yujet', 'YuJet', 'Electric Bikes', 'electric bodyboards'),
   mk('taiga', 'Taiga', 'Electric Bikes', 'electric jet skis'),
   mk('narke', 'Narke', 'Electric Bikes', 'electric jet skis'),
-  mk('sea-doo', 'Sea-Doo', 'Electric Bikes', 'electric jet skis', ['Sea-Doo']),
   mk('yamaha', 'Yamaha', 'Electric Bikes', 'electric personal watercraft'),
 ];

@@ -629,8 +629,8 @@ export const KIDS_ITEMS: Product[] = [
     }
   },
   {
-    "slug": "thumpstar-tsb-12-electric-balance",
-    "name": "Thumpstar TSB 12 Electric Balance",
+    "slug": "thumpstar-tsk-12-electric-balance",
+    "name": "Thumpstar TSK 12 Electric Balance",
     "price": 899,
     "category": "kids-off-road-ev",
     "subcategory": "electric-balance-bikes",
@@ -644,10 +644,10 @@ export const KIDS_ITEMS: Product[] = [
       "brakeType": "Mechanical Disc",
       "batteryRange": "Under 50km"
     },
-    "description": "Thumpstar TSB 12 Electric Balance is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Thumpstar TSB 12 Electric Balance featuring high torque motor, heavy-duty frame, and long-range battery.",
+    "description": "Thumpstar TSK 12 Electric Balance is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
+    "shortDescription": "Thumpstar TSK 12 Electric Balance featuring high torque motor, heavy-duty frame, and long-range battery.",
     "images": [
-      "https://picsum.photos/seed/thumpstar-tsb-12-electric-balance/1200/900"
+      "https://picsum.photos/seed/thumpstar-tsk-12-electric-balance/1200/900"
     ],
     "specs": {
       "motor": "250W Geared Rear Motor",
@@ -728,8 +728,8 @@ export const KIDS_ITEMS: Product[] = [
     }
   },
   {
-    "slug": "thumpstar-tsb-16-pro-balance",
-    "name": "Thumpstar TSB 16 Pro Balance",
+    "slug": "thumpstar-tsk-16-pro-balance",
+    "name": "Thumpstar TSK 16 Pro Balance",
     "price": 1099,
     "category": "kids-off-road-ev",
     "subcategory": "electric-balance-bikes",
@@ -743,10 +743,10 @@ export const KIDS_ITEMS: Product[] = [
       "brakeType": "Mechanical Disc",
       "batteryRange": "Under 50km"
     },
-    "description": "Thumpstar TSB 16 Pro Balance is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Thumpstar TSB 16 Pro Balance featuring high torque motor, heavy-duty frame, and long-range battery.",
+    "description": "Thumpstar TSK 16 Pro Balance is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
+    "shortDescription": "Thumpstar TSK 16 Pro Balance featuring high torque motor, heavy-duty frame, and long-range battery.",
     "images": [
-      "https://picsum.photos/seed/thumpstar-tsb-16-pro-balance/1200/900"
+      "https://picsum.photos/seed/thumpstar-tsk-16-pro-balance/1200/900"
     ],
     "specs": {
       "motor": "350W Geared Hub Engine",
@@ -959,8 +959,8 @@ export const KIDS_ITEMS: Product[] = [
     }
   },
   {
-    "slug": "thumpstar-tsb-70-e-pit-bike",
-    "name": "Thumpstar TSB 70 E-Pit Bike",
+    "slug": "thumpstar-tsk-70-e-pit-bike",
+    "name": "Thumpstar TSK 70 E-Pit Bike",
     "price": 2199,
     "category": "kids-off-road-ev",
     "subcategory": "youth-electric-dirt-bikes",
@@ -974,10 +974,10 @@ export const KIDS_ITEMS: Product[] = [
       "brakeType": "Hydraulic Disc",
       "batteryRange": "Under 50km"
     },
-    "description": "Thumpstar TSB 70 E-Pit Bike is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
-    "shortDescription": "Thumpstar TSB 70 E-Pit Bike featuring high torque motor, heavy-duty frame, and long-range battery.",
+    "description": "Thumpstar TSK 70 E-Pit Bike is engineered for Australian conditions with superior quality components, high torque motors, and reliable lithium battery tech.",
+    "shortDescription": "Thumpstar TSK 70 E-Pit Bike featuring high torque motor, heavy-duty frame, and long-range battery.",
     "images": [
-      "https://picsum.photos/seed/thumpstar-tsb-70-e-pit-bike/1200/900"
+      "https://picsum.photos/seed/thumpstar-tsk-70-e-pit-bike/1200/900"
     ],
     "specs": {
       "motor": "1500W Mid-Drive Brushless Engine",

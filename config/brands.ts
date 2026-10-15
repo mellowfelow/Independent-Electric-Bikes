@@ -571,6 +571,16 @@ const CORE_BRANDS: BrandDef[] = [
     tagline: '100% Waterproof Panniers & Bikepacking',
     description: 'Ortlieb Back-Roller Classic waterproof panniers clip securely to heavy duty e-bike rear racks.',
   },
+  // Water Sports
+  {
+    slug: 'sea-doo',
+    name: 'Sea-Doo',
+    category: 'Electric Bikes',
+    tagline: 'Electric Jet Skis — Zero-Emission Personal Watercraft by BRP',
+    description: 'Sea-Doo by BRP is the world\'s most recognised jet ski brand, now entering the electric era with the Sea-Doo Rise. Zero-emission, whisper-quiet electric personal watercraft (PWC) built for lakes, rivers, and coastal waterways across Australia. No fuel, no fumes — just instant electric torque on the water.',
+    aliases: ['Sea-Doo', 'SeaDoo', 'Seadoo'],
+    featured: true,
+  },
 ];
 
 /** Every brand, including those added without a hand-written profile. */
