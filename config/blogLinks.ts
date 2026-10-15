@@ -652,4 +652,86 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Compare e-bikes', href: '/compare/' },
     ],
   },
+  'ebikes-for-seniors-older-adults-guide': {
+    body: true,
+    shop: [
+      { label: 'Step-through e-bikes', href: '/shop/electric-bikes/' },
+      { label: 'Electric tricycles', href: '/shop/electric-bikes/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
+  'ebike-braking-techniques-safety-guide': {
+    body: true,
+    shop: [
+      { label: 'Safety gear', href: '/shop/safety-security-carry/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Brake parts', href: '/shop/batteries-parts-kits/' },
+    ],
+  },
+  'electric-cargo-bikes-family-errands-guide': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+      { label: 'Safety gear', href: '/shop/safety-security-carry/' },
+      { label: 'Kids e-bikes', href: '/shop/kids-off-road-ev/' },
+    ],
+  },
+  'ebike-rain-waterproofing-wet-weather': {
+    body: true,
+    shop: [
+      { label: 'Accessories', href: '/shop/accessories/' },
+      { label: 'Safety gear', href: '/shop/safety-security-carry/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'how-ebike-motors-work-beginners-guide': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'Conversion kits', href: '/shop/batteries-parts-kits/mid-drive-conversion-kits/' },
+    ],
+  },
+  'ebike-frame-materials-aluminium-carbon-steel': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
+  'ebike-delivery-riders-tips-food-courier': {
+    body: true,
+    shop: [
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/' },
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'Safety gear', href: '/shop/safety-security-carry/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
+  'ebike-noise-levels-quiet-riding-guide': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-resale-value-depreciation-guide': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Batteries & chargers', href: '/shop/batteries-parts-kits/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-vs-car-total-cost-comparison': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Electric scooters', href: '/shop/electric-scooters/' },
+      { label: 'Accessories', href: '/shop/accessories/' },
+    ],
+  },
 };
