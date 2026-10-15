@@ -676,3 +676,78 @@
 - Total blog primaries: 100
 - Duplicate primaries: 0
 - Cross-check with category primaries: ✅ No overlaps (blogs target informational intent; categories target transactional)
+
+
+---
+
+## Backlog — e-bike posts removed from the live blog (2026-10-15)
+
+The 100-post blog was rebalanced across all ten store categories. These 65 e-bike-only posts were removed from the live site and are kept here for future use. Full article text is in git history (last present at commit `35e89fd`): `git show 35e89fd:content/blog/<slug>.md`. To bring one back: restore the file, add its entry to `POSTS` in `config/site.ts` and `GUIDE_LINKS` in `config/blogLinks.ts`, and give it its own image that is not already used on the shop.
+
+| Slug | Title | Category |
+|---|---|---|
+| best-ebikes-for-hills-steep-terrain-australia | Best E-Bikes for Hills: Torque, Gearing & Motor Guide | Buying Guides |
+| best-ebikes-for-women-comfort-fit-guide | Best E-Bikes for Women: Comfort, Fit & Sizing Guide | Buying Guides |
+| buying-second-hand-ebike-what-to-check | Buying a Second-Hand E-Bike: What to Check Before You Pay | Buying Guides |
+| cargo-ebike-child-seats-school-runs-safety | Cargo E-Bike Child Seats & School Run Safety: A Parent\'s Complete Guide | Cargo Lifestyle |
+| carrying-kids-ebike-child-seats-trailers | Carrying Kids on an E-Bike: Child Seats, Trailers & Cargo Bikes | Lifestyle |
+| ebike-accessibility-disabilities-adaptive | E-Bikes for People with Disabilities: Adaptive Cycling Options | Lifestyle |
+| ebike-accessories-phone-mounts-mirrors-bells | E-Bike Accessories: Phone Mounts, Mirrors, Bells & More | Buying Guides |
+| ebike-braking-techniques-safety-guide | E-Bike Braking Techniques: How to Stop Safely Every Time | Safety |
+| ebike-camping-bikepacking-gear-guide | E-Bike Camping & Bikepacking: Gear, Routes & Planning Guide | Off-Road & Adventure |
+| ebike-chain-maintenance-cleaning-lubrication | E-Bike Chain Maintenance: Cleaning, Lubrication & Wear Guide | Maintenance |
+| ebike-commuting-hot-weather-summer-tips | E-Bike Commuting in Hot Weather: Summer Riding Tips | Commuting |
+| ebike-conversion-kit-diy-guide-australia | E-Bike Conversion Kits: DIY Guide for Australia | Tech & Components |
+| ebike-delivery-riders-tips-food-courier | E-Bike for Delivery Riders: Setup, Maintenance, and Earning Tips | Lifestyle |
+| ebike-display-apps-connectivity-features-guide | E-Bike Displays & App Connectivity: What the Screen Really Tells You | Tech & Components |
+| ebike-financing-options-australia | E-Bike Financing Options in Australia: How to Pay for Your Ride | Buying Guides |
+| ebike-fitness-health-benefits-exercise | E-Bike Fitness: Health Benefits and How Much Exercise You Get | Lifestyle |
+| ebike-for-food-delivery-riders-uber-doordash | Best E-Bikes for Food Delivery: Uber Eats, DoorDash & Menulog | Buying Guides |
+| ebike-for-seniors-mobility-step-through-guide | E-Bikes for Seniors: Step-Through Frames, Low-Impact Exercise & Mobility Freedom | Lifestyle Riding |
+| ebike-for-university-students-campus-commute | E-Bikes for University Students: The Best Campus Commute | Commuting |
+| ebike-frame-materials-aluminium-carbon-steel | E-Bike Frame Materials: Aluminium vs Carbon vs Steel | Tech & Components |
+| ebike-gear-ratios-shifting-explained | E-Bike Gear Ratios & Shifting Explained | Tech & Components |
+| ebike-gps-tracking-anti-theft-guide | E-Bike GPS Tracking and Anti-Theft: Protect Your Investment | Safety |
+| ebike-group-rides-community-clubs-australia | E-Bike Group Rides & Community Clubs in Australia | Lifestyle |
+| ebike-headlight-beam-patterns-visibility | E-Bike Headlight Beam Patterns & Visibility Guide | Safety |
+| ebike-motor-lifespan-durability-replacement | E-Bike Motor Lifespan: How Long Do They Last? | Maintenance |
+| ebike-motor-noise-quiet-riding-guide | E-Bike Motor Noise: Why Some Motors Whine & How to Ride Quietly | Motor Systems |
+| ebike-noise-levels-quiet-riding-guide | E-Bike Noise Levels: How Quiet Are Electric Bikes? | Tech & Components |
+| ebike-parking-storage-apartment-solutions | E-Bike Parking & Storage: Apartment, Garage & Outdoor Solutions | Safety |
+| ebike-pedals-types-clipless-flat-shoes | E-Bike Pedals: Flat vs Clipless & What Shoes to Wear | Tech & Components |
+| ebike-rain-waterproofing-wet-weather | Riding an E-Bike in the Rain: Waterproofing and Wet Weather Tips | Maintenance |
+| ebike-resale-value-depreciation-guide | E-Bike Resale Value: How Fast Do Electric Bikes Depreciate? | Buying Guides |
+| ebike-sharing-schemes-australia-cities | E-Bike Sharing Schemes in Australia: How They Work and What They Cost | Commuting |
+| ebike-solar-charging-panels-off-grid | Solar Charging an E-Bike: Panels, Power Stations, and Off-Grid Riding | Tech & Components |
+| ebike-suspension-setup-front-fork-seatpost | E-Bike Suspension Setup: Front Fork & Seatpost Guide | Maintenance |
+| ebike-suspension-types-front-full-rigid | E-Bike Suspension Types: Rigid, Hardtail, and Full Suspension Explained | Tech & Components |
+| ebike-throttle-vs-pedal-assist-differences | E-Bike Throttle vs Pedal Assist: What Is the Difference? | Tech & Components |
+| ebike-touring-australia-routes-gear-planning | E-Bike Touring in Australia: Routes, Gear & Battery Planning | Touring & Adventure |
+| ebike-touring-long-distance-planning-guide | E-Bike Touring: Long-Distance Planning Guide for Australia | Off-Road & Adventure |
+| ebike-trail-etiquette-shared-paths | E-Bike Trail Etiquette: How to Ride Shared Paths Respectfully | Safety |
+| ebike-tyre-pressure-guide-speed-comfort-grip | E-Bike Tyre Pressure Guide: Speed, Comfort & Grip in One Adjustment | Maintenance |
+| ebike-tyre-size-width-guide-choosing | How to Choose E-Bike Tyre Size and Width | Maintenance |
+| ebike-vs-car-annual-cost-comparison-australia | E-Bike vs Car: Annual Cost Comparison for Australian Commuters | Commuter Guides |
+| ebike-vs-car-total-cost-comparison | E-Bike vs Car: The True Cost of Ownership Compared | Commuting |
+| ebike-vs-public-transport-cost-time-comparison | E-Bike vs Public Transport: Cost & Time Comparison (Australia) | Commuting |
+| ebike-weight-capacity-heavy-rider-guide | E-Bike Weight Limits: A Guide for Heavier Riders (100 kg+) | Buying Guides |
+| ebike-weight-how-heavy-is-too-heavy | E-Bike Weight: How Heavy Is Too Heavy? | Tech & Components |
+| ebike-winter-cold-weather-riding-tips | E-Bike Winter Riding: Cold Weather Tips for Australian Commuters | Commuting |
+| ebikes-for-seniors-older-adults-guide | E-Bikes for Seniors: The Complete Older Adults Guide | Buying Guides |
+| electric-bike-financing-payment-plans-australia | How to Finance an E-Bike in Australia: BNPL, Loans, Salary Sacrifice & More | Buying & Discounts |
+| electric-bike-insurance-australia-guide | Electric Bike Insurance in Australia: What You Need to Know | Buying Guides |
+| electric-cargo-bikes-family-errands-guide | Electric Cargo Bikes: Replace Your Second Car for Family Errands | Lifestyle |
+| electric-cargo-trikes-business-delivery-guide | Electric Cargo Trikes for Business: Delivery, Food & Trades | Buying Guides |
+| folding-ebikes-pros-cons-commuters | Folding E-Bikes: Pros, Cons, and Who Should Buy One | Buying Guides |
+| gravel-ebikes-australia-adventure-touring | Gravel E-Bikes in Australia: Adventure Riding & Touring | Off-Road & Adventure |
+| how-ebike-motors-work-beginners-guide | How E-Bike Motors Work: A Beginner\'s Guide | Tech & Components |
+| how-to-clean-ebike-safely-washing-guide | How to Clean Your E-Bike Safely: A Step-by-Step Washing Guide | Maintenance |
+| how-to-test-ride-ebike-what-to-check | How to Test Ride an E-Bike: What to Check Before You Buy | Buying Guides |
+| night-riding-ebike-lights-reflectors-safety | Night Riding on an E-Bike: Lights, Reflectors & Safety Guide | Safety |
+| panniers-vs-backpack-ebike-commuter-carrying | Panniers vs Backpack: Best Way to Carry Gear on an E-Bike | Commuting |
+| plan-your-first-ebike-commute-route-checklist | Plan Your First E-Bike Commute: Route, Gear & Checklist | Commuting |
+| rainy-weather-ebike-riding-tips-melbourne | Riding Your E-Bike in the Rain: Melbourne Wet-Weather Commuting Guide | Commuter Guides |
+| regenerative-braking-ebike-how-it-works | Regenerative Braking on E-Bikes: How It Works & Is It Worth It? | Tech & Components |
+| riding-ebike-with-dog-carriers-trailers | Riding an E-Bike with Your Dog: Carriers, Trailers & Safety | Lifestyle |
+| throttle-vs-pedal-assist-ebike-modes-explained | Throttle vs Pedal Assist: E-Bike Modes Explained (Legal & Practical Guide) | Tech Comparisons |
+| winter-ebike-commuting-cold-weather-gear-tips | Winter E-Bike Commuting: Cold Weather Gear, Battery Tips & Visibility | Commuter Guides |

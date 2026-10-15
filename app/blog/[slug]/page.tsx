@@ -7,6 +7,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { GUIDE_LINKS } from '@/config/blogLinks';
 import { getBlogContent } from '@/lib/blog';
+import { BLOG_IMAGES } from '@/config/data/blogImages';
 
 export async function generateStaticParams() {
   return POSTS.map((post) => ({ slug: post.slug }));
@@ -76,9 +77,20 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
             <h1 className="text-3xl sm:text-5xl font-black text-white leading-tight">{post.title}</h1>
           </header>
 
-          <div className="rounded-2xl overflow-hidden mb-8 aspect-[16/9] border border-slate-800">
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-          </div>
+          <figure className="mb-8">
+            <div className="rounded-2xl overflow-hidden aspect-[16/9] border border-slate-800">
+              <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+            </div>
+            {BLOG_IMAGES[post.slug] && (
+              <figcaption className="mt-2 text-[11px] text-slate-500">
+                Photo:{' '}
+                <a href={BLOG_IMAGES[post.slug].sourceUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-300">
+                  {BLOG_IMAGES[post.slug].credit}
+                </a>
+                {BLOG_IMAGES[post.slug].license ? `, ${BLOG_IMAGES[post.slug].license}` : ''}
+              </figcaption>
+            )}
+          </figure>
 
           <article className="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base leading-relaxed space-y-6">
             <p className="text-lg text-slate-200 font-medium leading-relaxed bg-slate-900 p-6 rounded-2xl border border-slate-800">
