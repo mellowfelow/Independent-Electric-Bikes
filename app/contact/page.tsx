@@ -2,6 +2,7 @@
 
 import { EmailText } from '@/components/EmailText';
 import { useState, FormEvent } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { SITE, CONTACT } from '@/config/site';
 import { MapPin, Phone, Mail, Clock, Send, ShieldCheck, Bike } from 'lucide-react';
@@ -208,6 +209,15 @@ export default function ContactPage() {
                   <span>{isSubmitting ? 'Sending...' : 'Send Message to Brunswick Team'}</span>
                 </button>
               </form>
+              <p className="mt-5 text-center text-xs text-slate-400">
+                Want to know who you are buying from?{' '}
+                <Link href="/about/" className="font-bold text-emerald-400 underline hover:text-emerald-300">About VYRON Industries</Link>
+                {' '}and our{' '}
+                <Link href="/shipping/" className="font-bold text-emerald-400 underline hover:text-emerald-300">shipping</Link>
+                {' '}and{' '}
+                <Link href="/returns/" className="font-bold text-emerald-400 underline hover:text-emerald-300">returns</Link>
+                {' '}policies.
+              </p>
             </div>
           </div>
         </div>

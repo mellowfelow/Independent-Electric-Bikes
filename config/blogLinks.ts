@@ -93,7 +93,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     body: true,
     shop: [
       { label: 'Mid-drive conversion kits', href: '/shop/batteries-parts-kits/mid-drive-conversion-kits/' },
-      { label: 'Hub motor kits', href: '/shop/batteries-parts-kits/hub-motor-kits/' },
+      { label: 'Hub motor kits', href: '/shop/batteries-parts-kits/hub-motor-conversion-kits/' },
       { label: 'E-bike batteries', href: '/shop/batteries-parts-kits/ebike-batteries/' },
     ],
   },
@@ -109,7 +109,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     body: true,
     shop: [
       { label: 'Electric bikes', href: '/shop/electric-bikes/' },
-      { label: 'Fat tyre e-bikes', href: '/shop/electric-bikes/fat-tyre-ebikes/' },
+      { label: 'Fat tyre e-bikes', href: '/shop/electric-bikes/fat-tyre-lifestyle-ebikes/' },
       { label: 'Compare e-bikes', href: '/compare/' },
     ],
   },
@@ -133,8 +133,8 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     body: true,
     shop: [
       { label: 'Electric bikes', href: '/shop/electric-bikes/' },
-      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/commuter-electric-bikes/' },
-      { label: 'Folding e-bikes', href: '/shop/electric-bikes/folding-electric-bikes/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'Folding e-bikes', href: '/shop/electric-bikes/foldable-electric-bikes/' },
       { label: 'Compare e-bikes', href: '/compare/' },
     ],
   },
@@ -142,7 +142,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     body: true,
     shop: [
       { label: 'Electric bikes', href: '/shop/electric-bikes/' },
-      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/commuter-electric-bikes/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
       { label: 'Compare e-bikes', href: '/compare/' },
     ],
   },
@@ -150,7 +150,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
     body: true,
     shop: [
       { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
-      { label: 'Chargers', href: '/shop/batteries-parts-kits/chargers/' },
+      { label: 'Chargers', href: '/shop/batteries-parts-kits/ebike-chargers/' },
       { label: 'Electric bikes', href: '/shop/electric-bikes/' },
     ],
   },
@@ -232,7 +232,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
-      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+      { label: 'Bike locks', href: '/shop/safety-security-carry/u-d-locks/' },
     ],
   },
   'electric-scooter-maintenance-tyres-brakes-guide': {
@@ -241,7 +241,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
-      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+      { label: 'Bike locks', href: '/shop/safety-security-carry/u-d-locks/' },
     ],
   },
   'dual-motor-electric-scooter-long-range-guide': {
@@ -250,7 +250,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
-      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+      { label: 'Bike locks', href: '/shop/safety-security-carry/u-d-locks/' },
     ],
   },
   'electric-scooter-safety-gear-essentials-australia': {
@@ -259,7 +259,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
-      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+      { label: 'Bike locks', href: '/shop/safety-security-carry/u-d-locks/' },
     ],
   },
   'electric-scooter-battery-range-maximizing-tips': {
@@ -268,7 +268,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
-      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+      { label: 'Bike locks', href: '/shop/safety-security-carry/u-d-locks/' },
     ],
   },
   'folding-electric-scooter-last-mile-commuting': {
@@ -277,7 +277,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
-      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+      { label: 'Bike locks', href: '/shop/safety-security-carry/u-d-locks/' },
     ],
   },
   'electric-scooter-tyre-types-solid-pneumatic': {
@@ -286,7 +286,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
-      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+      { label: 'Bike locks', href: '/shop/safety-security-carry/u-d-locks/' },
     ],
   },
   'electric-scooter-speed-power-performance-guide': {
@@ -295,7 +295,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
-      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+      { label: 'Bike locks', href: '/shop/safety-security-carry/u-d-locks/' },
     ],
   },
   'electric-scooter-wet-weather-rain-riding-tips': {
@@ -304,7 +304,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
-      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+      { label: 'Bike locks', href: '/shop/safety-security-carry/u-d-locks/' },
     ],
   },
   'electric-scooter-vs-car-cost-comparison-australia': {
@@ -313,7 +313,7 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'Electric scooters', href: '/shop/electric-scooters/' },
       { label: 'Commuter scooters', href: '/shop/electric-scooters/commuter-electric-scooters/' },
       { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
-      { label: 'Locks & security', href: '/shop/safety-security-carry/bike-locks-security/' },
+      { label: 'Bike locks', href: '/shop/safety-security-carry/u-d-locks/' },
     ],
   },
   'electric-skateboard-laws-safety-gear-australia': {
@@ -673,9 +673,10 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
   'ebike-pannier-bag-waterproof-commuting-guide': {
     body: true,
     shop: [
-      { label: 'Electric water sports', href: '/shop/electric-water-sports/' },
-      { label: 'Contact us', href: '/contact/' },
-      { label: 'Shipping and returns', href: '/shipping/' },
+      { label: 'Safety, locks & carry', href: '/shop/safety-security-carry/' },
+      { label: 'Racks & baskets', href: '/shop/safety-security-carry/racks-baskets/' },
+      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
     ],
   },
   'bike-rack-basket-cargo-carrying-guide': {
@@ -717,9 +718,10 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
   'phone-mount-ebike-quad-lock-guide': {
     body: true,
     shop: [
-      { label: 'Electric quad bikes', href: '/shop/electric-quad-bikes/' },
-      { label: 'Kids & off-road EVs', href: '/shop/kids-off-road-ev/' },
-      { label: 'Helmets', href: '/shop/safety-security-carry/helmets/' },
+      { label: 'Safety, locks & carry', href: '/shop/safety-security-carry/' },
+      { label: 'Racks & baskets', href: '/shop/safety-security-carry/racks-baskets/' },
+      { label: 'Phone mounts', href: '/shop/safety-security-carry/phone-mounts/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
     ],
   },
   'electric-quad-bikes-atv-farm-recreation-guide': {

@@ -204,3 +204,16 @@ export function topBrandsFor(categorySlug: string, subSlug?: string, limit = 8):
   }
   return [...counts.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name)).slice(0, limit);
 }
+
+/** Brands with the most products across the whole shop, for the home page brand links. */
+export function topBrands(limit = 18): { slug: string; name: string; count: number }[] {
+  const counts = new Map<string, { slug: string; name: string; count: number }>();
+  for (const p of PRODUCTS) {
+    const b = brandOf(p);
+    if (!b) continue;
+    const row = counts.get(b.slug) ?? { slug: b.slug, name: b.name, count: 0 };
+    row.count++;
+    counts.set(b.slug, row);
+  }
+  return [...counts.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name)).slice(0, limit);
+}

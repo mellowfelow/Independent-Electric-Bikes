@@ -13,6 +13,7 @@ import { CompatibilityPanel } from '@/components/CompatibilityPanel';
 import { relatedProducts } from '@/lib/compat';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { CategoryLinks } from '@/components/CategoryLinks';
+import { RelatedGuides } from '@/components/RelatedGuides';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { CATEGORY_FAQS } from '@/config/data/categoryFaqs';
 import { isVehicle } from '@/lib/shopFilters';
@@ -192,7 +193,10 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                    <span>Save 10% when paying via Cryptocurrency (BTC/USDT)</span>
+                    <span>
+                      Save 10% when paying via Cryptocurrency (BTC/USDT){' '}
+                      <Link href="/blog/cryptocurrency-ebike-buying-discount-guide/" className="font-bold text-emerald-400 underline hover:text-emerald-300">How it works</Link>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -282,6 +286,7 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
             </div>
           </div>
         </div>
+        <RelatedGuides category={product.category} sub={product.subcategory} seed={product.slug} />
       </>
     );
   }
@@ -338,6 +343,8 @@ export default async function ShopCatchAllPage(props: { params: Promise<{ slug: 
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <ShopClientView initialCategory={targetSubcategorySlug || targetCategorySlug} />
         </div>
+
+        <RelatedGuides category={mainCategory.slug} sub={categoryNode.sub?.slug} seed={targetSubcategorySlug || targetCategorySlug} />
 
         {faqs && faqs.length > 0 && (
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">

@@ -5,6 +5,7 @@ import { SITE } from '@/config/site';
 import { fitTitle, fitDesc } from '@/lib/catalog';
 import { JsonLd } from '@/components/JsonLd';
 import { BrandDetailClient } from '@/components/BrandDetailClient';
+import { RelatedGuides } from '@/components/RelatedGuides';
 
 interface PageProps {
   params: Promise<{ brandSlug: string }>;
@@ -79,11 +80,17 @@ export default async function BrandDetailPage({ params }: PageProps) {
     })),
   };
 
+  // The category holding most of this brand products decides which guides are suggested.
+  const catCounts = new Map<string, number>();
+  for (const p of products) catCounts.set(p.category, (catCounts.get(p.category) ?? 0) + 1);
+  const mainCat = [...catCounts].sort((a, b) => b[1] - a[1])[0]?.[0];
+
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={itemListSchema} />
       <BrandDetailClient brand={brand} products={products} />
+      {mainCat && <RelatedGuides category={mainCat} seed={brand.slug} heading={`Guides for ${brand.name} buyers`} />}
     </>
   );
 }

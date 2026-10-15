@@ -56,17 +56,25 @@ export function relatedProducts(product: Product, isPart: boolean, limit = 8): P
   const push = (p: Product) => {
     if (p.slug !== product.slug && !out.some((o) => o.slug === p.slug)) out.push(p);
   };
+  // Siblings are taken in a ring starting just after this product, so every product is linked from the next few
+  // in its sub-category instead of everyone linking to the same first items.
+  const ring = (list: Product[]) => {
+    const i = list.findIndex((p) => p.slug === product.slug);
+    return i < 0 ? list : [...list.slice(i + 1), ...list.slice(0, i)];
+  };
+  const sameSub = ring(PRODUCTS.filter((p) => p.category === product.category && p.subcategory === product.subcategory));
+  const sameCat = ring(PRODUCTS.filter((p) => p.category === product.category));
   if (isPart) {
     const f = fitsOfPart(product);
     f?.confirmed.forEach(push);
     f?.system.forEach(push);
-    PRODUCTS.filter((p) => p.category === product.category && p.subcategory === product.subcategory).forEach(push);
+    sameSub.forEach(push);
   } else {
-    partsForVehicle(product).forEach(({ part }) => push(part));
-    PRODUCTS.filter((p) => p.category === product.category && p.subcategory === product.subcategory).forEach(push);
-    PRODUCTS.filter((p) => p.category === product.category).forEach(push);
+    // A few fitting parts, then neighbouring models.
+    partsForVehicle(product).slice(0, Math.max(2, Math.floor(limit / 2))).forEach(({ part }) => push(part));
+    sameSub.forEach(push);
   }
-  PRODUCTS.filter((p) => p.category === product.category).forEach(push);
+  sameCat.forEach(push);
   return out.slice(0, limit);
 }
 

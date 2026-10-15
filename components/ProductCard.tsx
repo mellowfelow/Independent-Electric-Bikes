@@ -141,7 +141,7 @@ export function ProductCard({ product, className = '', priority = false }: Produ
             href={productUrl}
             className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-[10px] rounded-lg transition-all"
           >
-            Details &rarr;
+            Details<span className="sr-only"> for {product.name}</span> &rarr;
           </Link>
         </div>
 
