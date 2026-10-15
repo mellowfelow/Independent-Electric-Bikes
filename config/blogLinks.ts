@@ -331,4 +331,84 @@ export const GUIDE_LINKS: Record<string, GuideLinks> = {
       { label: 'FAQ', href: '/faq/' },
     ],
   },
+  'ebike-chain-maintenance-cleaning-lubrication': {
+    body: true,
+    shop: [
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'E-bike accessories', href: '/shop/safety-security-carry/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'best-ebikes-for-hills-steep-terrain-australia': {
+    body: true,
+    shop: [
+      { label: 'Mountain e-bikes', href: '/shop/electric-bikes/electric-mountain-bikes/' },
+      { label: 'Mid-drive e-bikes', href: '/shop/electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'electric-bike-insurance-australia-guide': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Locks & security', href: '/shop/safety-security-carry/locks-security/' },
+      { label: 'FAQ', href: '/faq/' },
+    ],
+  },
+  'how-to-test-ride-ebike-what-to-check': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+      { label: 'Contact us', href: '/contact/' },
+    ],
+  },
+  'ebike-parking-storage-apartment-solutions': {
+    body: true,
+    shop: [
+      { label: 'Locks & security', href: '/shop/safety-security-carry/locks-security/' },
+      { label: 'Folding e-bikes', href: '/shop/electric-bikes/folding-ebikes/' },
+      { label: 'Safety & security', href: '/shop/safety-security-carry/' },
+    ],
+  },
+  'regenerative-braking-ebike-how-it-works': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Batteries & chargers', href: '/shop/batteries-parts-kits/' },
+      { label: 'Compare e-bikes', href: '/compare/' },
+    ],
+  },
+  'ebike-pedals-types-clipless-flat-shoes': {
+    body: true,
+    shop: [
+      { label: 'E-bike accessories', href: '/shop/safety-security-carry/' },
+      { label: 'Commuter e-bikes', href: '/shop/electric-bikes/urban-commuter-ebikes/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'electric-cargo-trikes-business-delivery-guide': {
+    body: true,
+    shop: [
+      { label: 'Cargo & family e-bikes', href: '/shop/electric-bikes/cargo-family-ebikes/' },
+      { label: 'Electric trikes', href: '/shop/electric-bikes/electric-trikes/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
+  'ebike-speed-limiters-derestriction-legal-risks': {
+    body: true,
+    shop: [
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+      { label: 'Electric scooters', href: '/shop/electric-scooters/' },
+      { label: 'FAQ', href: '/faq/' },
+    ],
+  },
+  'how-to-clean-ebike-safely-washing-guide': {
+    body: true,
+    shop: [
+      { label: 'E-bike accessories', href: '/shop/safety-security-carry/' },
+      { label: 'Batteries & parts', href: '/shop/batteries-parts-kits/' },
+      { label: 'Electric bikes', href: '/shop/electric-bikes/' },
+    ],
+  },
 };
