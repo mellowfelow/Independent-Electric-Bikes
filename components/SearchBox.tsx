@@ -14,6 +14,12 @@ interface Suggestion {
   url: string;
 }
 
+interface Shortcut {
+  label: string;
+  href: string;
+  kind: 'category' | 'brand' | 'guide';
+}
+
 interface SearchBoxProps {
   placeholder?: string;
   className?: string;
@@ -30,6 +36,7 @@ export function SearchBox({ placeholder = 'Search e-bikes, scooters, brands...',
   const [q, setQ] = useState('');
   const [items, setItems] = useState<Suggestion[]>([]);
   const [total, setTotal] = useState(0);
+  const [shortcuts, setShortcuts] = useState<Shortcut[]>([]);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(-1);
   const [loading, setLoading] = useState(false);
@@ -49,6 +56,12 @@ export function SearchBox({ placeholder = 'Search e-bikes, scooters, brands...',
         const data = await res.json();
         setItems(data.products ?? []);
         setTotal(data.totalProducts ?? 0);
+        const path = (u: string) => new URL(u).pathname;
+        setShortcuts([
+          ...(data.brands ?? []).slice(0, 2).map((b: { name: string; url: string }) => ({ label: b.name, href: path(b.url), kind: 'brand' as const })),
+          ...(data.categories ?? []).slice(0, 3).map((c: { name: string; url: string }) => ({ label: c.name, href: path(c.url), kind: 'category' as const })),
+          ...(data.posts ?? []).slice(0, 2).map((p: { title: string; url: string }) => ({ label: p.title, href: path(p.url), kind: 'guide' as const })),
+        ]);
         setActive(-1);
       } catch {
         /* aborted or offline: keep the previous suggestions */
@@ -130,6 +143,7 @@ export function SearchBox({ placeholder = 'Search e-bikes, scooters, brands...',
           onClick={() => {
             setQ('');
             setItems([]);
+            setShortcuts([]);
             setOpen(false);
           }}
           aria-label="Clear search"
@@ -161,7 +175,23 @@ export function SearchBox({ placeholder = 'Search e-bikes, scooters, brands...',
               </li>
             ))}
           </ul>
-          {items.length === 0 && !loading && <p className="px-4 py-4 text-xs text-slate-400">No products found for &ldquo;{trimmed}&rdquo;. Try a brand or type, such as &ldquo;Trek&rdquo; or &ldquo;cargo&rdquo;.</p>}
+          {shortcuts.length > 0 && (
+            <div className="border-t border-slate-800 px-3 py-2.5">
+              <div className="flex flex-wrap gap-1.5">
+                {shortcuts.filter((x) => x.kind !== 'guide').map((x) => (
+                  <a key={x.href} href={x.href} className="rounded-full border border-slate-700 px-2.5 py-1 text-[11px] font-semibold text-slate-200 hover:border-emerald-500 hover:text-white">
+                    {x.kind === 'brand' ? 'Brand: ' : ''}{x.label}
+                  </a>
+                ))}
+              </div>
+              {shortcuts.filter((x) => x.kind === 'guide').map((x) => (
+                <a key={x.href} href={x.href} className="mt-2 block truncate text-[11px] text-slate-400 hover:text-emerald-300">
+                  Guide: {x.label}
+                </a>
+              ))}
+            </div>
+          )}
+          {items.length === 0 && <p className="px-4 py-4 text-xs text-slate-400">No products found for &ldquo;{trimmed}&rdquo;. Try a brand or type, such as &ldquo;Trek&rdquo; or &ldquo;cargo&rdquo;.</p>}
           {loading && items.length === 0 && <p className="px-4 py-4 text-xs text-slate-400">Searching...</p>}
           <a href={`/search/?q=${encodeURIComponent(trimmed)}`} className="block border-t border-slate-800 bg-slate-950/60 px-4 py-3 text-xs font-bold text-emerald-400 hover:text-emerald-300">
             {total > items.length ? `See all ${total} results` : 'See all results'} for &ldquo;{trimmed}&rdquo; &rarr;

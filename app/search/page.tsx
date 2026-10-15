@@ -9,7 +9,7 @@ import { search } from '@/lib/search';
 
 const URL_EVENT = 'ieb-search-url';
 const PAGE_SIZE = 24;
-const POPULAR = ['step-through e-bike', 'cargo bike', 'folding e-bike', 'e-scooter', 'Trek', 'electric skateboard', 'e-bike under $2000', 'helmet'];
+const POPULAR = ['step-through e-bike', 'cargo bike', 'folding e-bike', 'e-scooter', 'electric skateboard', 'mobility scooter', 'hoverboard', 'Sea-Doo', 'kids electric', 'e-bike under $2000', 'Trek', 'helmet'];
 
 type Sort = 'relevance' | 'price-asc' | 'price-desc';
 
